@@ -57,9 +57,12 @@ export const Webcam = forwardRef<HTMLVideoElement, { className?: string }>(
     }, []);
 
     return (
-      <>
+      <div className="relative flex items-center justify-center w-full h-full">
         {error ? (
-          <p role="alert" className="text-red-500">
+          <p
+            role="alert"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-red-500"
+          >
             {error}
           </p>
         ) : null}
@@ -69,11 +72,11 @@ export const Webcam = forwardRef<HTMLVideoElement, { className?: string }>(
           playsInline
           muted
           className={cn(
-            "bg-black aspect-video object-cover scale-x-[-1] rounded-sm",
+            "bg-black aspect-video object-cover scale-x-[-1] rounded-xs",
             className,
           )}
         />
-      </>
+      </div>
     );
   },
 );
