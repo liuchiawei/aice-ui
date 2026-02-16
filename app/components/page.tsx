@@ -7,7 +7,7 @@ import GlassSurface from "@/components/ui/glass-surface";
 
 const Webcam = dynamic(
   () =>
-    import("@/components/ui/webcam").then((m) => m.Webcam),
+    import("@/components/media/webcam").then((m) => m.Webcam),
   { ssr: false }
 );
 

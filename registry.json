@@ -9,7 +9,7 @@
       "title": "Webcam",
       "description": "A browser webcam streaming component with error handling and ref forwarding. | ブラウザのウェブカメラストリーミング用コンポーネント。エラー処理とref転送機能付き。",
       "files": [
-        { "path": "registry/new-york/webcam/webcam.tsx", "type": "registry:ui" }
+        { "path": "components/media/webcam.tsx", "type": "registry:ui" }
       ]
     },
     {
@@ -19,7 +19,7 @@
       "description": "Liquid glass surface component with SVG displacement and optional backdrop blur fallback. | 液体ガラス表面コンポーネント。SVGディスプレイスメントとオプションのバックドロップブラーのフォールバック。",
       "files": [
         {
-          "path": "registry/new-york/glass-surface/glass-surface.tsx",
+          "path": "components/ui/glass-surface.tsx",
           "type": "registry:ui"
         }
       ]
@@ -31,7 +31,7 @@
       "description": "Animated gradient background with configurable colors and optional pointer-follow interaction. | 設定可能な色とオプションのポインター追従インタラクションを備えたアニメーショングラデーション背景。",
       "files": [
         {
-          "path": "registry/new-york/background-gradient-animation/background-gradient-animation.tsx",
+          "path": "components/background/background-gradient-animation.tsx",
           "type": "registry:ui"
         }
       ]
