@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "aice-ui",
+  "homepage": "https://aice-ui.vercel.app/",
+  "items": [
+    {
+      "name": "webcam",
+      "type": "registry:ui",
+      "title": "Webcam",
+      "description": "A browser webcam streaming component with error handling and ref forwarding. | ブラウザのウェブカメラストリーミング用コンポーネント。エラー処理とref転送機能付き。",
+      "files": [
+        {
+          "path": "registry/new-york/webcam/webcam.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}
