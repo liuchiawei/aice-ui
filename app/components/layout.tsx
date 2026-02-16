@@ -16,6 +16,7 @@ import {
   SidebarRail,
 } from "@/components/ui/sidebar";
 import { myComponents } from "@/lib/config";
+import { componentPageTitle } from "@/lib/message";
 
 export default function ShowcaseLayout({
   children,
@@ -56,9 +57,9 @@ export default function ShowcaseLayout({
       <SidebarInset>
         <header className="flex h-14 shrink-0 items-center gap-2 border-b border-border px-4">
           <SidebarTrigger aria-label="Toggle sidebar" />
-          <h1 className="text-lg font-semibold text-foreground">
-            aice-ui 元件展示
-          </h1>
+          <Link href="/" className="text-lg font-semibold text-foreground">
+            {componentPageTitle}
+          </Link>
         </header>
         {children}
       </SidebarInset>
