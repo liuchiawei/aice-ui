@@ -35,6 +35,18 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "code-block",
+      "type": "registry:ui",
+      "title": "Code Block",
+      "description": "Code block component with syntax highlighting and line numbers. | シンタックスハイライトと行番号を備えたコードブロックコンポーネント。",
+      "files": [
+        {
+          "path": "components/ai-elements/code-block.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }
