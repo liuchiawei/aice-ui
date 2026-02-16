@@ -1,25 +1,26 @@
 export const myComponents = [
   {
     label: "UI",
-    items: [{ href: "#glass-surface", label: "Glass Surface" }],
+    items: [
+      { slug: "glass-surface", label: "Glass Surface" },
+      { slug: "code-block", label: "Code Block" },
+    ],
   },
   {
     label: "Text",
-    items: [
-      { href: "#button", label: "Button" },
-    ],
+    items: [{ slug: "button", label: "Button" }],
   },
   {
     label: "Background",
     items: [
       {
-        href: "#background-gradient-animation",
+        slug: "background-gradient-animation",
         label: "Background Gradient Animation",
       },
     ],
   },
   {
     label: "Media",
-    items: [{ href: "#webcam", label: "Webcam" }],
+    items: [{ slug: "webcam", label: "Webcam" }],
   },
 ] as const;

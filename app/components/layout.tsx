@@ -24,7 +24,7 @@ export default function ShowcaseLayout({
 }) {
   return (
     <SidebarProvider>
-      <Sidebar collapsible="icon">
+      <Sidebar>
         <SidebarContent>
           {myComponents.map((group) => (
             <SidebarGroup key={group.label}>
@@ -33,10 +33,10 @@ export default function ShowcaseLayout({
                 <SidebarMenu>
                   {group.items.map((item) => {
                     return (
-                      <SidebarMenuItem key={item.href}>
+                      <SidebarMenuItem key={item.slug}>
                         <SidebarMenuButton asChild>
                           <Link
-                            href={item.href}
+                            href={`/components/${item.slug}`}
                             className="cursor-pointer"
                             aria-label={`Go to ${item.label} section`}
                           >
