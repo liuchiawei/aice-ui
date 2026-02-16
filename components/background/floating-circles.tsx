@@ -2,7 +2,7 @@
 import { cn } from "@/lib/utils";
 import { useEffect, useRef, useState } from "react";
 
-export const BackgroundGradientAnimation = ({
+export const FloatingCircles = ({
   gradientBackgroundStart = "rgb(108, 0, 162)",
   gradientBackgroundEnd = "rgb(0, 17, 82)",
   firstColor = "20, 72, 140",

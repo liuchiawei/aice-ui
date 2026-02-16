@@ -2,13 +2,12 @@
 
 import dynamic from "next/dynamic";
 import { Section } from "@/components/showcase/section";
-import { BackgroundGradientAnimation } from "@/components/background/background-gradient-animation";
+import { FloatingCircles } from "@/components/background/floating-circles";
 import GlassSurface from "@/components/ui/glass-surface";
 
 const Webcam = dynamic(
-  () =>
-    import("@/components/media/webcam").then((m) => m.Webcam),
-  { ssr: false }
+  () => import("@/components/media/webcam").then((m) => m.Webcam),
+  { ssr: false },
 );
 
 function WebcamDemo() {
@@ -31,7 +30,7 @@ export default function ComponentsPage() {
         description="Animated gradient background with configurable colors and optional pointer-follow interaction."
       >
         <div className="relative h-48 overflow-hidden rounded-lg border border-border">
-          <BackgroundGradientAnimation
+          <FloatingCircles
             className="absolute inset-0"
             size="60%"
             interactive={true}

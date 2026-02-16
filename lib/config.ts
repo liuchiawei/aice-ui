@@ -14,8 +14,8 @@ export const myComponents = [
     label: "Background",
     items: [
       {
-        slug: "background-gradient-animation",
-        label: "Background Gradient Animation",
+        slug: "floating-circles",
+        label: "Floating Circles",
       },
     ],
   },

@@ -3,12 +3,12 @@
 import type { ComponentType } from "react";
 import dynamic from "next/dynamic";
 import { CodeBlock } from "@/components/ai-elements/code-block";
-import { BackgroundGradientAnimation } from "@/components/background/background-gradient-animation";
+import { FloatingCircles } from "@/components/background/floating-circles";
 import GlassSurface from "@/components/ui/glass-surface";
 
 const Webcam = dynamic(
   () => import("@/components/media/webcam").then((m) => m.Webcam),
-  { ssr: false }
+  { ssr: false },
 );
 
 function GlassSurfaceDemo() {
@@ -26,17 +26,15 @@ const glassSurfaceSource = `<GlassSurface width={240} height={120} borderRadius=
 </GlassSurface>`;
 
 function CodeBlockDemo() {
-  return (
-    <CodeBlock code={glassSurfaceSource} language="tsx" showLineNumbers />
-  );
+  return <CodeBlock code={glassSurfaceSource} language="tsx" showLineNumbers />;
 }
 
 const codeBlockSource = `<CodeBlock code={code} language="tsx" showLineNumbers />`;
 
-function BackgroundGradientAnimationDemo() {
+function FloatingCirclesDemo() {
   return (
     <div className="relative h-48 w-full max-w-md overflow-hidden rounded-lg border border-border">
-      <BackgroundGradientAnimation
+      <FloatingCircles
         className="absolute inset-0"
         size="60%"
         interactive={true}
@@ -50,8 +48,8 @@ function BackgroundGradientAnimationDemo() {
   );
 }
 
-const backgroundGradientSource = `<div className="relative h-48 overflow-hidden rounded-lg border">
-  <BackgroundGradientAnimation
+const floatingCirclesSource = `<div className="relative h-48 overflow-hidden rounded-lg border">
+  <FloatingCircles
     className="absolute inset-0"
     size="60%"
     interactive={true}
@@ -93,9 +91,9 @@ const demos: Record<string, DemoConfig> = {
     sourceCode: codeBlockSource,
     language: "tsx",
   },
-  "background-gradient-animation": {
-    Demo: BackgroundGradientAnimationDemo,
-    sourceCode: backgroundGradientSource,
+  "floating-circles": {
+    Demo: FloatingCirclesDemo,
+    sourceCode: floatingCirclesSource,
     language: "tsx",
   },
   webcam: {

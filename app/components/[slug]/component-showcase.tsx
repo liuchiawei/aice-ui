@@ -40,64 +40,62 @@ export function ComponentShowcase({ slug }: ComponentShowcaseProps) {
   const description = componentDescription[slug] ?? componentPageIntro;
 
   return (
-    <div className="flex flex-col gap-8 p-4 md:p-6">
+    <div className="space-y-8 p-4 md:p-6">
       {/* Title & Description */}
-      <Breadcrumb>
-        <BreadcrumbList>
-          <BreadcrumbItem>
-            <BreadcrumbLink href="/">Home</BreadcrumbLink>
-          </BreadcrumbItem>
-          <BreadcrumbSeparator />
-          <BreadcrumbItem>
-            <BreadcrumbLink href="/components">Components</BreadcrumbLink>
-          </BreadcrumbItem>
-          <BreadcrumbSeparator />
-          <BreadcrumbItem>
-            <BreadcrumbLink href={`/components/${slug}`}>
-              {title}
-            </BreadcrumbLink>
-          </BreadcrumbItem>
-        </BreadcrumbList>
-      </Breadcrumb>
       <section className="space-y-2">
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/">Home</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/components">Components</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink href={`/components/${slug}`}>
+                {title}
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-black">{title}</h1>
         <p className="text-sm text-muted-foreground">{description}</p>
       </section>
       {/* Preview & Code */}
-      <section className="flex flex-col gap-3">
-        <Tabs defaultValue="preview" className="w-full">
-          <TabsList>
-            <TabsTrigger value="preview" className="text-xs">
-              <Eye className="size-4" /> Preview
-            </TabsTrigger>
-            <TabsTrigger value="source" className="text-xs">
-              <Code className="size-4" />
-              Code
-            </TabsTrigger>
-          </TabsList>
-          <TabsContent value="preview" className="mt-3">
-            <div className="rounded-lg border border-border bg-muted p-6">
-              <Demo />
-            </div>
-          </TabsContent>
-          <TabsContent value="source" className="mt-3">
-            <CodeBlock
-              code={sourceCode}
-              language={language}
-              showLineNumbers
-              className="rounded-lg border border-border"
-            />
-          </TabsContent>
-        </Tabs>
-      </section>
+      <Tabs defaultValue="preview" className="w-full">
+        <TabsList>
+          <TabsTrigger value="preview" className="text-xs">
+            <Eye className="size-4" /> Preview
+          </TabsTrigger>
+          <TabsTrigger value="source" className="text-xs">
+            <Code className="size-4" />
+            Code
+          </TabsTrigger>
+        </TabsList>
+        <TabsContent value="preview" className="mt-3">
+          <div className="rounded-lg border border-border bg-muted p-6">
+            <Demo />
+          </div>
+        </TabsContent>
+        <TabsContent value="source" className="mt-3">
+          <CodeBlock
+            code={sourceCode}
+            language={language}
+            showLineNumbers
+            className="rounded-lg border border-border"
+          />
+        </TabsContent>
+      </Tabs>
 
       {/* Installation */}
       <InstallationSection slug={slug} />
 
       {/* Related Components */}
-      <section className="flex flex-col gap-3 border-t border-border pt-6">
+      <section className="space-y-2">
         {currentGroup && (
-          <div className="flex flex-col gap-2">
+          <div className="space-y-2">
             <span className="text-xs font-medium text-muted-foreground">
               同分類元件
             </span>
