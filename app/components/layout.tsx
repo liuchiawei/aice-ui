@@ -15,7 +15,7 @@ import {
   SidebarTrigger,
   SidebarRail,
 } from "@/components/ui/sidebar";
-import { myComponents } from "@/lib/config";
+import { myComponents } from "@/lib/component-config";
 import { componentPageTitle } from "@/lib/message";
 
 export default function ShowcaseLayout({

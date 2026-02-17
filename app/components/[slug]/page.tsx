@@ -1,13 +1,13 @@
 import { notFound } from "next/navigation";
 import { ComponentShowcase } from "./component-showcase";
-import { myComponents } from "@/lib/config";
+import { myComponents } from "@/lib/component-config";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
 };
 
 const allSlugs: string[] = myComponents.flatMap((group) =>
-  group.items.map((item) => item.slug)
+  group.items.map((item) => item.slug),
 );
 
 export default async function ComponentSlugPage({ params }: PageProps) {
