@@ -41,6 +41,7 @@
       "type": "registry:ui",
       "title": "Code Block",
       "description": "Code block component with syntax highlighting and line numbers. | シンタックスハイライトと行番号を備えたコードブロックコンポーネント。",
+      "dependencies": ["shiki"],
       "files": [
         {
           "path": "components/ai-elements/code-block.tsx",
@@ -53,6 +54,7 @@
       "type": "registry:ui",
       "title": "Slide Up Letters",
       "description": "Slide up letters component with customizable animation. | カスタマイズ可能なアニメーションを備えたスライドアップ文字コンポーネント。",
+      "dependencies": ["motion"],
       "files": [
         {
           "path": "components/text/slide-up-letters.tsx",
@@ -65,6 +67,7 @@
       "type": "registry:ui",
       "title": "Glyph Katakana",
       "description": "Glyph katakana component with customizable animation. | カスタマイズ可能なアニメーションを備えたグリフ片仮名コンポーネント。",
+      "dependencies": ["motion"],
       "files": [
         {
           "path": "components/text/glyph-katakana.tsx",
@@ -77,7 +80,7 @@
       "type": "registry:ui",
       "title": "Theme Switch",
       "description": "Theme switch component with dark/light mode toggle. | ダーク/ライトモード切り替えコンポーネント。",
-      "dependencies": ["next-themes"],
+      "dependencies": ["next-themes", "motion"],
       "files": [
         {
           "path": "components/ui-elements/theme-switcher.tsx",
