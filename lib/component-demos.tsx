@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 import { CodeBlock } from "@/components/ai-elements/code-block";
 import { FloatingCircles } from "@/components/background/floating-circles";
 import GlassSurface from "@/components/ui-elements/glass-surface";
-import MotionWheel from "@/components/ui-elements/motion-wheel";
+import MotionWheel from "@/components/blocks/motion-wheel";
 
 const Webcam = dynamic(
   () => import("@/components/media/webcam").then((m) => m.Webcam),
