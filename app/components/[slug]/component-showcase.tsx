@@ -11,6 +11,7 @@ import {
   BreadcrumbList,
 } from "@/components/ui/breadcrumb";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Badge } from "@/components/ui/badge";
 import { Eye, Code } from "lucide-react";
 import { getItemBySlug, myComponents } from "@/lib/component-config";
 import {
@@ -112,12 +113,9 @@ export function ComponentShowcase({ slug }: ComponentShowcaseProps) {
                   {index > 0 && (
                     <span className="text-muted-foreground">·</span>
                   )}
-                  <Link
-                    href={`/components/${item.slug}`}
-                    className="text-sm text-primary underline-offset-4 hover:underline"
-                  >
-                    {item.label}
-                  </Link>
+                  <Badge className="py-1">
+                    <Link href={`/components/${item.slug}`}>{item.label}</Link>
+                  </Badge>
                 </li>
               ))}
             </ul>

@@ -4,6 +4,7 @@ import Link from "next/link";
 import {
   SidebarProvider,
   Sidebar,
+  SidebarHeader,
   SidebarInset,
   SidebarContent,
   SidebarGroup,
@@ -26,6 +27,11 @@ export default function ShowcaseLayout({
   return (
     <SidebarProvider>
       <Sidebar>
+        <SidebarHeader>
+          <Link href="/" className="text-3xl font-black font-roboto">
+            {componentPageTitle}
+          </Link>
+        </SidebarHeader>
         <SidebarContent>
           {myComponents.map((group) => (
             <SidebarGroup key={group.label}>

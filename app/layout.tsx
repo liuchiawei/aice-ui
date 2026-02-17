@@ -5,6 +5,7 @@ import "./globals.css";
 const roboto = Roboto({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  weight: ["400", "500", "700", "900"],
 });
 
 const robotoMono = Roboto_Mono({
@@ -15,6 +16,7 @@ const robotoMono = Roboto_Mono({
 const notoSansJP = Noto_Sans_JP({
   variable: "--font-noto-sans-jp",
   subsets: ["latin"],
+  weight: ["400", "500", "700", "900"],
 });
 
 const notoSans = Noto_Sans({
