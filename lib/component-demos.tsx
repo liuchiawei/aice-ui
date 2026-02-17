@@ -4,7 +4,7 @@ import type { ComponentType } from "react";
 import dynamic from "next/dynamic";
 import { CodeBlock } from "@/components/ai-elements/code-block";
 import { FloatingCircles } from "@/components/background/floating-circles";
-import GlassSurface from "@/components/ui/glass-surface";
+import GlassSurface from "@/components/ui-elements/glass-surface";
 
 const Webcam = dynamic(
   () => import("@/components/media/webcam").then((m) => m.Webcam),

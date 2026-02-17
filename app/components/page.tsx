@@ -3,7 +3,7 @@
 import dynamic from "next/dynamic";
 import { Section } from "@/components/showcase/section";
 import { FloatingCircles } from "@/components/background/floating-circles";
-import GlassSurface from "@/components/ui/glass-surface";
+import GlassSurface from "@/components/ui-elements/glass-surface";
 
 const Webcam = dynamic(
   () => import("@/components/media/webcam").then((m) => m.Webcam),
