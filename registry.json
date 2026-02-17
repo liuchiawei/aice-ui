@@ -71,6 +71,19 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "theme-switch",
+      "type": "registry:ui",
+      "title": "Theme Switch",
+      "description": "Theme switch component with dark/light mode toggle. | ダーク/ライトモード切り替えコンポーネント。",
+      "dependencies": ["next-themes"],
+      "files": [
+        {
+          "path": "components/ui-elements/theme-switcher.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }

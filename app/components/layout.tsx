@@ -16,6 +16,7 @@ import {
   SidebarTrigger,
   SidebarRail,
 } from "@/components/ui/sidebar";
+import { ThemeSwitcher } from "@/components/ui-elements/theme-switcher";
 import { myComponents } from "@/lib/component-config";
 import { componentPageTitle } from "@/lib/message";
 
@@ -61,11 +62,14 @@ export default function ShowcaseLayout({
         <SidebarRail />
       </Sidebar>
       <SidebarInset>
-        <header className="flex h-14 shrink-0 items-center gap-2 border-b border-border px-4">
-          <SidebarTrigger aria-label="Toggle sidebar" />
-          <Link href="/" className="text-lg font-semibold text-foreground">
-            {componentPageTitle}
-          </Link>
+        <header className="h-14 flex shrink-0 items-center justify-between border-b border-border px-4">
+          <div className="flex items-center gap-2">
+            <SidebarTrigger aria-label="Toggle sidebar" />
+            <Link href="/" className="text-lg font-semibold text-foreground">
+              {componentPageTitle}
+            </Link>
+          </div>
+          <ThemeSwitcher />
         </header>
         {children}
       </SidebarInset>

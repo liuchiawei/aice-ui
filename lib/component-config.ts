@@ -20,6 +20,7 @@ import {
   GlyphKatanaDemo,
   glyphKatanaSource,
 } from "@/components/demo/glyph-katana-demo";
+import { ThemeSwitchDemo, themeSwitchSource } from "@/components/demo/theme-switch-demo";
 
 export interface ComponentItem {
   slug: string;
@@ -45,6 +46,12 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         sourceCode: codeBlockSource,
       },
       { slug: "radar-chart", label: "Radar Chart" },
+      {
+        slug: "theme-switch",
+        label: "Theme Switch",
+        demo: ThemeSwitchDemo,
+        sourceCode: themeSwitchSource,
+      },
     ],
   },
   {
