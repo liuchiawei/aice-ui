@@ -16,6 +16,10 @@ import {
   SlideUpLettersDemo,
   slideUpLettersSource,
 } from "@/components/demo/slide-up-letters-demo";
+import {
+  GlyphKatanaDemo,
+  glyphKatanaSource,
+} from "@/components/demo/glyph-katana-demo";
 
 export interface ComponentItem {
   slug: string;
@@ -53,7 +57,12 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
   {
     label: "Text",
     items: [
-      { slug: "glyph-katakana", label: "Glyph Katakana" },
+      {
+        slug: "glyph-katakana",
+        label: "Glyph Katakana",
+        demo: GlyphKatanaDemo,
+        sourceCode: glyphKatanaSource,
+      },
       {
         slug: "slide-up-letters",
         label: "Slide Up Letters",
