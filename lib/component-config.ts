@@ -12,6 +12,10 @@ import {
   floatingCirclesSource,
 } from "@/components/demo/floating-circle-demo";
 import { WebcamDemo, webcamSource } from "@/components/demo/webcam-demo";
+import {
+  SlideUpLettersDemo,
+  slideUpLettersSource,
+} from "@/components/demo/slide-up-letters-demo";
 
 export interface ComponentItem {
   slug: string;
@@ -50,7 +54,12 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
     label: "Text",
     items: [
       { slug: "glyph-katakana", label: "Glyph Katakana" },
-      { slug: "slide-up-letters", label: "Slide Up Letters" },
+      {
+        slug: "slide-up-letters",
+        label: "Slide Up Letters",
+        demo: SlideUpLettersDemo,
+        sourceCode: slideUpLettersSource,
+      },
     ],
   },
   {
