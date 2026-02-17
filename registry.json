@@ -19,7 +19,7 @@
       "description": "Liquid glass surface component with SVG displacement and optional backdrop blur fallback. | 液体ガラス表面コンポーネント。SVGディスプレイスメントとオプションのバックドロップブラーのフォールバック。",
       "files": [
         {
-          "path": "components/ui/glass-surface.tsx",
+          "path": "components/ui-elements/glass-surface.tsx",
           "type": "registry:ui"
         }
       ]
@@ -44,6 +44,30 @@
       "files": [
         {
           "path": "components/ai-elements/code-block.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "slide-up-letters",
+      "type": "registry:ui",
+      "title": "Slide Up Letters",
+      "description": "Slide up letters component with customizable animation. | カスタマイズ可能なアニメーションを備えたスライドアップ文字コンポーネント。",
+      "files": [
+        {
+          "path": "components/text/slide-up-letters.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "glyph-katakana",
+      "type": "registry:ui",
+      "title": "Glyph Katakana",
+      "description": "Glyph katakana component with customizable animation. | カスタマイズ可能なアニメーションを備えたグリフ片仮名コンポーネント。",
+      "files": [
+        {
+          "path": "components/text/glyph-katakana.tsx",
           "type": "registry:ui"
         }
       ]
