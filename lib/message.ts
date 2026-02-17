@@ -1,4 +1,12 @@
 // 表示用文言（既定: 日本語）。将来 i18n 時は messages.ja / messages.en / messages.zh に分割可能。
+export const topPage = {
+  title: "AICE UI",
+  description: "AIに特化したアプリを素早く作れる、オープンソースのUIコンポーネント集です。会話やメッセージなどのコンポーネントを用意しています。Next.js・React・Tailwind CSS・shadcn/ui製。",
+  "CTA": "コンポーネント一覧",
+}
+
+export const siteDescriptionEng: string = "An open-source component library to help you build AI-native applications faster. It provides pre-built components like conversations, messages and more. Built with Next.js, React, Tailwind CSS, and shadcn/ui.";
+
 // Component Showcase Page Title
 export const componentPageTitle: string = "AICE UI";
 
