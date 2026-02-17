@@ -12,8 +12,7 @@ import {
 } from "@/components/ui/breadcrumb";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Eye, Code } from "lucide-react";
-import { getDemoBySlug } from "@/lib/component-demos";
-import { myComponents } from "@/lib/component-config";
+import { getDemoBySlug, myComponents } from "@/lib/component-config";
 import {
   componentPageIntro,
   componentTitle,

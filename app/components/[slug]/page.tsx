@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { ComponentShowcase } from "./component-showcase";
-import { myComponents } from "@/lib/component-config";
+import { demoSlugs, myComponents } from "@/lib/component-config";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -19,11 +19,5 @@ export default async function ComponentSlugPage({ params }: PageProps) {
 }
 
 export function generateStaticParams() {
-  const demoSlugs = [
-    "glass-surface",
-    "code-block",
-    "background-gradient-animation",
-    "webcam",
-  ];
   return demoSlugs.map((slug) => ({ slug }));
 }

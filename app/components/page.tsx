@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { Section } from "@/components/showcase/section";
+import { Section } from "@/components/demo/section";
 import { FloatingCircles } from "@/components/background/floating-circles";
 import GlassSurface from "@/components/ui-elements/glass-surface";
 
