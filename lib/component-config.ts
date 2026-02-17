@@ -4,6 +4,7 @@ export const myComponents = [
     items: [
       { slug: "glass-surface", label: "Glass Surface" },
       { slug: "code-block", label: "Code Block" },
+      { slug: "motion-wheel", label: "Motion Wheel" },
     ],
   },
   {

@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import { CodeBlock } from "@/components/ai-elements/code-block";
 import { FloatingCircles } from "@/components/background/floating-circles";
 import GlassSurface from "@/components/ui-elements/glass-surface";
+import MotionWheel from "@/components/ui-elements/motion-wheel";
 
 const Webcam = dynamic(
   () => import("@/components/media/webcam").then((m) => m.Webcam),
@@ -74,6 +75,12 @@ const webcamSource = `<div className="relative aspect-video overflow-hidden roun
   <Webcam className="absolute inset-0 size-full object-cover" />
 </div>`;
 
+function MotionWheelDemo() {
+  return <MotionWheel />;
+}
+
+const motionWheelSource = `<MotionWheel />`;
+
 export interface DemoConfig {
   Demo: ComponentType;
   sourceCode: string;
@@ -99,6 +106,11 @@ const demos: Record<string, DemoConfig> = {
   webcam: {
     Demo: WebcamDemo,
     sourceCode: webcamSource,
+    language: "tsx",
+  },
+  "motion-wheel": {
+    Demo: MotionWheelDemo,
+    sourceCode: motionWheelSource,
     language: "tsx",
   },
 };
