@@ -18,7 +18,7 @@ interface Product {
   brand: string;
 }
 
-export default function MotionReel() {
+export default function MotionWheel() {
   const isMobile = useIsMobile();
   const [currentIndex, setCurrentIndex] = useState(2);
   const [isAnimating, setIsAnimating] = useState(false);
