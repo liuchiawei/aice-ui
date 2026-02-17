@@ -202,6 +202,7 @@ export default function MotionWheel() {
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex space-x-3 z-20">
         {featuredProducts.map((_, index) => (
           <button
+            title={`Go to ${index + 1}`}
             key={index}
             onClick={() => {
               if (!isAnimating) {
