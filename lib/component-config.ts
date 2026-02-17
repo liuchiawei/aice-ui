@@ -77,17 +77,29 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
   },
 ];
 
-export interface DemoConfig {
-  Demo: ComponentType;
-  sourceCode: string;
-  language: "tsx" | "ts";
-}
+export type ItemBySlugResult =
+  | {
+      kind: "demo";
+      item: ComponentItem;
+      Demo: ComponentType;
+      sourceCode: string;
+      language: "tsx" | "ts";
+    }
+  | { kind: "coming-soon"; item: ComponentItem };
 
-export function getDemoBySlug(slug: string): DemoConfig | undefined {
+export function getItemBySlug(slug: string): ItemBySlugResult | undefined {
   for (const group of myComponents) {
     const item = group.items.find((i) => i.slug === slug);
-    if (item?.demo != null && item?.sourceCode != null)
-      return { Demo: item.demo, sourceCode: item.sourceCode, language: "tsx" };
+    if (!item) continue;
+    if (item.demo != null && item.sourceCode != null)
+      return {
+        kind: "demo",
+        item,
+        Demo: item.demo,
+        sourceCode: item.sourceCode,
+        language: "tsx",
+      };
+    return { kind: "coming-soon", item };
   }
   return undefined;
 }

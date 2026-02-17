@@ -1,3 +1,4 @@
+// 表示用文言（既定: 日本語）。将来 i18n 時は messages.ja / messages.en / messages.zh に分割可能。
 // Component Showcase Page Title
 export const componentPageTitle: string = "AICE UI";
 
@@ -22,6 +23,14 @@ export const componentDescription: Record<string, string> = {
     "色変更可能な動くグラデーション背景。マウス追従も可。",
   webcam: "ブラウザカメラ配信。エラー処理・ref転送対応。",
 };
+
+// Coming Soon セクション（既定: 日本語）
+export const comingSoonTitle = "近日公開";
+export const comingSoonDescription =
+  "このコンポーネントのデモとコードは近日公開予定です。";
+
+// 同カテゴリのコンポーネントラベル（コンポーネント詳細ページ）
+export const relatedComponentsLabel = "同カテゴリのコンポーネント";
 
 export const installationSectionTitle: string = "インストール";
 export const installationSectionDescription: string =

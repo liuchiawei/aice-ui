@@ -12,30 +12,31 @@ import {
 } from "@/components/ui/breadcrumb";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Eye, Code } from "lucide-react";
-import { getDemoBySlug, myComponents } from "@/lib/component-config";
+import { getItemBySlug, myComponents } from "@/lib/component-config";
 import {
   componentPageIntro,
   componentTitle,
   componentDescription,
+  relatedComponentsLabel,
 } from "@/lib/message";
 import { InstallationSection } from "@/components/section/installation-section";
+import { ComingSoon } from "@/components/section/coming-soon";
 
 interface ComponentShowcaseProps {
   slug: string;
 }
 
 export function ComponentShowcase({ slug }: ComponentShowcaseProps) {
-  const config = getDemoBySlug(slug);
-  if (!config) {
+  const result = getItemBySlug(slug);
+  if (result === undefined) {
     notFound();
   }
 
-  const { Demo, sourceCode, language } = config;
-
+  const { item } = result;
   const currentGroup = myComponents.find((group) =>
-    group.items.some((item) => item.slug === slug),
+    group.items.some((i) => i.slug === slug),
   );
-  const title = componentTitle[slug] ?? "Unknown";
+  const title = componentTitle[slug] ?? item.label;
   const description = componentDescription[slug] ?? componentPageIntro;
 
   return (
@@ -62,41 +63,45 @@ export function ComponentShowcase({ slug }: ComponentShowcaseProps) {
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-black">{title}</h1>
         <p className="text-sm text-muted-foreground">{description}</p>
       </section>
-      {/* Preview & Code */}
-      <Tabs defaultValue="preview" className="w-full">
-        <TabsList>
-          <TabsTrigger value="preview" className="text-xs">
-            <Eye className="size-4" /> Preview
-          </TabsTrigger>
-          <TabsTrigger value="source" className="text-xs">
-            <Code className="size-4" />
-            Code
-          </TabsTrigger>
-        </TabsList>
-        <TabsContent value="preview" className="mt-3">
-          <div className="rounded-lg border border-border bg-muted p-6">
-            <Demo />
-          </div>
-        </TabsContent>
-        <TabsContent value="source" className="mt-3">
-          <CodeBlock
-            code={sourceCode}
-            language={language}
-            showLineNumbers
-            className="rounded-lg border border-border"
-          />
-        </TabsContent>
-      </Tabs>
 
-      {/* Installation */}
-      <InstallationSection slug={slug} />
+      {result.kind === "demo" ? (
+        <>
+          <Tabs defaultValue="preview" className="w-full">
+            <TabsList>
+              <TabsTrigger value="preview" className="text-xs">
+                <Eye className="size-4" /> Preview
+              </TabsTrigger>
+              <TabsTrigger value="source" className="text-xs">
+                <Code className="size-4" />
+                Code
+              </TabsTrigger>
+            </TabsList>
+            <TabsContent value="preview" className="mt-3">
+              <div className="rounded-lg border border-border bg-muted p-6">
+                <result.Demo />
+              </div>
+            </TabsContent>
+            <TabsContent value="source" className="mt-3">
+              <CodeBlock
+                code={result.sourceCode}
+                language={result.language}
+                showLineNumbers
+                className="rounded-lg border border-border"
+              />
+            </TabsContent>
+          </Tabs>
+          <InstallationSection slug={slug} />
+        </>
+      ) : (
+        <ComingSoon componentName={result.item.label} />
+      )}
 
       {/* Related Components */}
       <section className="space-y-2">
         {currentGroup && (
           <div className="space-y-2">
             <span className="text-xs font-medium text-muted-foreground">
-              同分類元件
+              {relatedComponentsLabel}
             </span>
             <ul className="flex flex-wrap items-center gap-x-2 gap-y-1">
               {currentGroup.items.map((item, index) => (
