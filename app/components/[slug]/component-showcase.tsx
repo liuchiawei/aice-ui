@@ -19,7 +19,7 @@ import {
   componentTitle,
   componentDescription,
 } from "@/lib/message";
-import { InstallationSection } from "@/components/sections/installation-section";
+import { InstallationSection } from "@/components/section/installation-section";
 
 interface ComponentShowcaseProps {
   slug: string;
