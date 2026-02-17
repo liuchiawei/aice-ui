@@ -25,13 +25,13 @@
       ]
     },
     {
-      "name": "background-gradient-animation",
+      "name": "floating-circles",
       "type": "registry:ui",
-      "title": "Background Gradient Animation",
+      "title": "Floating Circles",
       "description": "Animated gradient background with configurable colors and optional pointer-follow interaction. | 設定可能な色とオプションのポインター追従インタラクションを備えたアニメーショングラデーション背景。",
       "files": [
         {
-          "path": "components/background/background-gradient-animation.tsx",
+          "path": "components/background/floating-circles.tsx",
           "type": "registry:ui"
         }
       ]
