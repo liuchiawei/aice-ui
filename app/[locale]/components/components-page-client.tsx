@@ -8,7 +8,7 @@ function sectionIdFromLabel(label: string): string {
   return label.toLowerCase().replace(/\s+/g, "-");
 }
 
-export default function ComponentsPage() {
+export function ComponentsPageClient() {
   return (
     <div className="min-h-screen pb-20">
       {myComponents.map((group) => (

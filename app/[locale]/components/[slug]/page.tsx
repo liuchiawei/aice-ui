@@ -1,9 +1,11 @@
 import { notFound } from "next/navigation";
+import { setRequestLocale } from "next-intl/server";
 import { ComponentShowcase } from "./component-showcase";
 import { demoSlugs, myComponents } from "@/lib/component-config";
+import { routing } from "@/i18n/routing";
 
 type PageProps = {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ locale: string; slug: string }>;
 };
 
 const allSlugs: string[] = myComponents.flatMap((group) =>
@@ -11,7 +13,8 @@ const allSlugs: string[] = myComponents.flatMap((group) =>
 );
 
 export default async function ComponentSlugPage({ params }: PageProps) {
-  const { slug } = await params;
+  const { locale, slug } = await params;
+  setRequestLocale(locale);
   if (!allSlugs.includes(slug)) {
     notFound();
   }
@@ -19,5 +22,7 @@ export default async function ComponentSlugPage({ params }: PageProps) {
 }
 
 export function generateStaticParams() {
-  return demoSlugs.map((slug) => ({ slug }));
+  return routing.locales.flatMap((locale) =>
+    demoSlugs.map((slug) => ({ locale, slug })),
+  );
 }

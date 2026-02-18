@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { notFound } from "next/navigation";
 import { CodeBlock } from "@/components/ai-elements/code-block";
 import {
@@ -47,16 +47,20 @@ export function ComponentShowcase({ slug }: ComponentShowcaseProps) {
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink href="/">Home</BreadcrumbLink>
+              <BreadcrumbLink asChild>
+                <Link href="/">Home</Link>
+              </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbLink href="/components">Components</BreadcrumbLink>
+              <BreadcrumbLink asChild>
+                <Link href="/components">Components</Link>
+              </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbLink href={`/components/${slug}`}>
-                {title}
+              <BreadcrumbLink asChild>
+                <Link href={`/components/${slug}`}>{title}</Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
           </BreadcrumbList>

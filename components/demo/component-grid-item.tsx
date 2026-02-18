@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import type { ComponentItem } from "@/lib/component-config";
 import { componentGridItem } from "@/lib/message";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";

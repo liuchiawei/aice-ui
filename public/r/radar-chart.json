@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radar-chart",
+  "title": "Radar Chart",
+  "description": "Radar chart component with customizable data and optional title and description. | カスタマイズ可能なデータとオプションのタイトルと説明を備えたラダーチャートコンポーネント。",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [
+    "recharts",
+    "card"
+  ],
+  "files": [
+    {
+      "path": "components/ui-elements/radar-chart.tsx",
+      "content": "\"use client\";\r\n\r\nimport {\r\n  PolarAngleAxis,\r\n  PolarGrid,\r\n  Radar,\r\n  RadarChart as RechartsRadarChart,\r\n} from \"recharts\";\r\nimport { cn } from \"@/lib/utils\";\r\nimport {\r\n  Card,\r\n  CardContent,\r\n  CardDescription,\r\n  CardHeader,\r\n  CardTitle,\r\n} from \"@/components/ui/card\";\r\nimport {\r\n  ChartConfig,\r\n  ChartContainer,\r\n  ChartTooltip,\r\n  ChartTooltipContent,\r\n} from \"@/components/ui/chart\";\r\n\r\nexport type RadarChartDataPoint = { name: string; value: number };\r\n\r\nconst DEMO_RADAR_DATA: RadarChartDataPoint[] = [\r\n  { name: \"Java\", value: 10 },\r\n  { name: \"Python\", value: 49 },\r\n  { name: \"JavaScript\", value: 80 },\r\n  { name: \"TypeScript\", value: 85 },\r\n  { name: \"React\", value: 90 },\r\n  { name: \"Next.js\", value: 85 },\r\n];\r\n\r\nexport interface RadarChartProps {\r\n  data?: RadarChartDataPoint[];\r\n  title?: string;\r\n  description?: string;\r\n  valueLabel?: string;\r\n  className?: string; // Card className\r\n  chartClassName?: string; // ChartContainer className\r\n}\r\n\r\nexport default function RadarChart({\r\n  data,\r\n  title,\r\n  description,\r\n  valueLabel = \"Points\",\r\n  className,\r\n  chartClassName,\r\n}: RadarChartProps) {\r\n  const chartData = data ?? DEMO_RADAR_DATA;\r\n  const chartConfig = {\r\n    value: {\r\n      label: valueLabel,\r\n    },\r\n  } satisfies ChartConfig;\r\n  // ヘッダーを表示するかどうか if title or description is not null, show header\r\n  const showHeader = title != null || description != null;\r\n\r\n  return (\r\n    <Card\r\n      className={cn(\r\n        \"w-full h-full flex flex-col justify-center items-center\",\r\n        className,\r\n      )}\r\n    >\r\n      {showHeader && (\r\n        <CardHeader className=\"items-center\">\r\n          {title != null && (\r\n            <CardTitle className=\"text-center text-3xl\">{title}</CardTitle>\r\n          )}\r\n          {description != null && (\r\n            <CardDescription>{description}</CardDescription>\r\n          )}\r\n        </CardHeader>\r\n      )}\r\n      <CardContent className=\"p-2 w-full h-full flex justify-center items-center\">\r\n        <ChartContainer\r\n          config={chartConfig}\r\n          className={cn(\"mx-auto w-full h-full\", chartClassName)}\r\n        >\r\n          <RechartsRadarChart data={chartData}>\r\n            <ChartTooltip cursor={false} content={<ChartTooltipContent />} />\r\n            <PolarAngleAxis dataKey=\"name\" />\r\n            <PolarGrid />\r\n            <Radar dataKey=\"value\" fill=\"var(--accent)\" fillOpacity={0.6} />\r\n          </RechartsRadarChart>\r\n        </ChartContainer>\r\n      </CardContent>\r\n    </Card>\r\n  );\r\n}\r\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}
