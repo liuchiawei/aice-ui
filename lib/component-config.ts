@@ -32,14 +32,15 @@ import {
   RadarChartDemo,
   radarChartSource,
 } from "@/components/demo/radar-chart-demo";
-import { componentDescription } from "@/lib/message";
-
+/** Translation keys under the "Components" namespace (e.g. "glass-surface.label"). Resolve with useTranslations("Components") then t(key). */
 export interface ComponentItem {
   slug: string;
-  label: string;
+  /** Key for label, e.g. "glass-surface.label" */
+  labelKey: string;
+  /** Key for description, e.g. "glass-surface.description" */
+  descriptionKey?: string;
   demo?: ComponentType;
   sourceCode?: string;
-  description?: string;
 }
 
 export const myComponents: { label: string; items: ComponentItem[] }[] = [
@@ -48,31 +49,31 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
     items: [
       {
         slug: "glass-surface",
-        label: "Glass Surface",
+        labelKey: "glass-surface.label",
+        descriptionKey: "glass-surface.description",
         demo: GlassSurfaceDemo,
         sourceCode: glassSurfaceSource,
-        description: componentDescription["glass-surface"],
       },
       {
         slug: "code-block",
-        label: "Code Block",
+        labelKey: "code-block.label",
+        descriptionKey: "code-block.description",
         demo: CodeBlockDemo,
         sourceCode: codeBlockSource,
-        description: componentDescription["code-block"],
       },
       {
         slug: "radar-chart",
-        label: "Radar Chart",
+        labelKey: "radar-chart.label",
+        descriptionKey: "radar-chart.description",
         demo: RadarChartDemo,
         sourceCode: radarChartSource,
-        description: componentDescription["radar-chart"],
       },
       {
         slug: "theme-switch",
-        label: "Theme Switch",
+        labelKey: "theme-switch.label",
+        descriptionKey: "theme-switch.description",
         demo: ThemeSwitchDemo,
         sourceCode: themeSwitchSource,
-        description: componentDescription["theme-switch"],
       },
     ],
   },
@@ -81,13 +82,13 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
     items: [
       {
         slug: "motion-wheel",
-        label: "Motion Wheel",
-        description: componentDescription["motion-wheel"],
+        labelKey: "motion-wheel.label",
+        descriptionKey: "motion-wheel.description",
       },
       {
         slug: "3d-flip-card",
-        label: "3D Flip Card",
-        description: componentDescription["3d-flip-card"],
+        labelKey: "3d-flip-card.label",
+        descriptionKey: "3d-flip-card.description",
       },
     ],
   },
@@ -96,17 +97,17 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
     items: [
       {
         slug: "glyph-katakana",
-        label: "Glyph Katakana",
+        labelKey: "glyph-katakana.label",
+        descriptionKey: "glyph-katakana.description",
         demo: GlyphKatanaDemo,
         sourceCode: glyphKatanaSource,
-        description: componentDescription["glyph-katakana"],
       },
       {
         slug: "slide-up-letters",
-        label: "Slide Up Letters",
+        labelKey: "slide-up-letters.label",
+        descriptionKey: "slide-up-letters.description",
         demo: SlideUpLettersDemo,
         sourceCode: slideUpLettersSource,
-        description: componentDescription["slide-up-letters"],
       },
     ],
   },
@@ -115,17 +116,17 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
     items: [
       {
         slug: "floating-circles",
-        label: "Floating Circles",
+        labelKey: "floating-circles.label",
+        descriptionKey: "floating-circles.description",
         demo: FloatingCirclesDemo,
         sourceCode: floatingCirclesSource,
-        description: componentDescription["floating-circles"],
       },
       {
         slug: "matrix-code",
-        label: "Matrix Code",
+        labelKey: "matrix-code.label",
+        descriptionKey: "matrix-code.description",
         demo: MatrixCodeDemo,
         sourceCode: matrixCodeSource,
-        description: componentDescription["matrix-code"],
       },
     ],
   },
@@ -134,10 +135,10 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
     items: [
       {
         slug: "webcam",
-        label: "Webcam",
+        labelKey: "webcam.label",
+        descriptionKey: "webcam.description",
         demo: WebcamDemo,
         sourceCode: webcamSource,
-        description: componentDescription["webcam"],
       },
     ],
   },

@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { ChevronRight } from "lucide-react";
 import {
@@ -30,6 +31,8 @@ export default function ShowcaseLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const t = useTranslations("Components");
+  const tSidebar = useTranslations("Sidebar");
   return (
     <SidebarProvider>
       <Sidebar>
@@ -47,7 +50,7 @@ export default function ShowcaseLayout({
                     type="button"
                     className="text-sidebar-foreground/70 ring-sidebar-ring group flex h-8 w-full shrink-0 cursor-pointer justify-between items-center gap-1 rounded-md px-2 text-left text-xs font-medium outline-hidden transition-[margin,opacity] duration-200 ease-linear hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 [&>svg]:size-4 [&>svg]:shrink-0"
                   >
-                    {group.label}
+                    {tSidebar(group.label)}
                     <ChevronRight
                       className="size-4 shrink-0 transition-transform group-data-[state=open]:rotate-90"
                       aria-hidden
@@ -63,9 +66,9 @@ export default function ShowcaseLayout({
                             <Link
                               href={`/components/${item.slug}`}
                               className="cursor-pointer"
-                              aria-label={`Go to ${item.label} section`}
+                              aria-label={`Go to ${t(item.labelKey)} section`}
                             >
-                              {item.label}
+                              {t(item.labelKey)}
                             </Link>
                           </SidebarMenuButton>
                         </SidebarMenuItem>

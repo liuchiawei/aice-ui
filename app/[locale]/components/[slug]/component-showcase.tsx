@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { notFound } from "next/navigation";
 import { CodeBlock } from "@/components/ai-elements/code-block";
@@ -28,6 +29,7 @@ interface ComponentShowcaseProps {
 }
 
 export function ComponentShowcase({ slug }: ComponentShowcaseProps) {
+  const t = useTranslations("Components");
   const result = getItemBySlug(slug);
   if (result === undefined) {
     notFound();
@@ -37,8 +39,10 @@ export function ComponentShowcase({ slug }: ComponentShowcaseProps) {
   const currentGroup = myComponents.find((group) =>
     group.items.some((i) => i.slug === slug),
   );
-  const title = componentTitle[slug] ?? item.label;
-  const description = componentDescription[slug] ?? componentPageIntro;
+  const title = componentTitle[slug] ?? t(item.labelKey);
+  const description =
+    componentDescription[slug] ??
+    (item.descriptionKey ? t(item.descriptionKey) : componentPageIntro);
 
   return (
     <div className="space-y-8 p-4 md:p-6">
@@ -99,7 +103,7 @@ export function ComponentShowcase({ slug }: ComponentShowcaseProps) {
           <InstallationSection slug={slug} />
         </>
       ) : (
-        <ComingSoon componentName={result.item.label} />
+        <ComingSoon componentName={t(result.item.labelKey)} />
       )}
 
       {/* Related Components */}
@@ -120,7 +124,7 @@ export function ComponentShowcase({ slug }: ComponentShowcaseProps) {
                       variant="outline"
                       className="py-1 hover:bg-primary/20 transition-colors"
                     >
-                      {item.label}
+                      {t(item.labelKey)}
                     </Badge>
                   </Link>
                 </li>
