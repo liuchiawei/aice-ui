@@ -1,69 +1,29 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import { Section } from "@/components/demo/section";
-import { FloatingCircles } from "@/components/background/floating-circles";
-import GlassSurface from "@/components/ui-elements/glass-surface";
+import { ComponentGridItem } from "@/components/demo/component-grid-item";
+import { myComponents } from "@/lib/component-config";
 
-const Webcam = dynamic(
-  () => import("@/components/media/webcam").then((m) => m.Webcam),
-  { ssr: false },
-);
-
-function WebcamDemo() {
-  return (
-    <div className="relative aspect-video w-full max-w-md overflow-hidden rounded-lg border border-border bg-muted">
-      <Webcam className="absolute inset-0 size-full object-cover" />
-      <p className="absolute bottom-2 left-2 text-xs text-white drop-shadow-md">
-        Allow camera access to see preview
-      </p>
-    </div>
-  );
+function sectionIdFromLabel(label: string): string {
+  return label.toLowerCase().replace(/\s+/g, "-");
 }
 
 export default function ComponentsPage() {
   return (
     <div className="min-h-screen pb-20">
-      <Section
-        id="background-gradient-animation"
-        title="Background Gradient Animation"
-        description="Animated gradient background with configurable colors and optional pointer-follow interaction."
-      >
-        <div className="relative h-48 overflow-hidden rounded-lg border border-border">
-          <FloatingCircles
-            className="absolute inset-0"
-            size="60%"
-            interactive={true}
-          />
-          <div className="relative flex h-full items-center justify-center">
-            <span className="text-sm font-medium text-foreground/90">
-              Gradient background
-            </span>
+      {myComponents.map((group) => (
+        <Section
+          key={group.label}
+          id={sectionIdFromLabel(group.label)}
+          title={group.label}
+        >
+          <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            {group.items.map((item) => (
+              <ComponentGridItem key={item.slug} item={item} />
+            ))}
           </div>
-        </div>
-      </Section>
-
-      <Section
-        id="glass-surface"
-        title="Glass Surface"
-        description="Liquid glass surface with SVG displacement and optional backdrop blur."
-      >
-        <div className="flex flex-wrap gap-4">
-          <GlassSurface width={240} height={120} borderRadius={16}>
-            <span className="text-sm font-medium text-foreground">
-              Glass card
-            </span>
-          </GlassSurface>
-        </div>
-      </Section>
-
-      <Section
-        id="webcam"
-        title="Webcam"
-        description="Browser webcam streaming with error handling and ref forwarding."
-      >
-        <WebcamDemo />
-      </Section>
+        </Section>
+      ))}
     </div>
   );
 }
