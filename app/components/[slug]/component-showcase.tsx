@@ -83,12 +83,15 @@ export function ComponentShowcase({ slug }: ComponentShowcaseProps) {
             >
               <result.Demo />
             </TabsContent>
-            <TabsContent value="source">
+            <TabsContent
+              value="source"
+              className="min-w-0 max-w-5xl"
+            >
               <CodeBlock
                 code={result.sourceCode}
                 language={result.language}
                 showLineNumbers
-                className="rounded-lg border border-border"
+                className="w-full min-w-0 rounded-lg border border-border bg-shiki-light-bg dark:bg-shiki-dark-bg"
               />
             </TabsContent>
           </Tabs>

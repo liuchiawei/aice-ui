@@ -359,7 +359,7 @@ const GlassSurface: React.FC<GlassSurfaceProps> = ({
         </defs>
       </svg>
 
-      <div className={cn("w-full h-full flex flex-col items-center justify-center rounded-[inherit] relative z-10", contentClassName)}>
+      <div className={cn("w-full h-full rounded-[inherit] relative z-10", contentClassName)}>
         {children}
       </div>
     </div>
