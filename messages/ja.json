@@ -11,6 +11,15 @@
     "description": "AI向けアプリをすぐ作れる、使いやすいUIコンポーネント集です。会話やメッセージなどが簡単に使えます。Next.js、React、Tailwind CSS、shadcn/ui製です。",
     "CTA": "コンポーネント一覧"
   },
+  "ComponentPage": {
+    "breadcrumb": {
+      "home": "ホーム",
+      "components": "コンポーネント一覧"
+    },
+    "description": "多様な用途に活用できる汎用的なUIコンポーネントです。",
+    "install": "お好きなパッケージマネージャーでコンポーネントをインストールしてください。",
+    "related": "関連コンポーネント"
+  },
   "Components": {
     "glass-surface": {
       "label": "リキッド・グラス",

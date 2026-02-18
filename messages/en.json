@@ -11,6 +11,14 @@
     "description": "An open-source UI component library to help you build applications faster. It provides pre-built components like conversations, messages and more. Built with Next.js, React, Tailwind CSS, and shadcn/ui.",
     "CTA": "Components"
   },
+  "ComponentPage": {
+    "breadcrumb": {
+      "home": "Home",
+      "components": "Components"
+    },
+    "install": "Please select your favorite package manager to install the component.",
+    "related": "Related Components"
+  },
   "Components": {
     "glass-surface": {
       "label": "Glass Surface",

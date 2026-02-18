@@ -15,12 +15,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { Eye, Code } from "lucide-react";
 import { getItemBySlug, myComponents } from "@/lib/component-config";
-import {
-  componentPageIntro,
-  componentTitle,
-  componentDescription,
-  relatedComponentsLabel,
-} from "@/lib/message";
 import { InstallationSection } from "@/components/section/installation-section";
 import { ComingSoon } from "@/components/section/coming-soon";
 
@@ -30,6 +24,7 @@ interface ComponentShowcaseProps {
 
 export function ComponentShowcase({ slug }: ComponentShowcaseProps) {
   const t = useTranslations("Components");
+  const tPage = useTranslations("ComponentPage");
   const result = getItemBySlug(slug);
   if (result === undefined) {
     notFound();
@@ -39,10 +34,6 @@ export function ComponentShowcase({ slug }: ComponentShowcaseProps) {
   const currentGroup = myComponents.find((group) =>
     group.items.some((i) => i.slug === slug),
   );
-  const title = componentTitle[slug] ?? t(item.labelKey);
-  const description =
-    componentDescription[slug] ??
-    (item.descriptionKey ? t(item.descriptionKey) : componentPageIntro);
 
   return (
     <div className="space-y-8 p-4 md:p-6">
@@ -52,25 +43,29 @@ export function ComponentShowcase({ slug }: ComponentShowcaseProps) {
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
-                <Link href="/">Home</Link>
+                <Link href="/">{tPage("breadcrumb.home")}</Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
-                <Link href="/components">Components</Link>
+                <Link href="/components">{tPage("breadcrumb.components")}</Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
-                <Link href={`/components/${slug}`}>{title}</Link>
+                <Link href={`/components/${slug}`}>{t(item.labelKey)}</Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-black">{title}</h1>
-        <p className="text-sm text-muted-foreground">{description}</p>
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-black">
+          {t(item.labelKey)}
+        </h1>
+        <p className="text-sm text-muted-foreground">
+          {t(item.descriptionKey ?? tPage("description"))}
+        </p>
       </section>
 
       {result.kind === "demo" ? (
@@ -111,7 +106,7 @@ export function ComponentShowcase({ slug }: ComponentShowcaseProps) {
         {currentGroup && (
           <>
             <h3 className="text-xs font-medium text-muted-foreground mb-3">
-              {relatedComponentsLabel}
+              {tPage("related")}
             </h3>
             <ul className="flex flex-wrap items-center gap-x-2 gap-y-1">
               {currentGroup.items.map((item) => (
