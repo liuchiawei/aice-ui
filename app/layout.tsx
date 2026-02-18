@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto, Roboto_Mono, Noto_Sans_JP, Noto_Sans } from "next/font/google";
 import { ThemeProvider } from "next-themes";
+import { getLocale } from "next-intl/server";
 import "./globals.css";
 
 const roboto = Roboto({
@@ -30,13 +31,14 @@ export const metadata: Metadata = {
   description: "AICE UI is a collection of open source UI components for AICE",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
   return (
-    <html lang="ja">
+    <html lang={locale}>
       <body
         className={`${roboto.variable} ${robotoMono.variable} ${notoSansJP.variable} ${notoSans.variable} antialiased`}
       >

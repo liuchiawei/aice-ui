@@ -1,0 +1,68 @@
+{
+  "Sidebar": {
+    "UI": "UI",
+    "Blocks": "Blocks",
+    "Text": "Text",
+    "Background": "Background",
+    "Media": "Media"
+  },
+  "Home": {
+    "title": "AICE UI",
+    "description": "An open-source UI component library to help you build applications faster. It provides pre-built components like conversations, messages and more. Built with Next.js, React, Tailwind CSS, and shadcn/ui.",
+    "CTA": "Components"
+  },
+  "ComponentPage": {
+    "breadcrumb": {
+      "home": "Home",
+      "components": "Components"
+    },
+    "install": "Please select your favorite package manager to install the component.",
+    "related": "Related Components"
+  },
+  "Components": {
+    "glass-surface": {
+      "label": "Glass Surface",
+      "description": "A glass surface component with blur and distortion effects. It is built with Next.js, React, Tailwind CSS, and shadcn/ui."
+    },
+    "code-block": {
+      "label": "Code Block",
+      "description": "A code block component with syntax highlighting and line numbers. It is built with Next.js, React, Tailwind CSS, and shadcn/ui."
+    },
+    "radar-chart": {
+      "label": "Radar Chart",
+      "description": "A radar chart component with customizable data and optional title and description. It is built with Next.js, React, Tailwind CSS, and shadcn/ui."
+      },
+      "theme-switch": {
+        "label": "Theme Switch",
+        "description": "A theme switch component with dark and light mode. It is built with Next.js, React, Tailwind CSS, and shadcn/ui."
+      },
+      "floating-circles": {
+        "label": "Floating Circles",
+        "description": "A floating circles component with customizable data and optional title and description. It is built with Next.js, React, Tailwind CSS, and shadcn/ui."
+      },
+      "matrix-code": {
+        "label": "Matrix Code",
+        "description": "A matrix code component with glitch effect and optional vignette effect. It is built with Next.js, React, Tailwind CSS, and shadcn/ui."
+      },
+      "webcam": {
+        "label": "Webcam",
+        "description": "A webcam component with customizable data and optional title and description. It is built with Next.js, React, Tailwind CSS, and shadcn/ui."
+      },
+      "motion-wheel": {
+        "label": "Motion Wheel",
+        "description": "A motion wheel component with customizable data and optional title and description. It is built with Next.js, React, Tailwind CSS, and shadcn/ui."
+      },
+      "3d-flip-card": {
+        "label": "3D Flip Card",
+        "description": "A 3d flip card component with customizable data and optional title and description. It is built with Next.js, React, Tailwind CSS, and shadcn/ui."
+      },
+      "glyph-katakana": {
+        "label": "Glyph Katakana",
+        "description": "A glyph katakana component with customizable data and optional title and description. It is built with Next.js, React, Tailwind CSS, and shadcn/ui."
+      },
+      "slide-up-letters": {
+        "label": "Slide Up Letters",
+        "description": "A slide up letters component with customizable data and optional title and description. It is built with Next.js, React, Tailwind CSS, and shadcn/ui."
+      }
+    }
+}

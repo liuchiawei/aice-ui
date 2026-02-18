@@ -7,10 +7,7 @@ import {
 } from "@/components/ai-elements/code-block";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { getInstallCommands } from "@/lib/installation";
-import {
-  installationSectionTitle,
-  installationSectionDescription,
-} from "@/lib/message";
+import { useTranslations } from "next-intl";
 
 interface InstallationSectionProps {
   slug: string;
@@ -19,13 +16,14 @@ interface InstallationSectionProps {
 const PACKAGE_MANAGERS = ["pnpm", "npm", "yarn"] as const;
 
 export function InstallationSection({ slug }: InstallationSectionProps) {
+  const t = useTranslations("ComponentPage");
   const commands = getInstallCommands(slug);
 
   return (
     <section className="flex flex-col gap-3 border-t border-border pt-6">
-      <h2 className="text-lg font-bold">{installationSectionTitle}</h2>
+      <h2 className="text-lg font-bold">{t("install")}</h2>
       <p className="text-sm text-muted-foreground">
-        {installationSectionDescription}
+        {t("install")}
       </p>
 
       <Tabs defaultValue="pnpm" className="w-full">

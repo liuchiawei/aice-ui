@@ -4,7 +4,12 @@
   "title": "Code Block",
   "description": "Code block component with syntax highlighting and line numbers. | シンタックスハイライトと行番号を備えたコードブロックコンポーネント。",
   "dependencies": [
-    "shiki"
+    "shiki",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "select",
+    "button"
   ],
   "files": [
     {

@@ -1,6 +1,7 @@
 "use client";
 
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { notFound } from "next/navigation";
 import { CodeBlock } from "@/components/ai-elements/code-block";
 import {
@@ -14,12 +15,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { Eye, Code } from "lucide-react";
 import { getItemBySlug, myComponents } from "@/lib/component-config";
-import {
-  componentPageIntro,
-  componentTitle,
-  componentDescription,
-  relatedComponentsLabel,
-} from "@/lib/message";
 import { InstallationSection } from "@/components/section/installation-section";
 import { ComingSoon } from "@/components/section/coming-soon";
 
@@ -28,6 +23,8 @@ interface ComponentShowcaseProps {
 }
 
 export function ComponentShowcase({ slug }: ComponentShowcaseProps) {
+  const t = useTranslations("Components");
+  const tPage = useTranslations("ComponentPage");
   const result = getItemBySlug(slug);
   if (result === undefined) {
     notFound();
@@ -37,8 +34,6 @@ export function ComponentShowcase({ slug }: ComponentShowcaseProps) {
   const currentGroup = myComponents.find((group) =>
     group.items.some((i) => i.slug === slug),
   );
-  const title = componentTitle[slug] ?? item.label;
-  const description = componentDescription[slug] ?? componentPageIntro;
 
   return (
     <div className="space-y-8 p-4 md:p-6">
@@ -47,22 +42,30 @@ export function ComponentShowcase({ slug }: ComponentShowcaseProps) {
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink href="/">Home</BreadcrumbLink>
+              <BreadcrumbLink asChild>
+                <Link href="/">{tPage("breadcrumb.home")}</Link>
+              </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbLink href="/components">Components</BreadcrumbLink>
+              <BreadcrumbLink asChild>
+                <Link href="/components">{tPage("breadcrumb.components")}</Link>
+              </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbLink href={`/components/${slug}`}>
-                {title}
+              <BreadcrumbLink asChild>
+                <Link href={`/components/${slug}`}>{t(item.labelKey)}</Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-black">{title}</h1>
-        <p className="text-sm text-muted-foreground">{description}</p>
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-black">
+          {t(item.labelKey)}
+        </h1>
+        <p className="text-sm text-muted-foreground">
+          {t(item.descriptionKey ?? tPage("description"))}
+        </p>
       </section>
 
       {result.kind === "demo" ? (
@@ -83,10 +86,7 @@ export function ComponentShowcase({ slug }: ComponentShowcaseProps) {
             >
               <result.Demo />
             </TabsContent>
-            <TabsContent
-              value="source"
-              className="min-w-0 max-w-5xl"
-            >
+            <TabsContent value="source" className="min-w-0 max-w-5xl">
               <CodeBlock
                 code={result.sourceCode}
                 language={result.language}
@@ -98,32 +98,34 @@ export function ComponentShowcase({ slug }: ComponentShowcaseProps) {
           <InstallationSection slug={slug} />
         </>
       ) : (
-        <ComingSoon componentName={result.item.label} />
+        <ComingSoon componentName={t(result.item.labelKey)} />
       )}
 
       {/* Related Components */}
-      <section className="space-y-2">
+      <section>
         {currentGroup && (
-          <div className="space-y-2">
-            <span className="text-xs font-medium text-muted-foreground">
-              {relatedComponentsLabel}
-            </span>
+          <>
+            <h3 className="text-xs font-medium text-muted-foreground mb-3">
+              {tPage("related")}
+            </h3>
             <ul className="flex flex-wrap items-center gap-x-2 gap-y-1">
-              {currentGroup.items.map((item, index) => (
+              {currentGroup.items.map((item) => (
                 <li
                   key={item.slug}
                   className="inline-flex items-center gap-x-2"
                 >
-                  {index > 0 && (
-                    <span className="text-muted-foreground">·</span>
-                  )}
-                  <Badge className="py-1">
-                    <Link href={`/components/${item.slug}`}>{item.label}</Link>
-                  </Badge>
+                  <Link href={`/components/${item.slug}`}>
+                    <Badge
+                      variant="outline"
+                      className="py-1 hover:bg-primary/20 transition-colors"
+                    >
+                      {t(item.labelKey)}
+                    </Badge>
+                  </Link>
                 </li>
               ))}
             </ul>
-          </div>
+          </>
         )}
       </section>
     </div>
