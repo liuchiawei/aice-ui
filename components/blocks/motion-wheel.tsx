@@ -232,7 +232,7 @@ const featuredProducts: Product[] = [
     name_jp: "プレミアム格闘技グローブ",
     name_en: "Premium Fighting Gloves",
     price: 15800,
-    image: "/images/glove_01.png",
+    image: "https://picsum.photos/200/300",
     category: "グローブ",
     brand: "BushiGear Pro",
   },

@@ -260,14 +260,6 @@ const CodeBlockBody = memo(
     showLineNumbers: boolean;
     className?: string;
   }) => {
-    const preStyle = useMemo(
-      () => ({
-        backgroundColor: tokenized.bg,
-        color: tokenized.fg,
-      }),
-      [tokenized.bg, tokenized.fg]
-    );
-
     const keyedLines = useMemo(
       () => addKeysToTokens(tokenized.tokens),
       [tokenized.tokens]
@@ -276,10 +268,9 @@ const CodeBlockBody = memo(
     return (
       <pre
         className={cn(
-          "dark:!bg-[var(--shiki-dark-bg)] dark:!text-[var(--shiki-dark)] m-0 p-4 text-sm",
+          "!bg-[var(--shiki-light-bg)] !text-[var(--shiki-light)] dark:!bg-[var(--shiki-dark-bg)] dark:!text-[var(--shiki-dark)] m-0 p-4 text-sm",
           className
         )}
-        style={preStyle}
       >
         <code
           className={cn(

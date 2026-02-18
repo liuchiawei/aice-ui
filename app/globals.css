@@ -82,6 +82,8 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --shiki-light-bg: oklch(0.975 0.003 247);
+  --shiki-light: oklch(0.22 0.02 264);
 }
 
 .dark {
@@ -116,6 +118,8 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+  --shiki-dark-bg: oklch(0.18 0.02 265);
+  --shiki-dark: oklch(0.83 0.02 250);
 }
 
 @layer base {
