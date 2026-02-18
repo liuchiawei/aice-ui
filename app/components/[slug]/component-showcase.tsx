@@ -78,7 +78,7 @@ export function ComponentShowcase({ slug }: ComponentShowcaseProps) {
               </TabsTrigger>
             </TabsList>
             <TabsContent value="preview" className="mt-3">
-              <div className="rounded-lg border border-border bg-muted p-6">
+              <div className="rounded-lg border border-border bg-shiki-light-bg dark:bg-shiki-dark-bg p-6">
                 <result.Demo />
               </div>
             </TabsContent>
