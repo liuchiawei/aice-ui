@@ -22,6 +22,7 @@ import {
   SidebarTrigger,
   SidebarRail,
 } from "@/components/ui/sidebar";
+import { LangSwitcher } from "@/components/ui-elements/lang-switcher";
 import { ThemeSwitcher } from "@/components/ui-elements/theme-switcher";
 import { myComponents } from "@/lib/component-config";
 import { componentPageTitle } from "@/lib/message";
@@ -90,7 +91,10 @@ export default function ShowcaseLayout({
               {componentPageTitle}
             </Link>
           </div>
-          <ThemeSwitcher />
+          <div className="flex items-center gap-2">
+            <LangSwitcher />
+            <ThemeSwitcher />
+          </div>
         </header>
         {children}
       </SidebarInset>
