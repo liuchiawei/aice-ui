@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "slide-up-letters",
+  "title": "Slide Up Letters",
+  "description": "Slide up letters component with customizable animation. | カスタマイズ可能なアニメーションを備えたスライドアップ文字コンポーネント。",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "components/text/slide-up-letters.tsx",
+      "content": "\"use client\";\r\n\r\nimport * as motion from \"motion/react-client\";\r\nimport { Variants } from \"motion/react\";\r\nimport { cn } from \"@/lib/utils\";\r\n\r\nexport default function SlideUpLetters({\r\n  text,\r\n  className,\r\n}: {\r\n  text: string;\r\n  className?: string;\r\n}) {\r\n  return (\r\n    <motion.div\r\n      initial=\"hidden\"\r\n      animate=\"visible\"\r\n      className={cn(\"flex justify-center items-center\", className)}\r\n    >\r\n      {text.split(\"\").map((letter, index) => (\r\n        <motion.div key={index} variants={variants} custom={index}>\r\n          {letter}\r\n        </motion.div>\r\n      ))}\r\n    </motion.div>\r\n  );\r\n}\r\n\r\nconst variants: Variants = {\r\n  hidden: { opacity: 0, y: 20, filter: \"blur(4px)\" },\r\n  visible: (i: number) => {\r\n    const delay = i * 0.1; // 遅延時間の設定\r\n    return {\r\n      opacity: 1,\r\n      y: 0,\r\n      filter: \"blur(0px)\",\r\n      transition: { delay, type: \"spring\", duration: 0.8, bounce: 0.4 },\r\n    };\r\n  },\r\n};\r\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

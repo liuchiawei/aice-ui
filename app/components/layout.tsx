@@ -1,6 +1,12 @@
 "use client";
 
 import Link from "next/link";
+import { ChevronRight } from "lucide-react";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
 import {
   SidebarProvider,
   Sidebar,
@@ -8,7 +14,6 @@ import {
   SidebarInset,
   SidebarContent,
   SidebarGroup,
-  SidebarGroupLabel,
   SidebarGroupContent,
   SidebarMenu,
   SidebarMenuItem,
@@ -35,27 +40,40 @@ export default function ShowcaseLayout({
         </SidebarHeader>
         <SidebarContent>
           {myComponents.map((group) => (
-            <SidebarGroup key={group.label}>
-              <SidebarGroupLabel>{group.label}</SidebarGroupLabel>
-              <SidebarGroupContent>
-                <SidebarMenu>
-                  {group.items.map((item) => {
-                    return (
-                      <SidebarMenuItem key={item.slug}>
-                        <SidebarMenuButton asChild>
-                          <Link
-                            href={`/components/${item.slug}`}
-                            className="cursor-pointer"
-                            aria-label={`Go to ${item.label} section`}
-                          >
-                            {item.label}
-                          </Link>
-                        </SidebarMenuButton>
-                      </SidebarMenuItem>
-                    );
-                  })}
-                </SidebarMenu>
-              </SidebarGroupContent>
+            <SidebarGroup key={group.label} className="group py-0">
+              <Collapsible defaultOpen>
+                <CollapsibleTrigger asChild>
+                  <button
+                    type="button"
+                    className="text-sidebar-foreground/70 ring-sidebar-ring group flex h-8 w-full shrink-0 cursor-pointer justify-between items-center gap-1 rounded-md px-2 text-left text-xs font-medium outline-hidden transition-[margin,opacity] duration-200 ease-linear hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 [&>svg]:size-4 [&>svg]:shrink-0"
+                  >
+                    {group.label}
+                    <ChevronRight
+                      className="size-4 shrink-0 transition-transform group-data-[state=open]:rotate-90"
+                      aria-hidden
+                    />
+                  </button>
+                </CollapsibleTrigger>
+                <CollapsibleContent className="overflow-hidden">
+                  <SidebarGroupContent>
+                    <SidebarMenu>
+                      {group.items.map((item) => (
+                        <SidebarMenuItem key={item.slug}>
+                          <SidebarMenuButton asChild>
+                            <Link
+                              href={`/components/${item.slug}`}
+                              className="cursor-pointer"
+                              aria-label={`Go to ${item.label} section`}
+                            >
+                              {item.label}
+                            </Link>
+                          </SidebarMenuButton>
+                        </SidebarMenuItem>
+                      ))}
+                    </SidebarMenu>
+                  </SidebarGroupContent>
+                </CollapsibleContent>
+              </Collapsible>
             </SidebarGroup>
           ))}
         </SidebarContent>
