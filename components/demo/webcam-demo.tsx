@@ -8,8 +8,8 @@ const Webcam = dynamic(
 
 export function WebcamDemo() {
   return (
-    <div className="relative aspect-video w-full max-w-md overflow-hidden rounded-lg border border-border bg-muted">
-      <Webcam className="absolute inset-0 size-full object-cover" />
+    <div className="relative w-full h-full min-h-108 overflow-hidden rounded-lg">
+      <Webcam containerClassName="absolute inset-0" className="aspect-auto" />
       <p className="absolute bottom-2 left-2 text-xs text-white drop-shadow-md">
         Allow camera access to see preview
       </p>
