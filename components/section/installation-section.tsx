@@ -42,7 +42,7 @@ export function InstallationSection({ slug }: InstallationSectionProps) {
             <CodeBlock
               code={commands[pm]}
               language="bash"
-              className="flex flex-row-reverse items-center justify-between pr-3 rounded-lg border border-border"
+              className="flex flex-row-reverse items-center justify-between pr-3 rounded-lg border border-border bg-shiki-light-bg dark:bg-shiki-dark-bg"
             >
               <CodeBlockActions>
                 <CodeBlockCopyButton />

@@ -40,6 +40,10 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  --color-shiki-light-bg: var(--shiki-light-bg);
+  --color-shiki-light: var(--shiki-light);
+  --color-shiki-dark-bg: var(--shiki-dark-bg);
+  --color-shiki-dark: var(--shiki-dark);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -82,7 +86,7 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
-  --shiki-light-bg: oklch(0.975 0.003 247);
+  --shiki-light-bg: oklch(0.965 0.003 247);
   --shiki-light: oklch(0.22 0.02 264);
 }
 
