@@ -83,10 +83,7 @@ export function ComponentShowcase({ slug }: ComponentShowcaseProps) {
             >
               <result.Demo />
             </TabsContent>
-            <TabsContent
-              value="source"
-              className="min-w-0 max-w-5xl"
-            >
+            <TabsContent value="source" className="min-w-0 max-w-5xl">
               <CodeBlock
                 code={result.sourceCode}
                 language={result.language}
@@ -102,28 +99,30 @@ export function ComponentShowcase({ slug }: ComponentShowcaseProps) {
       )}
 
       {/* Related Components */}
-      <section className="space-y-2">
+      <section>
         {currentGroup && (
-          <div className="space-y-2">
-            <span className="text-xs font-medium text-muted-foreground">
+          <>
+            <h3 className="text-xs font-medium text-muted-foreground mb-3">
               {relatedComponentsLabel}
-            </span>
+            </h3>
             <ul className="flex flex-wrap items-center gap-x-2 gap-y-1">
-              {currentGroup.items.map((item, index) => (
+              {currentGroup.items.map((item) => (
                 <li
                   key={item.slug}
                   className="inline-flex items-center gap-x-2"
                 >
-                  {index > 0 && (
-                    <span className="text-muted-foreground">·</span>
-                  )}
-                  <Badge className="py-1">
-                    <Link href={`/components/${item.slug}`}>{item.label}</Link>
-                  </Badge>
+                  <Link href={`/components/${item.slug}`}>
+                    <Badge
+                      variant="outline"
+                      className="py-1 hover:bg-primary/20 transition-colors"
+                    >
+                      {item.label}
+                    </Badge>
+                  </Link>
                 </li>
               ))}
             </ul>
-          </div>
+          </>
         )}
       </section>
     </div>
