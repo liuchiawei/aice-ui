@@ -17,6 +17,7 @@
       "components": "Components"
     },
     "install": "Please select your favorite package manager to install the component.",
+    "demo-code": "Demo Code",
     "related": "Related Components"
   },
   "Components": {

@@ -16,6 +16,7 @@
       "home": "首頁",
       "components": "元件一覽"
     },
+    "demo-code": "範例代碼",
     "install": "請選擇您喜歡的包管理器安裝元件。",
     "related": "相關元件"
   },
