@@ -8,7 +8,7 @@ function MatrixCodeDemo() {
         centerVignette={true}
         outerVignette={false}
         smooth={true}
-        className="brightness-50"
+        className="bg-gray-800 dark:bg-black"
       />
     </div>
   );
