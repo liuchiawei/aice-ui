@@ -87,6 +87,18 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "matrix-code",
+      "type": "registry:ui",
+      "title": "Matrix Code",
+      "description": "Matrix code component with glitch effect and optional vignette effect. | グリッチ効果とオプションのビネット効果を備えたマトリックスコードコンポーネント。",
+      "files": [
+        {
+          "path": "components/background/matrix-code.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }
