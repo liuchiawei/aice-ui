@@ -12,7 +12,7 @@ interface MatrixCodeProps {
   className?: string; // コンテナの class name
 }
 
-const MatrixCode = ({
+export default function MatrixCode({
   glitchColors = ["#2b4539", "#61dca3", "#61b3dc"],
   glitchSpeed = 50,
   centerVignette = false,
@@ -244,5 +244,3 @@ const MatrixCode = ({
     </div>
   );
 };
-
-export default MatrixCode;

@@ -1,6 +1,6 @@
 import MatrixCode from "@/components/background/matrix-code";
 
-function MatrixRainDemo() {
+function MatrixCodeDemo() {
   return (
     <div className="relative h-108 w-full overflow-hidden rounded-lg border border-border">
       <MatrixCode
