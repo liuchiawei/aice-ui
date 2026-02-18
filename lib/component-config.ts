@@ -28,6 +28,10 @@ import {
   MatrixCodeDemo,
   matrixCodeSource,
 } from "@/components/demo/matrix-code-demo";
+import {
+  RadarChartDemo,
+  radarChartSource,
+} from "@/components/demo/radar-chart-demo";
 
 export interface ComponentItem {
   slug: string;
@@ -52,7 +56,7 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         demo: CodeBlockDemo,
         sourceCode: codeBlockSource,
       },
-      { slug: "radar-chart", label: "Radar Chart" },
+      { slug: "radar-chart", label: "Radar Chart", demo: RadarChartDemo, sourceCode: radarChartSource },
       {
         slug: "theme-switch",
         label: "Theme Switch",
