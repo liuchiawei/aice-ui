@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@nauverse/tailwind-dot-grid-backgrounds':
+        specifier: ^1.2.13
+        version: 1.2.13(tailwindcss@4.1.18)
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -540,6 +543,12 @@ packages:
 
   '@napi-rs/wasm-runtime@0.2.12':
     resolution: {integrity: sha512-ZVWUcfwY4E/yPitQJl481FjFo3K22D6qF0DuFH6Y/nbnE11GY5uguDxZMGXPQ8WQ0128MXQD7TnfHyK4oWoIJQ==}
+
+  '@nauverse/tailwind-dot-grid-backgrounds@1.2.13':
+    resolution: {integrity: sha512-DBF5IW3vEOQV7tav8/hlGPco5MztF3HmAoKMD00hlpxgA6Dy+wJUsNgZgNUtv3tBKrJMx/1whYxn1Y9jJY0JzQ==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      tailwindcss: '>=3.4.0'
 
   '@next/env@16.1.6':
     resolution: {integrity: sha512-N1ySLuZjnAtN3kFnwhAwPvZah8RJxKasD7x1f8shFqhncnWZn4JMfg37diLNuoHsLAlrDfM3g4mawVdtAG8XLQ==}
@@ -4551,6 +4560,10 @@ snapshots:
       '@emnapi/runtime': 1.8.1
       '@tybys/wasm-util': 0.10.1
     optional: true
+
+  '@nauverse/tailwind-dot-grid-backgrounds@1.2.13(tailwindcss@4.1.18)':
+    dependencies:
+      tailwindcss: 4.1.18
 
   '@next/env@16.1.6': {}
 
