@@ -66,7 +66,7 @@ export default function ShowcaseLayout({
                           <SidebarMenuButton asChild>
                             <Link
                               href={`/components/${item.slug}`}
-                              className="cursor-pointer"
+                              className="cursor-pointer truncate"
                               aria-label={`Go to ${t(item.labelKey)} section`}
                             >
                               {t(item.labelKey)}
