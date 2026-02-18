@@ -77,17 +77,21 @@ export function ComponentShowcase({ slug }: ComponentShowcaseProps) {
                 Code
               </TabsTrigger>
             </TabsList>
-            <TabsContent value="preview" className="mt-3">
-              <div className="rounded-lg border border-border bg-shiki-light-bg dark:bg-shiki-dark-bg p-6">
-                <result.Demo />
-              </div>
+            <TabsContent
+              value="preview"
+              className="relative w-full h-full rounded-lg border border-border bg-muted p-6"
+            >
+              <result.Demo />
             </TabsContent>
-            <TabsContent value="source" className="mt-3">
+            <TabsContent
+              value="source"
+              className="min-w-0 max-w-5xl"
+            >
               <CodeBlock
                 code={result.sourceCode}
                 language={result.language}
                 showLineNumbers
-                className="rounded-lg border border-border"
+                className="w-full min-w-0 rounded-lg border border-border bg-shiki-light-bg dark:bg-shiki-dark-bg"
               />
             </TabsContent>
           </Tabs>

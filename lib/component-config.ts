@@ -28,12 +28,18 @@ import {
   MatrixCodeDemo,
   matrixCodeSource,
 } from "@/components/demo/matrix-code-demo";
+import {
+  RadarChartDemo,
+  radarChartSource,
+} from "@/components/demo/radar-chart-demo";
+import { componentDescription } from "@/lib/message";
 
 export interface ComponentItem {
   slug: string;
   label: string;
   demo?: ComponentType;
   sourceCode?: string;
+  description?: string;
 }
 
 export const myComponents: { label: string; items: ComponentItem[] }[] = [
@@ -45,27 +51,44 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         label: "Glass Surface",
         demo: GlassSurfaceDemo,
         sourceCode: glassSurfaceSource,
+        description: componentDescription["glass-surface"],
       },
       {
         slug: "code-block",
         label: "Code Block",
         demo: CodeBlockDemo,
         sourceCode: codeBlockSource,
+        description: componentDescription["code-block"],
       },
-      { slug: "radar-chart", label: "Radar Chart" },
+      {
+        slug: "radar-chart",
+        label: "Radar Chart",
+        demo: RadarChartDemo,
+        sourceCode: radarChartSource,
+        description: componentDescription["radar-chart"],
+      },
       {
         slug: "theme-switch",
         label: "Theme Switch",
         demo: ThemeSwitchDemo,
         sourceCode: themeSwitchSource,
+        description: componentDescription["theme-switch"],
       },
     ],
   },
   {
     label: "Blocks",
     items: [
-      { slug: "motion-wheel", label: "Motion Wheel" },
-      { slug: "3d-flip-card", label: "3D Flip Card" },
+      {
+        slug: "motion-wheel",
+        label: "Motion Wheel",
+        description: componentDescription["motion-wheel"],
+      },
+      {
+        slug: "3d-flip-card",
+        label: "3D Flip Card",
+        description: componentDescription["3d-flip-card"],
+      },
     ],
   },
   {
@@ -76,12 +99,14 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         label: "Glyph Katakana",
         demo: GlyphKatanaDemo,
         sourceCode: glyphKatanaSource,
+        description: componentDescription["glyph-katakana"],
       },
       {
         slug: "slide-up-letters",
         label: "Slide Up Letters",
         demo: SlideUpLettersDemo,
         sourceCode: slideUpLettersSource,
+        description: componentDescription["slide-up-letters"],
       },
     ],
   },
@@ -93,12 +118,14 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         label: "Floating Circles",
         demo: FloatingCirclesDemo,
         sourceCode: floatingCirclesSource,
+        description: componentDescription["floating-circles"],
       },
       {
         slug: "matrix-code",
         label: "Matrix Code",
         demo: MatrixCodeDemo,
         sourceCode: matrixCodeSource,
+        description: componentDescription["matrix-code"],
       },
     ],
   },
@@ -110,6 +137,7 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         label: "Webcam",
         demo: WebcamDemo,
         sourceCode: webcamSource,
+        description: componentDescription["webcam"],
       },
     ],
   },

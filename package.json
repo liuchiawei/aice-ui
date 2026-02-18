@@ -10,6 +10,7 @@
     "registry:build": "shadcn build"
   },
   "dependencies": {
+    "@nauverse/tailwind-dot-grid-backgrounds": "^1.2.13",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.564.0",

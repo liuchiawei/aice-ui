@@ -9,7 +9,7 @@ interface ComingSoonProps {
 export function ComingSoon({ componentName }: ComingSoonProps) {
   return (
     <section
-      className="relative flex min-h-[280px] flex-col items-center justify-center rounded-lg border border-border bg-muted/50 px-6 py-12 text-center"
+      className="relative w-full h-full flex flex-col items-center justify-center rounded-lg border border-border bg-muted/50 px-6 py-12 text-center"
       aria-label={comingSoonTitle}
     >
       <div className="absolute inset-0 rounded-lg bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,hsl(var(--primary)/0.08),transparent)]" />
