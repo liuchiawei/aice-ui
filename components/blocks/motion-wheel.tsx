@@ -27,9 +27,9 @@ export default function MotionWheel() {
   const handleNext = () => {
     if (isAnimating) return;
     setIsAnimating(true);
-    setWheelRotation((prev) => prev + 360 / featuredProducts.length); // Rotate 45 degrees clockwise
+    setWheelRotation((prev) => prev + 360 / demoProducts.length); // Rotate 45 degrees clockwise
     setCurrentIndex(
-      (prev) => (prev - 1 + featuredProducts.length) % featuredProducts.length
+      (prev) => (prev - 1 + demoProducts.length) % demoProducts.length
     );
     setTimeout(() => {
       setIsAnimating(false);
@@ -39,8 +39,8 @@ export default function MotionWheel() {
   const handlePrev = () => {
     if (isAnimating) return;
     setIsAnimating(true);
-    setWheelRotation((prev) => prev - 360 / featuredProducts.length); // Rotate 45 degrees counter-clockwise
-    setCurrentIndex((prev) => (prev + 1) % featuredProducts.length);
+    setWheelRotation((prev) => prev - 360 / demoProducts.length); // Rotate 45 degrees counter-clockwise
+    setCurrentIndex((prev) => (prev + 1) % demoProducts.length);
     setTimeout(() => {
       setIsAnimating(false);
     }, 500);
@@ -48,11 +48,11 @@ export default function MotionWheel() {
 
   // Calculate which product is currently at the "center" based on wheel rotation
   const getCurrentProduct = () => {
-    return featuredProducts[currentIndex];
+    return demoProducts[currentIndex];
   };
 
   const getVisibleProducts = () => {
-    return featuredProducts.map((product, index) => ({
+    return demoProducts.map((product, index) => ({
       ...product,
       position: index - 2, // Static positions: -2, -1, 0, 1, 2, 3
     }));
@@ -80,9 +80,9 @@ export default function MotionWheel() {
           {getVisibleProducts().map((product) => {
             // Check if this is the current product
             const isCurrentProduct =
-              product.id === featuredProducts[currentIndex].id;
+              product.id === demoProducts[currentIndex].id;
 
-            const angle = product.position * (360 / featuredProducts.length);
+            const angle = product.position * (360 / demoProducts.length);
             const radius = isMobile ? 270 : 320;
             const x = isCurrentProduct
               ? 0
@@ -200,7 +200,7 @@ export default function MotionWheel() {
 
       {/* Dots Indicator */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex space-x-3 z-20">
-        {featuredProducts.map((_, index) => (
+        {demoProducts.map((_, index) => (
           <button
             title={`Go to ${index + 1}`}
             key={index}
@@ -208,14 +208,14 @@ export default function MotionWheel() {
               if (!isAnimating) {
                 setIsAnimating(true);
                 const rotationDifference =
-                  (currentIndex - index) * (360 / featuredProducts.length);
+                  (currentIndex - index) * (360 / demoProducts.length);
                 setWheelRotation((prev) => prev + rotationDifference);
                 setCurrentIndex(index);
                 setTimeout(() => setIsAnimating(false), 500);
               }
             }}
             className={`size-3 rounded-full transition-all duration-300 cursor-pointer ${
-              getCurrentProduct().id === featuredProducts[index].id
+              getCurrentProduct().id === demoProducts[index].id
                 ? "bg-accent scale-125"
                 : "bg-white/50 hover:bg-primary"
             }`}
@@ -226,58 +226,58 @@ export default function MotionWheel() {
   );
 }
 
-const featuredProducts: Product[] = [
+const demoProducts: Product[] = [
   {
     id: 1,
     name_jp: "プレミアム格闘技グローブ",
     name_en: "Premium Fighting Gloves",
     price: 15800,
-    image: "https://picsum.photos/200/300",
+    image: "https://picsum.photos/200/300?random=1",
     category: "グローブ",
     brand: "BushiGear Pro",
   },
   {
-    id: 31,
+    id: 2,
     name_jp: "プロフェッショナルミット",
     name_en: "Professional Mitt",
     price: 12500,
-    image: "/images/mitt_01.png",
+    image: "https://picsum.photos/200/300?random=2",
     category: "ミット",
     brand: "Martial World",
   },
   {
-    id: 21,
+    id: 3,
     name_jp: "アドバンスドプロテクター",
     name_en: "Advanced Protector",
     price: 18900,
-    image: "/images/protector_01.png",
+    image: "https://picsum.photos/200/300?random=3",
     category: "プロテクター",
     brand: "BushiGear Elite",
   },
   {
-    id: 12,
+    id: 4,
     name_jp: "トレーニングウェア",
     name_en: "Training Wear",
     price: 8900,
-    image: "/images/fuku_02.png",
+    image: "https://picsum.photos/200/300?random=4",
     category: "服",
     brand: "Fighter Wear",
   },
   {
-    id: 32,
+    id: 5,
     name_jp: "コンバットミット",
     name_en: "Combat Mitt",
     price: 14200,
-    image: "/images/mitt_02.png",
+    image: "https://picsum.photos/200/300?random=5",
     category: "ミット",
     brand: "Combat Pro",
   },
   {
-    id: 22,
+    id: 6,
     name_jp: "ファイタープロテクション",
     name_en: "Fighter Protection",
     price: 21500,
-    image: "/images/protector_02.png",
+    image: "https://picsum.photos/200/300?random=6",
     category: "プロテクター",
     brand: "Guard Master",
   },
