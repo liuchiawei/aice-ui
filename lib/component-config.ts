@@ -25,8 +25,8 @@ import {
   themeSwitchSource,
 } from "@/components/demo/theme-switch-demo";
 import {
-  MatrixRainDemo,
-  matrixRainSource,
+  MatrixCodeDemo,
+  matrixCodeSource,
 } from "@/components/demo/matrix-code-demo";
 
 export interface ComponentItem {
@@ -95,10 +95,10 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         sourceCode: floatingCirclesSource,
       },
       {
-        slug: "matrix-rain",
-        label: "Matrix Rain",
-        demo: MatrixRainDemo,
-        sourceCode: matrixRainSource,
+        slug: "matrix-code",
+        label: "Matrix Code",
+        demo: MatrixCodeDemo,
+        sourceCode: matrixCodeSource,
       },
     ],
   },

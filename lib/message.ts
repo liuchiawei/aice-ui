@@ -19,7 +19,7 @@ export const componentTitle: Record<string, string> = {
   "glass-surface": "リキッド・グラス",
   "code-block": "コードブロック",
   "floating-circles": "浮遊円",
-  "matrix-rain": ". マトリックス・コード",
+  "matrix-code": "マトリックス・コード",
   webcam: "ウェブカメラ",
 };
 
