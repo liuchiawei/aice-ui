@@ -1,6 +1,7 @@
 {
-  "Common": {
-    "home": "首頁",
-    "components": "元件"
+  "Home": {
+    "title": "AICE UI",
+    "description": "這是一個開源的 UI 元件庫，幫助你更快打造 AI 應用。提供像對話、訊息等預建元件，採用 Next.js、React、Tailwind CSS 與 shadcn/ui 製作。",
+    "CTA": "组件一览"
   }
 }

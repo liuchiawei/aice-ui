@@ -1,6 +1,7 @@
 {
-  "Common": {
-    "home": "ホーム",
-    "components": "コンポーネント"
+  "Home": {
+    "title": "AICE UI",
+    "description": "AI向けアプリをすぐ作れる、使いやすいUIコンポーネント集です。会話やメッセージなどが簡単に使えます。Next.js、React、Tailwind CSS、shadcn/ui製です。",
+    "CTA": "コンポーネント一覧"
   }
 }

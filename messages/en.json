@@ -1,6 +1,7 @@
 {
-  "Common": {
-    "home": "Home",
-    "components": "Components"
+  "Home": {
+    "title": "AICE UI",
+    "description": "An open-source UI component library to help you build applications faster. It provides pre-built components like conversations, messages and more. Built with Next.js, React, Tailwind CSS, and shadcn/ui.",
+    "CTA": "Components"
   }
 }
