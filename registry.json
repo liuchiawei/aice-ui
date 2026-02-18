@@ -99,6 +99,20 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "radar-chart",
+      "type": "registry:ui",
+      "title": "Radar Chart",
+      "description": "Radar chart component with customizable data and optional title and description. | カスタマイズ可能なデータとオプションのタイトルと説明を備えたラダーチャートコンポーネント。",
+      "dependencies": ["recharts"],
+      "registryDependencies": ["recharts", "card"],
+      "files": [
+        {
+          "path": "components/ui-elements/radar-chart.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }
