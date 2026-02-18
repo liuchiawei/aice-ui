@@ -38,12 +38,19 @@ export const componentDescription: Record<string, string> = {
   webcam: "ブラウザカメラ配信コンポーネント。エラー処理・ref転送対応。",
   "radar-chart":
     "ラダーチャートコンポーネント。rechartsでデータを円形に表示します。",
+  "theme-switch": "テーマ切り替えコンポーネント。ダークモードとライトモードを切り替えます。",
 };
 
 // Coming Soon セクション（既定: 日本語）
 export const comingSoonTitle = "近日公開";
 export const comingSoonDescription =
   "このコンポーネントのデモとコードは近日公開予定です。";
+
+// コンポーネント一覧グリッドのカード説明文
+export const componentGridItem = {
+  viewDemo: "デモとコードを見る",
+  comingSoon: "現在開発中です。公開まで今しばらくお待ちください。",
+};
 
 // 同カテゴリのコンポーネントラベル（コンポーネント詳細ページ）
 export const relatedComponentsLabel = "同カテゴリのコンポーネント";
