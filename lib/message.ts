@@ -34,7 +34,7 @@ export const componentDescription: Record<string, string> = {
   "floating-circles": "色変更可能な動くグラデーション背景。マウス追従も可。",
   "matrix-code":
     "映画『マトリックス』の世界観を象徴する、緑色の文字が画面を上から下へと流れ落ちる視覚効果を再現した背景コンポーネントです。",
-  webcam: "ブラウザカメラ配信。エラー処理・ref転送対応。",
+  webcam: "ブラウザカメラ配信コンポーネント。エラー処理・ref転送対応。",
 };
 
 // Coming Soon セクション（既定: 日本語）
