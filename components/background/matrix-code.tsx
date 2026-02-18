@@ -3,7 +3,7 @@
 import { useRef, useEffect } from "react";
 import { cn } from "@/lib/utils";
 
-interface MatrixRainProps {
+interface MatrixCodeProps {
   glitchColors?: string[]; // グリッチの色
   glitchSpeed?: number; // グリッチの速度 (ms)
   centerVignette?: boolean; // 真ん中の暗いエフェクト
@@ -12,14 +12,14 @@ interface MatrixRainProps {
   className?: string; // コンテナの class name
 }
 
-const MatrixRain = ({
+const MatrixCode = ({
   glitchColors = ["#2b4539", "#61dca3", "#61b3dc"],
   glitchSpeed = 50,
   centerVignette = false,
   outerVignette = true,
   smooth = true,
   className,
-}: MatrixRainProps) => {
+}: MatrixCodeProps) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const animationRef = useRef<number | null>(null);
   const letters = useRef<
@@ -39,64 +39,7 @@ const MatrixRain = ({
   const charHeight = 20;
 
   const lettersAndSymbols = [
-    "A",
-    "B",
-    "C",
-    "D",
-    "E",
-    "F",
-    "G",
-    "H",
-    "I",
-    "J",
-    "K",
-    "L",
-    "M",
-    "N",
-    "O",
-    "P",
-    "Q",
-    "R",
-    "S",
-    "T",
-    "U",
-    "V",
-    "W",
-    "X",
-    "Y",
-    "Z",
-    "!",
-    "@",
-    "#",
-    "$",
-    "&",
-    "*",
-    "(",
-    ")",
-    "-",
-    "_",
-    "+",
-    "=",
-    "/",
-    "[",
-    "]",
-    "{",
-    "}",
-    ";",
-    ":",
-    "<",
-    ">",
-    ",",
-    "0",
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
+    "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","!","@","#","$","&","*","(",")","-","_","+","=","/","[","]","{","}",";",":","<",">",",","0","1","2","3","4","5","6","7","8","9",
   ];
 
   const getRandomChar = () => {
@@ -302,4 +245,4 @@ const MatrixRain = ({
   );
 };
 
-export default MatrixRain;
+export default MatrixCode;

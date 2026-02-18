@@ -20,7 +20,14 @@ import {
   GlyphKatanaDemo,
   glyphKatanaSource,
 } from "@/components/demo/glyph-katana-demo";
-import { ThemeSwitchDemo, themeSwitchSource } from "@/components/demo/theme-switch-demo";
+import {
+  ThemeSwitchDemo,
+  themeSwitchSource,
+} from "@/components/demo/theme-switch-demo";
+import {
+  MatrixRainDemo,
+  matrixRainSource,
+} from "@/components/demo/matrix-code-demo";
 
 export interface ComponentItem {
   slug: string;
@@ -86,6 +93,12 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         label: "Floating Circles",
         demo: FloatingCirclesDemo,
         sourceCode: floatingCirclesSource,
+      },
+      {
+        slug: "matrix-rain",
+        label: "Matrix Rain",
+        demo: MatrixRainDemo,
+        sourceCode: matrixRainSource,
       },
     ],
   },

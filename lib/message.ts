@@ -19,6 +19,7 @@ export const componentTitle: Record<string, string> = {
   "glass-surface": "リキッド・グラス",
   "code-block": "コードブロック",
   "floating-circles": "浮遊円",
+  "matrix-rain": ". マトリックス・コード",
   webcam: "ウェブカメラ",
 };
 
@@ -29,6 +30,8 @@ export const componentDescription: Record<string, string> = {
   "code-block": "コードブロック。シンタックスハイライトと行番号に対応。",
   "floating-circles":
     "色変更可能な動くグラデーション背景。マウス追従も可。",
+  "matrix-rain":
+    "映画『マトリックス』の世界観を象徴する、緑色の文字が画面を上から下へと流れ落ちる視覚効果を再現した背景コンポーネントです。",
   webcam: "ブラウザカメラ配信。エラー処理・ref転送対応。",
 };
 
