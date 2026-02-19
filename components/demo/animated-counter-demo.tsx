@@ -8,13 +8,14 @@ export function AnimatedCounterDemo() {
       <div className="text-center">
         <AnimatedCounter
           value={1247}
+          trigger="enter"
           className="block text-4xl font-bold text-primary"
         />
         <span className="text-sm text-muted-foreground">Downloads</span>
       </div>
       <div className="text-center">
         <div className="text-4xl font-bold text-primary">
-          <AnimatedCounter value={99} className="inline" />%
+          <AnimatedCounter value={99} trigger="hover" className="inline" />%
         </div>
         <span className="text-sm text-muted-foreground">Satisfaction</span>
       </div>
@@ -23,6 +24,7 @@ export function AnimatedCounterDemo() {
           value={24}
           from={10}
           speed={1.2}
+          trigger="whileInView"
           className="block text-4xl font-bold text-primary"
         />
         <span className="text-sm text-muted-foreground">Components</span>
@@ -33,6 +35,22 @@ export function AnimatedCounterDemo() {
 
 export const animatedCounterSource = `import AnimatedCounter from "@/components/text/animated-counter";
 
-<AnimatedCounter value={1247} className="text-4xl font-bold" />
+<AnimatedCounter
+  value={1247}
+  trigger="enter"
+  className="block text-4xl font-bold text-primary"
+/>
 
-<AnimatedCounter value={99} from={0} speed={0.8} />`;
+<AnimatedCounter
+  value={99}
+  trigger="hover"
+  className="inline"
+/>
+
+<AnimatedCounter
+  value={24}
+  from={10}
+  speed={1.2}
+  trigger="whileInView"
+  className="block text-4xl font-bold text-primary"
+/>`;
