@@ -11,7 +11,6 @@ import React, {
   type ReactNode,
 } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
