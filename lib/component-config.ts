@@ -21,6 +21,10 @@ import {
   glyphKatanaSource,
 } from "@/components/demo/glyph-katana-demo";
 import {
+  CopyButtonDemo,
+  copyButtonSource,
+} from "@/components/demo/copy-button-demo";
+import {
   ThemeSwitchDemo,
   themeSwitchSource,
 } from "@/components/demo/theme-switch-demo";
@@ -127,13 +131,20 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
     label: "Button",
     items: [
       {
+        slug: "copy-button",
+        labelKey: "copy-button.label",
+        descriptionKey: "copy-button.description",
+        demo: CopyButtonDemo,
+        sourceCode: copyButtonSource,
+      },
+      {
         slug: "theme-switch",
         labelKey: "theme-switch.label",
         descriptionKey: "theme-switch.description",
         demo: ThemeSwitchDemo,
         sourceCode: themeSwitchSource,
-      }
-    ]
+      },
+    ],
   },
   {
     label: "Card",

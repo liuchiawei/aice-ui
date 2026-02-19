@@ -35,11 +35,15 @@
     "radar-chart": {
       "label": "Radar Chart",
       "description": "A radar chart component with customizable data and optional title and description."
-      },
-      "theme-switch": {
-        "label": "Theme Switch",
-        "description": "A theme switch component with dark and light mode. It is built with React, Tailwind CSS, and Motion."
-      },
+    },
+    "copy-button": {
+      "label": "Copy Button",
+      "description": "A button that copies text to the clipboard. Shows a check icon after copying. Use it next to code blocks, quotes, or any text you want users to copy in one click."
+    },
+    "theme-switch": {
+      "label": "Theme Switch",
+      "description": "A theme switch component with dark and light mode. It is built with React, Tailwind CSS, and Motion."
+    },
       "floating-circles": {
         "label": "Floating Circles",
         "description": "A floating circles component with customizable data and optional title and description."
