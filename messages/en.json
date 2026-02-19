@@ -69,6 +69,10 @@
       "animated-counter": {
         "label": "Animated Counter",
         "description": "A number counter that animates from a starting value to a target when it enters the viewport."
+      },
+      "decrypted-text": {
+        "label": "Decrypted Text",
+        "description": "Scrambled text that reveals on hover or when in view. Supports sequential or batch reveal, and multiple reveal directions."
       }
     }
 }
