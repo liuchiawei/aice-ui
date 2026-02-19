@@ -67,6 +67,12 @@ function FlipCardRoot({
     onFlip,
   };
 
+  const childArray = React.Children.toArray(children);
+  const [front, back] = [
+    childArray[0] ?? <div />,
+    childArray[1] ?? <div />,
+  ];
+
   return (
     <FlipCardContext.Provider value={value}>
       <ReactCardFlip
@@ -74,7 +80,8 @@ function FlipCardRoot({
         flipDirection={flipDirection}
         containerClassName={cn(containerClassName)}
       >
-        {children}
+        {front}
+        {back}
       </ReactCardFlip>
     </FlipCardContext.Provider>
   );
