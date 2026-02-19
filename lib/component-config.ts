@@ -29,6 +29,10 @@ import {
   themeSwitchSource,
 } from "@/components/demo/theme-switch-demo";
 import {
+  TimerDemo,
+  timerSource,
+} from "@/components/demo/timer-demo";
+import {
   MatrixCodeDemo,
   matrixCodeSource,
 } from "@/components/demo/matrix-code-demo";
@@ -84,7 +88,14 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         descriptionKey: "code-block.description",
         demo: CodeBlockDemo,
         sourceCode: codeBlockSource,
-      }
+      },
+      {
+        slug: "timer",
+        labelKey: "timer.label",
+        descriptionKey: "timer.description",
+        demo: TimerDemo,
+        sourceCode: timerSource,
+      },
     ],
   },
   {

@@ -51,6 +51,18 @@
       ]
     },
     {
+      "name": "timer",
+      "type": "registry:ui",
+      "title": "Timer",
+      "description": "Reusable elapsed-time display. Control with isStarted (start/pause); remount to restart from zero. Supports formats like hh:mm:ss or milliseconds. | 経過時間を表示するタイマー。isStarted で開始・一時停止、remount でゼロから再開。表示形式（hh:mm:ss やミリ秒など）を選択可能。",
+      "files": [
+        {
+          "path": "components/ui-elements/timer.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "slide-up-letters",
       "type": "registry:ui",
       "title": "Slide Up Letters",
