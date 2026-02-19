@@ -75,4 +75,23 @@
         "description": "Scrambled text that reveals on hover or when in view. Supports sequential or batch reveal, and multiple reveal directions."
       }
     }
+  },
+  "DecryptedTextDemo": {
+    "labels": {
+      "hoverDefault": "Hover to reveal (default)",
+      "sequentialStart": "Sequential, start to end",
+      "sequentialEnd": "Sequential, end to start",
+      "sequentialCenter": "Sequential, center out",
+      "scrambleOnly": "Scramble only (batch reveal)",
+      "revealOnView": "Reveal when in view"
+    },
+    "text": {
+      "hover": "Decrypted on hover",
+      "sequentialStart": "Revealed one by one",
+      "sequentialEnd": "Revealed from the end",
+      "sequentialCenter": "Center outward",
+      "scramble": "Scramble then reveal",
+      "view": "Animate on scroll into view"
+    }
+  }
 }

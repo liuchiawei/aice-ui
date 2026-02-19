@@ -74,5 +74,23 @@
       "label": "解密文字",
       "description": "滑鼠懸停或進入視窗時解碼顯示的文字。支援逐一揭露、批次揭露與多種揭露方向。"
     }
+  },
+  "DecryptedTextDemo": {
+    "labels": {
+      "hoverDefault": "懸停解碼（預設）",
+      "sequentialStart": "依序由頭至尾",
+      "sequentialEnd": "依序由尾至頭",
+      "sequentialCenter": "由中心向外",
+      "scrambleOnly": "批次解碼",
+      "revealOnView": "進入視窗時解碼"
+    },
+    "text": {
+      "hover": "懸停時解碼",
+      "sequentialStart": "逐字揭露",
+      "sequentialEnd": "由後往前揭露",
+      "sequentialCenter": "由中心向外",
+      "scramble": "亂碼後揭露",
+      "view": "滾動進入視窗時動畫"
+    }
   }
 }

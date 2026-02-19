@@ -1,23 +1,30 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import DecryptedText from "@/components/text/decrypted-text";
 
 export function DecryptedTextDemo() {
+  const t = useTranslations("DecryptedTextDemo");
+
   return (
     <div className="flex flex-col justify-center items-center gap-12 py-12 w-full max-w-2xl mx-auto">
       <div className="text-center space-y-2">
-        <p className="text-sm text-muted-foreground">Hover to reveal (default)</p>
+        <p className="text-sm text-muted-foreground">
+          {t("labels.hoverDefault")}
+        </p>
         <DecryptedText
-          text="Decrypted on hover"
+          text={t("text.hover")}
           className="text-2xl font-bold text-primary"
           encryptedClassName="text-2xl font-bold text-muted-foreground"
         />
       </div>
 
       <div className="text-center space-y-2">
-        <p className="text-sm text-muted-foreground">Sequential, start to end</p>
+        <p className="text-sm text-muted-foreground">
+          {t("labels.sequentialStart")}
+        </p>
         <DecryptedText
-          text="Revealed one by one"
+          text={t("text.sequentialStart")}
           sequential
           revealDirection="start"
           className="text-2xl font-bold text-primary"
@@ -26,9 +33,11 @@ export function DecryptedTextDemo() {
       </div>
 
       <div className="text-center space-y-2">
-        <p className="text-sm text-muted-foreground">Sequential, end to start</p>
+        <p className="text-sm text-muted-foreground">
+          {t("labels.sequentialEnd")}
+        </p>
         <DecryptedText
-          text="Revealed from the end"
+          text={t("text.sequentialEnd")}
           sequential
           revealDirection="end"
           className="text-2xl font-bold text-primary"
@@ -37,9 +46,11 @@ export function DecryptedTextDemo() {
       </div>
 
       <div className="text-center space-y-2">
-        <p className="text-sm text-muted-foreground">Sequential, center out</p>
+        <p className="text-sm text-muted-foreground">
+          {t("labels.sequentialCenter")}
+        </p>
         <DecryptedText
-          text="Center outward"
+          text={t("text.sequentialCenter")}
           sequential
           revealDirection="center"
           className="text-2xl font-bold text-primary"
@@ -48,9 +59,11 @@ export function DecryptedTextDemo() {
       </div>
 
       <div className="text-center space-y-2">
-        <p className="text-sm text-muted-foreground">Scramble only (batch reveal)</p>
+        <p className="text-sm text-muted-foreground">
+          {t("labels.scrambleOnly")}
+        </p>
         <DecryptedText
-          text="Scramble then reveal"
+          text={t("text.scramble")}
           sequential={false}
           maxIterations={12}
           speed={60}
@@ -60,9 +73,11 @@ export function DecryptedTextDemo() {
       </div>
 
       <div className="text-center space-y-2">
-        <p className="text-sm text-muted-foreground">Reveal when in view</p>
+        <p className="text-sm text-muted-foreground">
+          {t("labels.revealOnView")}
+        </p>
         <DecryptedText
-          text="Animate on scroll into view"
+          text={t("text.view")}
           animateOn="view"
           sequential
           className="text-2xl font-bold text-primary"

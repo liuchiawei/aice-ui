@@ -75,5 +75,23 @@
       "label": "解碼テキスト",
       "description": "ホバーまたは表示時にスクランブルが解読されるテキスト。順次・一括揭露、複数の揭露方向に対応。"
     }
+  },
+  "DecryptedTextDemo": {
+    "labels": {
+      "hoverDefault": "ホバーで解碼（初期）",
+      "sequentialStart": "先頭から順に",
+      "sequentialEnd": "末尾から順に",
+      "sequentialCenter": "中央から外へ",
+      "scrambleOnly": "一括解碼",
+      "revealOnView": "表示時に解碼"
+    },
+    "text": {
+      "hover": "ホバーで解碼",
+      "sequentialStart": "一文字ずつ表示",
+      "sequentialEnd": "末尾から表示",
+      "sequentialCenter": "中央から外へ",
+      "scramble": "スクランブル後に表示",
+      "view": "スクロールで表示時に動畫"
+    }
   }
 }
