@@ -54,8 +54,8 @@
       "description": "モーションホイールコンポーネント。マウス追従も可。"
     },
     "3d-flip-card": {
-      "label": "3D翻转卡片",
-      "description": "3Dフリップカードコンポーネント。マウス追従も可。"
+      "label": "3D翻轉卡片",
+      "description": "點擊翻轉、滑鼠追蹤 3D 傾斜效果的複合式 flip card 元件。"
     },
     "glyph-katakana": {
       "label": "片假名符号",
