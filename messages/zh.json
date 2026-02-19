@@ -65,6 +65,10 @@
     "slide-up-letters": {
       "label": "向上滑动字母",
       "description": "スライドアップレターコンポーネント。マウス追従も可。"
+    },
+    "animated-counter": {
+      "label": "動畫計數器",
+      "description": "進入視窗時從起始值動畫到目標值的數字計數器。"
     }
   }
 }

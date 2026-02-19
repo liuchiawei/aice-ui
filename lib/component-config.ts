@@ -40,6 +40,10 @@ import {
   MotionWheelDemo,
   motionWheelDemoSource,
 } from "@/components/demo/motion-wheel-demo";
+import {
+  AnimatedCounterDemo,
+  animatedCounterSource,
+} from "@/components/demo/animated-counter-demo";
 /** Translation keys under the "Components" namespace (e.g. "glass-surface.label"). Resolve with useTranslations("Components") then t(key). */
 export interface ComponentItem {
   slug: string;
@@ -120,6 +124,13 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         descriptionKey: "slide-up-letters.description",
         demo: SlideUpLettersDemo,
         sourceCode: slideUpLettersSource,
+      },
+      {
+        slug: "animated-counter",
+        labelKey: "animated-counter.label",
+        descriptionKey: "animated-counter.description",
+        demo: AnimatedCounterDemo,
+        sourceCode: animatedCounterSource,
       },
     ],
   },

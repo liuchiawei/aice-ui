@@ -65,6 +65,10 @@
       "slide-up-letters": {
         "label": "Slide Up Letters",
         "description": "A slide up letters component with customizable data and optional title and description."
+      },
+      "animated-counter": {
+        "label": "Animated Counter",
+        "description": "A number counter that animates from a starting value to a target when it enters the viewport."
       }
     }
 }

@@ -66,6 +66,10 @@
     "slide-up-letters": {
       "label": "スライドアップレター",
       "description": "スライドアップレターコンポーネント。"
+    },
+    "animated-counter": {
+      "label": "アニメーションカウンター",
+      "description": "ビューポートに入った時、開始値から目標値へアニメーションする数字カウンター。"
     }
   }
 }
