@@ -69,6 +69,7 @@ export interface ComponentItem {
   descriptionKey?: string;
   demo?: ComponentType;
   sourceCode?: string;
+  date?: string;
 }
 
 export const myComponents: { label: string; items: ComponentItem[] }[] = [
@@ -81,6 +82,7 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         descriptionKey: "glass-surface.description",
         demo: GlassSurfaceDemo,
         sourceCode: glassSurfaceSource,
+        date: "2026-02-19",
       },
       {
         slug: "code-block",
@@ -88,13 +90,7 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         descriptionKey: "code-block.description",
         demo: CodeBlockDemo,
         sourceCode: codeBlockSource,
-      },
-      {
-        slug: "timer",
-        labelKey: "timer.label",
-        descriptionKey: "timer.description",
-        demo: TimerDemo,
-        sourceCode: timerSource,
+        date: "2026-02-19",
       },
     ],
   },
@@ -107,20 +103,7 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         descriptionKey: "glyph-katakana.description",
         demo: GlyphKatanaDemo,
         sourceCode: glyphKatanaSource,
-      },
-      {
-        slug: "slide-up-letters",
-        labelKey: "slide-up-letters.label",
-        descriptionKey: "slide-up-letters.description",
-        demo: SlideUpLettersDemo,
-        sourceCode: slideUpLettersSource,
-      },
-      {
-        slug: "animated-counter",
-        labelKey: "animated-counter.label",
-        descriptionKey: "animated-counter.description",
-        demo: AnimatedCounterDemo,
-        sourceCode: animatedCounterSource,
+        date: "2026-02-19",
       },
       {
         slug: "decrypted-text",
@@ -128,6 +111,31 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         descriptionKey: "decrypted-text.description",
         demo: DecryptedTextDemo,
         sourceCode: decryptedTextSource,
+        date: "2026-02-19",
+      },
+      {
+        slug: "slide-up-letters",
+        labelKey: "slide-up-letters.label",
+        descriptionKey: "slide-up-letters.description",
+        demo: SlideUpLettersDemo,
+        sourceCode: slideUpLettersSource,
+        date: "2026-02-19",
+      },
+      {
+        slug: "animated-counter",
+        labelKey: "animated-counter.label",
+        descriptionKey: "animated-counter.description",
+        demo: AnimatedCounterDemo,
+        sourceCode: animatedCounterSource,
+        date: "2026-02-19",
+      },
+      {
+        slug: "timer",
+        labelKey: "timer.label",
+        descriptionKey: "timer.description",
+        demo: TimerDemo,
+        sourceCode: timerSource,
+        date: "2026-02-19",
       },
     ],
   },
@@ -140,6 +148,7 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         descriptionKey: "copy-button.description",
         demo: CopyButtonDemo,
         sourceCode: copyButtonSource,
+        date: "2026-02-19",
       },
       {
         slug: "theme-switch",
@@ -147,6 +156,7 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         descriptionKey: "theme-switch.description",
         demo: ThemeSwitchDemo,
         sourceCode: themeSwitchSource,
+        date: "2026-02-19",
       },
     ],
   },
@@ -159,6 +169,7 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         descriptionKey: "3d-card.description",
         demo: ThreeDCardDemo,
         sourceCode: threeCardDemoSource,
+        date: "2026-02-19",
       },
       {
         slug: "3d-flip-card",
@@ -166,6 +177,7 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         descriptionKey: "3d-flip-card.description",
         demo: FlipCardDemo,
         sourceCode: flipCardDemoSource,
+        date: "2026-02-19",
       },
       {
         slug: "radar-chart",
@@ -173,6 +185,7 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         descriptionKey: "radar-chart.description",
         demo: RadarChartDemo,
         sourceCode: radarChartSource,
+        date: "2026-02-19",
       },
     ],
   },
@@ -185,6 +198,7 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         descriptionKey: "motion-wheel.description",
         demo: MotionWheelDemo,
         sourceCode: motionWheelDemoSource,
+        date: "2026-02-19",
       },
     ],
   },
@@ -197,6 +211,7 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         descriptionKey: "floating-circles.description",
         demo: FloatingCirclesDemo,
         sourceCode: floatingCirclesSource,
+        date: "2026-02-19",
       },
       {
         slug: "matrix-code",
@@ -204,6 +219,7 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         descriptionKey: "matrix-code.description",
         demo: MatrixCodeDemo,
         sourceCode: matrixCodeSource,
+        date: "2026-02-19",
       },
     ],
   },
@@ -216,6 +232,7 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         descriptionKey: "webcam.description",
         demo: WebcamDemo,
         sourceCode: webcamSource,
+        date: "2026-02-19",
       },
     ],
   },
@@ -228,6 +245,7 @@ export type ItemBySlugResult =
       Demo: ComponentType;
       sourceCode: string;
       language: "tsx" | "ts";
+      date: string;
     }
   | { kind: "coming-soon"; item: ComponentItem };
 
@@ -242,6 +260,7 @@ export function getItemBySlug(slug: string): ItemBySlugResult | undefined {
         Demo: item.demo,
         sourceCode: item.sourceCode,
         language: "tsx",
+        date: item.date ?? "",
       };
     return { kind: "coming-soon", item };
   }
@@ -253,3 +272,14 @@ export const demoSlugs = myComponents.flatMap((group) =>
     .filter((item) => item.demo != null && item.sourceCode != null)
     .map((item) => item.slug),
 );
+
+/** Returns true if date is within the last 7 days (inclusive), by local date. */
+export function isNewComponent(date: string | undefined): boolean {
+  if (!date) return false;
+  const itemTime = new Date(date).setHours(0, 0, 0, 0);
+  const now = new Date();
+  const cutoff = new Date(now);
+  cutoff.setDate(cutoff.getDate() - 7);
+  const cutoffTime = cutoff.setHours(0, 0, 0, 0);
+  return itemTime >= cutoffTime;
+}

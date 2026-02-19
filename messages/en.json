@@ -1,5 +1,5 @@
 {
-  "Sidebar": {
+  "Category": {
     "UI": "UI",
     "Text": "Text",
     "Button": "Button",
@@ -24,6 +24,7 @@
     "related": "Related Components"
   },
   "Components": {
+    "newLabel": "New",
     "glass-surface": {
       "label": "Glass Surface",
       "description": "A glass surface component with blur and distortion effects."

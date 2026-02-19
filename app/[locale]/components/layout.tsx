@@ -22,9 +22,10 @@ import {
   SidebarTrigger,
   SidebarRail,
 } from "@/components/ui/sidebar";
+import { Badge } from "@/components/ui/badge";
 import { LangSwitcher } from "@/components/ui-elements/lang-switcher";
 import { ThemeSwitch } from "@/components/button/theme-switch";
-import { myComponents } from "@/lib/component-config";
+import { myComponents, isNewComponent } from "@/lib/component-config";
 import { componentPageTitle } from "@/lib/message";
 
 export default function ShowcaseLayout({
@@ -33,7 +34,7 @@ export default function ShowcaseLayout({
   children: React.ReactNode;
 }) {
   const t = useTranslations("Components");
-  const tSidebar = useTranslations("Sidebar");
+  const tCategory = useTranslations("Category");
   return (
     <SidebarProvider>
       <Sidebar>
@@ -51,7 +52,7 @@ export default function ShowcaseLayout({
                     type="button"
                     className="text-sidebar-foreground/70 ring-sidebar-ring group flex h-8 w-full shrink-0 cursor-pointer justify-between items-center gap-1 rounded-md px-2 text-xs font-medium outline-hidden transition-[margin,opacity] duration-200 ease-linear hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 [&>svg]:size-4 [&>svg]:shrink-0"
                   >
-                    {tSidebar(group.label)}
+                    {tCategory(group.label)}
                     <ChevronRight
                       className="size-4 shrink-0 transition-transform group-data-[state=open]:rotate-90"
                       aria-hidden
@@ -61,19 +62,32 @@ export default function ShowcaseLayout({
                 <CollapsibleContent className="overflow-hidden">
                   <SidebarGroupContent>
                     <SidebarMenu className="border-l ml-2 pl-1">
-                      {group.items.map((item) => (
-                        <SidebarMenuItem key={item.slug}>
-                          <SidebarMenuButton asChild>
-                            <Link
-                              href={`/components/${item.slug}`}
-                              className="font-bold cursor-pointer truncate"
-                              aria-label={`Go to ${t(item.labelKey)} section`}
-                            >
-                              {t(item.labelKey)}
-                            </Link>
-                          </SidebarMenuButton>
-                        </SidebarMenuItem>
-                      ))}
+                      {group.items.map((item) => {
+                        const isNew = isNewComponent(item.date);
+                        return (
+                          <SidebarMenuItem key={item.slug}>
+                            <SidebarMenuButton asChild>
+                              <Link
+                                href={`/components/${item.slug}`}
+                                className="font-bold cursor-pointer flex items-center gap-1.5 min-w-0"
+                                aria-label={`Go to ${t(item.labelKey)} section`}
+                              >
+                                <span className="truncate">
+                                  {t(item.labelKey)}
+                                </span>
+                                {isNew ? (
+                                  <Badge
+                                    variant="outline"
+                                    className="shrink-0"
+                                  >
+                                    {t("newLabel")}
+                                  </Badge>
+                                ) : null}
+                              </Link>
+                            </SidebarMenuButton>
+                          </SidebarMenuItem>
+                        );
+                      })}
                     </SidebarMenu>
                   </SidebarGroupContent>
                 </CollapsibleContent>

@@ -13,7 +13,7 @@ function GlassSurfaceDemo() {
         contentClassName="group flex items-center justify-center gap-4"
       >
         <ChevronRight className="size-4 group-hover:translate-x-2 transition-transform duration-300" />
-        <span className="font-black text-shadow-lg">Hover me</span>
+        <span className="font-black text-shadow-lg">Scroll Down</span>
       </GlassSurface>
     </div>
   );
@@ -31,7 +31,7 @@ const GlassSurfaceDemo = () => {
       contentClassName="group flex gap-4"
     >
       <ChevronRight className="size-4 group-hover:translate-x-2" />
-        Hover me
+        Scroll Down
     </GlassSurface>
 )};`;
 

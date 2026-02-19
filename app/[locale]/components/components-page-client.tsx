@@ -10,7 +10,7 @@ function sectionIdFromLabel(label: string): string {
 }
 
 export function ComponentsPageClient() {
-  const t = useTranslations("Sidebar");
+  const t = useTranslations("Category");
   return (
     <div className="min-h-screen pb-20">
       {myComponents.map((group) => (

@@ -1,0 +1,58 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "floating-circles",
+  "title": "Floating Circles",
+  "description": "Animated gradient background with configurable colors and optional pointer-follow interaction. | 設定可能な色とオプションのポインター追従インタラクションを備えたアニメーショングラデーション背景。",
+  "files": [
+    {
+      "path": "components/background/floating-circles.tsx",
+      "content": "\"use client\";\nimport { cn } from \"@/lib/utils\";\nimport { useEffect, useRef, useState } from \"react\";\n\nexport const FloatingCircles = ({\n  gradientBackgroundStart = \"rgb(108, 0, 162)\",\n  gradientBackgroundEnd = \"rgb(0, 17, 82)\",\n  firstColor = \"20, 72, 140\",\n  secondColor = \"242, 61, 109\",\n  thirdColor = \"152, 50, 166\",\n  fourthColor = \"30, 164, 217\",\n  fifthColor = \"242, 87, 73\",\n  pointerColor = \"225, 160, 94\",\n  size = \"80%\",\n  blendingValue = \"hard-light\",\n  children,\n  className,\n  interactive = true,\n  containerClassName,\n}: {\n  gradientBackgroundStart?: string;\n  gradientBackgroundEnd?: string;\n  firstColor?: string;\n  secondColor?: string;\n  thirdColor?: string;\n  fourthColor?: string;\n  fifthColor?: string;\n  pointerColor?: string;\n  size?: string;\n  blendingValue?: string;\n  children?: React.ReactNode;\n  className?: string;\n  interactive?: boolean;\n  containerClassName?: string;\n}) => {\n  const containerRef = useRef<HTMLDivElement>(null);\n  const interactiveRef = useRef<HTMLDivElement>(null);\n\n  // Use refs for animation values to avoid re-renders\n  const currentXRef = useRef(0);\n  const currentYRef = useRef(0);\n  const targetXRef = useRef(0);\n  const targetYRef = useRef(0);\n  const rafIdRef = useRef<number | null>(null);\n\n  // Set CSS variables on container (local scope) instead of document.body\n  useEffect(() => {\n    if (!containerRef.current) return;\n\n    const container = containerRef.current;\n    container.style.setProperty(\n      \"--gradient-background-start\",\n      gradientBackgroundStart\n    );\n    container.style.setProperty(\n      \"--gradient-background-end\",\n      gradientBackgroundEnd\n    );\n    container.style.setProperty(\"--first-color\", firstColor);\n    container.style.setProperty(\"--second-color\", secondColor);\n    container.style.setProperty(\"--third-color\", thirdColor);\n    container.style.setProperty(\"--fourth-color\", fourthColor);\n    container.style.setProperty(\"--fifth-color\", fifthColor);\n    container.style.setProperty(\"--pointer-color\", pointerColor);\n    container.style.setProperty(\"--size\", size);\n    container.style.setProperty(\"--blending-value\", blendingValue);\n  }, [\n    gradientBackgroundStart,\n    gradientBackgroundEnd,\n    firstColor,\n    secondColor,\n    thirdColor,\n    fourthColor,\n    fifthColor,\n    pointerColor,\n    size,\n    blendingValue,\n  ]);\n\n  // RequestAnimationFrame loop for smooth animation\n  useEffect(() => {\n    if (!interactive || !interactiveRef.current) return;\n\n    const animate = () => {\n      if (!interactiveRef.current) return;\n\n      // Easing interpolation (1/20 factor for smooth movement)\n      currentXRef.current += (targetXRef.current - currentXRef.current) / 20;\n      currentYRef.current += (targetYRef.current - currentYRef.current) / 20;\n\n      // Apply transform directly without triggering React re-render\n      interactiveRef.current.style.transform = `translate(${Math.round(\n        currentXRef.current\n      )}px, ${Math.round(currentYRef.current)}px)`;\n\n      rafIdRef.current = requestAnimationFrame(animate);\n    };\n\n    rafIdRef.current = requestAnimationFrame(animate);\n\n    return () => {\n      if (rafIdRef.current !== null) {\n        cancelAnimationFrame(rafIdRef.current);\n        rafIdRef.current = null;\n      }\n    };\n  }, [interactive]);\n\n  // Listen to window pointermove events (viewport coordinate system)\n  useEffect(() => {\n    if (!interactive) return;\n\n    const handlePointerMove = (event: PointerEvent) => {\n      if (!containerRef.current) return;\n\n      // Use container's bounding rect as fixed reference frame\n      // This avoids feedback loop from the moving interactiveRef element\n      const rect = containerRef.current.getBoundingClientRect();\n\n      // Calculate target position relative to container\n      // Note: interactiveRef uses -top-1/2 -left-1/2, so we need to adjust\n      targetXRef.current = event.clientX - rect.left;\n      targetYRef.current = event.clientY - rect.top;\n    };\n\n    window.addEventListener(\"pointermove\", handlePointerMove, {\n      passive: true,\n    });\n\n    return () => {\n      window.removeEventListener(\"pointermove\", handlePointerMove);\n    };\n  }, [interactive]);\n\n  const [isSafari, setIsSafari] = useState(() =>\n    typeof navigator !== \"undefined\"\n      ? /^((?!chrome|android).)*safari/i.test(navigator.userAgent)\n      : false\n  );\n\n  return (\n    <div\n      ref={containerRef}\n      className={cn(\n        // \"h-svh w-full relative overflow-hidden top-0 left-0 right-0 bg-[linear-gradient(40deg,var(--gradient-background-start),var(--gradient-background-end))]\",\n        \"h-full w-full relative\",\n        containerClassName\n      )}\n    >\n      <svg className=\"hidden\">\n        <defs>\n          <filter id=\"blurMe\">\n            <feGaussianBlur\n              in=\"SourceGraphic\"\n              stdDeviation=\"10\"\n              result=\"blur\"\n            />\n            <feColorMatrix\n              in=\"blur\"\n              mode=\"matrix\"\n              values=\"1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8\"\n              result=\"goo\"\n            />\n            <feBlend in=\"SourceGraphic\" in2=\"goo\" />\n          </filter>\n        </defs>\n      </svg>\n      <div className={cn(\"\", className)}>{children}</div>\n      <div\n        className={cn(\n          \"gradients-container h-full min-h-svh w-full overflow-hidden blur-lg\",\n          isSafari ? \"blur-2xl\" : \"[filter:url(#blurMe)_blur(40px)]\"\n        )}\n      >\n        <div\n          className={cn(\n            `absolute [background:radial-gradient(circle_at_center,_var(--first-color)_0,_var(--first-color)_50%)_no-repeat]`,\n            `[mix-blend-mode:var(--blending-value)] w-[var(--size)] h-[var(--size)] top-[calc(50%-var(--size)/2)] left-[calc(50%-var(--size)/2)]`,\n            `[transform-origin:center_center]`,\n            `animate-first`,\n            `opacity-100`\n          )}\n        ></div>\n        <div\n          className={cn(\n            `absolute [background:radial-gradient(circle_at_center,_rgba(var(--second-color),_0.8)_0,_rgba(var(--second-color),_0)_50%)_no-repeat]`,\n            `[mix-blend-mode:var(--blending-value)] w-[var(--size)] h-[var(--size)] top-[calc(50%-var(--size)/2)] left-[calc(50%-var(--size)/2)]`,\n            `[transform-origin:calc(50%-400px)]`,\n            `animate-second`,\n            `opacity-100`\n          )}\n        ></div>\n        <div\n          className={cn(\n            `absolute [background:radial-gradient(circle_at_center,_rgba(var(--third-color),_0.8)_0,_rgba(var(--third-color),_0)_50%)_no-repeat]`,\n            `[mix-blend-mode:var(--blending-value)] w-[var(--size)] h-[var(--size)] top-[calc(50%-var(--size)/2)] left-[calc(50%-var(--size)/2)]`,\n            `[transform-origin:calc(50%+400px)]`,\n            `animate-third`,\n            `opacity-100`\n          )}\n        ></div>\n        <div\n          className={cn(\n            `absolute [background:radial-gradient(circle_at_center,_rgba(var(--fourth-color),_0.8)_0,_rgba(var(--fourth-color),_0)_50%)_no-repeat]`,\n            `[mix-blend-mode:var(--blending-value)] w-[var(--size)] h-[var(--size)] top-[calc(50%-var(--size)/2)] left-[calc(50%-var(--size)/2)]`,\n            `[transform-origin:calc(50%-200px)]`,\n            `animate-fourth`,\n            `opacity-70`\n          )}\n        ></div>\n        <div\n          className={cn(\n            `absolute [background:radial-gradient(circle_at_center,_rgba(var(--fifth-color),_0.8)_0,_rgba(var(--fifth-color),_0)_50%)_no-repeat]`,\n            `[mix-blend-mode:var(--blending-value)] w-[var(--size)] h-[var(--size)] top-[calc(50%-var(--size)/2)] left-[calc(50%-var(--size)/2)]`,\n            `[transform-origin:calc(50%-800px)_calc(50%+800px)]`,\n            `animate-fifth`,\n            `opacity-100`\n          )}\n        ></div>\n\n        {interactive && (\n          <div\n            ref={interactiveRef}\n            className={cn(\n              `absolute [background:radial-gradient(circle_at_center,_rgba(var(--pointer-color),_0.8)_0,_rgba(var(--pointer-color),_0)_50%)_no-repeat]`,\n              `[mix-blend-mode:var(--blending-value)] w-full h-full -top-1/2 -left-1/2`,\n              `opacity-70 pointer-events-none`\n            )}\n          ></div>\n        )}\n      </div>\n    </div>\n  );\n};\n",
+      "type": "registry:ui"
+    }
+  ],
+  "cssVars": {
+    "theme": {
+      "--animate-first": "moveVertical 30s ease infinite",
+      "--animate-second": "moveInCircle 20s reverse infinite",
+      "--animate-third": "moveInCircle 40s linear infinite",
+      "--animate-fourth": "moveHorizontal 40s ease infinite",
+      "--animate-fifth": "moveInCircle 20s ease infinite"
+    }
+  },
+  "css": {
+    "@keyframes moveHorizontal": {
+      "0%": {
+        "transform": "translateX(-50%) translateY(-10%)"
+      },
+      "50%": {
+        "transform": "translateX(50%) translateY(10%)"
+      },
+      "100%": {
+        "transform": "translateX(-50%) translateY(-10%)"
+      }
+    },
+    "@keyframes moveInCircle": {
+      "0%": {
+        "transform": "rotate(0deg)"
+      },
+      "50%": {
+        "transform": "rotate(180deg)"
+      },
+      "100%": {
+        "transform": "rotate(360deg)"
+      }
+    },
+    "@keyframes moveVertical": {
+      "0%": {
+        "transform": "translateY(-50%)"
+      },
+      "50%": {
+        "transform": "translateY(50%)"
+      },
+      "100%": {
+        "transform": "translateY(-50%)"
+      }
+    }
+  },
+  "type": "registry:ui"
+}
