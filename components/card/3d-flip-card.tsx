@@ -8,11 +8,7 @@ import React, {
   type ReactNode,
 } from "react";
 import { cn } from "@/lib/utils";
-import {
-  CardContainer,
-  CardBody,
-  CardItem,
-} from "@/components/ui/3d-card";
+import ThreeDCard from "@/components/card/3d-card";
 import ReactCardFlip from "react-card-flip";
 
 /** Context value for flip state and actions. Injected by FlipCard.Root. */
@@ -136,12 +132,12 @@ function FlipCardContainer({
   );
 
   return (
-    <CardContainer
+    <ThreeDCard.Container
       containerClassName={mergedContainerClassName}
       className={cn("w-full h-full", className)}
     >
       {children}
-    </CardContainer>
+    </ThreeDCard.Container>
   );
 }
 
@@ -154,14 +150,14 @@ function FlipCardBody({
   className?: string;
 }) {
   return (
-    <CardBody
+    <ThreeDCard.Body
       className={cn(
         "h-96 w-96 [transform-style:preserve-3d] [&>*]:[transform-style:preserve-3d]",
         className
       )}
     >
       {children}
-    </CardBody>
+    </ThreeDCard.Body>
   );
 }
 
@@ -190,7 +186,7 @@ function FlipCardItem({
   [key: string]: unknown;
 }) {
   return (
-    <CardItem
+    <ThreeDCard.Item
       as={as}
       translateX={translateX}
       translateY={translateY}
@@ -202,7 +198,7 @@ function FlipCardItem({
       {...rest}
     >
       {children}
-    </CardItem>
+    </ThreeDCard.Item>
   );
 }
 

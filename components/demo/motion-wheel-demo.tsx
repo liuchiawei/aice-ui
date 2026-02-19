@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { MotionWheel } from "@/components/carousel/motion-wheel";
-import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
+import ThreeDCard from "@/components/card/3d-card";
 
 interface Scene {
   id: number;
@@ -27,9 +27,9 @@ function MotionWheelDemo() {
       <MotionWheel.Wheel<Scene>>
         {(scene, index) => (
           <MotionWheel.Item key={scene.id} item={scene} index={index}>
-            <CardContainer className="relative">
-              <CardBody className="flex flex-col items-center justify-center space-y-2">
-                <CardItem translateZ={80}>
+            <ThreeDCard.Container className="relative">
+              <ThreeDCard.Body className="flex flex-col items-center justify-center space-y-2">
+                <ThreeDCard.Item translateZ={80}>
                   <Image
                     src={scene.image}
                     alt={scene.name}
@@ -37,17 +37,17 @@ function MotionWheelDemo() {
                     height={300}
                     className="w-full h-full object-cover rounded-lg"
                   />
-                </CardItem>
-                <CardItem
+                </ThreeDCard.Item>
+                <ThreeDCard.Item
                   translateZ={20}
                   className="flex flex-col justify-between items-center"
                 >
                   <h3 className="text-base font-bold text-primary">
                     {scene.name}
                   </h3>
-                </CardItem>
-              </CardBody>
-            </CardContainer>
+                </ThreeDCard.Item>
+              </ThreeDCard.Body>
+            </ThreeDCard.Container>
           </MotionWheel.Item>
         )}
       </MotionWheel.Wheel>

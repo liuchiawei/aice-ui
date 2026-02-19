@@ -29,7 +29,7 @@ const Card3DContext = createContext<Card3DContextValue | undefined>(undefined);
  * @param containerClassName - Applied to the outer wrapper (centering, padding)
  * @param className - Applied to the tiltable inner div
  */
-export const CardContainer = ({
+const CardContainer = ({
   children,
   className,
   containerClassName,
@@ -103,7 +103,7 @@ export const CardContainer = ({
  *
  * @param className - Customize size (default h-96 w-96) and layout
  */
-export const CardBody = ({
+const CardBody = ({
   children,
   className,
 }: {
@@ -133,7 +133,7 @@ export const CardBody = ({
  * @param rotateZ - Z rotation in deg when hovered
  * @param as - Render as a different element (e.g. "span")
  */
-export const CardItem = ({
+const CardItem = ({
   as: Tag = "div",
   children,
   className,
@@ -179,7 +179,7 @@ export const CardItem = ({
  * Hook that returns [isMouseEntered, setIsMouseEntered].
  * Must be used within CardContainer.
  */
-export const useMouseEnter = (): [
+const useMouseEnter = (): [
   boolean,
   React.Dispatch<React.SetStateAction<boolean>>,
 ] => {
@@ -189,3 +189,12 @@ export const useMouseEnter = (): [
   }
   return [context.isMouseEntered, context.setIsMouseEntered];
 };
+
+const ThreeDCard = {
+  Container: CardContainer,
+  Body: CardBody,
+  Item: CardItem,
+  useMouseEnter,
+};
+
+export default ThreeDCard;
