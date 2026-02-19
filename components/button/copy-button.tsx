@@ -3,6 +3,11 @@
 import type { ComponentProps, ReactNode } from "react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 import { Check, Copy } from "lucide-react";
 
@@ -12,6 +17,7 @@ export type CopyButtonProps = {
   onError?: (error: Error) => void;
   timeout?: number;
   children?: ReactNode;
+  tooltip?: string;
 } & Omit<ComponentProps<typeof Button>, "onClick">;
 
 const DEFAULT_TIMEOUT = 2000;
@@ -25,6 +31,7 @@ export function CopyButton({
   className,
   size = "icon",
   variant = "ghost",
+  tooltip = "Copy",
   ...props
 }: CopyButtonProps) {
   const [isCopied, setIsCopied] = useState(false);
@@ -59,7 +66,7 @@ export function CopyButton({
         window.clearTimeout(timeoutRef.current);
       }
     },
-    []
+    [],
   );
 
   const defaultContent =
@@ -74,16 +81,23 @@ export function CopyButton({
     );
 
   return (
-    <Button
-      type="button"
-      size={size}
-      variant={variant}
-      className={cn("shrink-0", className)}
-      onClick={handleCopy}
-      aria-label={isCopied ? "Copied" : "Copy"}
-      {...props}
-    >
-      {defaultContent}
-    </Button>
+    <Tooltip>
+      <TooltipTrigger asChild>
+        <Button
+          type="button"
+          size={size}
+          variant={variant}
+          className={cn("shrink-0", className)}
+          onClick={handleCopy}
+          aria-label={tooltip}
+          {...props}
+        >
+          {defaultContent}
+        </Button>
+      </TooltipTrigger>
+      <TooltipContent>
+        <p>{tooltip}</p>
+      </TooltipContent>
+    </Tooltip>
   );
 }
