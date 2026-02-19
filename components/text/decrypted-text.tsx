@@ -226,6 +226,8 @@ function DecryptedTextProvider({
     }
 
     if (sequential) {
+      cancelledRef.current = false;
+      maxPositionRef.current = 0;
       setIsScrambling(true);
       const unsubscribe = decoderSpring.on("change", (value: number) => {
         if (cancelledRef.current) return;
@@ -260,6 +262,8 @@ function DecryptedTextProvider({
       };
     }
 
+    cancelledRef.current = false;
+    currentIterationRef.current = 0;
     setIsScrambling(true);
     let interval: NodeJS.Timeout;
     interval = setInterval(() => {
