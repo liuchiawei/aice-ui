@@ -121,7 +121,7 @@
       "title": "3D Flip Card",
       "description": "A compound flip card with 3D tilt on hover and click-to-flip front/back. | 3D傾き効果とクリックで裏表が入れ替わる、マウス追従の3D傾き効果付きフリップカードコンポーネント。",
       "dependencies": ["react-card-flip"],
-      "registryDependencies": ["card"],
+      "registryDependencies": ["3d-card"],
       "files": [
         {
           "path": "components/ui-elements/3d-flip-card.tsx",
