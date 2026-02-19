@@ -78,37 +78,11 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         sourceCode: codeBlockSource,
       },
       {
-        slug: "radar-chart",
-        labelKey: "radar-chart.label",
-        descriptionKey: "radar-chart.description",
-        demo: RadarChartDemo,
-        sourceCode: radarChartSource,
-      },
-      {
         slug: "theme-switch",
         labelKey: "theme-switch.label",
         descriptionKey: "theme-switch.description",
         demo: ThemeSwitchDemo,
         sourceCode: themeSwitchSource,
-      },
-    ],
-  },
-  {
-    label: "Blocks",
-    items: [
-      {
-        slug: "motion-wheel",
-        labelKey: "motion-wheel.label",
-        descriptionKey: "motion-wheel.description",
-        demo: MotionWheelDemo,
-        sourceCode: motionWheelDemoSource,
-      },
-      {
-        slug: "3d-flip-card",
-        labelKey: "3d-flip-card.label",
-        descriptionKey: "3d-flip-card.description",
-        demo: FlipCardDemo,
-        sourceCode: flipCardDemoSource,
       },
     ],
   },
@@ -142,6 +116,37 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         descriptionKey: "decrypted-text.description",
         demo: DecryptedTextDemo,
         sourceCode: decryptedTextSource,
+      },
+    ],
+  },
+  {
+    label: "Card",
+    items: [
+      {
+        slug: "3d-flip-card",
+        labelKey: "3d-flip-card.label",
+        descriptionKey: "3d-flip-card.description",
+        demo: FlipCardDemo,
+        sourceCode: flipCardDemoSource,
+      },
+      {
+        slug: "radar-chart",
+        labelKey: "radar-chart.label",
+        descriptionKey: "radar-chart.description",
+        demo: RadarChartDemo,
+        sourceCode: radarChartSource,
+      },
+    ],
+  },
+  {
+    label: "Carousel",
+    items: [
+      {
+        slug: "motion-wheel",
+        labelKey: "motion-wheel.label",
+        descriptionKey: "motion-wheel.description",
+        demo: MotionWheelDemo,
+        sourceCode: motionWheelDemoSource,
       },
     ],
   },

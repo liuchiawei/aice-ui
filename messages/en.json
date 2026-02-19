@@ -1,7 +1,8 @@
 {
   "Sidebar": {
     "UI": "UI",
-    "Blocks": "Blocks",
+    "Carousel": "Carousel",
+    "Card": "Card",
     "Text": "Text",
     "Background": "Background",
     "Media": "Media"
@@ -74,8 +75,7 @@
         "label": "Decrypted Text",
         "description": "Scrambled text that reveals on hover or when in view. Supports sequential or batch reveal, and multiple reveal directions."
       }
-    }
-  },
+    },
   "DecryptedTextDemo": {
     "labels": {
       "hoverDefault": "Hover to reveal (default)",

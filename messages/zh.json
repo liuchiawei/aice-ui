@@ -1,7 +1,8 @@
 {
   "Sidebar": {
     "UI": "UI",
-    "Blocks": "區塊",
+    "Carousel": "輪播",
+    "Card": "卡片",
     "Text": "文字",
     "Background": "背景",
     "Media": "媒體"

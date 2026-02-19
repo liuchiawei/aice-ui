@@ -1,7 +1,8 @@
 {
   "Sidebar": {
     "UI": "UI",
-    "Blocks": "ブロック",
+    "Carousel": "カルーセル",
+    "Card": "カード",
     "Text": "テキスト",
     "Background": "背景",
     "Media": "メディア"
