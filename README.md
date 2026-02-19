@@ -12,13 +12,68 @@ Open-source UI component collection built with [Next.js](https://nextjs.org), [R
 
 ## Components
 
+Components are grouped by category (see `lib/component-config.ts`).
+
+### UI
+
 | Component | Description |
 |-----------|-------------|
-| **Webcam** | Browser webcam streaming with error handling and ref forwarding |
-| **Glass Surface** | Liquid glass surface with SVG displacement and optional backdrop blur |
-| **Background Gradient Animation** | Animated gradient background with configurable colors and optional pointer-follow interaction |
+| **Glass Surface** | A glass surface component with blur and distortion effects. |
+| **Code Block** | A code block component with syntax highlighting and line numbers. |
 
-More components coming. Issues and PRs welcome.
+### Text
+
+| Component | Description |
+|-----------|-------------|
+| **Glyph Katakana** | A text component with decoding animation—random katakana glyphs gradually resolve to reveal the target text. |
+| **Decrypted Text** | Scrambled text that reveals on hover or when in view. Supports sequential or batch reveal, and multiple reveal directions. |
+| **Slide Up Letters** | A slide up letters component with customizable data and optional title and description. |
+| **Animated Counter** | A number counter that animates from a starting value to a target when it enters the viewport. |
+| **Timer** | A reusable timer that shows elapsed time. Start, pause, or restart with buttons; choose display format (e.g. 00:01:23 or 83.250s). |
+
+### Button
+
+| Component | Description |
+|-----------|-------------|
+| **Copy Button** | A button that copies text to the clipboard. Shows a check icon after copying. Use it next to code blocks, quotes, or any text you want users to copy in one click. |
+| **Theme Switch** | A theme switch component with dark and light mode. It is built with React, Tailwind CSS, and Motion. |
+
+### Card
+
+| Component | Description |
+|-----------|-------------|
+| **3D Card** | A card that tilts in 3D following your cursor on hover. Child elements can float at different depths for a parallax effect. |
+| **3D Flip Card** | A compound flip card with 3D tilt on hover and click-to-flip front/back. |
+| **Radar Chart** | A radar chart component with customizable data and optional title and description. |
+
+### Carousel
+
+| Component | Description |
+|-----------|-------------|
+| **Motion Wheel** | A compound carousel wheel with rotation animation, prev/next navigation, dot indicators, and optional center info panel. |
+
+### Background
+
+| Component | Description |
+|-----------|-------------|
+| **Floating Circles** | A floating circles component with customizable data and optional title and description. |
+| **Matrix Code** | A matrix code component with glitch effect and optional vignette effect. |
+
+### Media
+
+| Component | Description |
+|-----------|-------------|
+| **Webcam** | A webcam component with customizable data and optional title and description. |
+
+---
+
+### Adding a new component
+
+When you add a new component, remember to update:
+
+1. **Component config** — `lib/component-config.ts` (slug, labelKey, descriptionKey, demo, sourceCode).
+2. **Messages** — Add `label` and `description` for the component in `messages/en.json`, `messages/ja.json`, and `messages/zh.json` (under the `Components` namespace).
+3. **Registry** — `registry.json` for shadcn CLI so the component can be installed with `pnpm dlx shadcn@latest add <component>`.
 
 ---
 
