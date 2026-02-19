@@ -84,9 +84,18 @@ function MotionWheelDemo() {
             <CardContainer className="relative">
               <CardBody className="flex flex-col items-center justify-center">
                 <CardItem translateZ={80}>
-                  <Image src={scene.image} alt={scene.name} width={300} height={300} className="w-full h-full object-cover" />
+                  <Image
+                    src={scene.image}
+                    alt={scene.name}
+                    width={300}
+                    height={300}
+                    className="w-full h-full object-cover rounded-lg"
+                  />
                 </CardItem>
-                <CardItem translateZ={20} className="flex flex-col justify-between items-center gap-2">
+                <CardItem
+                  translateZ={20}
+                  className="flex flex-col justify-between items-center"
+                >
                   <h3 className="text-base font-bold text-primary">{scene.name}</h3>
                 </CardItem>
               </CardBody>

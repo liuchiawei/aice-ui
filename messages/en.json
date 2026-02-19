@@ -60,7 +60,7 @@
       },
       "glyph-katakana": {
         "label": "Glyph Katakana",
-        "description": "A glyph katakana component with customizable data and optional title and description."
+        "description": "A text component with decoding animation—random katakana glyphs gradually resolve to reveal the target text."
       },
       "slide-up-letters": {
         "label": "Slide Up Letters",

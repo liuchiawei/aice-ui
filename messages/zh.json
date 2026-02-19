@@ -59,8 +59,8 @@
       "description": "點擊翻轉、滑鼠追蹤 3D 傾斜效果的複合式 flip card 元件。"
     },
     "glyph-katakana": {
-      "label": "片假名符号",
-      "description": "グリフ片仮名コンポーネント。マウス追従も可。"
+      "label": "片假名符號",
+      "description": "解碼動畫文字元件，隨機片假名會逐漸揭示目標文字。支援延遲與減少動畫偏好。"
     },
     "slide-up-letters": {
       "label": "向上滑动字母",
