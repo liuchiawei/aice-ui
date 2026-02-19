@@ -135,10 +135,23 @@
       "title": "Motion Wheel",
       "description": "A compound carousel wheel with rotation animation, navigation, and optional center info. | 回転アニメーション、ナビゲーション、オプションの中央情報を備えた複合カルーセルホイールコンポーネント。",
       "dependencies": ["motion", "lucide-react"],
-      "registryDependencies": ["card", "button"],
+      "registryDependencies": ["card", "button", "use-mobile"],
       "files": [
         {
           "path": "components/ui-elements/motion-wheel.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "animated-counter",
+      "type": "registry:ui",
+      "title": "Animated Counter",
+      "description": "An animated counter component with customizable starting number, target number, speed, and trigger. | カスタマイズ可能な開始数、目標数、速度、トリガーを備えたアニメーションカウンターコンポーネント。",
+      "dependencies": ["motion"],
+      "files": [
+        {
+          "path": "components/text/animated-counter.tsx",
           "type": "registry:ui"
         }
       ]
