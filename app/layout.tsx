@@ -5,7 +5,7 @@ import { getLocale } from "next-intl/server";
 import "./globals.css";
 
 const roboto = Roboto({
-  variable: "--font-roboto-sans",
+  variable: "--font-roboto",
   subsets: ["latin"],
   weight: ["200", "300", "400", "500", "700", "900"],
 });
