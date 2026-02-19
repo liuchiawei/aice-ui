@@ -33,6 +33,10 @@ import {
   radarChartSource,
 } from "@/components/demo/radar-chart-demo";
 import {
+  ThreeDCardDemo,
+  threeCardDemoSource,
+} from "@/components/demo/3d-card-demo";
+import {
   FlipCardDemo,
   flipCardDemoSource,
 } from "@/components/demo/3d-flip-card-demo";
@@ -122,6 +126,13 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
   {
     label: "Card",
     items: [
+      {
+        slug: "3d-card",
+        labelKey: "3d-card.label",
+        descriptionKey: "3d-card.description",
+        demo: ThreeDCardDemo,
+        sourceCode: threeCardDemoSource,
+      },
       {
         slug: "3d-flip-card",
         labelKey: "3d-flip-card.label",

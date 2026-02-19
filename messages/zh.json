@@ -55,6 +55,10 @@
       "label": "旋轉輪播",
       "description": "具旋轉動畫、前後導航、圓點指示與可選中央資訊區的複合式輪播元件。"
     },
+    "3d-card": {
+      "label": "3D卡片",
+      "description": "懸停時依滑鼠位置產生 3D 傾斜效果。子元件可設定不同景深，呈現視差效果。"
+    },
     "3d-flip-card": {
       "label": "3D翻轉卡片",
       "description": "點擊翻轉、滑鼠追蹤 3D 傾斜效果的複合式 flip card 元件。"
@@ -75,6 +79,10 @@
       "label": "解密文字",
       "description": "滑鼠懸停或進入視窗時解碼顯示的文字。支援逐一揭露、批次揭露與多種揭露方向。"
     }
+  },
+  "ThreeDCardDemo": {
+    "title": "3D 傾斜卡片",
+    "hint": "懸停查看傾斜效果"
   },
   "DecryptedTextDemo": {
     "labels": {

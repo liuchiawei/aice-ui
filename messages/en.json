@@ -55,6 +55,10 @@
         "label": "Motion Wheel",
         "description": "A compound carousel wheel with rotation animation, prev/next navigation, dot indicators, and optional center info panel."
       },
+      "3d-card": {
+        "label": "3D Card",
+        "description": "A card that tilts in 3D following your cursor on hover. Child elements can float at different depths for a parallax effect."
+      },
       "3d-flip-card": {
         "label": "3D Flip Card",
         "description": "A compound flip card with 3D tilt on hover and click-to-flip front/back."
@@ -76,6 +80,10 @@
         "description": "Scrambled text that reveals on hover or when in view. Supports sequential or batch reveal, and multiple reveal directions."
       }
     },
+  "ThreeDCardDemo": {
+    "title": "3D Tilt Card",
+    "hint": "Hover to see tilt effect"
+  },
   "DecryptedTextDemo": {
     "labels": {
       "hoverDefault": "Hover to reveal (default)",
