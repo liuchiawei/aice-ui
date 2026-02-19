@@ -110,7 +110,7 @@
       "registryDependencies": ["recharts", "card"],
       "files": [
         {
-          "path": "components/ui-elements/radar-chart.tsx",
+          "path": "components/card/radar-chart.tsx",
           "type": "registry:ui"
         }
       ]
@@ -124,7 +124,7 @@
       "registryDependencies": ["three-card"],
       "files": [
         {
-          "path": "components/ui-elements/3d-flip-card.tsx",
+          "path": "components/card/3d-flip-card.tsx",
           "type": "registry:ui"
         }
       ]
@@ -138,7 +138,7 @@
       "registryDependencies": ["card", "button", "use-mobile"],
       "files": [
         {
-          "path": "components/ui-elements/motion-wheel.tsx",
+          "path": "components/carousel/motion-wheel.tsx",
           "type": "registry:ui"
         }
       ]
