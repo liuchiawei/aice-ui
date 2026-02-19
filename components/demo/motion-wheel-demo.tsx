@@ -22,6 +22,7 @@ const demoScenes: Scene[] = [
 function MotionWheelDemo() {
   return (
     <MotionWheel.Root items={demoScenes} initialIndex={2}>
+      <MotionWheel.AutoCarousel interval={3000} />
       <MotionWheel.Border />
       <MotionWheel.Wheel<Scene>>
         {(scene, index) => (
@@ -75,6 +76,7 @@ const items = [
 function MotionWheelDemo() {
   return (
     <MotionWheel.Root items={items} initialIndex={2}>
+      <MotionWheel.AutoCarousel interval={5000} />
       <MotionWheel.Border />
       <MotionWheel.Wheel>
         {(scene, index) => (

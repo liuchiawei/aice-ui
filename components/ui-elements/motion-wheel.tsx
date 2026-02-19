@@ -7,6 +7,7 @@ import React, {
   useCallback,
   useMemo,
   useRef,
+  useEffect,
   type ReactNode,
 } from "react";
 import { motion, AnimatePresence } from "motion/react";
@@ -179,6 +180,27 @@ function MotionWheelBorder({ className }: { className?: string }) {
       )}
     />
   );
+}
+
+/**
+ * Use: Opt-in dynamic carousel. Place inside Root to auto-advance to the next item.
+ * When absent, the wheel is manual-only. Props: interval? (ms per item, default 3000).
+ * (slug: motion-wheel-auto-carousel)
+ */
+function MotionWheelAutoCarousel({
+  interval = 3000,
+}: {
+  interval?: number;
+}) {
+  const { actions, meta } = useMotionWheel();
+
+  useEffect(() => {
+    if (meta.count === 0) return;
+    const id = setInterval(() => actions.goNext(), interval);
+    return () => clearInterval(id);
+  }, [interval, actions.goNext, meta.count]);
+
+  return null;
 }
 
 /**
@@ -389,6 +411,7 @@ function MotionWheelCenterInfo<T extends MotionWheelItemBase>({
 const MotionWheel = {
   Root: MotionWheelRoot,
   Border: MotionWheelBorder,
+  AutoCarousel: MotionWheelAutoCarousel,
   Wheel: MotionWheelWheel,
   Item: MotionWheelItem,
   Navigation: MotionWheelNavigation,
