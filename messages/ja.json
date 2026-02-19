@@ -48,11 +48,11 @@
     },
     "webcam": {
       "label": "ウェブカメラ",
-      "description": "ブラウザのウェブカメラストリーミング用コンポーネント。エラー処理・ref転送対応。"
+      "description": "ブラウザのウェブカメラストリーミング用コンポーネント。"
     },
     "motion-wheel": {
       "label": "モーションホイール",
-      "description": "モーションホイールコンポーネント。マウス追従も可。"
+      "description": "モーションホイールコンポーネント。"
     },
     "3d-flip-card": {
       "label": "3Dフリップカード",
@@ -60,11 +60,11 @@
     },
     "glyph-katakana": {
       "label": "グリフ片仮名",
-      "description": "グリフ片仮名コンポーネント。マウス追従も可。"
+      "description": "グリフ片仮名コンポーネント。"
     },
     "slide-up-letters": {
       "label": "スライドアップレター",
-      "description": "スライドアップレターコンポーネント。マウス追従も可。"
+      "description": "スライドアップレターコンポーネント。"
     }
   }
 }
