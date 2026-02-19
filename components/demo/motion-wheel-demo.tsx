@@ -11,12 +11,12 @@ interface Scene {
 }
 
 const demoScenes: Scene[] = [
-  { id: 1, name: "Mountain Sunrise", image: "https://picsum.photos/200/300?random=1" },
-  { id: 2, name: "Ocean Horizon", image: "https://picsum.photos/200/300?random=2" },
-  { id: 3, name: "Forest Path", image: "https://picsum.photos/200/300?random=3" },
-  { id: 4, name: "City Skyline", image: "https://picsum.photos/200/300?random=4" },
-  { id: 5, name: "Desert Dunes", image: "https://picsum.photos/200/300?random=5" },
-  { id: 6, name: "Northern Lights", image: "https://picsum.photos/200/300?random=6" },
+  { id: 1, name: "Mountain Sunrise", image: "https://picsum.photos/300/300?random=1" },
+  { id: 2, name: "Ocean Horizon", image: "https://picsum.photos/300/300?random=2" },
+  { id: 3, name: "Forest Path", image: "https://picsum.photos/300/300?random=3" },
+  { id: 4, name: "City Skyline", image: "https://picsum.photos/300/300?random=4" },
+  { id: 5, name: "Desert Dunes", image: "https://picsum.photos/300/300?random=5" },
+  { id: 6, name: "Northern Lights", image: "https://picsum.photos/300/300?random=6" },
 ];
 
 function MotionWheelDemo() {
