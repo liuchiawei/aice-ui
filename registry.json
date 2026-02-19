@@ -203,6 +203,18 @@
       "files": [
         { "path": "components/button/copy-button.tsx", "type": "registry:ui" }
       ]
+    },
+    {
+      "name": "timer",
+      "type": "registry:ui",
+      "title": "Timer",
+      "description": "A reusable timer that shows elapsed time. Start, pause, or restart with buttons; choose display format (e.g. 00:01:23 or 83.250s). | 経過時間を表示するタイマー。開始、一時停止、または再開ボタンで制御；表示形式（例：00:01:23 または 83.250 秒）を選択可能。",
+      "files": [
+        {
+          "path": "components/ui-elements/timer.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }
