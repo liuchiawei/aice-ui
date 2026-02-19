@@ -10,7 +10,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import Timer, { type TimerFormat } from "@/components/ui-elements/timer";
+import Timer, { type TimerFormat } from "@/components/text/timer";
 
 const FORMAT_OPTIONS: { value: TimerFormat; label: string }[] = [
   { value: "hh:mm:ss", label: "HH:MM:SS" },
@@ -93,7 +93,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import Timer, { type TimerFormat } from "@/components/ui-elements/timer";
+import Timer, { type TimerFormat } from "@/components/text/timer";
 
 export function TimerDemo() {
   const [isStarted, setIsStarted] = useState(true);
