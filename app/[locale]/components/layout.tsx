@@ -33,7 +33,7 @@ export default function ShowcaseLayout({
   children: React.ReactNode;
 }) {
   const t = useTranslations("Components");
-  const tSidebar = useTranslations("Sidebar");
+  const tCategory = useTranslations("Category");
   return (
     <SidebarProvider>
       <Sidebar>
@@ -51,7 +51,7 @@ export default function ShowcaseLayout({
                     type="button"
                     className="text-sidebar-foreground/70 ring-sidebar-ring group flex h-8 w-full shrink-0 cursor-pointer justify-between items-center gap-1 rounded-md px-2 text-xs font-medium outline-hidden transition-[margin,opacity] duration-200 ease-linear hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 [&>svg]:size-4 [&>svg]:shrink-0"
                   >
-                    {tSidebar(group.label)}
+                    {tCategory(group.label)}
                     <ChevronRight
                       className="size-4 shrink-0 transition-transform group-data-[state=open]:rotate-90"
                       aria-hidden
