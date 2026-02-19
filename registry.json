@@ -180,6 +180,17 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "copy-button",
+      "type": "registry:ui",
+      "title": "Copy Button",
+      "description": "A button that copies text to the clipboard. Shows a check icon after copying. Use it next to code blocks, quotes, or any text you want users to copy in one click. | テキストをクリップボードにコピーするボタン。コピー後にチェックアイコンを表示。コードブロックや引用文など、ワンクリックでコピーしたいテキストの横に配置できます。",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["button", "tooltip"],
+      "files": [
+        { "path": "components/button/copy-button.tsx", "type": "registry:ui" }
+      ]
     }
   ]
 }
