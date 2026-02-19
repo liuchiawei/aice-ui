@@ -155,6 +155,19 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "decrypted-text",
+      "type": "registry:ui",
+      "title": "Decrypted Text",
+      "description": "A text component with decoding animation—random katakana glyphs gradually resolve to reveal the target text. | 片仮名グリフが徐々に目標テキストへ解碼するアニメーション付きテキストコンポーネント。遅延設定・動きの軽減対応。",
+      "dependencies": ["motion"],
+      "files": [
+        {
+          "path": "components/text/decrypted-text.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }
