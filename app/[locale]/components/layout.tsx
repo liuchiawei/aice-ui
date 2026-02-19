@@ -49,7 +49,7 @@ export default function ShowcaseLayout({
                 <CollapsibleTrigger asChild>
                   <button
                     type="button"
-                    className="text-sidebar-foreground/70 ring-sidebar-ring group flex h-8 w-full shrink-0 cursor-pointer justify-between items-center gap-1 rounded-md px-2 text-left text-xs font-medium outline-hidden transition-[margin,opacity] duration-200 ease-linear hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 [&>svg]:size-4 [&>svg]:shrink-0"
+                    className="text-sidebar-foreground/70 ring-sidebar-ring group flex h-8 w-full shrink-0 cursor-pointer justify-between items-center gap-1 rounded-md px-2 text-xs font-medium outline-hidden transition-[margin,opacity] duration-200 ease-linear hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 [&>svg]:size-4 [&>svg]:shrink-0"
                   >
                     {tSidebar(group.label)}
                     <ChevronRight
@@ -60,13 +60,13 @@ export default function ShowcaseLayout({
                 </CollapsibleTrigger>
                 <CollapsibleContent className="overflow-hidden">
                   <SidebarGroupContent>
-                    <SidebarMenu>
+                    <SidebarMenu className="border-l ml-2 pl-1">
                       {group.items.map((item) => (
                         <SidebarMenuItem key={item.slug}>
                           <SidebarMenuButton asChild>
                             <Link
                               href={`/components/${item.slug}`}
-                              className="cursor-pointer truncate"
+                              className="font-bold cursor-pointer truncate"
                               aria-label={`Go to ${t(item.labelKey)} section`}
                             >
                               {t(item.labelKey)}
