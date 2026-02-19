@@ -43,9 +43,9 @@ export default function ShowcaseLayout({
           </Link>
         </SidebarHeader>
         <SidebarContent>
-          {myComponents.map((group) => (
+          {myComponents.map((group, index) => (
             <SidebarGroup key={group.label} className="group py-0">
-              <Collapsible defaultOpen>
+              <Collapsible defaultOpen={index === 0}>
                 <CollapsibleTrigger asChild>
                   <button
                     type="button"
@@ -87,7 +87,10 @@ export default function ShowcaseLayout({
         <header className="h-14 flex shrink-0 items-center justify-between border-b border-border px-4">
           <div className="flex items-center gap-2">
             <SidebarTrigger aria-label="Toggle sidebar" />
-            <Link href="/" className="text-lg font-extrabold font-roboto text-foreground uppercase">
+            <Link
+              href="/"
+              className="text-lg font-extrabold font-roboto text-foreground uppercase"
+            >
               {componentPageTitle}
             </Link>
           </div>
