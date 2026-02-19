@@ -77,7 +77,7 @@ export default function ShowcaseLayout({
                                 </span>
                                 {isNew ? (
                                   <Badge
-                                    variant="secondary"
+                                    variant="outline"
                                     className="shrink-0"
                                   >
                                     {t("newLabel")}
