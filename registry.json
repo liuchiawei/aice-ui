@@ -168,6 +168,18 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "3d-card",
+      "type": "registry:ui",
+      "title": "3D Card",
+      "description": "A 3D card component with customizable data and optional title and description. | カスタマイズ可能なデータとオプションのタイトルと説明を備えた3Dカードコンポーネント。",
+      "files": [
+        {
+          "path": "components/card/3d-card.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }
