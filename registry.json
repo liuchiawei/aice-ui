@@ -124,7 +124,7 @@
       "registryDependencies": ["three-card"],
       "files": [
         {
-          "path": "components/ui-elements/3d-flip-card.tsx",
+          "path": "components/card/3d-flip-card.tsx",
           "type": "registry:ui"
         }
       ]
