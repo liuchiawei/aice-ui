@@ -114,6 +114,34 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "3d-flip-card",
+      "type": "registry:ui",
+      "title": "3D Flip Card",
+      "description": "A compound flip card with 3D tilt on hover and click-to-flip front/back. | 3D傾き効果とクリックで裏表が入れ替わる、マウス追従の3D傾き効果付きフリップカードコンポーネント。",
+      "dependencies": ["react-card-flip"],
+      "registryDependencies": ["card"],
+      "files": [
+        {
+          "path": "components/ui-elements/3d-flip-card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "motion-wheel",
+      "type": "registry:ui",
+      "title": "Motion Wheel",
+      "description": "A compound carousel wheel with rotation animation, navigation, and optional center info. | 回転アニメーション、ナビゲーション、オプションの中央情報を備えた複合カルーセルホイールコンポーネント。",
+      "dependencies": ["motion", "lucide-react"],
+      "registryDependencies": ["card", "button"],
+      "files": [
+        {
+          "path": "components/ui-elements/motion-wheel.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }

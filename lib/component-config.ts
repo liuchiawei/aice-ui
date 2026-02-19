@@ -36,6 +36,10 @@ import {
   FlipCardDemo,
   flipCardDemoSource,
 } from "@/components/demo/3d-flip-card-demo";
+import {
+  MotionWheelDemo,
+  motionWheelDemoSource,
+} from "@/components/demo/motion-wheel-demo";
 /** Translation keys under the "Components" namespace (e.g. "glass-surface.label"). Resolve with useTranslations("Components") then t(key). */
 export interface ComponentItem {
   slug: string;
@@ -88,6 +92,8 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         slug: "motion-wheel",
         labelKey: "motion-wheel.label",
         descriptionKey: "motion-wheel.description",
+        demo: MotionWheelDemo,
+        sourceCode: motionWheelDemoSource,
       },
       {
         slug: "3d-flip-card",

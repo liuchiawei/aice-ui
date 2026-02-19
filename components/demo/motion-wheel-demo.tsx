@@ -71,7 +71,7 @@ const demoProducts: Product[] = [
   },
 ];
 
-export default function MotionWheelBlock() {
+function MotionWheelDemo() {
   return (
     <MotionWheel.Root items={demoProducts} initialIndex={2}>
       <MotionWheel.Border />
@@ -126,3 +126,51 @@ export default function MotionWheelBlock() {
     </MotionWheel.Root>
   );
 }
+
+const motionWheelDemoSource = `import Image from "next/image";
+import { MotionWheel } from "@/components/ui-elements/motion-wheel";
+import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
+
+const items = [
+  { id: 1, name_jp: "...", name_en: "...", price: 15800, image: "...", category: "...", brand: "..." },
+  // ... more items
+];
+
+function MotionWheelDemo() {
+  return (
+    <MotionWheel.Root items={items} initialIndex={2}>
+      <MotionWheel.Border />
+      <MotionWheel.Wheel>
+        {(product, index) => (
+          <MotionWheel.Item key={product.id} item={product} index={index}>
+            <CardContainer className="relative">
+              <CardBody className="flex flex-col items-center justify-center">
+                <CardItem translateZ={80}>
+                  <Image src={product.image} alt={product.name_jp} width={300} height={300} className="w-full h-full object-cover" />
+                </CardItem>
+                <CardItem translateZ={20} className="flex flex-col justify-between items-center gap-2">
+                  <h3 className="text-base font-bold text-primary">{product.name_jp}</h3>
+                  <p className="text-sm text-neutral-400">{product.brand}</p>
+                </CardItem>
+              </CardBody>
+            </CardContainer>
+          </MotionWheel.Item>
+        )}
+      </MotionWheel.Wheel>
+      <MotionWheel.Navigation />
+      <MotionWheel.CenterInfo>
+        {(product) => (
+          <>
+            <h3 className="text-neutral-400 mb-1 text-sm md:text-base uppercase">{product.brand}</h3>
+            <h1 className="text-xl md:text-2xl font-sans font-[900] mb-2">{product.name_jp}</h1>
+            <p className="text-neutral-400 mb-1 text-sm md:text-base uppercase">{product.name_en}</p>
+            <p className="text-3xl font-bold text-primary">¥\${product.price.toLocaleString()}</p>
+          </>
+        )}
+      </MotionWheel.CenterInfo>
+      <MotionWheel.Dots />
+    </MotionWheel.Root>
+  );
+}`;
+
+export { MotionWheelDemo, motionWheelDemoSource };

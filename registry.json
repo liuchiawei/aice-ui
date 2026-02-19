@@ -128,6 +128,20 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "motion-wheel",
+      "type": "registry:ui",
+      "title": "Motion Wheel",
+      "description": "A compound carousel wheel with rotation animation, navigation, and optional center info. | 回転アニメーション、ナビゲーション、オプションの中央情報を備えた複合カルーセルホイールコンポーネント。",
+      "dependencies": ["motion", "lucide-react"],
+      "registryDependencies": ["card", "button"],
+      "files": [
+        {
+          "path": "components/ui-elements/motion-wheel.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }

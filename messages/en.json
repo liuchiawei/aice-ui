@@ -17,6 +17,7 @@
       "components": "Components"
     },
     "install": "Please select your favorite package manager to install the component.",
+    "usage": "Please select your favorite package manager to install the component.",
     "demo-code": "Demo Code",
     "related": "Related Components"
   },
@@ -51,7 +52,7 @@
       },
       "motion-wheel": {
         "label": "Motion Wheel",
-        "description": "A motion wheel component with customizable data and optional title and description."
+        "description": "A compound carousel wheel with rotation animation, prev/next navigation, dot indicators, and optional center info panel."
       },
       "3d-flip-card": {
         "label": "3D Flip Card",
