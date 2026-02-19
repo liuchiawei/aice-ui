@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "copy-button",
+  "title": "Copy Button",
+  "description": "A button that copies text to the clipboard. Shows a check icon after copying. Use it next to code blocks, quotes, or any text you want users to copy in one click. | テキストをクリップボードにコピーするボタン。コピー後にチェックアイコンを表示。コードブロックや引用文など、ワンクリックでコピーしたいテキストの横に配置できます。",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "tooltip"
+  ],
+  "files": [
+    {
+      "path": "components/button/copy-button.tsx",
+      "content": "\"use client\";\n\nimport type { ComponentProps, ReactNode } from \"react\";\nimport { useCallback, useEffect, useRef, useState } from \"react\";\nimport { Button } from \"@/components/ui/button\";\nimport {\n  Tooltip,\n  TooltipContent,\n  TooltipTrigger,\n} from \"@/components/ui/tooltip\";\nimport { cn } from \"@/lib/utils\";\nimport { Check, Copy } from \"lucide-react\";\n\nexport type CopyButtonProps = {\n  value: string;\n  onCopy?: () => void;\n  onError?: (error: Error) => void;\n  timeout?: number;\n  children?: ReactNode;\n  tooltip?: string;\n} & Omit<ComponentProps<typeof Button>, \"onClick\">;\n\nconst DEFAULT_TIMEOUT = 2000;\n\nexport function CopyButton({\n  value,\n  onCopy,\n  onError,\n  timeout = DEFAULT_TIMEOUT,\n  children,\n  className,\n  size = \"icon\",\n  variant = \"ghost\",\n  tooltip = \"Copy\",\n  ...props\n}: CopyButtonProps) {\n  const [isCopied, setIsCopied] = useState(false);\n  const timeoutRef = useRef<number | null>(null);\n\n  const handleCopy = useCallback(async () => {\n    if (typeof window === \"undefined\" || !navigator?.clipboard?.writeText) {\n      onError?.(new Error(\"Clipboard API not available\"));\n      return;\n    }\n\n    try {\n      await navigator.clipboard.writeText(value);\n      setIsCopied(true);\n      onCopy?.();\n\n      if (timeoutRef.current !== null) {\n        window.clearTimeout(timeoutRef.current);\n      }\n      timeoutRef.current = window.setTimeout(() => {\n        setIsCopied(false);\n        timeoutRef.current = null;\n      }, timeout);\n    } catch (error) {\n      onError?.(error instanceof Error ? error : new Error(String(error)));\n    }\n  }, [value, onCopy, onError, timeout]);\n\n  useEffect(\n    () => () => {\n      if (timeoutRef.current !== null) {\n        window.clearTimeout(timeoutRef.current);\n      }\n    },\n    [],\n  );\n\n  const defaultContent =\n    children === undefined ? (\n      isCopied ? (\n        <Check className=\"size-4 shrink-0\" />\n      ) : (\n        <Copy className=\"size-4 shrink-0\" />\n      )\n    ) : (\n      children\n    );\n\n  return (\n    <Tooltip>\n      <TooltipTrigger asChild>\n        <Button\n          type=\"button\"\n          size={size}\n          variant={variant}\n          className={cn(\"shrink-0\", className)}\n          onClick={handleCopy}\n          aria-label={tooltip}\n          {...props}\n        >\n          {defaultContent}\n        </Button>\n      </TooltipTrigger>\n      <TooltipContent>\n        <p>{tooltip}</p>\n      </TooltipContent>\n    </Tooltip>\n  );\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}
