@@ -84,7 +84,7 @@
       "dependencies": ["next-themes", "motion"],
       "files": [
         {
-          "path": "components/ui-elements/theme-switcher.tsx",
+          "path": "components/button/theme-switch.tsx",
           "type": "registry:ui"
         }
       ]

@@ -1,4 +1,4 @@
-import { ThemeSwitcher } from "@/components/ui-elements/theme-switcher";
+import { ThemeSwitcher } from "@/components/button/theme-switch";
 
 export function ThemeSwitchDemo() {
   return (
