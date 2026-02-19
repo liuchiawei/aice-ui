@@ -4,99 +4,46 @@ import Image from "next/image";
 import { MotionWheel } from "@/components/ui-elements/motion-wheel";
 import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
 
-interface Product {
+interface Scene {
   id: number;
-  name_jp: string;
-  name_en: string;
-  price: number;
+  name: string;
   image: string;
-  category: string;
-  brand: string;
 }
 
-const demoProducts: Product[] = [
-  {
-    id: 1,
-    name_jp: "プレミアム格闘技グローブ",
-    name_en: "Premium Fighting Gloves",
-    price: 15800,
-    image: "https://picsum.photos/200/300?random=1",
-    category: "グローブ",
-    brand: "BushiGear Pro",
-  },
-  {
-    id: 2,
-    name_jp: "プロフェッショナルミット",
-    name_en: "Professional Mitt",
-    price: 12500,
-    image: "https://picsum.photos/200/300?random=2",
-    category: "ミット",
-    brand: "Martial World",
-  },
-  {
-    id: 3,
-    name_jp: "アドバンスドプロテクター",
-    name_en: "Advanced Protector",
-    price: 18900,
-    image: "https://picsum.photos/200/300?random=3",
-    category: "プロテクター",
-    brand: "BushiGear Elite",
-  },
-  {
-    id: 4,
-    name_jp: "トレーニングウェア",
-    name_en: "Training Wear",
-    price: 8900,
-    image: "https://picsum.photos/200/300?random=4",
-    category: "服",
-    brand: "Fighter Wear",
-  },
-  {
-    id: 5,
-    name_jp: "コンバットミット",
-    name_en: "Combat Mitt",
-    price: 14200,
-    image: "https://picsum.photos/200/300?random=5",
-    category: "ミット",
-    brand: "Combat Pro",
-  },
-  {
-    id: 6,
-    name_jp: "ファイタープロテクション",
-    name_en: "Fighter Protection",
-    price: 21500,
-    image: "https://picsum.photos/200/300?random=6",
-    category: "プロテクター",
-    brand: "Guard Master",
-  },
+const demoScenes: Scene[] = [
+  { id: 1, name: "Mountain Sunrise", image: "https://picsum.photos/200/300?random=1" },
+  { id: 2, name: "Ocean Horizon", image: "https://picsum.photos/200/300?random=2" },
+  { id: 3, name: "Forest Path", image: "https://picsum.photos/200/300?random=3" },
+  { id: 4, name: "City Skyline", image: "https://picsum.photos/200/300?random=4" },
+  { id: 5, name: "Desert Dunes", image: "https://picsum.photos/200/300?random=5" },
+  { id: 6, name: "Northern Lights", image: "https://picsum.photos/200/300?random=6" },
 ];
 
 function MotionWheelDemo() {
   return (
-    <MotionWheel.Root items={demoProducts} initialIndex={2}>
+    <MotionWheel.Root items={demoScenes} initialIndex={2}>
       <MotionWheel.Border />
-      <MotionWheel.Wheel<Product>>
-        {(product, index) => (
-          <MotionWheel.Item key={product.id} item={product} index={index}>
+      <MotionWheel.Wheel<Scene>>
+        {(scene, index) => (
+          <MotionWheel.Item key={scene.id} item={scene} index={index}>
             <CardContainer className="relative">
-              <CardBody className="flex flex-col items-center justify-center">
+              <CardBody className="flex flex-col items-center justify-center space-y-2">
                 <CardItem translateZ={80}>
                   <Image
-                    src={product.image}
-                    alt={product.name_jp}
+                    src={scene.image}
+                    alt={scene.name}
                     width={300}
                     height={300}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover rounded-lg"
                   />
                 </CardItem>
                 <CardItem
                   translateZ={20}
-                  className="flex flex-col justify-between items-center gap-2"
+                  className="flex flex-col justify-between items-center"
                 >
                   <h3 className="text-base font-bold text-primary">
-                    {product.name_jp}
+                    {scene.name}
                   </h3>
-                  <p className="text-sm text-neutral-400">{product.brand}</p>
                 </CardItem>
               </CardBody>
             </CardContainer>
@@ -104,22 +51,11 @@ function MotionWheelDemo() {
         )}
       </MotionWheel.Wheel>
       <MotionWheel.Navigation />
-      <MotionWheel.CenterInfo<Product>>
-        {(product) => (
-          <>
-            <h3 className="text-neutral-400 mb-1 text-sm md:text-base uppercase">
-              {product.brand}
-            </h3>
-            <h1 className="text-xl md:text-2xl font-sans font-[900] mb-2">
-              {product.name_jp}
-            </h1>
-            <p className="text-neutral-400 mb-1 text-sm md:text-base uppercase">
-              {product.name_en}
-            </p>
-            <p className="text-3xl font-bold text-primary">
-              ¥{product.price.toLocaleString()}
-            </p>
-          </>
+      <MotionWheel.CenterInfo<Scene>>
+        {(scene) => (
+          <h1 className="text-xl md:text-2xl font-sans font-[900]">
+            {scene.name}
+          </h1>
         )}
       </MotionWheel.CenterInfo>
       <MotionWheel.Dots />
@@ -132,8 +68,8 @@ import { MotionWheel } from "@/components/ui-elements/motion-wheel";
 import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
 
 const items = [
-  { id: 1, name_jp: "...", name_en: "...", price: 15800, image: "...", category: "...", brand: "..." },
-  // ... more items
+  { id: 1, name: "Mountain Sunrise", image: "..." },
+  // ... more scenes
 ];
 
 function MotionWheelDemo() {
@@ -141,16 +77,15 @@ function MotionWheelDemo() {
     <MotionWheel.Root items={items} initialIndex={2}>
       <MotionWheel.Border />
       <MotionWheel.Wheel>
-        {(product, index) => (
-          <MotionWheel.Item key={product.id} item={product} index={index}>
+        {(scene, index) => (
+          <MotionWheel.Item key={scene.id} item={scene} index={index}>
             <CardContainer className="relative">
               <CardBody className="flex flex-col items-center justify-center">
                 <CardItem translateZ={80}>
-                  <Image src={product.image} alt={product.name_jp} width={300} height={300} className="w-full h-full object-cover" />
+                  <Image src={scene.image} alt={scene.name} width={300} height={300} className="w-full h-full object-cover" />
                 </CardItem>
                 <CardItem translateZ={20} className="flex flex-col justify-between items-center gap-2">
-                  <h3 className="text-base font-bold text-primary">{product.name_jp}</h3>
-                  <p className="text-sm text-neutral-400">{product.brand}</p>
+                  <h3 className="text-base font-bold text-primary">{scene.name}</h3>
                 </CardItem>
               </CardBody>
             </CardContainer>
@@ -159,13 +94,8 @@ function MotionWheelDemo() {
       </MotionWheel.Wheel>
       <MotionWheel.Navigation />
       <MotionWheel.CenterInfo>
-        {(product) => (
-          <>
-            <h3 className="text-neutral-400 mb-1 text-sm md:text-base uppercase">{product.brand}</h3>
-            <h1 className="text-xl md:text-2xl font-sans font-[900] mb-2">{product.name_jp}</h1>
-            <p className="text-neutral-400 mb-1 text-sm md:text-base uppercase">{product.name_en}</p>
-            <p className="text-3xl font-bold text-primary">¥\${product.price.toLocaleString()}</p>
-          </>
+        {(scene) => (
+          <h1 className="text-xl md:text-2xl font-sans font-[900]">{scene.name}</h1>
         )}
       </MotionWheel.CenterInfo>
       <MotionWheel.Dots />
