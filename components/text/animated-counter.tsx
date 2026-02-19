@@ -8,11 +8,11 @@ import { cn } from "@/lib/utils";
 export type AnimatedCounterTrigger = "enter" | "hover" | "whileInView";
 
 export default function AnimatedCounter({
-  value,
-  from = 0,
-  className,
-  speed = 0.8,
-  trigger = "enter",
+  value, // The number to animate to
+  from = 0, // The starting number, default is 0
+  className, // Optional CSS class names for tailwind
+  speed = 0.8, // The speed of the animation, default is 0.8
+  trigger = "enter", // When to run the animation: "enter" = when first entering view, "whileInView" = each time entering view, "hover" = on hover
 }: {
   value: number;
   from?: number;
