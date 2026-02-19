@@ -32,6 +32,10 @@ import {
   RadarChartDemo,
   radarChartSource,
 } from "@/components/demo/radar-chart-demo";
+import {
+  FlipCardDemo,
+  flipCardDemoSource,
+} from "@/components/demo/3d-flip-card-demo";
 /** Translation keys under the "Components" namespace (e.g. "glass-surface.label"). Resolve with useTranslations("Components") then t(key). */
 export interface ComponentItem {
   slug: string;
@@ -89,6 +93,8 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         slug: "3d-flip-card",
         labelKey: "3d-flip-card.label",
         descriptionKey: "3d-flip-card.description",
+        demo: FlipCardDemo,
+        sourceCode: flipCardDemoSource,
       },
     ],
   },
