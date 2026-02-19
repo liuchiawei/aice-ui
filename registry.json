@@ -142,6 +142,19 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "animated-counter",
+      "type": "registry:ui",
+      "title": "Animated Counter",
+      "description": "An animated counter component with customizable starting number, target number, speed, and trigger. | カスタマイズ可能な開始数、目標数、速度、トリガーを備えたアニメーションカウンターコンポーネント。",
+      "dependencies": ["motion"],
+      "files": [
+        {
+          "path": "components/text/animated-counter.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }
