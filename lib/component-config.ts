@@ -84,14 +84,7 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         descriptionKey: "code-block.description",
         demo: CodeBlockDemo,
         sourceCode: codeBlockSource,
-      },
-      {
-        slug: "theme-switch",
-        labelKey: "theme-switch.label",
-        descriptionKey: "theme-switch.description",
-        demo: ThemeSwitchDemo,
-        sourceCode: themeSwitchSource,
-      },
+      }
     ],
   },
   {
