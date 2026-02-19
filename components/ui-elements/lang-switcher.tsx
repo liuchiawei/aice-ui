@@ -31,9 +31,7 @@ export function LangSwitcher({ className }: { className?: string }) {
   }, []);
 
   if (!mounted) {
-    return (
-      <div className="size-9 rounded-lg bg-muted/50 backdrop-blur-sm" />
-    );
+    return <div className="size-9 rounded-lg bg-muted/50 backdrop-blur-sm" />;
   }
 
   const defaultTriggerClassNames =
@@ -64,8 +62,8 @@ export function LangSwitcher({ className }: { className?: string }) {
             key={loc}
             onClick={() => router.replace(pathname, { locale: loc })}
             className={cn(
-              "focus:bg-foreground/10 cursor-pointer",
-              locale === loc && "bg-primary text-primary-foreground font-medium"
+              "focus:bg-muted focus:text-foreground cursor-pointer",
+              locale === loc && "bg-accent/90 text-accent-foreground focus:bg-accent focus:text-accent-foreground",
             )}
           >
             {localeLabels[loc] ?? loc}

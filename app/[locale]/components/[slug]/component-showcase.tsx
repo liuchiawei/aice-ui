@@ -42,9 +42,9 @@ export function ComponentShowcase({ slug }: ComponentShowcaseProps) {
   );
 
   return (
-    <div className="space-y-8 p-4 md:p-6">
+    <div className="space-y-8 p-4 md:p-6 md:pt-3">
       {/* Title & Description */}
-      <section className="space-y-2">
+      <section className="space-y-3">
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
@@ -66,7 +66,7 @@ export function ComponentShowcase({ slug }: ComponentShowcaseProps) {
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-black">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-black font-noto">
           {t(item.labelKey)}
         </h1>
         <p className="text-sm text-muted-foreground">
