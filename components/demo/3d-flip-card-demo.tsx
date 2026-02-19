@@ -1,6 +1,6 @@
 "use client";
 
-import { FlipCard, useFlipCard } from "@/components/ui-elements/3d-flip-card";
+import { FlipCard, useFlipCard } from "@/components/card/3d-flip-card";
 import { RotateCw } from "lucide-react";
 
 function FlipCardDemoContent() {

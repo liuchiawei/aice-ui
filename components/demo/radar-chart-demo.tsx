@@ -1,4 +1,4 @@
-import RadarChart from "@/components/ui-elements/radar-chart";
+import RadarChart from "@/components/card/radar-chart";
 
 function RadarChartDemo() {
   return <RadarChart />;

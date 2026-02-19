@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { MotionWheel } from "@/components/ui-elements/motion-wheel";
+import { MotionWheel } from "@/components/carousel/motion-wheel";
 import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
 
 interface Scene {
