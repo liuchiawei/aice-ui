@@ -1,9 +1,10 @@
 {
   "Sidebar": {
     "UI": "UI",
-    "Carousel": "Carousel",
-    "Card": "Card",
     "Text": "Text",
+    "Button": "Button",
+    "Card": "Card",
+    "Carousel": "Carousel",
     "Background": "Background",
     "Media": "Media"
   },

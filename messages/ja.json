@@ -1,9 +1,10 @@
 {
   "Sidebar": {
     "UI": "UI",
-    "Carousel": "カルーセル",
-    "Card": "カード",
     "Text": "テキスト",
+    "Button": "ボタン",
+    "Card": "カード",
+    "Carousel": "カルーセル",
     "Background": "背景",
     "Media": "メディア"
   },

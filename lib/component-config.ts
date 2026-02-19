@@ -124,6 +124,18 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
     ],
   },
   {
+    label: "Button",
+    items: [
+      {
+        slug: "theme-switch",
+        labelKey: "theme-switch.label",
+        descriptionKey: "theme-switch.description",
+        demo: ThemeSwitchDemo,
+        sourceCode: themeSwitchSource,
+      }
+    ]
+  },
+  {
     label: "Card",
     items: [
       {
