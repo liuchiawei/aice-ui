@@ -1,13 +1,13 @@
-import { ThemeSwitcher } from "@/components/ui-elements/theme-switcher";
+import { ThemeSwitch } from "@/components/button/theme-switch";
 
 export function ThemeSwitchDemo() {
   return (
     <div className="flex justify-center items-center h-48 w-full">
-      <ThemeSwitcher />
+      <ThemeSwitch />
     </div>
   );
 }
 
-export const themeSwitchSource = `import { ThemeSwitcher } from "@/components/ui-elements/theme-switcher";
+export const themeSwitchSource = `import { ThemeSwitch } from "@/components/button/theme-switch";
 
-<ThemeSwitcher />`;
+<ThemeSwitch />`;

@@ -37,7 +37,7 @@ export function LangSwitcher({ className }: { className?: string }) {
   }
 
   const defaultTriggerClassNames =
-    "relative size-9 rounded-lg bg-card/20 backdrop-blur-xs border border-border/50 shadow-sm overflow-hidden group cursor-pointer flex items-center justify-center";
+    "relative size-8 rounded-lg bg-card/20 backdrop-blur-xs border border-border/50 shadow-sm overflow-hidden group cursor-pointer flex items-center justify-center";
 
   return (
     <DropdownMenu>
@@ -51,14 +51,14 @@ export function LangSwitcher({ className }: { className?: string }) {
           transition={{ duration: 0.2 }}
         >
           <Languages
-            className="size-[18px] text-foreground"
+            className="size-4 text-foreground"
             strokeWidth={2}
             aria-hidden
           />
           <div className="absolute inset-0 rounded-lg ring-1 ring-foreground/0 group-hover:ring-foreground/10 transition-all duration-300" />
         </motion.button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="min-w-[8rem]">
+      <DropdownMenuContent className="min-w-[8rem] space-y-1">
         {routing.locales.map((loc) => (
           <DropdownMenuItem
             key={loc}

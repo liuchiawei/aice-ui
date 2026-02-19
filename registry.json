@@ -84,7 +84,7 @@
       "dependencies": ["next-themes", "motion"],
       "files": [
         {
-          "path": "components/ui-elements/theme-switcher.tsx",
+          "path": "components/button/theme-switch.tsx",
           "type": "registry:ui"
         }
       ]
@@ -113,6 +113,83 @@
           "path": "components/ui-elements/radar-chart.tsx",
           "type": "registry:ui"
         }
+      ]
+    },
+    {
+      "name": "three-flip-card",
+      "type": "registry:ui",
+      "title": "3D Flip Card",
+      "description": "A compound flip card with 3D tilt on hover and click-to-flip front/back. | 3D傾き効果とクリックで裏表が入れ替わる、マウス追従の3D傾き効果付きフリップカードコンポーネント。",
+      "dependencies": ["react-card-flip"],
+      "registryDependencies": ["three-card"],
+      "files": [
+        {
+          "path": "components/ui-elements/3d-flip-card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "motion-wheel",
+      "type": "registry:ui",
+      "title": "Motion Wheel",
+      "description": "A compound carousel wheel with rotation animation, navigation, and optional center info. | 回転アニメーション、ナビゲーション、オプションの中央情報を備えた複合カルーセルホイールコンポーネント。",
+      "dependencies": ["motion", "lucide-react"],
+      "registryDependencies": ["card", "button", "use-mobile"],
+      "files": [
+        {
+          "path": "components/ui-elements/motion-wheel.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "animated-counter",
+      "type": "registry:ui",
+      "title": "Animated Counter",
+      "description": "An animated counter component with customizable starting number, target number, speed, and trigger. | カスタマイズ可能な開始数、目標数、速度、トリガーを備えたアニメーションカウンターコンポーネント。",
+      "dependencies": ["motion"],
+      "files": [
+        {
+          "path": "components/text/animated-counter.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "decrypted-text",
+      "type": "registry:ui",
+      "title": "Decrypted Text",
+      "description": "A text component with decoding animation—random katakana glyphs gradually resolve to reveal the target text. | 片仮名グリフが徐々に目標テキストへ解碼するアニメーション付きテキストコンポーネント。遅延設定・動きの軽減対応。",
+      "dependencies": ["motion"],
+      "files": [
+        {
+          "path": "components/text/decrypted-text.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "three-card",
+      "type": "registry:ui",
+      "title": "3D Card",
+      "description": "A 3D card component with customizable data and optional title and description. | カスタマイズ可能なデータとオプションのタイトルと説明を備えた3Dカードコンポーネント。",
+      "files": [
+        {
+          "path": "components/card/3d-card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "copy-button",
+      "type": "registry:ui",
+      "title": "Copy Button",
+      "description": "A button that copies text to the clipboard. Shows a check icon after copying. Use it next to code blocks, quotes, or any text you want users to copy in one click. | テキストをクリップボードにコピーするボタン。コピー後にチェックアイコンを表示。コードブロックや引用文など、ワンクリックでコピーしたいテキストの横に配置できます。",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["button", "tooltip"],
+      "files": [
+        { "path": "components/button/copy-button.tsx", "type": "registry:ui" }
       ]
     }
   ]

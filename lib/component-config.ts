@@ -21,6 +21,10 @@ import {
   glyphKatanaSource,
 } from "@/components/demo/glyph-katana-demo";
 import {
+  CopyButtonDemo,
+  copyButtonSource,
+} from "@/components/demo/copy-button-demo";
+import {
   ThemeSwitchDemo,
   themeSwitchSource,
 } from "@/components/demo/theme-switch-demo";
@@ -32,6 +36,26 @@ import {
   RadarChartDemo,
   radarChartSource,
 } from "@/components/demo/radar-chart-demo";
+import {
+  ThreeDCardDemo,
+  threeCardDemoSource,
+} from "@/components/demo/3d-card-demo";
+import {
+  FlipCardDemo,
+  flipCardDemoSource,
+} from "@/components/demo/3d-flip-card-demo";
+import {
+  MotionWheelDemo,
+  motionWheelDemoSource,
+} from "@/components/demo/motion-wheel-demo";
+import {
+  AnimatedCounterDemo,
+  animatedCounterSource,
+} from "@/components/demo/animated-counter-demo";
+import {
+  DecryptedTextDemo,
+  decryptedTextSource,
+} from "@/components/demo/decrypted-text-demo";
 /** Translation keys under the "Components" namespace (e.g. "glass-surface.label"). Resolve with useTranslations("Components") then t(key). */
 export interface ComponentItem {
   slug: string;
@@ -60,36 +84,7 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         descriptionKey: "code-block.description",
         demo: CodeBlockDemo,
         sourceCode: codeBlockSource,
-      },
-      {
-        slug: "radar-chart",
-        labelKey: "radar-chart.label",
-        descriptionKey: "radar-chart.description",
-        demo: RadarChartDemo,
-        sourceCode: radarChartSource,
-      },
-      {
-        slug: "theme-switch",
-        labelKey: "theme-switch.label",
-        descriptionKey: "theme-switch.description",
-        demo: ThemeSwitchDemo,
-        sourceCode: themeSwitchSource,
-      },
-    ],
-  },
-  {
-    label: "Blocks",
-    items: [
-      {
-        slug: "motion-wheel",
-        labelKey: "motion-wheel.label",
-        descriptionKey: "motion-wheel.description",
-      },
-      {
-        slug: "3d-flip-card",
-        labelKey: "3d-flip-card.label",
-        descriptionKey: "3d-flip-card.description",
-      },
+      }
     ],
   },
   {
@@ -108,6 +103,77 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         descriptionKey: "slide-up-letters.description",
         demo: SlideUpLettersDemo,
         sourceCode: slideUpLettersSource,
+      },
+      {
+        slug: "animated-counter",
+        labelKey: "animated-counter.label",
+        descriptionKey: "animated-counter.description",
+        demo: AnimatedCounterDemo,
+        sourceCode: animatedCounterSource,
+      },
+      {
+        slug: "decrypted-text",
+        labelKey: "decrypted-text.label",
+        descriptionKey: "decrypted-text.description",
+        demo: DecryptedTextDemo,
+        sourceCode: decryptedTextSource,
+      },
+    ],
+  },
+  {
+    label: "Button",
+    items: [
+      {
+        slug: "copy-button",
+        labelKey: "copy-button.label",
+        descriptionKey: "copy-button.description",
+        demo: CopyButtonDemo,
+        sourceCode: copyButtonSource,
+      },
+      {
+        slug: "theme-switch",
+        labelKey: "theme-switch.label",
+        descriptionKey: "theme-switch.description",
+        demo: ThemeSwitchDemo,
+        sourceCode: themeSwitchSource,
+      },
+    ],
+  },
+  {
+    label: "Card",
+    items: [
+      {
+        slug: "3d-card",
+        labelKey: "3d-card.label",
+        descriptionKey: "3d-card.description",
+        demo: ThreeDCardDemo,
+        sourceCode: threeCardDemoSource,
+      },
+      {
+        slug: "3d-flip-card",
+        labelKey: "3d-flip-card.label",
+        descriptionKey: "3d-flip-card.description",
+        demo: FlipCardDemo,
+        sourceCode: flipCardDemoSource,
+      },
+      {
+        slug: "radar-chart",
+        labelKey: "radar-chart.label",
+        descriptionKey: "radar-chart.description",
+        demo: RadarChartDemo,
+        sourceCode: radarChartSource,
+      },
+    ],
+  },
+  {
+    label: "Carousel",
+    items: [
+      {
+        slug: "motion-wheel",
+        labelKey: "motion-wheel.label",
+        descriptionKey: "motion-wheel.description",
+        demo: MotionWheelDemo,
+        sourceCode: motionWheelDemoSource,
       },
     ],
   },

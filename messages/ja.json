@@ -1,8 +1,10 @@
 {
   "Sidebar": {
     "UI": "UI",
-    "Blocks": "ブロック",
     "Text": "テキスト",
+    "Button": "ボタン",
+    "Card": "カード",
+    "Carousel": "カルーセル",
     "Background": "背景",
     "Media": "メディア"
   },
@@ -17,7 +19,9 @@
       "components": "コンポーネント一覧"
     },
     "description": "多様な用途に活用できる汎用的なUIコンポーネントです。",
+    "demo-code": "デモコード",
     "install": "お好きなパッケージマネージャーでコンポーネントをインストールしてください。",
+    "usage": "お好きなパッケージマネージャーでコンポーネントをインストールしてください。",
     "related": "関連コンポーネント"
   },
   "Components": {
@@ -33,6 +37,10 @@
       "label": "ラダーチャート",
       "description": "カスタマイズ可能なデータとオプションのタイトルと説明を備えたラダーチャートコンポーネント。"
     },
+    "copy-button": {
+      "label": "コピーボタン",
+      "description": "テキストをクリップボードにコピーするボタン。コピー後にチェックアイコンを表示。コードブロックや引用文など、ワンクリックでコピーしたいテキストの横に配置できます。"
+    },
     "theme-switch": {
       "label": "テーマ切り替え",
       "description": "ダークモードとライトモードを切り替えるコンポーネント。"
@@ -47,23 +55,57 @@
     },
     "webcam": {
       "label": "ウェブカメラ",
-      "description": "ブラウザのウェブカメラストリーミング用コンポーネント。エラー処理・ref転送対応。"
+      "description": "ブラウザのウェブカメラストリーミング用コンポーネント。"
     },
     "motion-wheel": {
-      "label": "モーションホイール",
-      "description": "モーションホイールコンポーネント。マウス追従も可。"
+      "label": "回転カルーセル",
+      "description": "回転アニメーションと前後ナビゲーション・ドットインジケーター・中央情報パネルを備えた複合カルーセルホイールコンポーネント。"
+    },
+    "3d-card": {
+      "label": "3Dカード",
+      "description": "ホバー時にマウスに追従して3D傾くカード。子要素を奥行きで配置し、パララックス表現が可能。"
     },
     "3d-flip-card": {
       "label": "3Dフリップカード",
-      "description": "3Dフリップカードコンポーネント。マウス追従も可。"
+      "description": "クリックで裏表が入れ替わる、マウス追従の3D傾き効果付きフリップカードコンポーネント。"
     },
     "glyph-katakana": {
       "label": "グリフ片仮名",
-      "description": "グリフ片仮名コンポーネント。マウス追従も可。"
+      "description": "ランダムな片仮名が徐々に目標テキストへ解碼するアニメーション付きテキストコンポーネント。遅延設定・動きの軽減対応。"
     },
     "slide-up-letters": {
       "label": "スライドアップレター",
-      "description": "スライドアップレターコンポーネント。マウス追従も可。"
+      "description": "スライドアップレターコンポーネント。"
+    },
+    "animated-counter": {
+      "label": "アニメーションカウンター",
+      "description": "ビューポートに入った時、開始値から目標値へアニメーションする数字カウンター。"
+    },
+    "decrypted-text": {
+      "label": "解碼テキスト",
+      "description": "ホバーまたは表示時にスクランブルが解読されるテキスト。順次・一括揭露、複数の揭露方向に対応。"
+    }
+  },
+  "ThreeDCardDemo": {
+    "title": "3Dチルトカード",
+    "hint": "ホバーで傾き効果を確認"
+  },
+  "DecryptedTextDemo": {
+    "labels": {
+      "hoverDefault": "ホバーで解碼（初期）",
+      "sequentialStart": "先頭から順に",
+      "sequentialEnd": "末尾から順に",
+      "sequentialCenter": "中央から外へ",
+      "scrambleOnly": "一括解碼",
+      "revealOnView": "表示時に解碼"
+    },
+    "text": {
+      "hover": "ホバーで解碼",
+      "sequentialStart": "一文字ずつ表示",
+      "sequentialEnd": "末尾から表示",
+      "sequentialCenter": "中央から外へ",
+      "scramble": "スクランブル後に表示",
+      "view": "スクロールで表示時に動畫"
     }
   }
 }

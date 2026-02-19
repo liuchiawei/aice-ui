@@ -3,7 +3,13 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { notFound } from "next/navigation";
-import { CodeBlock } from "@/components/ai-elements/code-block";
+import {
+  CodeBlock,
+  CodeBlockHeader,
+  CodeBlockActions,
+  CodeBlockCopyButton,
+  CodeBlockTitle,
+} from "@/components/ai-elements/code-block";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -86,13 +92,20 @@ export function ComponentShowcase({ slug }: ComponentShowcaseProps) {
             >
               <result.Demo />
             </TabsContent>
-            <TabsContent value="source" className="min-w-0 max-w-5xl">
+            <TabsContent value="source" className="min-w-0 w-full relative">
               <CodeBlock
                 code={result.sourceCode}
                 language={result.language}
                 showLineNumbers
-                className="w-full min-w-0 rounded-lg border border-border bg-shiki-light-bg dark:bg-shiki-dark-bg"
-              />
+                className="min-w-0 rounded-lg border border-border bg-shiki-light-bg dark:bg-shiki-dark-bg"
+              >
+                <CodeBlockHeader>
+                  <CodeBlockTitle>{tPage("demo-code")}</CodeBlockTitle>
+                  <CodeBlockActions>
+                    <CodeBlockCopyButton />
+                  </CodeBlockActions>
+                </CodeBlockHeader>
+              </CodeBlock>
             </TabsContent>
           </Tabs>
           <InstallationSection slug={slug} />

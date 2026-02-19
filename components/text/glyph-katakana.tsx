@@ -81,6 +81,12 @@ const glyphs = [
   "ポ",
 ];
 
+/** Module-level Tailwind classes for glyph/value states */
+const CHAR_CLASSES: Record<string, string> = {
+  glyph: "opacity-50 transition-all",
+  value: "transition-all",
+};
+
 enum CharType {
   Glyph = "glyph",
   Value = "value",
@@ -131,12 +137,8 @@ const GlyphKatakana: React.FC<GlyphKatakanaProps> = (
     const output = useRef<CharItem[]>(
       content.map(() => ({ type: CharType.Glyph, value: "" }))
     );
-
-    // 定義針對不同文字狀態的 Tailwind class
-    const tailwindClasses: Record<string, string> = {
-      glyph: "opacity-50 transition-all",
-      value: "transition-all",
-    };
+    const maxPositionRef = useRef(0);
+    const cancelledRef = useRef(false);
 
     // 直接操作 innerHTML 將各字元以 span 包裹
     const renderOutput = () => {
@@ -144,7 +146,7 @@ const GlyphKatakana: React.FC<GlyphKatakanaProps> = (
         const html = output.current
           .map(
             (item) =>
-              `<span class="${tailwindClasses[item.type]}">${item.value}</span>`
+              `<span class="${CHAR_CLASSES[item.type]}">${item.value}</span>`
           )
           .join("");
         containerRef.current.innerHTML = html;
@@ -152,17 +154,25 @@ const GlyphKatakana: React.FC<GlyphKatakanaProps> = (
     };
 
     useEffect(() => {
+      cancelledRef.current = false;
+      maxPositionRef.current = 0;
+
       const unsubscribe = decoderSpring.on("change", (value: number) => {
-        output.current = shuffle(content, output.current, Math.floor(value));
+        const rawPos = Math.floor(value);
+        const pos = Math.min(content.length, Math.max(0, rawPos));
+        maxPositionRef.current = Math.max(maxPositionRef.current, pos);
+        output.current = shuffle(content, output.current, maxPositionRef.current);
         renderOutput();
       });
 
       const startAnimation = async () => {
         await new Promise((resolve) => setTimeout(resolve, delay));
+        if (cancelledRef.current) return;
         decoderSpring.set(content.length);
       };
 
       if (start && !reduceMotion) {
+        decoderSpring.jump(0); // Reset for fresh animation (handles text change replay)
         startAnimation();
       } else {
         output.current = content.map((char) => ({
@@ -173,6 +183,7 @@ const GlyphKatakana: React.FC<GlyphKatakanaProps> = (
       }
 
       return () => {
+        cancelledRef.current = true;
         unsubscribe();
       };
       // eslint-disable-next-line react-hooks/exhaustive-deps

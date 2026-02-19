@@ -1,8 +1,10 @@
 {
   "Sidebar": {
     "UI": "UI",
-    "Blocks": "區塊",
     "Text": "文字",
+    "Button": "按鈕",
+    "Card": "卡片",
+    "Carousel": "跑馬燈",
     "Background": "背景",
     "Media": "媒體"
   },
@@ -16,7 +18,9 @@
       "home": "首頁",
       "components": "元件一覽"
     },
+    "demo-code": "範例代碼",
     "install": "請選擇您喜歡的包管理器安裝元件。",
+    "usage": "請選擇您喜歡的包管理器安裝元件。",
     "related": "相關元件"
   },
   "Components": {
@@ -31,6 +35,10 @@
     "radar-chart": {
       "label": "雷达图",
       "description": "カスタマイズ可能なデータとオプションのタイトルと説明を備えたラダーチャートコンポーネント。"
+    },
+    "copy-button": {
+      "label": "複製按鈕",
+      "description": "一鍵將文字複製到剪貼簿的按鈕，複製後會顯示勾選圖示。可放在程式碼區塊、引用文或任何希望使用者一鍵複製的內容旁。"
     },
     "theme-switch": {
       "label": "主题切换",
@@ -49,20 +57,54 @@
       "description": "ブラウザのウェブカメラストリーミング用コンポーネント。エラー処理・ref転送対応。"
     },
     "motion-wheel": {
-      "label": "运动轮",
-      "description": "モーションホイールコンポーネント。マウス追従も可。"
+      "label": "旋轉輪播",
+      "description": "具旋轉動畫、前後導航、圓點指示與可選中央資訊區的複合式輪播元件。"
+    },
+    "3d-card": {
+      "label": "3D卡片",
+      "description": "懸停時依滑鼠位置產生 3D 傾斜效果。子元件可設定不同景深，呈現視差效果。"
     },
     "3d-flip-card": {
-      "label": "3D翻转卡片",
-      "description": "3Dフリップカードコンポーネント。マウス追従も可。"
+      "label": "3D翻轉卡片",
+      "description": "點擊翻轉、滑鼠追蹤 3D 傾斜效果的複合式 flip card 元件。"
     },
     "glyph-katakana": {
-      "label": "片假名符号",
-      "description": "グリフ片仮名コンポーネント。マウス追従も可。"
+      "label": "片假名符號",
+      "description": "解碼動畫文字元件，隨機片假名會逐漸揭示目標文字。支援延遲與減少動畫偏好。"
     },
     "slide-up-letters": {
       "label": "向上滑动字母",
       "description": "スライドアップレターコンポーネント。マウス追従も可。"
+    },
+    "animated-counter": {
+      "label": "動畫計數器",
+      "description": "進入視窗時從起始值動畫到目標值的數字計數器。"
+    },
+    "decrypted-text": {
+      "label": "解密文字",
+      "description": "滑鼠懸停或進入視窗時解碼顯示的文字。支援逐一揭露、批次揭露與多種揭露方向。"
+    }
+  },
+  "ThreeDCardDemo": {
+    "title": "3D 傾斜卡片",
+    "hint": "懸停查看傾斜效果"
+  },
+  "DecryptedTextDemo": {
+    "labels": {
+      "hoverDefault": "懸停解碼（預設）",
+      "sequentialStart": "依序由頭至尾",
+      "sequentialEnd": "依序由尾至頭",
+      "sequentialCenter": "由中心向外",
+      "scrambleOnly": "批次解碼",
+      "revealOnView": "進入視窗時解碼"
+    },
+    "text": {
+      "hover": "懸停時解碼",
+      "sequentialStart": "逐字揭露",
+      "sequentialEnd": "由後往前揭露",
+      "sequentialCenter": "由中心向外",
+      "scramble": "亂碼後揭露",
+      "view": "滾動進入視窗時動畫"
     }
   }
 }
