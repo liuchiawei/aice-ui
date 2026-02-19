@@ -19,7 +19,7 @@ export function ComponentsPageClient() {
           id={sectionIdFromLabel(group.label)}
           title={t(group.label)}
         >
-          <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5">
             {group.items.map((item) => (
               <ComponentGridItem key={item.slug} item={item} />
             ))}
