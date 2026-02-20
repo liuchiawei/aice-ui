@@ -306,11 +306,46 @@ function TimelineLine(props: TimelineLineProps) {
 // ---------------------------------------------------------------------------
 // Timeline.Item — single entry: sticky date, dot/connector, content (Card or children).
 // ---------------------------------------------------------------------------
+const timelineItemVariants = {
+  default: {
+    root: "relative flex gap-4 md:gap-6",
+    date: "flex flex-col text-foreground",
+    dateYear: "text-4xl md:text-5xl font-bold leading-tight",
+    dateMonthDay:
+      "text-md md:text-lg font-thin tracking-widest leading-tight mt-1 text-muted-foreground",
+    dotColumn:
+      "relative flex flex-col items-center justify-center flex-shrink-0 w-4 self-stretch",
+    line: "absolute left-1/2 -translate-x-1/2 w-1 bg-secondary",
+    dot: "relative z-10 size-4 rounded-full bg-secondary border-2 border-background",
+    content: "flex-1 p-4 md:p-8",
+    card: "hover:shadow-md transition-shadow duration-200",
+  },
+} as const;
+
+export type TimelineItemVariant = keyof typeof timelineItemVariants;
+
+export interface TimelineItemClassNames {
+  root?: string;
+  date?: string;
+  dateYear?: string;
+  dateMonthDay?: string;
+  dotColumn?: string;
+  line?: string;
+  dot?: string;
+  content?: string;
+  card?: string;
+}
+
 interface TimelineItemProps {
   date: Date | string;
   title?: string;
   description?: string | React.ReactNode;
   children?: ReactNode;
+  /** Variant for default styles. Merged with classNames via cn(). */
+  variant?: TimelineItemVariant;
+  /** Override or extend styles per slot. Merged after variant. */
+  classNames?: TimelineItemClassNames;
+  /** @deprecated Use classNames.root. Kept for backward compatibility. */
   className?: string;
   /** Injected by Timeline.Root via cloneElement. */
   index?: number;
@@ -323,15 +358,19 @@ const TimelineItemComponent = memo(function TimelineItemComponent({
   title,
   description,
   children,
+  variant = "default",
+  classNames,
   className,
   isLast = true,
 }: TimelineItemProps) {
   const formattedDate = useMemo(() => formatDate(date), [date]);
+  const v = timelineItemVariants[variant];
+
   const content =
     children !== undefined ? (
       children
     ) : title !== undefined ? (
-      <Card className="hover:shadow-md transition-shadow duration-200">
+      <Card className={cn(v.card, classNames?.card)}>
         <CardHeader>
           <CardTitle className="text-lg md:text-xl">{title}</CardTitle>
         </CardHeader>
@@ -346,37 +385,39 @@ const TimelineItemComponent = memo(function TimelineItemComponent({
     ) : null;
 
   return (
+    // Left Side Date Section
     <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-      className={cn("relative flex gap-4 md:gap-6", className)}
+      className={cn(v.root, classNames?.root, className)}
     >
       <div className="flex-shrink-0 w-32 md:w-40">
-        <div className="sticky top-4 z-10 flex flex-col">
+        <div className="sticky top-4 md:top-8 z-10 flex flex-col">
           <time
-            className="flex flex-col text-foreground"
+            className={cn(v.date, classNames?.date)}
             dateTime={
               typeof date === "string" ? date : (date as Date).toISOString()
             }
           >
-            <span className="text-4xl md:text-5xl font-bold leading-tight">
+            {/* Year */}
+            <span className={cn(v.dateYear, classNames?.dateYear)}>
               {formattedDate.year}
             </span>
-            <span className="text-md md:text-lg font-thin tracking-widest leading-tight mt-1 text-muted-foreground">
+            {/* Month and Day */}
+            <span className={cn(v.dateMonthDay, classNames?.dateMonthDay)}>
               {formattedDate.monthDay}
             </span>
           </time>
         </div>
       </div>
 
-      <div className="relative flex flex-col items-center flex-shrink-0 w-4 border border-red-500">
-        {/* Timeline Dot */}
-        <div className="relative z-10 size-4 rounded-full bg-secondary border-2" />
-        {/* Timeline Line extending down to next item */}
+      <div className={cn(v.dotColumn, classNames?.dotColumn)}>
+        <div className={cn(v.line, "top-0 h-1/2", classNames?.line)} />
+        <div className={cn(v.dot, classNames?.dot)} />
         {!isLast && (
-          <div className="absolute top-4 left-1/2 -translate-x-1/2 w-1 bottom-0" />
+          <div className={cn(v.line, "top-1/2 bottom-0", classNames?.line)} />
         )}
       </div>
 
@@ -385,7 +426,7 @@ const TimelineItemComponent = memo(function TimelineItemComponent({
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.5, type: "spring" }}
-        className="flex-1 pb-8 md:pb-12"
+        className={cn(v.content, classNames?.content)}
       >
         {content}
       </motion.div>
