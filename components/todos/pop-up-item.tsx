@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 // TODO:
 // 元件化: make it a reusable component under vercel-composition-pattern.
 // 增加控制項: add Props to control the component's behavior. like when to start the animation (hover/whileInView/Click, etc.), duration, delay, animation type(spring/ease/linear/etc.), className, etc.
+// Category: 想一個合適的分類
 
 export default function PopUpItem({ emoji }: { emoji: string }) {
   return (

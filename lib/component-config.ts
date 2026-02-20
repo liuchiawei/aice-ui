@@ -191,6 +191,11 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         sourceCode: flipCardDemoSource,
         date: "2026-02-19",
       },
+    ],
+  },
+  {
+    label: "Chart",
+    items: [
       {
         slug: "radar-chart",
         labelKey: "radar-chart.label",
@@ -213,6 +218,14 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         date: "2026-02-19",
       },
     ],
+  },
+  {
+    label: "Layout",
+    items: [],
+  },
+  {
+    label: "Navigation",
+    items: [],
   },
   {
     label: "Background",

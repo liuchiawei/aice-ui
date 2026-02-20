@@ -4,7 +4,10 @@
     "Text": "テキスト",
     "Button": "ボタン",
     "Card": "カード",
+    "Chart": "チャート",
     "Carousel": "カルーセル",
+    "Layout": "レイアウト",
+    "Navigation": "ナビゲーション",
     "Background": "背景",
     "Media": "メディア"
   },

@@ -4,7 +4,10 @@
     "Text": "文字",
     "Button": "按鈕",
     "Card": "卡片",
+    "Chart": "圖表",
     "Carousel": "跑馬燈",
+    "Layout": "版面",
+    "Navigation": "導航",
     "Background": "背景",
     "Media": "媒體"
   },

@@ -148,7 +148,7 @@
       "registryDependencies": ["recharts", "card"],
       "files": [
         {
-          "path": "components/card/radar-chart.tsx",
+          "path": "components/chart/radar-chart.tsx",
           "type": "registry:ui"
         }
       ]

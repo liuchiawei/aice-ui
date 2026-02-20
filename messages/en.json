@@ -4,7 +4,10 @@
     "Text": "Text",
     "Button": "Button",
     "Card": "Card",
+    "Chart": "Chart",
     "Carousel": "Carousel",
+    "Layout": "Layout",
+    "Navigation": "Navigation",
     "Background": "Background",
     "Media": "Media"
   },
