@@ -46,7 +46,7 @@ export function DraggableGridDemo() {
                         alt={`Demo image ${index + 1}`}
                         width={SIZE}
                         height={SIZE}
-                        className="object-cover select-none touch-none"
+                        className="object-cover select-none touch-none pointer-events-none"
                       />
                     </div>
                   </TooltipTrigger>
