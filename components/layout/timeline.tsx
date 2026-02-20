@@ -1,5 +1,5 @@
 "use client";
-
+// TODO: 靜態timeline 與動態 timeline 分離
 import * as React from "react";
 import {
   createContext,
@@ -285,7 +285,8 @@ function TimelineLineInternal({
       className="absolute left-[9.5rem] md:left-[12rem] top-0 -translate-x-1/2 overflow-hidden w-[2px] pointer-events-none [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)]"
       aria-hidden
     >
-      <div className="absolute inset-0 w-full bg-muted" />
+      {/* Track: same hue as connector (primary) at low opacity so no double-line; fill grows on top */}
+      <div className="absolute inset-0 w-full bg-primary/20 rounded-full" />
       <motion.div
         style={
           {
@@ -314,10 +315,10 @@ const timelineItemVariants = {
     dateMonthDay:
       "text-md md:text-lg font-thin tracking-widest leading-tight mt-1 text-muted-foreground",
     dotColumn:
-      "relative flex flex-col items-center justify-center flex-shrink-0 w-4 self-stretch",
-    line: "absolute left-1/2 -translate-x-1/2 w-1 bg-secondary",
-    dot: "relative z-10 size-4 rounded-full bg-secondary border-2 border-background",
-    content: "flex-1 p-4 md:p-8",
+      "relative flex flex-col items-center flex-shrink-0 w-4 self-stretch",
+    line: "absolute left-1/2 -translate-x-1/2 w-1 bg-primary",
+    dot: "relative z-10 size-4 rounded-full bg-primary-foreground border-2 border-primary",
+    content: "flex-1 pb-4 md:pb-8",
     card: "hover:shadow-md transition-shadow duration-200",
   },
 } as const;
