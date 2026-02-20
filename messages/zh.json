@@ -49,6 +49,10 @@
       "label": "主题切换",
       "description": "ダークモードとライトモードを切り替えるコンポーネント。"
     },
+    "scroll-button": {
+      "label": "捲動按鈕",
+      "description": "可將視窗捲動至頂部、底部或上下一屏的按鈕，用於快速頁面導航。"
+    },
     "floating-circles": {
       "label": "浮动圆",
       "description": "色変更可能な動くグラデーション背景。マウス追従も可。"

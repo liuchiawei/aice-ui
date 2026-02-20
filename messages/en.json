@@ -49,6 +49,10 @@
       "label": "Theme Switch",
       "description": "A theme switch component with dark and light mode. It is built with React, Tailwind CSS, and Motion."
     },
+    "scroll-button": {
+      "label": "Scroll Button",
+      "description": "Buttons that scroll the window (top, bottom, up, down). Use for quick page navigation."
+    },
       "floating-circles": {
         "label": "Floating Circles",
         "description": "A floating circles component with customizable data and optional title and description."
