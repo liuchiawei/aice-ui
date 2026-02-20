@@ -38,7 +38,7 @@ export function DraggableGridDemo() {
               index={index}
             >
               <TooltipProvider>
-                <Tooltip delayDuration={600}>
+                <Tooltip delayDuration={400}>
                   <TooltipTrigger asChild>
                     <div className="w-full h-full flex justify-center items-center">
                       <Image
