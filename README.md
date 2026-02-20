@@ -36,6 +36,7 @@ Components are grouped by category (see `lib/component-config.ts`).
 | Component | Description |
 |-----------|-------------|
 | **Copy Button** | A button that copies text to the clipboard. Shows a check icon after copying. Use it next to code blocks, quotes, or any text you want users to copy in one click. |
+| **Scroll Button** | Buttons that scroll the window (top, bottom, up, down). Use for quick page navigation. |
 | **Theme Switch** | A theme switch component with dark and light mode. It is built with React, Tailwind CSS, and Motion. |
 
 ### Card
