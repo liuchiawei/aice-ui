@@ -15,6 +15,8 @@ const DEMO_RADAR_DATA = [
   { name: "Next.js", value: 85 },
 ];
 
-return <RadarChart data={DEMO_RADAR_DATA} />;`;
+function RadarChartDemo() {
+  return <RadarChart />;
+};`;
 
 export { RadarChartDemo, radarChartSource };
