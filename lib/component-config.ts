@@ -64,6 +64,10 @@ import {
   DecryptedTextDemo,
   decryptedTextSource,
 } from "@/components/demo/decrypted-text-demo";
+import {
+  DraggableGridDemo,
+  draggableGridSource,
+} from "@/components/demo/draggable-grid-demo";
 /** Translation keys under the "Components" namespace (e.g. "glass-surface.label"). Resolve with useTranslations("Components") then t(key). */
 export interface ComponentItem {
   slug: string;
@@ -221,7 +225,16 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
   },
   {
     label: "Layout",
-    items: [],
+    items: [
+      {
+        slug: "draggable-grid",
+        labelKey: "draggable-grid.label",
+        descriptionKey: "draggable-grid.description",
+        demo: DraggableGridDemo,
+        sourceCode: draggableGridSource,
+        date: "2026-02-20",
+      },
+    ],
   },
   {
     label: "Navigation",

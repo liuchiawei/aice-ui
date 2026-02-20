@@ -252,6 +252,20 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "draggable-grid",
+      "type": "registry:ui",
+      "title": "Draggable Grid",
+      "description": "A draggable 2D grid with parallax icon cells. Inspired by Apple WatchOS. | 視差付きアイコンセルのドラッグ可能な2Dグリッド。Apple WatchOS にインスパイア。",
+      "dependencies": ["motion"],
+      "registryDependencies": ["tooltip"],
+      "files": [
+        {
+          "path": "components/grid/draggable-grid.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }

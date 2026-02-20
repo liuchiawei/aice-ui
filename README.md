@@ -60,7 +60,9 @@ Components are grouped by category (see `lib/component-config.ts`).
 
 ### Layout
 
-*(Coming soon — Bento grid, Timeline, etc.)*
+| Component | Description |
+|-----------|-------------|
+| **Draggable Grid** | A draggable 2D grid with parallax icon cells. Inspired by Apple WatchOS. (2026-02-20) |
 
 ### Navigation
 

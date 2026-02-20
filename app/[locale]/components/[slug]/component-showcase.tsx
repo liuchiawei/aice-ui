@@ -88,7 +88,7 @@ export function ComponentShowcase({ slug }: ComponentShowcaseProps) {
             </TabsList>
             <TabsContent
               value="preview"
-              className="relative w-full h-full rounded-lg border border-border bg-muted p-6"
+              className="relative w-full h-full rounded-lg border border-border bg-muted p-6 overflow-hidden"
             >
               <result.Demo />
             </TabsContent>

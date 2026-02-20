@@ -95,6 +95,10 @@
     "decrypted-text": {
       "label": "解密文字",
       "description": "滑鼠懸停或進入視窗時解碼顯示的文字。支援逐一揭露、批次揭露與多種揭露方向。"
+    },
+    "draggable-grid": {
+      "label": "拖拽格",
+      "description": "可拖曳的 2D 網格，圖示格具視差效果。靈感來自 Apple WatchOS。"
     }
   },
   "ThreeDCardDemo": {

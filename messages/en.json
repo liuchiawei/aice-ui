@@ -95,6 +95,10 @@
       "decrypted-text": {
         "label": "Decrypted Text",
         "description": "Scrambled text that reveals on hover or when in view. Supports sequential or batch reveal, and multiple reveal directions."
+      },
+      "draggable-grid": {
+        "label": "Draggable Grid",
+        "description": "A draggable 2D grid with parallax icon cells. Inspired by Apple WatchOS."
       }
     },
   "ThreeDCardDemo": {

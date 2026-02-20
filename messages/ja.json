@@ -96,6 +96,10 @@
     "decrypted-text": {
       "label": "解碼テキスト",
       "description": "ホバーまたは表示時にスクランブルが解読されるテキスト。順次・一括揭露、複数の揭露方向に対応。"
+    },
+    "draggable-grid": {
+      "label": "ドラッググリッド",
+      "description": "視差付きアイコンセルのドラッグ可能な2Dグリッド。Apple WatchOS にインスパイア。"
     }
   },
   "ThreeDCardDemo": {
