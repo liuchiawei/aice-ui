@@ -25,6 +25,10 @@ import {
   copyButtonSource,
 } from "@/components/demo/copy-button-demo";
 import {
+  ScrollButtonDemo,
+  scrollButtonSource,
+} from "@/components/demo/scroll-button-demo";
+import {
   ThemeSwitchDemo,
   themeSwitchSource,
 } from "@/components/demo/theme-switch-demo";
