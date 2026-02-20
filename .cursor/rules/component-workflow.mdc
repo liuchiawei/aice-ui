@@ -1,0 +1,30 @@
+---
+description: Component refactor workflow for aice-ui shadcn collection
+alwaysApply: true
+---
+
+# Component Workflow
+
+When the user asks to **refactor a component**, follow this 7-step workflow in order. When they ask for **partial work only** (e.g. "add a demo component"), prioritize that part, then list remaining steps and ask if they want to continue.
+
+## Full Workflow (7 steps)
+
+1. **Refactor component** in `components/todos/` — move to proper location and adapt to project conventions
+2. **Review** using skill `@.cursor/skills/vercel-composition-patterns/SKILL.md`
+3. **Add demo** in `components/demo/` — follow format of `copy-button-demo.tsx`:
+   - Export `{Component}Demo` function component
+   - Export `{component}Source` string (simplified usage example)
+4. **Write descriptions** in `messages/en.json`, `ja.json`, `zh.json` under `Components` namespace with `{slug}.label` and `{slug}.description`
+5. **Update** `lib/component-config.ts` — add/update item with slug, labelKey, descriptionKey, demo, sourceCode, `date: "YYYY-MM-DD"` (today)
+6. **Update** `registry.json`:
+   - Add `dependencies` for npm packages used
+   - Add `registryDependencies` for other registry components used
+   - Set `files[].path` to final component path (not todos path)
+7. **Update** `README.md` — add component title, description, update date in the list
+
+## Partial Work Rule
+
+If the user requests only part of the workflow:
+1. Execute the requested step(s) first
+2. After completion, list the remaining steps (e.g. "還未完成：步驟 1、2、4、5、6、7")
+3. Ask: "是否要繼續進行後續 workflow？"

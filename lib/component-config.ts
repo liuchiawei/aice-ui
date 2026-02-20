@@ -158,6 +158,14 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         sourceCode: themeSwitchSource,
         date: "2026-02-19",
       },
+      {
+        slug: "scroll-button",
+        labelKey: "scroll-button.label",
+        descriptionKey: "scroll-button.description",
+        demo: ScrollButtonDemo,
+        sourceCode: scrollButtonSource,
+        date: "2026-02-20",
+      }
     ],
   },
   {
