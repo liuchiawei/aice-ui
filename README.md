@@ -45,6 +45,11 @@ Components are grouped by category (see `lib/component-config.ts`).
 |-----------|-------------|
 | **3D Card** | A card that tilts in 3D following your cursor on hover. Child elements can float at different depths for a parallax effect. |
 | **3D Flip Card** | A compound flip card with 3D tilt on hover and click-to-flip front/back. |
+
+### Chart
+
+| Component | Description |
+|-----------|-------------|
 | **Radar Chart** | A radar chart component with customizable data and optional title and description. |
 
 ### Carousel
@@ -52,6 +57,14 @@ Components are grouped by category (see `lib/component-config.ts`).
 | Component | Description |
 |-----------|-------------|
 | **Motion Wheel** | A compound carousel wheel with rotation animation, prev/next navigation, dot indicators, and optional center info panel. |
+
+### Layout
+
+*(Coming soon — Bento grid, Timeline, etc.)*
+
+### Navigation
+
+*(Coming soon — FAB nav, etc.)*
 
 ### Background
 
@@ -65,6 +78,8 @@ Components are grouped by category (see `lib/component-config.ts`).
 | Component | Description |
 |-----------|-------------|
 | **Webcam** | A webcam component with customizable data and optional title and description. |
+
+**Total: 17 components**
 
 ---
 
