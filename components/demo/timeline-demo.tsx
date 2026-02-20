@@ -29,17 +29,22 @@ const DEMO_ITEMS = [
 export function TimelineDemo() {
   return (
     <div className="min-h-[60vh]">
-      <Timeline items={DEMO_ITEMS} scrollAxis />
+      <Timeline.Root scrollAxis>
+        {DEMO_ITEMS.map((item) => (
+          <Timeline.Item
+            key={item.id}
+            date={item.date}
+            title={item.title}
+            description={item.description}
+          />
+        ))}
+      </Timeline.Root>
     </div>
   );
 }
 
 export const timelineSource = `import { Timeline } from "@/components/layout/timeline";
 
-// Legacy API (items array)
-<Timeline items={items} scrollAxis />
-
-// Compound API (full control)
 <Timeline.Root className="w-full" scrollAxis>
   <Timeline.Item date="2024-01-15" title="Kickoff" description="Project started." />
   <Timeline.Item date="2024-03-22" title="Release">
@@ -47,10 +52,8 @@ export const timelineSource = `import { Timeline } from "@/components/layout/tim
   </Timeline.Item>
 </Timeline.Root>
 
-// Provider when you need context without Root (e.g. custom layout + Timeline.Line)
+// Optional: Provider when you need context without Root
 <Timeline.Provider scrollAxis>
-  <YourCustomLayout>
-    <Timeline.Item date="2024-01-01" title="Event" />
-    <Timeline.Line />
-  </YourCustomLayout>
+  <Timeline.Item date="2024-01-01" title="Event" />
+  <Timeline.Line />
 </Timeline.Provider>`;

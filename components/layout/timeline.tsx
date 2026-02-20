@@ -441,35 +441,11 @@ function TimelineItem(props: TimelineItemProps) {
 }
 
 // ---------------------------------------------------------------------------
-// Backward-compatible Timeline (items + className + scrollAxis)
-// ---------------------------------------------------------------------------
-interface TimelineProps {
-  items: TimelineItemData[];
-  className?: string;
-  scrollAxis?: boolean | TimelineScrollAxisOptions;
-}
-
-function TimelineLegacy({ items, className, scrollAxis }: TimelineProps) {
-  return (
-    <Timeline.Root className={className} scrollAxis={scrollAxis}>
-      {items.map((item, index) => (
-        <Timeline.Item
-          key={item.id ?? index}
-          date={item.date}
-          title={item.title}
-          description={item.description}
-        />
-      ))}
-    </Timeline.Root>
-  );
-}
-
-// ---------------------------------------------------------------------------
 // Compound export
 // ---------------------------------------------------------------------------
-export const Timeline = Object.assign(TimelineLegacy, {
+export const Timeline = {
   Root: TimelineRoot,
   Provider: TimelineProvider,
   Item: TimelineItem,
   Line: TimelineLine,
-});
+};
