@@ -266,6 +266,20 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "timeline",
+      "type": "registry:ui",
+      "title": "Timeline",
+      "description": "Vertical timeline with sticky year and optional scroll-driven axis fill. | 左にスティッキーな年表示、オプションでスクロール連動の軸線。",
+      "dependencies": ["motion"],
+      "registryDependencies": ["card"],
+      "files": [
+        {
+          "path": "components/layout/timeline.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }

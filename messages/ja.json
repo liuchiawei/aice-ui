@@ -100,6 +100,10 @@
     "draggable-grid": {
       "label": "ドラッググリッド",
       "description": "視差付きアイコンセルのドラッグ可能な2Dグリッド。Apple WatchOS にインスパイア。"
+    },
+    "timeline": {
+      "label": "タイムライン",
+      "description": "左にスティッキーな年表示、右にカードコンテンツの縦型タイムライン。オプションでスクロール連動の軸線表示。"
     }
   },
   "ThreeDCardDemo": {

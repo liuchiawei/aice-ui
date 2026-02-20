@@ -99,6 +99,10 @@
       "draggable-grid": {
         "label": "Draggable Grid",
         "description": "A draggable 2D grid with parallax icon cells. Inspired by Apple WatchOS."
+      },
+      "timeline": {
+        "label": "Timeline",
+        "description": "Vertical timeline with sticky year on the left and card content on the right. Optional scroll-driven axis fill effect."
       }
     },
   "ThreeDCardDemo": {

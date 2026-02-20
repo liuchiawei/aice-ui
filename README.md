@@ -63,6 +63,7 @@ Components are grouped by category (see `lib/component-config.ts`).
 | Component | Description |
 |-----------|-------------|
 | **Draggable Grid** | A draggable 2D grid with parallax icon cells. Inspired by Apple WatchOS. (2026-02-20) |
+| **Timeline** | Vertical timeline with sticky year on the left and card content on the right. Optional scroll-driven axis fill effect. (2026-02-20) |
 
 ### Navigation
 
@@ -81,7 +82,7 @@ Components are grouped by category (see `lib/component-config.ts`).
 |-----------|-------------|
 | **Webcam** | A webcam component with customizable data and optional title and description. |
 
-**Total: 17 components**
+**Total: 18 components**
 
 ---
 

@@ -99,6 +99,10 @@
     "draggable-grid": {
       "label": "拖拽格",
       "description": "可拖曳的 2D 網格，圖示格具視差效果。靈感來自 Apple WatchOS。"
+    },
+    "timeline": {
+      "label": "時間軸",
+      "description": "左側固定年份、右側卡片內容的垂直時間軸。可選捲動驅動軸線填充效果。"
     }
   },
   "ThreeDCardDemo": {
