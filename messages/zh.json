@@ -51,7 +51,7 @@
     },
     "scroll-button": {
       "label": "捲動按鈕",
-      "description": "可將視窗捲動至頂部、底部或上下一屏的按鈕，用於快速頁面導航。"
+      "description": "可將視窗捲動至頂部、底部、左側或右側的按鈕，用於快速頁面導航。"
     },
     "floating-circles": {
       "label": "浮动圆",

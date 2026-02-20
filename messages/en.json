@@ -51,7 +51,7 @@
     },
     "scroll-button": {
       "label": "Scroll Button",
-      "description": "Buttons that scroll the window (top, bottom, up, down). Use for quick page navigation."
+      "description": "Buttons that scroll the window (top, bottom, up, down, left, right). Use for quick page navigation."
     },
       "floating-circles": {
         "label": "Floating Circles",

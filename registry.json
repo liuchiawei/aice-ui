@@ -231,6 +231,17 @@
       ]
     },
     {
+      "name": "scroll-button",
+      "type": "registry:ui",
+      "title": "Scroll Button",
+      "description": "Buttons that scroll the window . Use for quick page navigation. | ウィンドウを上下左右にスクロールするボタン。ページ内ナビゲーションに。",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["button", "tooltip"],
+      "files": [
+        { "path": "components/button/scroll-button.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
       "name": "timer",
       "type": "registry:ui",
       "title": "Timer",
