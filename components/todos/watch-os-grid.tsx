@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import { motion, MotionValue, useMotionValue, useTransform } from "motion/react"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import Image from "next/image"
-import Link from "next/link"
+import { Link } from "@/i18n/navigation"
 import { Loader } from "lucide-react"
 
 export default function WatchOsGrid() {

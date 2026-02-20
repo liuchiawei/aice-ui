@@ -76,10 +76,7 @@ export default function ShowcaseLayout({
                                   {t(item.labelKey)}
                                 </span>
                                 {isNew ? (
-                                  <Badge
-                                    variant="outline"
-                                    className="shrink-0"
-                                  >
+                                  <Badge variant="outline" className="shrink-0">
                                     {t("newLabel")}
                                   </Badge>
                                 ) : null}

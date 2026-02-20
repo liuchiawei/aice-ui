@@ -37,7 +37,6 @@ export const metadata: Metadata = {
 async function RootLayoutContent({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-  await getLocale(); // Resolve locale for next-intl request context
   return (
     <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
       {children}
@@ -45,13 +44,14 @@ async function RootLayoutContent({
   );
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <body
         className={`${roboto.variable} ${robotoMono.variable} ${notoSansJP.variable} ${notoSans.variable} antialiased`}
       >
