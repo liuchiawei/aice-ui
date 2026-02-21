@@ -14,7 +14,7 @@ const VARIANTS = [
   {
     spreadRangeAngle: 360,
     directionAngle: 0,
-    title: "360° Full circle",
+    title: "360°",
     description: "Items spread in full circle (no overlap)",
     itemCount: 4,
   },
@@ -60,20 +60,6 @@ const VARIANTS = [
     description: "90° fan toward the top",
     itemCount: 4,
   },
-  {
-    spreadRangeAngle: 360,
-    directionAngle: 90,
-    title: "360° 2 items",
-    description: "Two items, no overlap",
-    itemCount: 2,
-  },
-  {
-    spreadRangeAngle: 90,
-    directionAngle: 90,
-    title: "90° 1 item",
-    description: "Single item centered",
-    itemCount: 1,
-  },
 ] as const;
 
 function SpeedDialVariantCard({
@@ -85,14 +71,12 @@ function SpeedDialVariantCard({
 }: (typeof VARIANTS)[number]) {
   const items = ALL_ITEMS.slice(0, itemCount);
   return (
-    <div className="rounded-lg border border-border bg-card p-4 flex flex-col">
-      <h3 className="text-sm font-semibold">{title}</h3>
-      <p className="text-xs text-muted-foreground mt-1">{description}</p>
-      <div className="min-h-[200px] flex items-center justify-center mt-4">
+    <div className="py-8 md:py-12 rounded-lg flex flex-col justify-center items-center gap-2">
+      <div className="flex-1 flex items-center justify-center">
         <SpeedDial.Root
           spreadRangeAngle={spreadRangeAngle}
           directionAngle={directionAngle}
-          radius={90}
+          radius={70}
         >
           {items.map(({ icon: Icon, label }) => (
             <SpeedDial.Item
@@ -106,6 +90,7 @@ function SpeedDialVariantCard({
           <SpeedDial.Trigger aria-label="Open speed dial menu" />
         </SpeedDial.Root>
       </div>
+      <h3 className="text-sm text-center font-semibold">{title}</h3>
     </div>
   );
 }
