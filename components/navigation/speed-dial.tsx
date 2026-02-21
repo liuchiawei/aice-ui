@@ -59,7 +59,7 @@ function useSpeedDial(component: string) {
 // Trigger variants (cva)
 // ---------------------------------------------------------------------------
 const speedDialTriggerVariants = cva(
-  "inline-flex items-center justify-center rounded-full shadow-lg transition-transform outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 cursor-pointer z-10",
+  "relative inline-flex items-center justify-center rounded-full shadow-lg transition-transform outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 cursor-pointer z-10",
   {
     variants: {
       variant: {
@@ -169,7 +169,8 @@ function SpeedDialRoot({
   };
 
   const itemChildren: ReactNode[] = [];
-  const otherChildren: ReactNode[] = [];
+  let triggerChild: ReactNode = null;
+  const restChildren: ReactNode[] = [];
   let itemIndex = 0;
   Children.forEach(children, (child) => {
     if (isValidElement(child) && (child.type as unknown) === SpeedDialItem) {
@@ -178,8 +179,13 @@ function SpeedDialRoot({
           index: itemIndex++,
         }),
       );
+    } else if (
+      isValidElement(child) &&
+      (child.type as unknown) === SpeedDialTrigger
+    ) {
+      triggerChild = child;
     } else {
-      otherChildren.push(child);
+      restChildren.push(child);
     }
   });
 
@@ -191,6 +197,7 @@ function SpeedDialRoot({
         role="group"
         aria-label="Speed dial menu"
       >
+        {triggerChild}
         <AnimatePresence>
           {open && (
             <motion.div
@@ -209,7 +216,7 @@ function SpeedDialRoot({
             </motion.div>
           )}
         </AnimatePresence>
-        {otherChildren}
+        {restChildren}
       </div>
     </SpeedDialContext.Provider>
   );
