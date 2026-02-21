@@ -103,6 +103,10 @@
     "timeline": {
       "label": "時間軸",
       "description": "左側固定年份、右側卡片內容的垂直時間軸。可選捲動驅動軸線填充效果。"
+    },
+    "speed-dial": {
+      "label": "快速撥號",
+      "description": "點擊 FAB 後以放射狀展開的動作選單。複合元件：Root、Trigger、Item。可設定展開角度與方向。"
     }
   },
   "ThreeDCardDemo": {

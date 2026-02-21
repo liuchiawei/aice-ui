@@ -72,6 +72,10 @@ import {
   TimelineDemo,
   timelineSource,
 } from "@/components/demo/timeline-demo";
+import {
+  SpeedDialDemo,
+  speedDialSource,
+} from "@/components/demo/speed-dial-demo";
 /** Translation keys under the "Components" namespace (e.g. "glass-surface.label"). Resolve with useTranslations("Components") then t(key). */
 export interface ComponentItem {
   slug: string;
@@ -250,7 +254,16 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
   },
   {
     label: "Navigation",
-    items: [],
+    items: [
+      {
+        slug: "speed-dial",
+        labelKey: "speed-dial.label",
+        descriptionKey: "speed-dial.description",
+        demo: SpeedDialDemo,
+        sourceCode: speedDialSource,
+        date: "2026-02-21",
+      },
+    ],
   },
   {
     label: "Background",

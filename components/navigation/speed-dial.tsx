@@ -12,7 +12,13 @@ import {
   isValidElement,
   type ReactNode,
 } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import {
+  motion,
+  AnimatePresence,
+  useMotionValue,
+  useTransform,
+  animate,
+} from "motion/react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -53,7 +59,7 @@ function useSpeedDial(component: string) {
 // Trigger variants (cva)
 // ---------------------------------------------------------------------------
 const speedDialTriggerVariants = cva(
-  "inline-flex items-center justify-center rounded-full shadow-lg transition-transform outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+  "inline-flex items-center justify-center rounded-full shadow-lg transition-transform outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 cursor-pointer",
   {
     variants: {
       variant: {
@@ -74,7 +80,7 @@ const speedDialTriggerVariants = cva(
       variant: "default",
       size: "default",
     },
-  }
+  },
 );
 
 // ---------------------------------------------------------------------------
@@ -104,7 +110,7 @@ function SpeedDialRoot({
 
   const childArray = Children.toArray(children);
   const itemCount = childArray.filter(
-    (c) => isValidElement(c) && (c.type as unknown) === SpeedDialItem
+    (c) => isValidElement(c) && (c.type as unknown) === SpeedDialItem,
   ).length;
 
   const menuId = "speed-dial-menu";
@@ -123,11 +129,7 @@ function SpeedDialRoot({
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       const target = e.target as Node;
-      if (
-        rootRef.current &&
-        !rootRef.current.contains(target) &&
-        open
-      ) {
+      if (rootRef.current && !rootRef.current.contains(target) && open) {
         setOpen(false);
       }
     };
@@ -174,7 +176,7 @@ function SpeedDialRoot({
       itemChildren.push(
         cloneElement(child as React.ReactElement<{ index: number }>, {
           index: itemIndex++,
-        })
+        }),
       );
     } else {
       otherChildren.push(child);
@@ -193,9 +195,12 @@ function SpeedDialRoot({
           {open && (
             <motion.div
               id={menuId}
-              initial={{ opacity: 0 }}
+              initial={{ opacity: 1 }}
               animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
+              exit={{
+                opacity: 0,
+                transition: { type: "spring", ...SPRING_CONFIG },
+              }}
               transition={{ duration: 0.2 }}
               className="absolute bottom-0 right-0"
               role="menu"
@@ -214,7 +219,8 @@ function SpeedDialRoot({
 // Trigger
 // ---------------------------------------------------------------------------
 export interface SpeedDialTriggerProps
-  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "children">,
+  extends
+    Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "children">,
     VariantProps<typeof speedDialTriggerVariants> {
   children?: ReactNode;
 }
@@ -226,7 +232,8 @@ function SpeedDialTrigger({
   children,
   ...props
 }: SpeedDialTriggerProps) {
-  const { open, setOpen, menuId, triggerRef } = useSpeedDial("SpeedDial.Trigger");
+  const { open, setOpen, menuId, triggerRef } =
+    useSpeedDial("SpeedDial.Trigger");
 
   const handleMouseDown = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -297,20 +304,51 @@ export interface SpeedDialItemProps {
   onClick?: () => void;
 }
 
+const SPRING_CONFIG = { stiffness: 350, damping: 24 };
+const SPRING_SHOOTOUT = { stiffness: 280, damping: 24 };
+
 function SpeedDialItemComponent({
   children,
   className,
   index = 0,
   onClick,
 }: SpeedDialItemProps) {
-  const {
-    open,
-    setOpen,
-    radius,
-    spreadRangeAngle,
-    directionAngle,
-    itemCount,
-  } = useSpeedDial("SpeedDial.Item");
+  const { open, setOpen, radius, spreadRangeAngle, directionAngle, itemCount } =
+    useSpeedDial("SpeedDial.Item");
+
+  const angle =
+    itemCount <= 1
+      ? directionAngle
+      : directionAngle -
+        spreadRangeAngle / 2 +
+        (index / Math.max(1, itemCount - 1)) * spreadRangeAngle;
+
+  const radiusVal = useMotionValue(0);
+  const xTransform = useTransform(radiusVal, (r) =>
+    angleToPosition(angle, r).x,
+  );
+  const yTransform = useTransform(radiusVal, (r) =>
+    angleToPosition(angle, r).y,
+  );
+
+  useEffect(() => {
+    if (itemCount <= 0) return;
+    if (open) {
+      radiusVal.set(0);
+      const controls = animate(radiusVal, radius, {
+        ...SPRING_SHOOTOUT,
+        type: "spring",
+        delay: index * 0.03,
+      });
+      return () => controls.stop();
+    }
+    // Close: animate radius back to 0 (shoot back to center)
+    const controls = animate(radiusVal, 0, {
+      ...SPRING_CONFIG,
+      type: "spring",
+    });
+    return () => controls.stop();
+  }, [open, radius, index, itemCount, radiusVal]);
 
   const close = useCallback(() => {
     setOpen(false);
@@ -321,39 +359,26 @@ function SpeedDialItemComponent({
       onClick?.();
       close();
     },
-    [onClick, close]
+    [onClick, close],
   );
-
-  const angle =
-    itemCount <= 1
-      ? directionAngle
-      : directionAngle -
-        spreadRangeAngle / 2 +
-        (index / Math.max(1, itemCount - 1)) * spreadRangeAngle;
-  const position = angleToPosition(angle, radius);
-
-  if (!open) return null;
 
   return (
     <motion.div
       role="menuitem"
-      initial={{ opacity: 0, scale: 0, x: 0, y: 0 }}
+      initial={{ opacity: 0, scale: 0 }}
       animate={{
-        opacity: 1,
-        scale: 1,
-        x: position.x,
-        y: position.y,
+        opacity: open ? 1 : 0,
+        scale: open ? 1 : 0,
       }}
-      exit={{ opacity: 0, scale: 0, x: 0, y: 0 }}
       transition={{
-        delay: index * 0.05,
+        delay: open ? index * 0.03 : 0,
         type: "spring",
-        stiffness: 300,
-        damping: 25,
+        ...(open ? SPRING_SHOOTOUT : SPRING_CONFIG),
       }}
+      style={{ x: xTransform, y: yTransform }}
       className={cn(
-        "absolute bottom-0 right-0 flex items-center justify-center rounded-full size-12 shadow-lg transition-transform will-change-transform hover:scale-110 hover:shadow-xl cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
-        className
+        "absolute bottom-0 right-0 flex items-center justify-center rounded-full size-12 shadow-lg transition-transform will-change-transform hover:scale-105 hover:shadow-xl cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+        className,
       )}
       onClick={handleClick}
       onKeyDown={(e) => {

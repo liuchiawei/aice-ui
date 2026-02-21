@@ -104,6 +104,10 @@
     "timeline": {
       "label": "タイムライン",
       "description": "左にスティッキーな年表示、右にカードコンテンツの縦型タイムライン。オプションでスクロール連動の軸線表示。"
+    },
+    "speed-dial": {
+      "label": "スピードダイヤル",
+      "description": "FAB を押すと放射状にアクションボタンが広がるメニュー。Root / Trigger / Item の複合コンポーネント。展開角度・方向を指定可能。"
     }
   },
   "ThreeDCardDemo": {

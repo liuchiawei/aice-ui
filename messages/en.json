@@ -103,6 +103,10 @@
       "timeline": {
         "label": "Timeline",
         "description": "Vertical timeline with sticky year on the left and card content on the right. Optional scroll-driven axis fill effect."
+      },
+      "speed-dial": {
+        "label": "Speed Dial",
+        "description": "FAB that expands into a radial menu of actions. Compound component: Root, Trigger, Item. Supports spread angle and direction."
       }
     },
   "ThreeDCardDemo": {
