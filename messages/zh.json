@@ -134,5 +134,10 @@
       "scramble": "亂碼後揭露",
       "view": "滾動進入視窗時動畫"
     }
+  },
+  "PopUpItemDemo": {
+    "hover": "懸停彈出",
+    "scroll": "滾動彈出",
+    "click": "點擊彈出"
   }
 }
