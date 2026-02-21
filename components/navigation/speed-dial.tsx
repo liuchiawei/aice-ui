@@ -12,13 +12,7 @@ import {
   isValidElement,
   type ReactNode,
 } from "react";
-import {
-  motion,
-  AnimatePresence,
-  useMotionValue,
-  useTransform,
-  animate,
-} from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -31,7 +25,6 @@ function angleToPosition(angleDeg: number, radius: number) {
   return { x, y };
 }
 
-const SPRING_CONFIG = { stiffness: 350, damping: 24 };
 const SPRING_SHOOTOUT = { stiffness: 800, damping: 24 };
 
 // ---------------------------------------------------------------------------
@@ -66,8 +59,7 @@ const speedDialTriggerVariants = cva(
   {
     variants: {
       variant: {
-        default:
-          "bg-primary text-primary-foreground hover:bg-primary/90",
+        default: "bg-primary text-primary-foreground hover:bg-primary/90",
         outline:
           "border-2 border-input bg-background hover:bg-accent hover:text-accent-foreground",
         secondary:
@@ -104,7 +96,7 @@ function SpeedDialRoot({
   children,
   spreadRangeAngle = 90,
   directionAngle = 90,
-  radius = 140,
+  radius = 120,
   className,
 }: SpeedDialRootProps) {
   const [open, setOpen] = useState(false);
@@ -209,7 +201,7 @@ function SpeedDialRoot({
               animate={{ opacity: 1 }}
               exit={{
                 opacity: 0,
-                transition: { type: "spring", ...SPRING_CONFIG },
+                transition: { type: "spring", ...SPRING_SHOOTOUT },
               }}
               transition={{ duration: 0.2 }}
               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
@@ -333,31 +325,12 @@ function SpeedDialItemComponent({
         spreadRangeAngle / 2 +
         (index / Math.max(1, itemCount - 1)) * spreadRangeAngle;
 
-  const radiusVal = useMotionValue(0);
-  const xTransform = useTransform(
-    radiusVal,
-    (r) => angleToPosition(angle, r).x + ITEM_HALF,
-  );
-  const yTransform = useTransform(
-    radiusVal,
-    (r) => angleToPosition(angle, r).y + ITEM_HALF,
-  );
-
-  useEffect(() => {
-    if (itemCount <= 0) return;
-    if (open) {
-      radiusVal.set(0);
-      const controls = animate(radiusVal, radius, {
-        ...SPRING_SHOOTOUT,
-        type: "spring",
-        delay: index * 0.03,
-      });
-      return () => controls.stop();
-    }
-    // Close: animate radius back to 0 (shoot back to center)
-    const controls = animate(radiusVal, 0);
-    return () => controls.stop();
-  }, [open, radius, index, itemCount, radiusVal]);
+  const centerPos = angleToPosition(angle, 0);
+  const targetPos = angleToPosition(angle, radius);
+  const centerX = centerPos.x + ITEM_HALF;
+  const centerY = centerPos.y + ITEM_HALF;
+  const targetX = targetPos.x + ITEM_HALF;
+  const targetY = targetPos.y + ITEM_HALF;
 
   const close = useCallback(() => {
     setOpen(false);
@@ -374,17 +347,20 @@ function SpeedDialItemComponent({
   return (
     <motion.div
       role="menuitem"
-      initial={{ opacity: 0, scale: 0 }}
+      initial={{ opacity: 0, scale: 0, x: centerX, y: centerY }}
       animate={{
         opacity: open ? 1 : 0,
         scale: open ? 1 : 0,
+        x: open ? targetX : centerX,
+        y: open ? targetY : centerY,
       }}
       transition={{
         delay: open ? index * 0.03 : 0,
-        type: "spring",
-        ...(open ? SPRING_SHOOTOUT : SPRING_CONFIG),
+        ...(open
+          ? { type: "tween" as const, duration: 0.2, ease: "easeOut" as const }
+          : { type: "spring" as const, ...SPRING_SHOOTOUT }
+        ),
       }}
-      style={{ x: xTransform, y: yTransform }}
       className={cn(
         "absolute bottom-0 right-0 flex items-center justify-center rounded-full size-12 shadow-lg transition-transform will-change-transform hover:scale-105 hover:shadow-xl cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
         className,
