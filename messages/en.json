@@ -134,5 +134,10 @@
       "scramble": "Scramble then reveal",
       "view": "Animate on scroll into view"
     }
+  },
+  "PopUpItemDemo": {
+    "hover": "Hover to pop up",
+    "scroll": "Scroll to pop up",
+    "click": "Click to pop up"
   }
 }
