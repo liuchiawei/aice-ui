@@ -64,11 +64,11 @@ const speedDialTriggerVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-primary text-primary-foreground hover:bg-primary/90 size-16 md:size-20",
+          "bg-primary text-primary-foreground hover:bg-primary/90 size-16",
         outline:
-          "border-2 border-input bg-background hover:bg-accent hover:text-accent-foreground size-16 md:size-20",
+          "border-2 border-input bg-background hover:bg-accent hover:text-accent-foreground size-16",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80 size-16 md:size-20",
+          "bg-secondary text-secondary-foreground hover:bg-secondary/80 size-16",
       },
       size: {
         default: "size-16 md:size-20",
@@ -187,7 +187,7 @@ function SpeedDialRoot({
     <SpeedDialContext.Provider value={value}>
       <div
         ref={rootRef}
-        className={cn(className)}
+        className={cn("relative", className)}
         role="group"
         aria-label="Speed dial menu"
       >
@@ -202,7 +202,7 @@ function SpeedDialRoot({
                 transition: { type: "spring", ...SPRING_CONFIG },
               }}
               transition={{ duration: 0.2 }}
-              className="absolute bottom-0 right-0"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
               role="menu"
             >
               {itemChildren}
@@ -307,6 +307,9 @@ export interface SpeedDialItemProps {
 const SPRING_CONFIG = { stiffness: 350, damping: 24 };
 const SPRING_SHOOTOUT = { stiffness: 280, damping: 24 };
 
+/** size-12 = 48px; items 錨點為 bottom-right，需 offset 使中心落在 radial 位置上 */
+const ITEM_HALF = 24;
+
 function SpeedDialItemComponent({
   children,
   className,
@@ -324,11 +327,13 @@ function SpeedDialItemComponent({
         (index / Math.max(1, itemCount - 1)) * spreadRangeAngle;
 
   const radiusVal = useMotionValue(0);
-  const xTransform = useTransform(radiusVal, (r) =>
-    angleToPosition(angle, r).x,
+  const xTransform = useTransform(
+    radiusVal,
+    (r) => angleToPosition(angle, r).x + ITEM_HALF,
   );
-  const yTransform = useTransform(radiusVal, (r) =>
-    angleToPosition(angle, r).y,
+  const yTransform = useTransform(
+    radiusVal,
+    (r) => angleToPosition(angle, r).y + ITEM_HALF,
   );
 
   useEffect(() => {
