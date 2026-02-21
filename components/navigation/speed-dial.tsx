@@ -354,12 +354,13 @@ function SpeedDialItemComponent({
   const effectiveSize = size ?? defaultItemSize ?? "default";
   const itemHalf = ITEM_SIZE_MAP[effectiveSize] / 2;
 
+  // 使用 (index + 0.5) / itemCount 讓 n 個 item 均勻分佈、居中，並避免 360° 時首尾重疊
   const angle =
     itemCount <= 1
       ? directionAngle
       : directionAngle -
         spreadRangeAngle / 2 +
-        (index / Math.max(1, itemCount - 1)) * spreadRangeAngle;
+        ((index + 0.5) / itemCount) * spreadRangeAngle;
 
   const centerPos = angleToPosition(angle, 0);
   const targetPos = angleToPosition(angle, radius);
