@@ -90,7 +90,7 @@ function SpeedDialVariantCard({
           <SpeedDial.Trigger aria-label="Open speed dial menu" />
         </SpeedDial.Root>
       </div>
-      <h3 className="text-sm text-center font-semibold">{title}</h3>
+      <h3 className="text-sm text-center font-light font-roboto">{title}</h3>
     </div>
   );
 }
