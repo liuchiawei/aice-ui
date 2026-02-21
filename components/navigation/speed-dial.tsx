@@ -31,6 +31,9 @@ function angleToPosition(angleDeg: number, radius: number) {
   return { x, y };
 }
 
+const SPRING_CONFIG = { stiffness: 350, damping: 24 };
+const SPRING_SHOOTOUT = { stiffness: 800, damping: 24 };
+
 // ---------------------------------------------------------------------------
 // Context
 // ---------------------------------------------------------------------------
@@ -311,9 +314,6 @@ export interface SpeedDialItemProps {
   onClick?: () => void;
 }
 
-const SPRING_CONFIG = { stiffness: 350, damping: 24 };
-const SPRING_SHOOTOUT = { stiffness: 280, damping: 24 };
-
 /** size-12 = 48px; items 錨點為 bottom-right，需 offset 使中心落在 radial 位置上 */
 const ITEM_HALF = 24;
 
@@ -355,10 +355,7 @@ function SpeedDialItemComponent({
       return () => controls.stop();
     }
     // Close: animate radius back to 0 (shoot back to center)
-    const controls = animate(radiusVal, 0, {
-      ...SPRING_CONFIG,
-      type: "spring",
-    });
+    const controls = animate(radiusVal, 0);
     return () => controls.stop();
   }, [open, radius, index, itemCount, radiusVal]);
 
