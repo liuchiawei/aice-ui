@@ -28,8 +28,8 @@ export interface PopUpItemProps {
 }
 
 const defaultTransition = { duration: 1, delay: 0, bounce: 0.4 };
-const hidden = { y: "150%", rotate: 0 };
-const visible = { y: 0, rotate: 0 };
+const hidden = { y: "150%" };
+const visible = { y: 0 };
 
 export default function PopUpItem({
   trigger = "scroll",
