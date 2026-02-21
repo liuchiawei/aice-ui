@@ -33,6 +33,9 @@ export default function MatrixCode({
   const grid = useRef({ columns: 0, rows: 0 });
   const context = useRef<CanvasRenderingContext2D | null>(null);
   const lastGlitchTime = useRef(Date.now());
+  const pendingResizeRect = useRef<{ width: number; height: number } | null>(
+    null,
+  );
 
   const fontSize = 16;
   const charWidth = 10;
@@ -155,26 +158,26 @@ export default function MatrixCode({
     }));
   };
 
-  const resizeCanvas = () => {
+  const resizeCanvas = (rect?: { width: number; height: number }) => {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const parent = canvas.parentElement;
     if (!parent) return;
 
     const dpr = window.devicePixelRatio || 1;
-    const rect = parent.getBoundingClientRect();
+    const dimensions = rect ?? parent.getBoundingClientRect();
 
-    canvas.width = rect.width * dpr;
-    canvas.height = rect.height * dpr;
+    canvas.width = dimensions.width * dpr;
+    canvas.height = dimensions.height * dpr;
 
-    canvas.style.width = `${rect.width}px`;
-    canvas.style.height = `${rect.height}px`;
+    canvas.style.width = `${dimensions.width}px`;
+    canvas.style.height = `${dimensions.height}px`;
 
     if (context.current) {
       context.current.setTransform(dpr, 0, 0, dpr, 0, 0);
     }
 
-    const { columns, rows } = calculateGrid(rect.width, rect.height);
+    const { columns, rows } = calculateGrid(dimensions.width, dimensions.height);
     initializeLetters(columns, rows);
     drawLetters();
   };
@@ -270,14 +273,36 @@ export default function MatrixCode({
       clearTimeout(resizeTimeout);
       resizeTimeout = setTimeout(() => {
         cancelAnimationFrame(animationRef.current as number);
-        resizeCanvas();
+        const rect = pendingResizeRect.current;
+        pendingResizeRect.current = null;
+        resizeCanvas(rect ?? undefined);
         animate();
-      }, 100);
+      }, 150);
     };
 
     window.addEventListener("resize", handleResize);
 
+    const parent = canvas.parentElement;
+    const containerToObserve = parent?.parentElement ?? parent;
+    const resizeObserver = containerToObserve
+      ? new ResizeObserver((entries) => {
+          const entry = entries[0];
+          if (entry?.contentRect) {
+            const { width, height } = entry.contentRect;
+            if (width > 0 && height > 0) {
+              pendingResizeRect.current = { width, height };
+              handleResize();
+            }
+          }
+        })
+      : null;
+    if (resizeObserver && containerToObserve) {
+      resizeObserver.observe(containerToObserve);
+    }
+
     return () => {
+      clearTimeout(resizeTimeout);
+      resizeObserver?.disconnect();
       cancelAnimationFrame(animationRef.current!);
       window.removeEventListener("resize", handleResize);
     };
@@ -287,7 +312,7 @@ export default function MatrixCode({
   return (
     <div
       className={cn(
-        "relative w-full h-full overflow-hidden",
+        "relative min-w-0 w-full h-full overflow-hidden",
         className,
       )}
     >
