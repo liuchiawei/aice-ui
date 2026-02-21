@@ -28,6 +28,28 @@ function angleToPosition(angleDeg: number, radius: number) {
 const SPRING_SHOOTOUT = { stiffness: 800, damping: 24 };
 
 // ---------------------------------------------------------------------------
+// Item size map (px) - sm=32, default=40, lg=48; items 錨點為 bottom-right，需 offset 使中心落在 radial 位置上
+// ---------------------------------------------------------------------------
+const ITEM_SIZE_MAP = { sm: 32, default: 40, lg: 48 } as const;
+export type SpeedDialItemSize = keyof typeof ITEM_SIZE_MAP;
+
+const speedDialItemVariants = cva(
+  "absolute bottom-0 right-0 flex items-center justify-center rounded-full shadow-lg transition-transform will-change-transform hover:scale-105 hover:shadow-xl cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+  {
+    variants: {
+      size: {
+        sm: "size-8",
+        default: "size-10",
+        lg: "size-12",
+      },
+    },
+    defaultVariants: {
+      size: "default",
+    },
+  },
+);
+
+// ---------------------------------------------------------------------------
 // Context
 // ---------------------------------------------------------------------------
 interface SpeedDialContextValue {
@@ -39,6 +61,7 @@ interface SpeedDialContextValue {
   itemCount: number;
   menuId: string;
   triggerRef: React.RefObject<HTMLButtonElement | null>;
+  defaultItemSize: SpeedDialItemSize;
 }
 
 const SpeedDialContext = createContext<SpeedDialContextValue | null>(null);
@@ -89,6 +112,8 @@ export interface SpeedDialRootProps {
   directionAngle?: number;
   /** Distance from trigger to each item (px). */
   radius?: number;
+  /** Default size for all SpeedDial.Item children. */
+  itemSize?: SpeedDialItemSize;
   className?: string;
 }
 
@@ -97,6 +122,7 @@ function SpeedDialRoot({
   spreadRangeAngle = 90,
   directionAngle = 90,
   radius = 120,
+  itemSize = "default",
   className,
 }: SpeedDialRootProps) {
   const [open, setOpen] = useState(false);
@@ -161,6 +187,7 @@ function SpeedDialRoot({
     itemCount,
     menuId,
     triggerRef,
+    defaultItemSize: itemSize,
   };
 
   const itemChildren: ReactNode[] = [];
@@ -298,7 +325,8 @@ function SpeedDialTrigger({
 // ---------------------------------------------------------------------------
 // Item (internal component for cloneElement check)
 // ---------------------------------------------------------------------------
-export interface SpeedDialItemProps {
+export interface SpeedDialItemProps
+  extends VariantProps<typeof speedDialItemVariants> {
   children: ReactNode;
   className?: string;
   /** Injected by SpeedDial.Root. */
@@ -306,17 +334,25 @@ export interface SpeedDialItemProps {
   onClick?: () => void;
 }
 
-/** size-12 = 48px; items 錨點為 bottom-right，需 offset 使中心落在 radial 位置上 */
-const ITEM_HALF = 24;
-
 function SpeedDialItemComponent({
   children,
   className,
+  size,
   index = 0,
   onClick,
 }: SpeedDialItemProps) {
-  const { open, setOpen, radius, spreadRangeAngle, directionAngle, itemCount } =
-    useSpeedDial("SpeedDial.Item");
+  const {
+    open,
+    setOpen,
+    radius,
+    spreadRangeAngle,
+    directionAngle,
+    itemCount,
+    defaultItemSize,
+  } = useSpeedDial("SpeedDial.Item");
+
+  const effectiveSize = size ?? defaultItemSize ?? "default";
+  const itemHalf = ITEM_SIZE_MAP[effectiveSize] / 2;
 
   const angle =
     itemCount <= 1
@@ -327,10 +363,10 @@ function SpeedDialItemComponent({
 
   const centerPos = angleToPosition(angle, 0);
   const targetPos = angleToPosition(angle, radius);
-  const centerX = centerPos.x + ITEM_HALF;
-  const centerY = centerPos.y + ITEM_HALF;
-  const targetX = targetPos.x + ITEM_HALF;
-  const targetY = targetPos.y + ITEM_HALF;
+  const centerX = centerPos.x + itemHalf;
+  const centerY = centerPos.y + itemHalf;
+  const targetX = targetPos.x + itemHalf;
+  const targetY = targetPos.y + itemHalf;
 
   const close = useCallback(() => {
     setOpen(false);
@@ -361,10 +397,7 @@ function SpeedDialItemComponent({
           : { type: "spring" as const, ...SPRING_SHOOTOUT }
         ),
       }}
-      className={cn(
-        "absolute bottom-0 right-0 flex items-center justify-center rounded-full size-12 shadow-lg transition-transform will-change-transform hover:scale-105 hover:shadow-xl cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
-        className,
-      )}
+      className={cn(speedDialItemVariants({ size: effectiveSize }), className)}
       onClick={handleClick}
       onKeyDown={(e) => {
         if (e.key === "Enter" || e.key === " ") {
