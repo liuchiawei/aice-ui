@@ -36,6 +36,10 @@
       "label": "Code Block",
       "description": "A code block component with syntax highlighting and line numbers."
     },
+    "pop-up-item": {
+      "label": "Pop Up Item",
+      "description": "Animated container that reveals content with pop-up spring animation. Supports whileInView, hover, or click triggers."
+    },
     "timer": {
       "label": "Timer",
       "description": "A reusable timer that shows elapsed time. Start, pause, or restart with buttons; choose display format (e.g. 00:01:23 or 83.250s)."

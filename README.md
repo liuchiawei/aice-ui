@@ -20,6 +20,7 @@ Components are grouped by category (see `lib/component-config.ts`).
 |-----------|-------------|
 | **Glass Surface** | A glass surface component with blur and distortion effects. |
 | **Code Block** | A code block component with syntax highlighting and line numbers. |
+| **Pop Up Item** | Animated container that reveals content with pop-up spring animation. Supports whileInView, hover, or click triggers. (2026-02-21) |
 
 ### Text
 
@@ -84,7 +85,7 @@ Components are grouped by category (see `lib/component-config.ts`).
 |-----------|-------------|
 | **Webcam** | A webcam component with customizable data and optional title and description. |
 
-**Total: 19 components**
+**Total: 20 components**
 
 ---
 

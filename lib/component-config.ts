@@ -25,6 +25,10 @@ import {
   copyButtonSource,
 } from "@/components/demo/copy-button-demo";
 import {
+  PopUpItemDemo,
+  popUpItemSource,
+} from "@/components/demo/pop-up-item-demo";
+import {
   ScrollButtonDemo,
   scrollButtonSource,
 } from "@/components/demo/scroll-button-demo";
@@ -107,6 +111,14 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         demo: CodeBlockDemo,
         sourceCode: codeBlockSource,
         date: "2026-02-19",
+      },
+      {
+        slug: "pop-up-item",
+        labelKey: "pop-up-item.label",
+        descriptionKey: "pop-up-item.description",
+        demo: PopUpItemDemo,
+        sourceCode: popUpItemSource,
+        date: "2026-02-21",
       },
     ],
   },

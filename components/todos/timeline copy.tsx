@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { useScroll, useTransform, motion } from "motion/react";
-import ScrollUpItem from "@/components/todos/pop-up-item";
+import PopUpItem from "@/components/ui-elements/pop-up-item";
 
 interface TimelineHeader {
   title: string;
@@ -99,7 +99,9 @@ export const Timeline = ({
               >
                 {item.content}
               </motion.p>
-              <ScrollUpItem emoji={item.emoji} />
+              <PopUpItem>
+                <span className="text-[96px] md:text-[132px] select-none">{item.emoji}</span>
+              </PopUpItem>
             </div>
           </div>
         ))}

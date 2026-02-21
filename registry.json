@@ -25,6 +25,19 @@
       ]
     },
     {
+      "name": "pop-up-item",
+      "type": "registry:ui",
+      "title": "Pop Up Item",
+      "description": "Animated container that reveals content with pop-up spring animation. Supports whileInView, hover, or click triggers.",
+      "dependencies": ["motion"],
+      "files": [
+        {
+          "path": "components/ui-elements/pop-up-item.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "floating-circles",
       "type": "registry:ui",
       "title": "Floating Circles",
