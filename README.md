@@ -67,7 +67,9 @@ Components are grouped by category (see `lib/component-config.ts`).
 
 ### Navigation
 
-*(Coming soon — FAB nav, etc.)*
+| Component | Description |
+|-----------|-------------|
+| **Speed Dial** | FAB that expands into a radial menu of actions. Compound component: Root, Trigger, Item. Supports spread angle and direction. (2026-02-21) |
 
 ### Background
 
@@ -82,7 +84,7 @@ Components are grouped by category (see `lib/component-config.ts`).
 |-----------|-------------|
 | **Webcam** | A webcam component with customizable data and optional title and description. |
 
-**Total: 18 components**
+**Total: 19 components**
 
 ---
 

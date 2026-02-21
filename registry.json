@@ -280,6 +280,19 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "speed-dial",
+      "type": "registry:ui",
+      "title": "Speed Dial",
+      "description": "FAB that expands into a radial menu of actions. Compound component: Root, Trigger, Item. Supports spread angle and direction. | FABを押すと放射状にアクションボタンが広がるメニュー。Root/Trigger/Itemの複合コンポーネント。",
+      "dependencies": ["motion", "lucide-react"],
+      "files": [
+        {
+          "path": "components/navigation/speed-dial.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }
