@@ -4,7 +4,10 @@
     "Text": "Text",
     "Button": "Button",
     "Card": "Card",
+    "Chart": "Chart",
     "Carousel": "Carousel",
+    "Layout": "Layout",
+    "Navigation": "Navigation",
     "Background": "Background",
     "Media": "Media"
   },
@@ -33,6 +36,10 @@
       "label": "Code Block",
       "description": "A code block component with syntax highlighting and line numbers."
     },
+    "pop-up-item": {
+      "label": "Pop Up Item",
+      "description": "Animated container that reveals content with pop-up spring animation. Supports whileInView, hover, or click triggers."
+    },
     "timer": {
       "label": "Timer",
       "description": "A reusable timer that shows elapsed time. Start, pause, or restart with buttons; choose display format (e.g. 00:01:23 or 83.250s)."
@@ -48,6 +55,10 @@
     "theme-switch": {
       "label": "Theme Switch",
       "description": "A theme switch component with dark and light mode. It is built with React, Tailwind CSS, and Motion."
+    },
+    "scroll-button": {
+      "label": "Scroll Button",
+      "description": "Buttons that scroll the window (top, bottom, up, down, left, right). Use for quick page navigation."
     },
       "floating-circles": {
         "label": "Floating Circles",
@@ -88,6 +99,18 @@
       "decrypted-text": {
         "label": "Decrypted Text",
         "description": "Scrambled text that reveals on hover or when in view. Supports sequential or batch reveal, and multiple reveal directions."
+      },
+      "draggable-grid": {
+        "label": "Draggable Grid",
+        "description": "A draggable 2D grid with parallax icon cells. Inspired by Apple WatchOS."
+      },
+      "timeline": {
+        "label": "Timeline",
+        "description": "Vertical timeline with sticky year on the left and card content on the right. Optional scroll-driven axis fill effect."
+      },
+      "speed-dial": {
+        "label": "Speed Dial",
+        "description": "FAB that expands into a radial menu of actions. Compound component: Root, Trigger, Item. Supports spread angle and direction."
       }
     },
   "ThreeDCardDemo": {

@@ -42,7 +42,7 @@ export function ComponentShowcase({ slug }: ComponentShowcaseProps) {
   );
 
   return (
-    <div className="space-y-8 p-4 md:p-6 md:pt-3">
+    <div className="min-w-0 space-y-8 p-4 md:p-6 md:pt-3">
       {/* Title & Description */}
       <section className="space-y-3">
         <Breadcrumb>
@@ -76,7 +76,7 @@ export function ComponentShowcase({ slug }: ComponentShowcaseProps) {
 
       {result.kind === "demo" ? (
         <>
-          <Tabs defaultValue="preview" className="w-full">
+          <Tabs defaultValue="preview" className="min-w-0 w-full">
             <TabsList>
               <TabsTrigger value="preview" className="text-xs">
                 <Eye className="size-4" /> Preview
@@ -88,7 +88,7 @@ export function ComponentShowcase({ slug }: ComponentShowcaseProps) {
             </TabsList>
             <TabsContent
               value="preview"
-              className="relative w-full h-full rounded-lg border border-border bg-muted p-6"
+              className="relative w-full h-full rounded-lg border border-border bg-muted p-6 overflow-hidden"
             >
               <result.Demo />
             </TabsContent>

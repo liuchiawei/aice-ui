@@ -1,10 +1,10 @@
-import RadarChart from "@/components/card/radar-chart";
+import RadarChart from "@/components/chart/radar-chart";
 
 function RadarChartDemo() {
   return <RadarChart />;
 }
 
-const radarChartSource = `import RadarChart from "@/components/ui-elements/radar-chart";
+const radarChartSource = `import RadarChart from "@/components/chart/radar-chart";
 
 const DEMO_RADAR_DATA = [
   { name: "Java", value: 10 },
@@ -15,6 +15,8 @@ const DEMO_RADAR_DATA = [
   { name: "Next.js", value: 85 },
 ];
 
-return <RadarChart data={DEMO_RADAR_DATA} />;`;
+function RadarChartDemo() {
+  return <RadarChart />;
+};`;
 
 export { RadarChartDemo, radarChartSource };

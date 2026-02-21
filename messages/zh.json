@@ -4,7 +4,10 @@
     "Text": "文字",
     "Button": "按鈕",
     "Card": "卡片",
+    "Chart": "圖表",
     "Carousel": "跑馬燈",
+    "Layout": "版面",
+    "Navigation": "導航",
     "Background": "背景",
     "Media": "媒體"
   },
@@ -26,40 +29,48 @@
   "Components": {
     "newLabel": "新",
     "glass-surface": {
-      "label": "液体玻璃",
-      "description": "Appleの最新デザイン言語にインスパイアされた、次世代のUIコンポーネントです。従来のグラスモーフィズムを進化させ、光の屈折やエッジの光沢、液体のような有機的な動きをリアルタイムで再現しました。物理ベースの高度な視覚効果を保ちつつ、軽量な実装でWebサイトに圧倒的な「質感」と「没入感」を与えます。"
+      "label": "液態玻璃",
+      "description": "受 Apple 最新設計語言啟發的次世代 UI 元件。將傳統玻璃擬態設計進化，即時再現光的折射、邊緣光澤與如液體般的流動動態。以輕量實作保留物理基礎的進階視覺效果，為網站帶來出色的「質感」與「沉浸感」。"
     },
     "code-block": {
       "label": "代碼",
       "description": "具語法高亮與行號的程式碼區塊元件。"
+    },
+    "pop-up-item": {
+      "label": "彈出項目",
+      "description": "以彈出式 spring 動畫顯示內容的動畫容器。支援進入視窗、懸停或點擊觸發。"
     },
     "timer": {
       "label": "計時器",
       "description": "可重用的經過時間顯示元件。可用按鈕開始、暫停或重啟；可選擇顯示格式（如 00:01:23 或 83.250 秒）。"
     },
     "radar-chart": {
-      "label": "雷达图",
-      "description": "カスタマイズ可能なデータとオプションのタイトルと説明を備えたラダーチャートコンポーネント。"
+      "label": "雷達圖",
+      "description": "具可自訂資料與可選標題、說明的雷達圖元件。"
     },
     "copy-button": {
       "label": "複製按鈕",
       "description": "一鍵將文字複製到剪貼簿的按鈕，複製後會顯示勾選圖示。可放在程式碼區塊、引用文或任何希望使用者一鍵複製的內容旁。"
     },
     "theme-switch": {
-      "label": "主题切换",
-      "description": "ダークモードとライトモードを切り替えるコンポーネント。"
+      "label": "主題切換",
+      "description": "可切換深色模式與淺色模式的主題切換元件。"
+    },
+    "scroll-button": {
+      "label": "捲動按鈕",
+      "description": "可將視窗捲動至頂部、底部、左側或右側的按鈕，用於快速頁面導航。"
     },
     "floating-circles": {
-      "label": "浮动圆",
-      "description": "色変更可能な動くグラデーション背景。マウス追従も可。"
+      "label": "浮動圓形",
+      "description": "顏色可自訂的流動漸層背景，支援滑鼠追蹤效果。"
     },
     "matrix-code": {
-      "label": "矩阵代码",
-      "description": "映画『マトリックス』の世界観を象徴する、緑色の文字が画面を上から下へと流れ落ちる視覚効果を再現した背景コンポーナントです。"
+      "label": "代碼瀑布",
+      "description": "以電影《駭客任務》世界觀為靈感的背景元件，呈現綠色字元由畫面頂部向下流動的視覺效果。"
     },
     "webcam": {
-      "label": "网络摄像头",
-      "description": "ブラウザのウェブカメラストリーミング用コンポーネント。エラー処理・ref転送対応。"
+      "label": "網路攝影機",
+      "description": "用於瀏覽器網路攝影機串流的元件，具備錯誤處理與 ref 轉發支援。"
     },
     "motion-wheel": {
       "label": "旋轉輪播",
@@ -78,16 +89,28 @@
       "description": "解碼動畫文字元件，隨機片假名會逐漸揭示目標文字。支援延遲與減少動畫偏好。"
     },
     "slide-up-letters": {
-      "label": "向上滑动字母",
-      "description": "スライドアップレターコンポーネント。マウス追従も可。"
+      "label": "向上滑動字母",
+      "description": "文字向上滑動顯示的元件，支援滑鼠追蹤效果。"
     },
     "animated-counter": {
       "label": "動畫計數器",
       "description": "進入視窗時從起始值動畫到目標值的數字計數器。"
     },
     "decrypted-text": {
-      "label": "解密文字",
+      "label": "解碼文字",
       "description": "滑鼠懸停或進入視窗時解碼顯示的文字。支援逐一揭露、批次揭露與多種揭露方向。"
+    },
+    "draggable-grid": {
+      "label": "可拖拽網格",
+      "description": "可拖曳的 2D 網格，圖示格具視差效果。靈感來自 Apple WatchOS。"
+    },
+    "timeline": {
+      "label": "時間軸",
+      "description": "左側固定年份、右側卡片內容的垂直時間軸。可選捲動驅動軸線填充效果。"
+    },
+    "speed-dial": {
+      "label": "放射式選單",
+      "description": "點擊後以放射狀展開的動作選單。複合元件：Root、Trigger、Item。可設定展開角度與方向。"
     }
   },
   "ThreeDCardDemo": {

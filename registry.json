@@ -25,6 +25,19 @@
       ]
     },
     {
+      "name": "pop-up-item",
+      "type": "registry:ui",
+      "title": "Pop Up Item",
+      "description": "Animated container that reveals content with pop-up spring animation. Supports whileInView, hover, or click triggers.",
+      "dependencies": ["motion"],
+      "files": [
+        {
+          "path": "components/ui-elements/pop-up-item.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "floating-circles",
       "type": "registry:ui",
       "title": "Floating Circles",
@@ -148,7 +161,7 @@
       "registryDependencies": ["recharts", "card"],
       "files": [
         {
-          "path": "components/card/radar-chart.tsx",
+          "path": "components/chart/radar-chart.tsx",
           "type": "registry:ui"
         }
       ]
@@ -231,6 +244,17 @@
       ]
     },
     {
+      "name": "scroll-button",
+      "type": "registry:ui",
+      "title": "Scroll Button",
+      "description": "Buttons that scroll the window . Use for quick page navigation. | ウィンドウを上下左右にスクロールするボタン。ページ内ナビゲーションに。",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["button", "tooltip"],
+      "files": [
+        { "path": "components/button/scroll-button.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
       "name": "timer",
       "type": "registry:ui",
       "title": "Timer",
@@ -238,6 +262,47 @@
       "files": [
         {
           "path": "components/text/timer.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "draggable-grid",
+      "type": "registry:ui",
+      "title": "Draggable Grid",
+      "description": "A draggable 2D grid with parallax icon cells. Inspired by Apple WatchOS. | 視差付きアイコンセルのドラッグ可能な2Dグリッド。Apple WatchOS にインスパイア。",
+      "dependencies": ["motion"],
+      "registryDependencies": ["tooltip"],
+      "files": [
+        {
+          "path": "components/grid/draggable-grid.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "timeline",
+      "type": "registry:ui",
+      "title": "Timeline",
+      "description": "Vertical timeline with sticky year and optional scroll-driven axis fill. | 左にスティッキーな年表示、オプションでスクロール連動の軸線。",
+      "dependencies": ["motion"],
+      "registryDependencies": ["card"],
+      "files": [
+        {
+          "path": "components/layout/timeline.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "speed-dial",
+      "type": "registry:ui",
+      "title": "Speed Dial",
+      "description": "FAB that expands into a radial menu of actions. Compound component: Root, Trigger, Item. Supports spread angle and direction. | FABを押すと放射状にアクションボタンが広がるメニュー。Root/Trigger/Itemの複合コンポーネント。",
+      "dependencies": ["motion", "lucide-react"],
+      "files": [
+        {
+          "path": "components/navigation/speed-dial.tsx",
           "type": "registry:ui"
         }
       ]

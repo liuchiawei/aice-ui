@@ -25,6 +25,14 @@ import {
   copyButtonSource,
 } from "@/components/demo/copy-button-demo";
 import {
+  PopUpItemDemo,
+  popUpItemSource,
+} from "@/components/demo/pop-up-item-demo";
+import {
+  ScrollButtonDemo,
+  scrollButtonSource,
+} from "@/components/demo/scroll-button-demo";
+import {
   ThemeSwitchDemo,
   themeSwitchSource,
 } from "@/components/demo/theme-switch-demo";
@@ -60,6 +68,18 @@ import {
   DecryptedTextDemo,
   decryptedTextSource,
 } from "@/components/demo/decrypted-text-demo";
+import {
+  DraggableGridDemo,
+  draggableGridSource,
+} from "@/components/demo/draggable-grid-demo";
+import {
+  TimelineDemo,
+  timelineSource,
+} from "@/components/demo/timeline-demo";
+import {
+  SpeedDialDemo,
+  speedDialSource,
+} from "@/components/demo/speed-dial-demo";
 /** Translation keys under the "Components" namespace (e.g. "glass-surface.label"). Resolve with useTranslations("Components") then t(key). */
 export interface ComponentItem {
   slug: string;
@@ -91,6 +111,14 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         demo: CodeBlockDemo,
         sourceCode: codeBlockSource,
         date: "2026-02-19",
+      },
+      {
+        slug: "pop-up-item",
+        labelKey: "pop-up-item.label",
+        descriptionKey: "pop-up-item.description",
+        demo: PopUpItemDemo,
+        sourceCode: popUpItemSource,
+        date: "2026-02-21",
       },
     ],
   },
@@ -158,6 +186,14 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         sourceCode: themeSwitchSource,
         date: "2026-02-19",
       },
+      {
+        slug: "scroll-button",
+        labelKey: "scroll-button.label",
+        descriptionKey: "scroll-button.description",
+        demo: ScrollButtonDemo,
+        sourceCode: scrollButtonSource,
+        date: "2026-02-20",
+      }
     ],
   },
   {
@@ -179,6 +215,11 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         sourceCode: flipCardDemoSource,
         date: "2026-02-19",
       },
+    ],
+  },
+  {
+    label: "Chart",
+    items: [
       {
         slug: "radar-chart",
         labelKey: "radar-chart.label",
@@ -199,6 +240,40 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         demo: MotionWheelDemo,
         sourceCode: motionWheelDemoSource,
         date: "2026-02-19",
+      },
+    ],
+  },
+  {
+    label: "Layout",
+    items: [
+      {
+        slug: "draggable-grid",
+        labelKey: "draggable-grid.label",
+        descriptionKey: "draggable-grid.description",
+        demo: DraggableGridDemo,
+        sourceCode: draggableGridSource,
+        date: "2026-02-20",
+      },
+      {
+        slug: "timeline",
+        labelKey: "timeline.label",
+        descriptionKey: "timeline.description",
+        demo: TimelineDemo,
+        sourceCode: timelineSource,
+        date: "2026-02-20",
+      },
+    ],
+  },
+  {
+    label: "Navigation",
+    items: [
+      {
+        slug: "speed-dial",
+        labelKey: "speed-dial.label",
+        descriptionKey: "speed-dial.description",
+        demo: SpeedDialDemo,
+        sourceCode: speedDialSource,
+        date: "2026-02-21",
       },
     ],
   },

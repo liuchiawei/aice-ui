@@ -20,6 +20,7 @@ Components are grouped by category (see `lib/component-config.ts`).
 |-----------|-------------|
 | **Glass Surface** | A glass surface component with blur and distortion effects. |
 | **Code Block** | A code block component with syntax highlighting and line numbers. |
+| **Pop Up Item** | Animated container that reveals content with pop-up spring animation. Supports whileInView, hover, or click triggers. (2026-02-21) |
 
 ### Text
 
@@ -36,6 +37,7 @@ Components are grouped by category (see `lib/component-config.ts`).
 | Component | Description |
 |-----------|-------------|
 | **Copy Button** | A button that copies text to the clipboard. Shows a check icon after copying. Use it next to code blocks, quotes, or any text you want users to copy in one click. |
+| **Scroll Button** | Buttons that scroll the window (top, bottom, up, down). Use for quick page navigation. |
 | **Theme Switch** | A theme switch component with dark and light mode. It is built with React, Tailwind CSS, and Motion. |
 
 ### Card
@@ -44,6 +46,11 @@ Components are grouped by category (see `lib/component-config.ts`).
 |-----------|-------------|
 | **3D Card** | A card that tilts in 3D following your cursor on hover. Child elements can float at different depths for a parallax effect. |
 | **3D Flip Card** | A compound flip card with 3D tilt on hover and click-to-flip front/back. |
+
+### Chart
+
+| Component | Description |
+|-----------|-------------|
 | **Radar Chart** | A radar chart component with customizable data and optional title and description. |
 
 ### Carousel
@@ -51,6 +58,19 @@ Components are grouped by category (see `lib/component-config.ts`).
 | Component | Description |
 |-----------|-------------|
 | **Motion Wheel** | A compound carousel wheel with rotation animation, prev/next navigation, dot indicators, and optional center info panel. |
+
+### Layout
+
+| Component | Description |
+|-----------|-------------|
+| **Draggable Grid** | A draggable 2D grid with parallax icon cells. Inspired by Apple WatchOS. (2026-02-20) |
+| **Timeline** | Vertical timeline with sticky year on the left and card content on the right. Optional scroll-driven axis fill effect. (2026-02-20) |
+
+### Navigation
+
+| Component | Description |
+|-----------|-------------|
+| **Speed Dial** | FAB that expands into a radial menu of actions. Compound component: Root, Trigger, Item. Supports spread angle and direction. (2026-02-21) |
 
 ### Background
 
@@ -64,6 +84,8 @@ Components are grouped by category (see `lib/component-config.ts`).
 | Component | Description |
 |-----------|-------------|
 | **Webcam** | A webcam component with customizable data and optional title and description. |
+
+**Total: 20 components**
 
 ---
 
