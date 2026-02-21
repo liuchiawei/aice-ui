@@ -4,41 +4,41 @@ import PopUpItem from "@/components/ui-elements/pop-up-item";
 
 export function PopUpItemDemo() {
   return (
-    <div className="flex flex-col gap-8 w-full">
-      <div>
-        <p className="text-sm text-muted-foreground mb-2">Hover to pop up</p>
+    <section className="w-full space-y-4 *:data-demo-item:space-y-2 *:data-demo-item:font-sans **:data-demo-item-title:text-sm **:data-demo-item-title:text-muted-foreground">
+      <div data-demo-item>
+        <h3 data-demo-item-title>Hover to pop up</h3>
         <PopUpItem
           trigger="hover"
-          className="mx-auto mt-8 w-full h-[280px] md:h-[360px] rounded-3xl bg-accent flex justify-center items-center relative overflow-hidden"
+          className="w-full h-[280px] md:h-[360px] rounded-3xl bg-accent flex justify-center items-center relative overflow-hidden"
         >
           <span className="text-[96px] md:text-[120px] select-none" aria-hidden>
             ✨
           </span>
         </PopUpItem>
       </div>
-      <div>
-        <h3 className="text-sm">Scroll into view to animate (default)</h3>
+      <div data-demo-item>
+        <h3 data-demo-item-title>Scroll to pop up</h3>
         <PopUpItem
           trigger="scroll"
-          className="mx-auto mt-8 w-full h-[280px] md:h-[360px] rounded-3xl bg-accent flex justify-center items-center relative overflow-hidden"
+          className="w-full h-[280px] md:h-[360px] rounded-3xl bg-accent flex justify-center items-center relative overflow-hidden"
         >
           <span className="text-[96px] md:text-[120px] select-none" aria-hidden>
             🎯
           </span>
         </PopUpItem>
       </div>
-      <div>
-        <p className="text-sm text-muted-foreground mb-2">Click to toggle</p>
+      <div data-demo-item>
+        <h3 data-demo-item-title>Click to pop up</h3>
         <PopUpItem
           trigger="click"
-          className="mx-auto mt-8 w-full h-[280px] md:h-[360px] rounded-3xl bg-accent flex justify-center items-center relative overflow-hidden"
+          className="w-full h-[280px] md:h-[360px] rounded-3xl bg-accent flex justify-center items-center relative overflow-hidden"
         >
           <span className="text-[96px] md:text-[120px] select-none" aria-hidden>
             🚀
           </span>
         </PopUpItem>
       </div>
-    </div>
+    </section>
   );
 }
 
