@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useCallback, useRef } from "react";
-import { motion, useInView } from "motion/react";
+import { useState, useCallback } from "react";
+import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 
 export type PopUpItemTrigger = "scroll" | "hover" | "click";
@@ -13,7 +13,7 @@ export interface PopUpItemTransition {
 }
 
 export interface PopUpItemViewport {
-  amount?: number;
+  amount?: "some" | "all" | number;
   threshold?: number;
   once?: boolean;
 }
@@ -28,7 +28,7 @@ export interface PopUpItemProps {
 }
 
 const defaultTransition = { duration: 1, delay: 0, bounce: 0.4 };
-const hidden = { y: "200%", rotate: 0 };
+const hidden = { y: "150%", rotate: 0 };
 const visible = { y: 0, rotate: -8 };
 
 export default function PopUpItem({
@@ -44,12 +44,6 @@ export default function PopUpItem({
   const [hovered, setHovered] = useState(false);
   const toggle = useCallback(() => setClicked((c) => !c), []);
 
-  const viewportConfig = {
-    amount: viewport.amount ?? 0.4,
-    threshold: viewport.threshold,
-    once: viewport.once ?? false, // play animation  every time element enters viewport(default)
-  };
-
   const springTransition = {
     type: "spring" as const,
     bounce: transition.bounce,
@@ -57,36 +51,35 @@ export default function PopUpItem({
     delay: transition.delay,
   };
 
-  const containerRef = useRef<HTMLDivElement>(null);
-  const useInViewResult = useInView(containerRef, {
-    amount: viewportConfig.amount,
-    once: viewportConfig.once,
-  });
-
   const contentProps =
     trigger === "scroll"
       ? {
           initial: hidden,
-          animate: useInViewResult ? visible : hidden,
+          whileInView: visible,
+          viewport: {
+            amount: viewport.amount ?? "some",
+            once: viewport.once ?? false,
+          },
           transition: springTransition,
         }
       : {
           initial: hidden,
-          animate:
-            (trigger === "click" ? clicked : hovered) ? visible : hidden,
+          animate: (trigger === "click" ? clicked : hovered) ? visible : hidden,
           transition: springTransition,
         };
 
   return (
     <motion.div
-      ref={trigger === "scroll" ? containerRef : undefined}
       className={cn(
         "flex justify-center items-center relative overflow-hidden",
         trigger === "click" && "cursor-pointer",
         className,
       )}
       {...(trigger === "hover"
-        ? { onMouseEnter: () => setHovered(true), onMouseLeave: () => setHovered(false) }
+        ? {
+            onMouseEnter: () => setHovered(true),
+            onMouseLeave: () => setHovered(false),
+          }
         : trigger === "click"
           ? {
               onClick: toggle,
