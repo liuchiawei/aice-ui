@@ -59,21 +59,21 @@ function useSpeedDial(component: string) {
 // Trigger variants (cva)
 // ---------------------------------------------------------------------------
 const speedDialTriggerVariants = cva(
-  "inline-flex items-center justify-center rounded-full shadow-lg transition-transform outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 cursor-pointer",
+  "inline-flex items-center justify-center rounded-full shadow-lg transition-transform outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 cursor-pointer z-10",
   {
     variants: {
       variant: {
         default:
-          "bg-primary text-primary-foreground hover:bg-primary/90 size-16",
+          "bg-primary text-primary-foreground hover:bg-primary/90",
         outline:
-          "border-2 border-input bg-background hover:bg-accent hover:text-accent-foreground size-16",
+          "border-2 border-input bg-background hover:bg-accent hover:text-accent-foreground",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80 size-16",
+          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
       },
       size: {
-        default: "size-16 md:size-20",
-        sm: "size-14 md:size-16",
-        lg: "size-20 md:size-24",
+        default: "size-16",
+        sm: "size-12",
+        lg: "size-20",
       },
     },
     defaultVariants: {
