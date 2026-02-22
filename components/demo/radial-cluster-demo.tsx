@@ -28,12 +28,26 @@ export function RadialClusterDemo() {
 
 export const radialClusterSource = `import { RadialCluster, type Node } from "@/components/chart/radial-cluster";
 
-const data: Node[] = [{
-  name: "Root",
-  children: [
-    { name: "A", children: [{ name: "A1" }, { name: "A2" }] },
-    { name: "B", children: [{ name: "B1" }] },
-  ],
-}];
+const DEMO_DATA: Node[] = [
+  {
+    name: "AICE",
+    children: [
+      {
+        name: "A",
+        children: [{ name: "A-1" }, { name: "A-2" }],
+      },
+      {
+        name: "B",
+        children: [{ name: "B-1" }, { name: "B-2" }, { name: "B-3" }],
+      },
+      {
+        name: "C",
+        children: [{ name: "C-1" }, { name: "C-2" }, { name: "C-3" }],
+      },
+    ],
+  },
+];
 
-<RadialCluster data={data} size={700} />`;
+export function RadialClusterDemo() {
+  return <RadialCluster data={DEMO_DATA} size={700} />;
+}`;
