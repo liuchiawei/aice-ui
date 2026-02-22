@@ -49,6 +49,10 @@ import {
   radarChartSource,
 } from "@/components/demo/radar-chart-demo";
 import {
+  RadialClusterDemo,
+  radialClusterSource,
+} from "@/components/demo/radial-cluster-demo";
+import {
   ThreeDCardDemo,
   threeCardDemoSource,
 } from "@/components/demo/3d-card-demo";
@@ -227,6 +231,14 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         demo: RadarChartDemo,
         sourceCode: radarChartSource,
         date: "2026-02-19",
+      },
+      {
+        slug: "radial-cluster",
+        labelKey: "radial-cluster.label",
+        descriptionKey: "radial-cluster.description",
+        demo: RadialClusterDemo,
+        sourceCode: radialClusterSource,
+        date: "2026-02-22",
       },
     ],
   },

@@ -48,6 +48,10 @@
       "label": "雷達圖",
       "description": "具可自訂資料與可選標題、說明的雷達圖元件。"
     },
+    "radial-cluster": {
+      "label": "徑向叢集",
+      "description": "階層資料徑向叢集圖。支援 data prop 或 Item/SubItem 組合式用法。"
+    },
     "copy-button": {
       "label": "複製按鈕",
       "description": "一鍵將文字複製到剪貼簿的按鈕，複製後會顯示勾選圖示。可放在程式碼區塊、引用文或任何希望使用者一鍵複製的內容旁。"
