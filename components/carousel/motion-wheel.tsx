@@ -149,15 +149,33 @@ function MotionWheelRoot<T extends MotionWheelItemBase>({
     ],
   );
 
+  const handleKeyDown = useCallback(
+    (e: React.KeyboardEvent) => {
+      if (count === 0 || isAnimating) return;
+      if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        goPrev();
+      } else if (e.key === "ArrowRight") {
+        e.preventDefault();
+        goNext();
+      }
+    },
+    [count, isAnimating, goPrev, goNext],
+  );
+
   return (
     <MotionWheelContext.Provider
       value={value as MotionWheelContextValue<MotionWheelItemBase>}
     >
       <div
+        role="region"
+        aria-label="Carousel"
+        tabIndex={0}
         className={cn(
           "w-full h-[840px] flex justify-center items-center relative overflow-hidden",
           className,
         )}
+        onKeyDown={handleKeyDown}
       >
         {children}
       </div>
