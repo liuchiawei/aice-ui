@@ -78,7 +78,7 @@
       },
       "motion-wheel": {
         "label": "Motion Wheel",
-        "description": "A compound carousel wheel with rotation animation, prev/next navigation, dot indicators, and optional center info panel."
+        "description": "A compound carousel wheel with rotation animation, prev/next navigation, dot indicators, and optional center info panel. Supports keyboard control (ArrowLeft/ArrowRight) when focused."
       },
       "3d-card": {
         "label": "3D Card",
