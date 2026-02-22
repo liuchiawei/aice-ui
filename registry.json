@@ -306,6 +306,20 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "radial-cluster",
+      "type": "registry:ui",
+      "title": "Radial Cluster",
+      "description": "Radial cluster chart for hierarchical data. Supports data prop or Item/SubItem composition. | 階層データの円環階層図。data プロップまたは Item/SubItem 構成に対応。",
+      "dependencies": ["d3"],
+      "registryDependencies": ["use-mobile"],
+      "files": [
+        {
+          "path": "components/chart/radial-cluster.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }
