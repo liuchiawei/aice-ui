@@ -1,10 +1,6 @@
 "use client";
 
-import {
-  CodeBlock,
-  CodeBlockActions,
-  CodeBlockCopyButton,
-} from "@/components/ai-elements/code-block";
+import Snippet from "@/components/ui-elements/snippet";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { getInstallCommands } from "@/lib/installation";
 import { useTranslations } from "next-intl";
@@ -37,15 +33,15 @@ export function InstallationSection({ slug }: InstallationSectionProps) {
 
         {PACKAGE_MANAGERS.map((pm) => (
           <TabsContent key={pm} value={pm}>
-            <CodeBlock
+            <Snippet.Provider
               code={commands[pm]}
-              language="bash"
-              className="flex flex-row-reverse items-center justify-between pr-3 rounded-lg border border-border bg-shiki-light-bg dark:bg-shiki-dark-bg"
+              className="rounded-lg border border-border bg-shiki-light-bg dark:bg-shiki-dark-bg"
             >
-              <CodeBlockActions>
-                <CodeBlockCopyButton />
-              </CodeBlockActions>
-            </CodeBlock>
+              <Snippet.Input className="min-h-9" />
+              <Snippet.Addon align="inline-end">
+                <Snippet.CopyButton />
+              </Snippet.Addon>
+            </Snippet.Provider>
           </TabsContent>
         ))}
       </Tabs>
