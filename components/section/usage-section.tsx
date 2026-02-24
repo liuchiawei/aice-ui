@@ -1,58 +1,71 @@
 "use client";
 
-import {
-  CodeBlock,
-  CodeBlockActions,
-  CodeBlockCopyButton,
-} from "@/components/ai-elements/code-block";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { getInstallCommands } from "@/lib/installation";
 import { useTranslations } from "next-intl";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import type { UsagePropRow } from "@/lib/component-config";
+
+export type { UsagePropRow };
 
 interface UsageSectionProps {
-  slug: string;
+  rows?: UsagePropRow[];
 }
 
-const PACKAGE_MANAGERS = ["pnpm", "npm", "yarn"] as const;
-
-export function UsageSection({ slug }: UsageSectionProps) {
+export function UsageSection({ rows = [] }: UsageSectionProps) {
   const t = useTranslations("ComponentPage");
-  const commands = getInstallCommands(slug);
+  const tComponents = useTranslations("Components");
+  const showItemColumn =
+    rows.length > 0 && rows.some((row) => row.item != null);
 
   return (
     <section className="flex flex-col gap-3 border-t border-border pt-6">
-      <h2 className="text-lg font-bold">{t("install")}</h2>
-      <p className="text-sm text-muted-foreground">
-        {t("install")}
-      </p>
-
-      <Tabs defaultValue="pnpm" className="w-full">
-        <TabsList>
-          {PACKAGE_MANAGERS.map((pm) => (
-            <TabsTrigger key={pm} value={pm}>
-              {pm}
-            </TabsTrigger>
-          ))}
-        </TabsList>
-
-        {PACKAGE_MANAGERS.map((pm) => (
-          <TabsContent key={pm} value={pm}>
-            <CodeBlock
-              code={commands[pm]}
-              language="bash"
-              className="flex flex-row-reverse items-center justify-between pr-3 rounded-lg border border-border bg-shiki-light-bg dark:bg-shiki-dark-bg"
-            >
-              <CodeBlockActions>
-                <CodeBlockCopyButton />
-              </CodeBlockActions>
-            </CodeBlock>
-          </TabsContent>
-        ))}
-      </Tabs>
-
-      {/* <p className="text-sm text-muted-foreground">
-        または、上のコードタブからコンポーネントのコードをコピーしてプロジェクトに手動で追加してください。
-      </p> */}
+      <h2 className="text-lg font-bold">{t("usage.title")}</h2>
+      {rows.length === 0 ? (
+        <p className="text-sm text-muted-foreground">
+          {t("usage.description")}
+        </p>
+      ) : (
+        <Table>
+          <TableHeader>
+            <TableRow>
+              {showItemColumn && <TableHead>{t("usage.table.item")}</TableHead>}
+              <TableHead>{t("usage.table.prop")}</TableHead>
+              <TableHead>{t("usage.table.default")}</TableHead>
+              <TableHead className="min-w-[12rem]">
+                {t("usage.table.description")}
+              </TableHead>
+              <TableHead>{t("usage.table.type")}</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {rows.map((row) => (
+              <TableRow key={`${row.item ?? ""}-${row.name}`}>
+                {showItemColumn && (
+                  <TableCell className="font-mono text-xs">
+                    {row.item ?? "—"}
+                  </TableCell>
+                )}
+                <TableCell className="font-mono text-xs">{row.name}</TableCell>
+                <TableCell className="font-mono text-xs">
+                  {row.default ?? "—"}
+                </TableCell>
+                <TableCell className="whitespace-normal text-muted-foreground">
+                  {row.descriptionKey
+                    ? tComponents(row.descriptionKey)
+                    : (row.description ?? "—")}
+                </TableCell>
+                <TableCell className="font-mono text-xs">{row.type}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      )}
     </section>
   );
 }

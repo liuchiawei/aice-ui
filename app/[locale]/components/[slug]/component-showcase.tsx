@@ -22,6 +22,7 @@ import { Badge } from "@/components/ui/badge";
 import { Eye, Code } from "lucide-react";
 import { getItemBySlug, myComponents } from "@/lib/component-config";
 import { InstallationSection } from "@/components/section/installation-section";
+import { UsageSection } from "@/components/section/usage-section";
 import { ComingSoon } from "@/components/section/coming-soon";
 
 interface ComponentShowcaseProps {
@@ -66,7 +67,7 @@ export function ComponentShowcase({ slug }: ComponentShowcaseProps) {
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-black font-noto">
+        <h1 className="text-4xl md:text-5xl lg:text-7xl font-black font-noto font-roboto">
           {t(item.labelKey)}
         </h1>
         <p className="text-sm text-muted-foreground">
@@ -109,6 +110,7 @@ export function ComponentShowcase({ slug }: ComponentShowcaseProps) {
             </TabsContent>
           </Tabs>
           <InstallationSection slug={slug} />
+          <UsageSection rows={result.usageProps} />
         </>
       ) : (
         <ComingSoon componentName={t(result.item.labelKey)} />

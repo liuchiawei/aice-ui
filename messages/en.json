@@ -21,16 +21,53 @@
       "home": "Home",
       "components": "Components"
     },
-    "install": "Please select your favorite package manager to install the component.",
-    "usage": "Please select your favorite package manager to install the component.",
+    "install": {
+      "title": "Install",
+      "description": "Please select your favorite package manager to install the component."
+    },
+    "usage": {
+      "title": "Usage",
+      "description": "The usage and properties of the component are not yet documented.",
+      "table": {
+        "item": "Item",
+        "prop": "Prop",
+        "type": "Type",
+        "default": "Default",
+        "description": "Description"
+      }
+    },
     "demo-code": "Demo Code",
+    "usageTitle": "Props",
     "related": "Related Components"
   },
   "Components": {
     "newLabel": "New",
     "glass-surface": {
       "label": "Glass Surface",
-      "description": "A glass surface component with blur and distortion effects."
+      "description": "A glass surface component with blur and distortion effects.",
+      "props": {
+        "children": "Content inside the glass surface.",
+        "width": "Width of the surface (number in px or CSS string).",
+        "height": "Height of the surface (number in px or CSS string).",
+        "borderRadius": "Border radius in pixels.",
+        "borderWidth": "Relative border/edge width for the displacement effect (e.g. 0.07).",
+        "brightness": "Brightness value for the glass effect.",
+        "opacity": "Opacity of the glass layer (0–1).",
+        "blur": "Backdrop blur amount in pixels.",
+        "displace": "Displacement amount for the distortion effect.",
+        "backgroundOpacity": "Opacity of the inner background layer.",
+        "saturation": "Color saturation of the effect.",
+        "distortionScale": "Scale of the SVG displacement map (negative values invert).",
+        "redOffset": "Red channel offset for displacement mapping.",
+        "greenOffset": "Green channel offset for displacement mapping.",
+        "blueOffset": "Blue channel offset for displacement mapping.",
+        "xChannel": "Color channel used for horizontal displacement (R, G, or B).",
+        "yChannel": "Color channel used for vertical displacement (R, G, or B).",
+        "mixBlendMode": "CSS mix-blend-mode for compositing (e.g. difference, overlay).",
+        "className": "Additional CSS class for the root container.",
+        "contentClassName": "Additional CSS class for the inner content wrapper.",
+        "style": "Inline styles for the root element."
+      }
     },
     "code-block": {
       "label": "Code Block",
@@ -38,7 +75,15 @@
     },
     "snippet": {
       "label": "Snippet",
-      "description": "One-line code or command display with copy button. Compound component: Provider, Input, Addon, Text, CopyButton. Use for install commands, tokens, or copyable snippets."
+      "description": "One-line code or command display with copy button. Compound component: Provider, Input, Addon, Text, CopyButton. Use for install commands, tokens, or copyable snippets.",
+      "props": {
+        "code": "Text to display and copy.",
+        "className": "Additional CSS class for the root container.",
+        "align": "Alignment of the addon (inline/block, start/end).",
+        "onCopy": "Called after the code is copied successfully.",
+        "onError": "Called when copying fails (e.g. Clipboard API unavailable).",
+        "timeout": "Time in ms to keep the copied state before resetting."
+      }
     },
     "pop-up-item": {
       "label": "Pop Up Item",
@@ -68,21 +113,100 @@
       "label": "Scroll Button",
       "description": "Buttons that scroll the window (top, bottom, up, down, left, right). Use for quick page navigation."
     },
-      "floating-circles": {
-        "label": "Floating Circles",
-        "description": "A floating circles component with customizable data and optional title and description."
-      },
-      "matrix-code": {
+    "floating-circles": {
+      "label": "Floating Circles",
+      "description": "A floating circles component with customizable data and optional title and description.",
+      "props": {
+        "gradientBackgroundStart": "CSS color for the gradient background start (e.g. rgb(108, 0, 162)).",
+        "gradientBackgroundEnd": "CSS color for the gradient background end (e.g. rgb(0, 17, 82)).",
+        "firstColor": "RGB values for the first circle color (e.g. \"20, 72, 140\").",
+        "secondColor": "RGB values for the second circle color.",
+        "thirdColor": "RGB values for the third circle color.",
+        "fourthColor": "RGB values for the fourth circle color.",
+        "fifthColor": "RGB values for the fifth circle color.",
+        "pointerColor": "RGB values for the pointer-following circle (shown when interactive).",
+        "size": "Size of the gradient circles (e.g. \"80%\" or CSS length).",
+        "blendingValue": "CSS mix-blend-mode for the circles (e.g. hard-light, overlay).",
+        "children": "Content rendered above the background (e.g. hero text).",
+        "className": "Additional CSS class for the content wrapper.",
+        "interactive": "Whether to show a circle that follows the pointer.",
+        "containerClassName": "Additional CSS class for the root container."
+      }
+    },
+    "matrix-code": {
         "label": "Matrix Code",
-        "description": "A matrix code component with glitch effect and optional vignette effect."
+        "description": "A matrix code component with glitch effect and optional vignette effect.",
+        "props": {
+          "glitchColors": "Hex color array for the glitch characters (e.g. green/cyan palette).",
+          "glitchSpeed": "Interval in ms between character/color updates; lower is faster.",
+          "centerVignette": "Whether to apply a dark vignette overlay in the center.",
+          "outerVignette": "Whether to apply a dark vignette overlay at the edges.",
+          "smooth": "Whether to smoothly interpolate color changes; false for instant switches.",
+          "className": "Additional CSS class for the container."
+        }
+      },
+      "perlin-noise": {
+        "label": "Perlin Noise",
+        "description": "Canvas-based Perlin noise wave grid background. Configurable line color, wave speed and amplitude; mouse and touch interaction affect grid displacement.",
+        "props": {
+          "lineColor": "Stroke color of the wave grid lines (CSS color).",
+          "backgroundColor": "Background color of the container (CSS color).",
+          "waveSpeedX": "Horizontal speed of the Perlin wave animation.",
+          "waveSpeedY": "Vertical speed of the Perlin wave animation.",
+          "waveAmpX": "Horizontal amplitude of the wave displacement in pixels.",
+          "waveAmpY": "Vertical amplitude of the wave displacement in pixels.",
+          "xGap": "Horizontal spacing between grid lines in pixels.",
+          "yGap": "Vertical spacing between points on each line in pixels.",
+          "friction": "Decay factor for cursor-induced motion (0–1); higher values mean longer drift.",
+          "tension": "Spring tension pulling points back toward rest after cursor interaction.",
+          "maxCursorMove": "Maximum pixel displacement of grid points from cursor/touch influence.",
+          "style": "Inline CSS styles for the root container.",
+          "className": "Additional CSS class for the root container."
+        }
+      },
+      "star-background": {
+        "label": "Star Background",
+        "description": "Canvas 2D starfield background. Configurable star count, twinkle speed, and color. Suited for hero sections or page backgrounds with optional overlay content.",
+        "props": {
+          "starCount": "Number of stars to render in the canvas.",
+          "twinkleSpeed": "Speed of the twinkle animation (0 to disable).",
+          "starColor": "Star color as RGB comma-separated string (e.g. \"255, 255, 255\").",
+          "backgroundColor": "Background color of the canvas (CSS color).",
+          "className": "Additional CSS class for the canvas element.",
+          "containerClassName": "Additional CSS class for the outer container.",
+          "children": "Optional overlay content rendered above the starfield.",
+          "style": "Inline CSS styles for the root container."
+        }
       },
       "webcam": {
         "label": "Webcam",
-        "description": "A webcam component with customizable data and optional title and description."
+        "description": "A webcam component that streams the user's camera with configurable resolution and optional audio. Supports ref forwarding and shows an error message when camera access fails.",
+        "props": {
+          "width": "Video width in pixels.",
+          "height": "Video height in pixels.",
+          "audio": "Whether to request the microphone stream.",
+          "className": "Additional CSS class for the <video> element.",
+          "containerClassName": "Additional CSS class for the outer container."
+        }
       },
       "motion-wheel": {
         "label": "Motion Wheel",
-        "description": "A compound carousel wheel with rotation animation, prev/next navigation, dot indicators, and optional center info panel. Supports keyboard control (ArrowLeft/ArrowRight) when focused."
+        "description": "A compound carousel wheel with rotation animation, prev/next navigation, dot indicators, and optional center info panel. Supports keyboard control (ArrowLeft/ArrowRight) when focused.",
+        "props": {
+          "items": "Data array for wheel items; each item must have an id.",
+          "children": "Child elements or render content.",
+          "className": "Additional CSS class for the element.",
+          "radius": "Wheel radius in pixels; responsive default (desktop 320, mobile 270).",
+          "spring": "Spring animation config: stiffness, damping, duration.",
+          "initialIndex": "Index of the initially focused item.",
+          "interval": "Auto-advance interval in milliseconds (AutoCarousel).",
+          "wheelChildren": "Render function (item, index) => ReactNode for each wheel item.",
+          "item": "Current item data (MotionWheel.Item).",
+          "index": "Index of the item in the wheel (MotionWheel.Item).",
+          "prevClassName": "CSS class for the previous (left) navigation button.",
+          "nextClassName": "CSS class for the next (right) navigation button.",
+          "centerInfoChildren": "Render function (item) => ReactNode for the center info panel content."
+        }
       },
       "3d-card": {
         "label": "3D Card",
@@ -110,7 +234,22 @@
       },
       "draggable-grid": {
         "label": "Draggable Grid",
-        "description": "A draggable 2D grid with parallax icon cells. Inspired by Apple WatchOS."
+        "description": "A draggable 2D grid with parallax icon cells. Inspired by Apple WatchOS.",
+        "props": {
+          "children": "Root/Grid: child nodes. Item: custom content; when provided, item (link+image+tooltip) is ignored.",
+          "className": "Optional CSS class for the container.",
+          "iconSize": "Size (px) of each grid cell/icon. Used for layout and parallax.",
+          "iconMargin": "Gap (px) between grid cells.",
+          "rows": "Number of grid rows (Root).",
+          "cols": "Number of grid columns (Root).",
+          "linkComponent": "Custom component for links (e.g. Next.js Link). Receives href and children.",
+          "fallback": "ReactNode shown before mount (e.g. loading). If set, Root renders it instead of default loading UI.",
+          "dragConstraints": "Bounds for dragging: { left, right, top, bottom } in px. Limits how far the grid plane can be dragged.",
+          "row": "Item's row index in the grid (0-based).",
+          "col": "Item's column index in the grid (0-based).",
+          "index": "Item order for stagger animation delay.",
+          "item": "Data for default cell: { id, href?, image?, label? }. When set, renders link + image/tooltip; omit and use children for custom content."
+        }
       },
       "timeline": {
         "label": "Timeline",
@@ -118,11 +257,27 @@
       },
       "speed-dial": {
         "label": "Speed Dial",
-        "description": "FAB that expands into a radial menu of actions. Compound component: Root, Trigger, Item. Supports spread angle and direction."
+        "description": "FAB that expands into a radial menu of actions. Compound component: Root, Trigger, Item. Supports spread angle and direction.",
+        "props": {
+          "children": "Root: Trigger and Item components. Trigger: optional icon or label for the FAB. Item: icon or label for the action button.",
+          "spreadRangeAngle": "Total angle (degrees) the items spread over. e.g. 360 full circle, 180 half, 30 narrow.",
+          "directionAngle": "Direction of the fan: 0° = right, 90° = down, 180° = left, 270° = up.",
+          "radius": "Distance from trigger to each item (px).",
+          "itemSize": "Default size for all SpeedDial.Item children (sm, default, lg).",
+          "className": "Optional CSS class for the Root container.",
+          "variant": "Trigger button style: default, outline, or secondary.",
+          "size": "Trigger or Item size: default, sm, or lg. On Item, overrides Root's itemSize.",
+          "onClick": "Callback when the Item is clicked (menu closes after)."
+        }
       },
       "floating-dock": {
         "label": "Floating Dock",
-        "description": "Bottom navigation dock with magnify-on-hover. Desktop bar at bottom; mobile collapses to hamburger menu."
+        "description": "Bottom navigation dock with magnify-on-hover. Desktop bar at bottom; mobile collapses to hamburger menu.",
+        "props": {
+          "items": "Array of nav items: title, icon (ReactNode), and href. Rendered in both desktop bar and mobile menu.",
+          "desktopClassName": "Optional CSS class for the desktop dock container (visible from md breakpoint).",
+          "mobileClassName": "Optional CSS class for the mobile dock wrapper (visible below md; wraps the hamburger trigger and expanded menu)."
+        }
       }
     },
   "ThreeDCardDemo": {

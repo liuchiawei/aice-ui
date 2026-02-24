@@ -153,6 +153,30 @@
       ]
     },
     {
+      "name": "perlin-noise",
+      "type": "registry:ui",
+      "title": "Perlin Noise",
+      "description": "Canvas-based Perlin noise wave grid background with configurable line color, wave speed and amplitude; mouse and touch interaction. | パーリンノイズの波状グリッド背景。線色・波速・振幅を設定可能。マウス・タッチでグリッド変形。",
+      "files": [
+        {
+          "path": "components/background/perlin-noise.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "star-background",
+      "type": "registry:ui",
+      "title": "Star Background",
+      "description": "Canvas 2D starfield background. Configurable star count, twinkle speed, and color. Suited for hero sections or page backgrounds with optional overlay content. | Canvas 2D の星空背景。星の数・きらめきの速さ・色を設定可能。",
+      "files": [
+        {
+          "path": "components/background/star-background.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "radar-chart",
       "type": "registry:ui",
       "title": "Radar Chart",

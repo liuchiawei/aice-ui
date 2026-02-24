@@ -22,15 +22,52 @@
       "components": "元件一覽"
     },
     "demo-code": "範例代碼",
-    "install": "請選擇您喜歡的包管理器安裝元件。",
-    "usage": "請選擇您喜歡的包管理器安裝元件。",
+    "install": {
+      "title": "安裝",
+      "description": "請選擇您喜歡的包管理器安裝元件。"
+    },
+    "usage": {
+      "title": "使用方法",
+      "description": "元件的使用方法和屬性說明尚未記載。",
+      "table": {
+        "item": "子項",
+        "prop": "屬性",
+        "type": "類型",
+        "default": "預設值",
+        "description": "說明"
+      }
+    },
+    "usageTitle": "Props",
     "related": "相關元件"
   },
   "Components": {
     "newLabel": "新",
     "glass-surface": {
       "label": "液態玻璃",
-      "description": "受 Apple 最新設計語言啟發的次世代 UI 元件。將傳統玻璃擬態設計進化，即時再現光的折射、邊緣光澤與如液體般的流動動態。以輕量實作保留物理基礎的進階視覺效果，為網站帶來出色的「質感」與「沉浸感」。"
+      "description": "受 Apple 最新設計語言啟發的次世代 UI 元件。將傳統玻璃擬態設計進化，即時再現光的折射、邊緣光澤與如液體般的流動動態。以輕量實作保留物理基礎的進階視覺效果，為網站帶來出色的「質感」與「沉浸感」。",
+      "props": {
+        "children": "玻璃面內部的內容。",
+        "width": "表面寬度（數字為 px，或 CSS 字串）。",
+        "height": "表面高度（數字為 px，或 CSS 字串）。",
+        "borderRadius": "圓角半徑（像素）。",
+        "borderWidth": "用於位移效果的相對邊框／邊緣寬度（如 0.07）。",
+        "brightness": "玻璃效果的亮度。",
+        "opacity": "玻璃層不透明度（0～1）。",
+        "blur": "背景模糊量（像素）。",
+        "displace": "扭曲效果的位移量。",
+        "backgroundOpacity": "內層背景的不透明度。",
+        "saturation": "效果的色彩飽和度。",
+        "distortionScale": "SVG 位移貼圖的縮放（負值為反轉）。",
+        "redOffset": "位移映射的紅通道偏移。",
+        "greenOffset": "位移映射的綠通道偏移。",
+        "blueOffset": "位移映射的藍通道偏移。",
+        "xChannel": "水平位移使用的色通道（R、G 或 B）。",
+        "yChannel": "垂直位移使用的色通道（R、G 或 B）。",
+        "mixBlendMode": "合成用的 CSS mix-blend-mode（如 difference、overlay）。",
+        "className": "根容器上額外加入的 CSS 類名。",
+        "contentClassName": "內層內容包裝上額外加入的 CSS 類名。",
+        "style": "根元素的內聯樣式。"
+      }
     },
     "code-block": {
       "label": "代碼",
@@ -38,7 +75,15 @@
     },
     "snippet": {
       "label": "指令欄",
-      "description": "單行程式碼或指令顯示，附複製按鈕。複合元件：Provider、Input、Addon、Text、CopyButton。適用於安裝指令、token 或可複製片段。"
+      "description": "單行程式碼或指令顯示，附複製按鈕。複合元件：Provider、Input、Addon、Text、CopyButton。適用於安裝指令、token 或可複製片段。",
+      "props": {
+        "code": "要顯示並複製的文字內容。",
+        "className": "根容器的額外 CSS class。",
+        "align": "Addon 的對齊方式（沿用 InputGroupAddon 的 align）。",
+        "onCopy": "複製成功後觸發。",
+        "onError": "複製失敗時觸發（例如 Clipboard API 不可用）。",
+        "timeout": "複製成功狀態維持時間（毫秒），到期後恢復。"
+      }
     },
     "pop-up-item": {
       "label": "彈出項目",
@@ -70,19 +115,98 @@
     },
     "floating-circles": {
       "label": "浮動圓形",
-      "description": "顏色可自訂的流動漸層背景，支援滑鼠追蹤效果。"
+      "description": "顏色可自訂的流動漸層背景，支援滑鼠追蹤效果。",
+      "props": {
+        "gradientBackgroundStart": "漸層背景的起始色（如 rgb(108, 0, 162)）。",
+        "gradientBackgroundEnd": "漸層背景的結束色（如 rgb(0, 17, 82)）。",
+        "firstColor": "第一個圓的 RGB 值（如 \"20, 72, 140\"）。",
+        "secondColor": "第二個圓的 RGB 值。",
+        "thirdColor": "第三個圓的 RGB 值。",
+        "fourthColor": "第四個圓的 RGB 值。",
+        "fifthColor": "第五個圓的 RGB 值。",
+        "pointerColor": "跟隨滑鼠之圓的 RGB 值（interactive 時顯示）。",
+        "size": "漸層圓的尺寸（如 \"80%\" 或 CSS 長度）。",
+        "blendingValue": "圓的 CSS mix-blend-mode（如 hard-light、overlay）。",
+        "children": "疊在背景上的內容（如主視覺文字）。",
+        "className": "內容包裝的額外 CSS 類名。",
+        "interactive": "是否顯示跟隨滑鼠的圓。",
+        "containerClassName": "根容器的額外 CSS 類名。"
+      }
     },
     "matrix-code": {
       "label": "代碼瀑布",
-      "description": "以電影《駭客任務》世界觀為靈感的背景元件，呈現綠色字元由畫面頂部向下流動的視覺效果。"
+      "description": "以電影《駭客任務》世界觀為靈感的背景元件，呈現綠色字元由畫面頂部向下流動的視覺效果。",
+      "props": {
+        "glitchColors": "格狀字元使用的 HEX 色陣列（如綠、青系）。",
+        "glitchSpeed": "字元與顏色更新間隔（毫秒），數值越小越快。",
+        "centerVignette": "是否在中央套用暗角效果。",
+        "outerVignette": "是否在邊緣套用暗角效果。",
+        "smooth": "是否平滑過渡顏色變化；false 為即時切換。",
+        "className": "容器額外的 CSS 類名。"
+      }
+    },
+    "perlin-noise": {
+      "label": "波浪網格",
+      "description": "以 Canvas 繪製的柏林噪聲(Perlin Noise)波浪網格背景。可設定線條顏色、波速與振幅；支援滑鼠與觸控互動，游標會影響網格位移。",
+      "props": {
+        "lineColor": "波浪網格線條的描邊顏色（CSS 顏色）。",
+        "backgroundColor": "容器背景色（CSS 顏色）。",
+        "waveSpeedX": "波浪動畫的水平速度。",
+        "waveSpeedY": "波浪動畫的垂直速度。",
+        "waveAmpX": "波浪水平位移振幅（像素）。",
+        "waveAmpY": "波浪垂直位移振幅（像素）。",
+        "xGap": "網格線水平間距（像素）。",
+        "yGap": "每條線上點的垂直間距（像素）。",
+        "friction": "游標引起的位移衰減係數（0–1），越大殘留越久。",
+        "tension": "游標互動後將點拉回原位的彈簧張力。",
+        "maxCursorMove": "游標／觸控對網格點的最大位移（像素）。",
+        "style": "根容器的內聯 CSS 樣式。",
+        "className": "根容器的額外 CSS 類名。"
+      }
+    },
+    "star-background": {
+      "label": "星空背景",
+      "description": "Canvas 2D 星空背景。可設定星數、閃爍速度與顏色。適合用於主視覺區或頁面背景，可選疊加內容。",
+      "props": {
+        "starCount": "畫布上繪製的星星數量。",
+        "twinkleSpeed": "閃爍動畫速度（設為 0 可關閉）。",
+        "starColor": "星星顏色，以 RGB 逗號分隔字串表示（例如 \"255, 255, 255\"）。",
+        "backgroundColor": "畫布背景色（CSS 顏色）。",
+        "className": "套用在 canvas 元素上的額外 CSS 類名。",
+        "containerClassName": "套用在外層容器上的額外 CSS 類名。",
+        "children": "可選的疊加內容，會顯示在星空之上。",
+        "style": "根容器的內聯 CSS 樣式。"
+      }
     },
     "webcam": {
       "label": "網路攝影機",
-      "description": "用於瀏覽器網路攝影機串流的元件，具備錯誤處理與 ref 轉發支援。"
+      "description": "可設定解析度與是否啟用麥克風的網路攝影機串流元件，支援 ref 轉發，取得攝影機失敗時會顯示錯誤訊息。",
+      "props": {
+        "width": "影片寬度（像素）。",
+        "height": "影片高度（像素）。",
+        "audio": "是否請求麥克風音訊串流。",
+        "className": "套用在 <video> 上的額外 CSS 類名。",
+        "containerClassName": "套用在外層容器上的額外 CSS 類名。"
+      }
     },
     "motion-wheel": {
       "label": "旋轉輪播",
-      "description": "具旋轉動畫、前後導航、圓點指示與可選中央資訊區的複合式輪播元件。聚焦後支援鍵盤控制（左右方向鍵切換項目）。"
+      "description": "具旋轉動畫、前後導航、圓點指示與可選中央資訊區的複合式輪播元件。聚焦後支援鍵盤控制（左右方向鍵切換項目）。",
+      "props": {
+        "items": "輪播項目資料陣列，每筆需有 id。",
+        "children": "子元件或渲染內容。",
+        "className": "套用在該元件上的額外 CSS 類名。",
+        "radius": "輪圈半徑（像素），響應式預設為桌面 320、行動 270。",
+        "spring": "彈簧動畫設定：stiffness、damping、duration。",
+        "initialIndex": "初始顯示的項目索引。",
+        "interval": "自動切換間隔（毫秒，AutoCarousel 用）。",
+        "wheelChildren": "各輪播項目的渲染函式 (item, index) => ReactNode。",
+        "item": "當前項目資料（MotionWheel.Item）。",
+        "index": "項目在輪播中的索引（MotionWheel.Item）。",
+        "prevClassName": "「上一項」按鈕的 CSS 類名。",
+        "nextClassName": "「下一項」按鈕的 CSS 類名。",
+        "centerInfoChildren": "中央資訊區內容的渲染函式 (item) => ReactNode。"
+      }
     },
     "3d-card": {
       "label": "3D卡片",
@@ -110,7 +234,22 @@
     },
     "draggable-grid": {
       "label": "可拖拽網格",
-      "description": "可拖曳的 2D 網格，圖示格具視差效果。靈感來自 Apple WatchOS。"
+      "description": "可拖曳的 2D 網格，圖示格具視差效果。靈感來自 Apple WatchOS。",
+      "props": {
+        "children": "Root/Grid：子節點。Item：自訂內容；提供時會忽略 item（連結+圖片+提示）。",
+        "className": "容器的選用 CSS 類名。",
+        "iconSize": "每個網格格/圖示的尺寸（px），用於版面與視差。",
+        "iconMargin": "網格格之間的間距（px）。",
+        "rows": "網格行數（Root）。",
+        "cols": "網格列數（Root）。",
+        "linkComponent": "連結用自訂元件（如 Next.js Link），接收 href 與 children。",
+        "fallback": "掛載前顯示的 ReactNode（如載入中）。設定時 Root 會渲染此內容而非預設載入 UI。",
+        "dragConstraints": "拖曳邊界：{ left, right, top, bottom }（px），限制網格平面可拖曳範圍。",
+        "row": "項目在網格中的行索引（從 0 開始）。",
+        "col": "項目在網格中的列索引（從 0 開始）。",
+        "index": "用於錯開動畫延遲的順序。",
+        "item": "預設格子的資料：{ id, href?, image?, label? }。設定時會渲染連結+圖片/提示；省略並用 children 可自訂內容。"
+      }
     },
     "timeline": {
       "label": "時間軸",
@@ -118,11 +257,27 @@
     },
     "speed-dial": {
       "label": "放射式選單",
-      "description": "點擊後以放射狀展開的動作選單。複合元件：Root、Trigger、Item。可設定展開角度與方向。"
+      "description": "點擊後以放射狀展開的動作選單。複合元件：Root、Trigger、Item。可設定展開角度與方向。",
+      "props": {
+        "children": "Root：Trigger 與 Item 元件。Trigger：FAB 的選用圖示或文字。Item：動作按鈕的圖示或文字。",
+        "spreadRangeAngle": "選單項目展開的總角度（度）。例如 360 整圓、180 半圓、30 窄扇。",
+        "directionAngle": "扇型方向：0° 右、90° 下、180° 左、270° 上。",
+        "radius": "觸發鈕到每個項目之間的距離（px）。",
+        "itemSize": "所有 SpeedDial.Item 的預設尺寸（sm、default、lg）。",
+        "className": "Root 容器的選用 CSS 類名。",
+        "variant": "Trigger 按鈕樣式：default、outline 或 secondary。",
+        "size": "Trigger 或 Item 尺寸：default、sm 或 lg。用於 Item 時會覆寫 Root 的 itemSize。",
+        "onClick": "點擊 Item 時的回呼（點擊後選單會關閉）。"
+      }
     },
     "floating-dock": {
       "label": "懸浮式選單",
-      "description": "滑鼠懸停放大圖示的底部導航列。桌面版固定於底部，手機版收合為選單按鈕。"
+      "description": "滑鼠懸停放大圖示的底部導航列。桌面版固定於底部，手機版收合為選單按鈕。",
+      "props": {
+        "items": "導航項目陣列（title、icon、href）。會同時用於桌面列與手機選單。",
+        "desktopClassName": "桌面版 dock 容器可選的 CSS 類名（md 斷點以上顯示）。",
+        "mobileClassName": "手機版 dock 外層可選的 CSS 類名（md 以下顯示，含漢堡按鈕與展開選單）。"
+      }
     }
   },
   "ThreeDCardDemo": {

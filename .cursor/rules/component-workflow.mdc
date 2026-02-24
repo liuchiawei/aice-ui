@@ -14,8 +14,11 @@ When the user asks to **refactor a component**, follow this 7-step workflow in o
 3. **Add demo** in `components/demo/` — follow format of `copy-button-demo.tsx`:
    - Export `{Component}Demo` function component
    - Export `{component}Source` string (simplified usage example)
-4. **Write descriptions** in `messages/en.json`, `ja.json`, `zh.json` under `Components` namespace with `{slug}.label` and `{slug}.description`
-5. **Update** `lib/component-config.ts` — add/update item with slug, labelKey, descriptionKey, demo, sourceCode, `date: "YYYY-MM-DD"` (today)
+4. **Write i18n messages** in `messages/en.json`, `ja.json`, `zh.json` under `Components` namespace, following the format required by `components/section/usage-section.tsx`:
+   - `{slug}.label` — component display name
+   - `{slug}.description` — component description
+   - **Props usage (en/ja/zh):** when the component has a Usage/Props table, add `{slug}.props.{propName}` for each prop used in `usageProps` (each row’s `descriptionKey`). Provide the same keys in all three locale files so the Usage section can show prop descriptions in the user’s language.
+5. **Update** `lib/component-config.ts` — add/update item with slug, labelKey, descriptionKey, demo, sourceCode, `date: "YYYY-MM-DD"` (today). If the component has a Props table, add `usageProps` (array of `UsagePropRow`) with `descriptionKey: "{slug}.props.{propName}"` so `UsageSection` can resolve descriptions from step 4. For **compound components** (e.g. Snippet with Provider, Addon, CopyButton), add optional `item: "SubComponentName"` to each row (e.g. `"Provider"`, `"Addon"`, `"CopyButton"`) so the Usage table shows the Item column (Item / Prop / Type / Default / Description).
 6. **Update** `registry.json`:
    - Add `dependencies` for npm packages used
    - Add `registryDependencies` for other registry components used

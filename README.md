@@ -79,6 +79,8 @@ Components are grouped by category (see `lib/component-config.ts`).
 |-----------|-------------|
 | **Floating Circles** | A floating circles component with customizable data and optional title and description. |
 | **Matrix Code** | A matrix code component with glitch effect and optional vignette effect. |
+| **Perlin Noise** | Canvas-based Perlin noise wave grid background. Configurable line color, wave speed and amplitude; mouse and touch interaction. (2026-02-24) |
+| **Star Background** | Canvas 2D starfield background. Configurable star count, twinkle speed, and color; optional overlay content. (2026-02-24) |
 
 ### Media
 
@@ -86,7 +88,7 @@ Components are grouped by category (see `lib/component-config.ts`).
 |-----------|-------------|
 | **Webcam** | A webcam component with customizable data and optional title and description. |
 
-**Total: 21 components**
+**Total: 23 components**
 
 ---
 

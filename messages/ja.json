@@ -23,15 +23,52 @@
     },
     "description": "多様な用途に活用できる汎用的なUIコンポーネントです。",
     "demo-code": "デモコード",
-    "install": "お好きなパッケージマネージャーでコンポーネントをインストールしてください。",
-    "usage": "お好きなパッケージマネージャーでコンポーネントをインストールしてください。",
+    "install": {
+      "title": "インストール",
+      "description": "お好きなパッケージマネージャーでコンポーネントをインストールしてください。"
+    },
+    "usage": {
+      "title": "使用方法",
+      "description": "コンポーネントの使用方法とプロパティはまだ記載されていません。",
+      "table": {
+        "item": "子要素",
+        "prop": "プロパティ",
+        "type": "型",
+        "default": "デフォルト",
+        "description": "説明"
+      }
+    },
+    "usageTitle": "Props",
     "related": "関連コンポーネント"
   },
   "Components": {
     "newLabel": "新規",
     "glass-surface": {
       "label": "リキッド・グラス",
-      "description": "Appleの最新デザイン言語にインスパイアされた、次世代のUIコンポーネントです。従来のグラスモーフィズムを進化させ、光の屈折やエッジの光沢、液体のような有機的な動きをリアルタイムで再現しました。物理ベースの高度な視覚効果を保ちつつ、軽量な実装でWebサイトに圧倒的な「質感」と「没入感」を与えます。"
+      "description": "Appleの最新デザイン言語にインスパイアされた、次世代のUIコンポーネントです。従来のグラスモーフィズムを進化させ、光の屈折やエッジの光沢、液体のような有機的な動きをリアルタイムで再現しました。物理ベースの高度な視覚効果を保ちつつ、軽量な実装でWebサイトに圧倒的な「質感」と「没入感」を与えます。",
+      "props": {
+        "children": "グラス面の内側に表示するコンテンツ。",
+        "width": "表面の幅（数値は px、または CSS 文字列）。",
+        "height": "表面の高さ（数値は px、または CSS 文字列）。",
+        "borderRadius": "角丸の半径（ピクセル）。",
+        "borderWidth": "変位効果用の相対的な枠・エッジ幅（例: 0.07）。",
+        "brightness": "グラス効果の明るさ。",
+        "opacity": "グラス層の不透明度（0～1）。",
+        "blur": "背景ぼかしの量（ピクセル）。",
+        "displace": "歪み効果の変位量。",
+        "backgroundOpacity": "内側背景層の不透明度。",
+        "saturation": "効果の色飽和度。",
+        "distortionScale": "SVG 変位マップのスケール（負で反転）。",
+        "redOffset": "変位マッピングの赤チャンネルオフセット。",
+        "greenOffset": "変位マッピングの緑チャンネルオフセット。",
+        "blueOffset": "変位マッピングの青チャンネルオフセット。",
+        "xChannel": "水平変位に使う色チャンネル（R / G / B）。",
+        "yChannel": "垂直変位に使う色チャンネル（R / G / B）。",
+        "mixBlendMode": "合成用の CSS mix-blend-mode（例: difference, overlay）。",
+        "className": "ルートコンテナに追加する CSS クラス。",
+        "contentClassName": "内側コンテンツラッパーに追加する CSS クラス。",
+        "style": "ルート要素のインラインスタイル。"
+      }
     },
     "code-block": {
       "label": "コードブロック",
@@ -39,7 +76,15 @@
     },
     "snippet": {
       "label": "コマンドライン",
-      "description": "コピーボタン付きの一行コード・コマンド表示。Provider / Input / Addon / Text / CopyButton の複合コンポーネント。インストールコマンドやトークン、コピー可能なスニペットに。"
+      "description": "コピーボタン付きの一行コード・コマンド表示。Provider / Input / Addon / Text / CopyButton の複合コンポーネント。インストールコマンドやトークン、コピー可能なスニペットに。",
+      "props": {
+        "code": "表示してコピーする文字列。",
+        "className": "ルートコンテナに追加する CSS クラス。",
+        "align": "アドオンの配置（InputGroupAddon の align）。",
+        "onCopy": "コピー成功後に呼ばれます。",
+        "onError": "コピー失敗時に呼ばれます（Clipboard API など）。",
+        "timeout": "コピー後に成功状態を保持する時間（ミリ秒）。"
+      }
     },
     "pop-up-item": {
       "label": "ポップアップアイテム",
@@ -71,19 +116,98 @@
     },
     "floating-circles": {
       "label": "浮動サークル",
-      "description": "色変更可能な動くグラデーション背景。マウス追従も可。"
+      "description": "色変更可能な動くグラデーション背景。マウス追従も可。",
+      "props": {
+        "gradientBackgroundStart": "グラデーション背景の開始色（例: rgb(108, 0, 162)）。",
+        "gradientBackgroundEnd": "グラデーション背景の終了色（例: rgb(0, 17, 82)）。",
+        "firstColor": "1 つ目の円の RGB 値（例: \"20, 72, 140\"）。",
+        "secondColor": "2 つ目の円の RGB 値。",
+        "thirdColor": "3 つ目の円の RGB 値。",
+        "fourthColor": "4 つ目の円の RGB 値。",
+        "fifthColor": "5 つ目の円の RGB 値。",
+        "pointerColor": "ポインター追従円の RGB 値（interactive 時のみ表示）。",
+        "size": "グラデーション円のサイズ（例: \"80%\" または CSS の長さ）。",
+        "blendingValue": "円の CSS mix-blend-mode（例: hard-light, overlay）。",
+        "children": "背景の上に表示するコンテンツ（例: ヒーローテキスト）。",
+        "className": "コンテンツラッパーに追加する CSS クラス。",
+        "interactive": "ポインター追従の円を表示するかどうか。",
+        "containerClassName": "ルートコンテナに追加する CSS クラス。"
+      }
     },
     "matrix-code": {
       "label": "マトリックスコード",
-      "description": "映画『マトリックス』の世界観を象徴する、緑色の文字が画面を上から下へと流れ落ちる視覚効果を再現した背景コンポーネントです。"
+      "description": "映画『マトリックス』の世界観を象徴する、緑色の文字が画面を上から下へと流れ落ちる視覚効果を再現した背景コンポーネントです。",
+      "props": {
+        "glitchColors": "グリッチ文字に使う HEX 色の配列（例：緑・シアン系）。",
+        "glitchSpeed": "文字・色の更新間隔（ミリ秒）。小さいほど速い。",
+        "centerVignette": "中央に暗いビネットをかけるかどうか。",
+        "outerVignette": "外側に暗いビネットをかけるかどうか。",
+        "smooth": "色の変化をスムーズに補間するか。false で即時切り替え。",
+        "className": "コンテナに追加する CSS クラス。"
+      }
+    },
+    "perlin-noise": {
+      "label": "波状グリッド",
+      "description": "Canvas で描画するパーリンノイズの波状グリッド背景。線色・波の速さ・振幅を設定可能。マウス・タッチでグリッドが変形するインタラクション付き。",
+      "props": {
+        "lineColor": "波線のストローク色（CSS 色）。",
+        "backgroundColor": "コンテナの背景色（CSS 色）。",
+        "waveSpeedX": "波アニメーションの水平方向の速さ。",
+        "waveSpeedY": "波アニメーションの垂直方向の速さ。",
+        "waveAmpX": "波の水平方向の変位振幅（ピクセル）。",
+        "waveAmpY": "波の垂直方向の変位振幅（ピクセル）。",
+        "xGap": "グリッド線の水平間隔（ピクセル）。",
+        "yGap": "各線上の点の垂直間隔（ピクセル）。",
+        "friction": "カーソルによる動きの減衰係数（0–1）。大きいほど残りやすい。",
+        "tension": "カーソル操作後に点を元の位置に戻すスプリングの張力。",
+        "maxCursorMove": "カーソル・タッチによるグリッド点の最大変位（ピクセル）。",
+        "style": "ルートコンテナのインライン CSS。",
+        "className": "ルートコンテナに追加する CSS クラス。"
+      }
+    },
+    "star-background": {
+      "label": "星空背景",
+      "description": "Canvas 2D の星空背景。星の数・きらめきの速さ・色を設定可能。ヒーローセクションやページ背景に最適。オプションでオーバーレイコンテンツを配置可能。",
+      "props": {
+        "starCount": "キャンバスに描画する星の数。",
+        "twinkleSpeed": "きらめきアニメーションの速さ（0 で無効）。",
+        "starColor": "星の色（RGB カンマ区切り文字列、例: \"255, 255, 255\"）。",
+        "backgroundColor": "キャンバスの背景色（CSS 色）。",
+        "className": "キャンバス要素に追加する CSS クラス。",
+        "containerClassName": "外側コンテナに追加する CSS クラス。",
+        "children": "星景の上に表示するオプションのオーバーレイコンテンツ。",
+        "style": "ルートコンテナのインライン CSS。"
+      }
     },
     "webcam": {
       "label": "ウェブカメラ",
-      "description": "ブラウザのウェブカメラストリーミング用コンポーネント。"
+      "description": "解像度とオーディオを設定可能なウェブカメラストリーミングコンポーネント。ref 転送に対応し、カメラ取得失敗時はエラーメッセージを表示します。",
+      "props": {
+        "width": "映像の幅（ピクセル）。",
+        "height": "映像の高さ（ピクセル）。",
+        "audio": "マイクストリームを取得するかどうか。",
+        "className": "<video> 要素に付与する追加の CSS クラス。",
+        "containerClassName": "外側コンテナに付与する追加の CSS クラス。"
+      }
     },
     "motion-wheel": {
       "label": "回転カルーセル",
-      "description": "回転アニメーションと前後ナビゲーション・ドットインジケーター・中央情報パネルを備えた複合カルーセルホイールコンポーネント。フォーカス時は左右キーで項目切り替え可能。"
+      "description": "回転アニメーションと前後ナビゲーション・ドットインジケーター・中央情報パネルを備えた複合カルーセルホイールコンポーネント。フォーカス時は左右キーで項目切り替え可能。",
+      "props": {
+        "items": "ホイール項目のデータ配列。各要素は id 必須。",
+        "children": "子要素または表示内容。",
+        "className": "要素に付与する追加の CSS クラス。",
+        "radius": "ホイールの半径（ピクセル）。レスポンシブ時はデスクトップ 320・モバイル 270。",
+        "spring": "スプリングアニメーション設定（stiffness, damping, duration）。",
+        "initialIndex": "初期表示する項目のインデックス。",
+        "interval": "自動送りの間隔（ミリ秒、AutoCarousel 用）。",
+        "wheelChildren": "各ホイール項目の描画関数 (item, index) => ReactNode。",
+        "item": "現在の項目データ（MotionWheel.Item）。",
+        "index": "ホイール内の項目インデックス（MotionWheel.Item）。",
+        "prevClassName": "前へ（左）ナビボタン用の CSS クラス。",
+        "nextClassName": "次へ（右）ナビボタン用の CSS クラス。",
+        "centerInfoChildren": "中央情報パネルの内容を描画する関数 (item) => ReactNode。"
+      }
     },
     "3d-card": {
       "label": "3Dカード",
@@ -111,7 +235,22 @@
     },
     "draggable-grid": {
       "label": "ドラッググリッド",
-      "description": "視差付きアイコンセルのドラッグ可能な2Dグリッド。Apple WatchOS にインスパイア。"
+      "description": "視差付きアイコンセルのドラッグ可能な2Dグリッド。Apple WatchOS にインスパイア。",
+      "props": {
+        "children": "Root/Grid：子ノード。Item：カスタム内容。指定時は item（リンク+画像+ツールチップ）は無視。",
+        "className": "コンテナの任意 CSS クラス。",
+        "iconSize": "各グリッドセル/アイコンのサイズ（px）。レイアウトと視差に使用。",
+        "iconMargin": "グリッドセル間の余白（px）。",
+        "rows": "グリッドの行数（Root）。",
+        "cols": "グリッドの列数（Root）。",
+        "linkComponent": "リンク用のカスタムコンポーネント（例：Next.js Link）。href と children を受け取る。",
+        "fallback": "マウント前に表示する ReactNode（例：ローディング）。指定時は Root はデフォルトのローディング UI の代わりにこれを表示。",
+        "dragConstraints": "ドラッグ範囲：{ left, right, top, bottom }（px）。グリッド平面のドラッグ限界。",
+        "row": "アイテムの行インデックス（0 始まり）。",
+        "col": "アイテムの列インデックス（0 始まり）。",
+        "index": "スタッガーアニメーションの遅延用の順序。",
+        "item": "デフォルトセル用データ：{ id, href?, image?, label? }。指定時はリンク+画像/ツールチップを描画。省略して children でカスタム内容を渡せる。"
+      }
     },
     "timeline": {
       "label": "タイムライン",
@@ -119,11 +258,27 @@
     },
     "speed-dial": {
       "label": "スピードダイヤル",
-      "description": "FAB を押すと放射状にアクションボタンが広がるメニュー。Root / Trigger / Item の複合コンポーネント。展開角度・方向を指定可能。"
+      "description": "FAB を押すと放射状にアクションボタンが広がるメニュー。Root / Trigger / Item の複合コンポーネント。展開角度・方向を指定可能。",
+      "props": {
+        "children": "Root：Trigger と Item コンポーネント。Trigger：FAB の任意のアイコンまたはラベル。Item：アクションボタンのアイコンまたはラベル。",
+        "spreadRangeAngle": "項目が広がる総角度（度）。360 で円形、180 で半円、30 で狭い扇形など。",
+        "directionAngle": "扇形の方向：0° 右、90° 下、180° 左、270° 上。",
+        "radius": "トリガーから各項目までの距離（px）。",
+        "itemSize": "全 SpeedDial.Item のデフォルトサイズ（sm / default / lg）。",
+        "className": "Root コンテナの任意 CSS クラス。",
+        "variant": "Trigger ボタンのスタイル：default / outline / secondary。",
+        "size": "Trigger または Item のサイズ：default / sm / lg。Item では Root の itemSize を上書き。",
+        "onClick": "Item クリック時のコールバック（クリック後にメニューが閉じる）。"
+      }
     },
     "floating-dock": {
       "label": "フローティングドック",
-      "description": "ホバーで拡大する下部ナビゲーションドック。デスクトップは下に固定、モバイルはハンバーガーメニューに折りたたみ。"
+      "description": "ホバーで拡大する下部ナビゲーションドック。デスクトップは下に固定、モバイルはハンバーガーメニューに折りたたみ。",
+      "props": {
+        "items": "ナビ項目の配列（title・icon・href）。デスクトップバーとモバイルメニュー両方に表示。",
+        "desktopClassName": "デスクトップ用ドックのコンテナに付与する任意の CSS クラス（md 以上で表示）。",
+        "mobileClassName": "モバイル用ドックのラッパーに付与する任意の CSS クラス（md 未満で表示、ハンバーガーと展開メニューを含む）。"
+      }
     }
   },
   "ThreeDCardDemo": {
