@@ -116,6 +116,10 @@
     "speed-dial": {
       "label": "スピードダイヤル",
       "description": "FAB を押すと放射状にアクションボタンが広がるメニュー。Root / Trigger / Item の複合コンポーネント。展開角度・方向を指定可能。"
+    },
+    "floating-dock": {
+      "label": "フローティングドック",
+      "description": "ホバーで拡大する下部ナビゲーションドック。デスクトップは下に固定、モバイルはハンバーガーメニューに折りたたみ。"
     }
   },
   "ThreeDCardDemo": {

@@ -115,6 +115,10 @@
     "speed-dial": {
       "label": "放射式選單",
       "description": "點擊後以放射狀展開的動作選單。複合元件：Root、Trigger、Item。可設定展開角度與方向。"
+    },
+    "floating-dock": {
+      "label": "懸浮式選單",
+      "description": "滑鼠懸停放大圖示的底部導航列。桌面版固定於底部，手機版收合為選單按鈕。"
     }
   },
   "ThreeDCardDemo": {

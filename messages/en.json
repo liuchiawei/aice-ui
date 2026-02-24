@@ -115,6 +115,10 @@
       "speed-dial": {
         "label": "Speed Dial",
         "description": "FAB that expands into a radial menu of actions. Compound component: Root, Trigger, Item. Supports spread angle and direction."
+      },
+      "floating-dock": {
+        "label": "Floating Dock",
+        "description": "Bottom navigation dock with magnify-on-hover. Desktop bar at bottom; mobile collapses to hamburger menu."
       }
     },
   "ThreeDCardDemo": {

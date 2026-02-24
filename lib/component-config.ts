@@ -84,6 +84,10 @@ import {
   SpeedDialDemo,
   speedDialSource,
 } from "@/components/demo/speed-dial-demo";
+import {
+  FloatingDockDemo,
+  floatingDockSource,
+} from "@/components/demo/floating-dock-demo";
 /** Translation keys under the "Components" namespace (e.g. "glass-surface.label"). Resolve with useTranslations("Components") then t(key). */
 export interface ComponentItem {
   slug: string;
@@ -286,6 +290,14 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         demo: SpeedDialDemo,
         sourceCode: speedDialSource,
         date: "2026-02-21",
+      },
+      {
+        slug: "floating-dock",
+        labelKey: "floating-dock.label",
+        descriptionKey: "floating-dock.description",
+        demo: FloatingDockDemo,
+        sourceCode: floatingDockSource,
+        date: "2026-02-24",
       },
     ],
   },
