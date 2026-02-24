@@ -7,10 +7,7 @@ import {
   CodeBlockDemo,
   codeBlockSource,
 } from "@/components/demo/code-block-demo";
-import {
-  SnippetDemo,
-  snippetSource,
-} from "@/components/demo/snippet-demo";
+import { SnippetDemo, snippetSource } from "@/components/demo/snippet-demo";
 import {
   FloatingCirclesDemo,
   floatingCirclesSource,
@@ -40,10 +37,7 @@ import {
   ThemeSwitchDemo,
   themeSwitchSource,
 } from "@/components/demo/theme-switch-demo";
-import {
-  TimerDemo,
-  timerSource,
-} from "@/components/demo/timer-demo";
+import { TimerDemo, timerSource } from "@/components/demo/timer-demo";
 import {
   MatrixCodeDemo,
   matrixCodeSource,
@@ -88,10 +82,7 @@ import {
   DraggableGridDemo,
   draggableGridSource,
 } from "@/components/demo/draggable-grid-demo";
-import {
-  TimelineDemo,
-  timelineSource,
-} from "@/components/demo/timeline-demo";
+import { TimelineDemo, timelineSource } from "@/components/demo/timeline-demo";
 import {
   SpeedDialDemo,
   speedDialSource,
@@ -100,7 +91,7 @@ import {
   FloatingDockDemo,
   floatingDockSource,
 } from "@/components/demo/floating-dock-demo";
-/** One row for the Usage section props table (Prop, Type, Default, Description). */
+/** One row for the Usage section props table (Item, Prop, Type, Default, Description). */
 export interface UsagePropRow {
   name: string;
   type: string;
@@ -109,6 +100,8 @@ export interface UsagePropRow {
   description?: string;
   /** When set, description is resolved via useTranslations("Components")(descriptionKey). */
   descriptionKey?: string;
+  /** Optional sub-component name (e.g. Provider, Addon, CopyButton). When any row has this, the Usage table shows an "Item" column. */
+  item?: string;
 }
 
 /** Translation keys under the "Components" namespace (e.g. "glass-surface.label"). Resolve with useTranslations("Components") then t(key). */
@@ -137,27 +130,128 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         sourceCode: glassSurfaceSource,
         date: "2026-02-19",
         usageProps: [
-          { name: "children", type: "ReactNode", descriptionKey: "glass-surface.props.children" },
-          { name: "width", type: "number | string", default: "200", descriptionKey: "glass-surface.props.width" },
-          { name: "height", type: "number | string", default: "80", descriptionKey: "glass-surface.props.height" },
-          { name: "borderRadius", type: "number", default: "20", descriptionKey: "glass-surface.props.borderRadius" },
-          { name: "borderWidth", type: "number", default: "0.07", descriptionKey: "glass-surface.props.borderWidth" },
-          { name: "brightness", type: "number", default: "50", descriptionKey: "glass-surface.props.brightness" },
-          { name: "opacity", type: "number", default: "0.93", descriptionKey: "glass-surface.props.opacity" },
-          { name: "blur", type: "number", default: "11", descriptionKey: "glass-surface.props.blur" },
-          { name: "displace", type: "number", default: "0", descriptionKey: "glass-surface.props.displace" },
-          { name: "backgroundOpacity", type: "number", default: "0", descriptionKey: "glass-surface.props.backgroundOpacity" },
-          { name: "saturation", type: "number", default: "1", descriptionKey: "glass-surface.props.saturation" },
-          { name: "distortionScale", type: "number", default: "-180", descriptionKey: "glass-surface.props.distortionScale" },
-          { name: "redOffset", type: "number", default: "0", descriptionKey: "glass-surface.props.redOffset" },
-          { name: "greenOffset", type: "number", default: "10", descriptionKey: "glass-surface.props.greenOffset" },
-          { name: "blueOffset", type: "number", default: "20", descriptionKey: "glass-surface.props.blueOffset" },
-          { name: "xChannel", type: "'R' | 'G' | 'B'", default: "R", descriptionKey: "glass-surface.props.xChannel" },
-          { name: "yChannel", type: "'R' | 'G' | 'B'", default: "G", descriptionKey: "glass-surface.props.yChannel" },
-          { name: "mixBlendMode", type: "string", default: "difference", descriptionKey: "glass-surface.props.mixBlendMode" },
-          { name: "className", type: "string", descriptionKey: "glass-surface.props.className" },
-          { name: "contentClassName", type: "string", descriptionKey: "glass-surface.props.contentClassName" },
-          { name: "style", type: "CSSProperties", descriptionKey: "glass-surface.props.style" },
+          {
+            name: "children",
+            type: "ReactNode",
+            descriptionKey: "glass-surface.props.children",
+          },
+          {
+            name: "width",
+            type: "number | string",
+            default: "200",
+            descriptionKey: "glass-surface.props.width",
+          },
+          {
+            name: "height",
+            type: "number | string",
+            default: "80",
+            descriptionKey: "glass-surface.props.height",
+          },
+          {
+            name: "borderRadius",
+            type: "number",
+            default: "20",
+            descriptionKey: "glass-surface.props.borderRadius",
+          },
+          {
+            name: "borderWidth",
+            type: "number",
+            default: "0.07",
+            descriptionKey: "glass-surface.props.borderWidth",
+          },
+          {
+            name: "brightness",
+            type: "number",
+            default: "50",
+            descriptionKey: "glass-surface.props.brightness",
+          },
+          {
+            name: "opacity",
+            type: "number",
+            default: "0.93",
+            descriptionKey: "glass-surface.props.opacity",
+          },
+          {
+            name: "blur",
+            type: "number",
+            default: "11",
+            descriptionKey: "glass-surface.props.blur",
+          },
+          {
+            name: "displace",
+            type: "number",
+            default: "0",
+            descriptionKey: "glass-surface.props.displace",
+          },
+          {
+            name: "backgroundOpacity",
+            type: "number",
+            default: "0",
+            descriptionKey: "glass-surface.props.backgroundOpacity",
+          },
+          {
+            name: "saturation",
+            type: "number",
+            default: "1",
+            descriptionKey: "glass-surface.props.saturation",
+          },
+          {
+            name: "distortionScale",
+            type: "number",
+            default: "-180",
+            descriptionKey: "glass-surface.props.distortionScale",
+          },
+          {
+            name: "redOffset",
+            type: "number",
+            default: "0",
+            descriptionKey: "glass-surface.props.redOffset",
+          },
+          {
+            name: "greenOffset",
+            type: "number",
+            default: "10",
+            descriptionKey: "glass-surface.props.greenOffset",
+          },
+          {
+            name: "blueOffset",
+            type: "number",
+            default: "20",
+            descriptionKey: "glass-surface.props.blueOffset",
+          },
+          {
+            name: "xChannel",
+            type: "'R' | 'G' | 'B'",
+            default: "R",
+            descriptionKey: "glass-surface.props.xChannel",
+          },
+          {
+            name: "yChannel",
+            type: "'R' | 'G' | 'B'",
+            default: "G",
+            descriptionKey: "glass-surface.props.yChannel",
+          },
+          {
+            name: "mixBlendMode",
+            type: "string",
+            default: "difference",
+            descriptionKey: "glass-surface.props.mixBlendMode",
+          },
+          {
+            name: "className",
+            type: "string",
+            descriptionKey: "glass-surface.props.className",
+          },
+          {
+            name: "contentClassName",
+            type: "string",
+            descriptionKey: "glass-surface.props.contentClassName",
+          },
+          {
+            name: "style",
+            type: "CSSProperties",
+            descriptionKey: "glass-surface.props.style",
+          },
         ],
       },
       {
@@ -175,6 +269,46 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         demo: SnippetDemo,
         sourceCode: snippetSource,
         date: "2026-02-24",
+        usageProps: [
+          {
+            name: "code",
+            type: "string",
+            descriptionKey: "snippet.props.code",
+            item: "Provider",
+          },
+          {
+            name: "className",
+            type: "string",
+            descriptionKey: "snippet.props.className",
+            item: "Provider",
+          },
+          {
+            name: "align",
+            type: '"inline-start" | "inline-end" | "block-start" | "block-end"',
+            default: "inline-start",
+            descriptionKey: "snippet.props.align",
+            item: "Addon",
+          },
+          {
+            name: "onCopy",
+            type: "() => void",
+            descriptionKey: "snippet.props.onCopy",
+            item: "CopyButton",
+          },
+          {
+            name: "onError",
+            type: "(error: Error) => void",
+            descriptionKey: "snippet.props.onError",
+            item: "CopyButton",
+          },
+          {
+            name: "timeout",
+            type: "number",
+            default: "2000",
+            descriptionKey: "snippet.props.timeout",
+            item: "CopyButton",
+          },
+        ],
       },
       {
         slug: "pop-up-item",
@@ -257,7 +391,7 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         demo: ScrollButtonDemo,
         sourceCode: scrollButtonSource,
         date: "2026-02-20",
-      }
+      },
     ],
   },
   {

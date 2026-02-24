@@ -31,6 +31,7 @@
       "title": "使用方法",
       "description": "コンポーネントの使用方法とプロパティはまだ記載されていません。",
       "table": {
+        "item": "子要素",
         "prop": "プロパティ",
         "type": "型",
         "default": "デフォルト",
@@ -75,7 +76,15 @@
     },
     "snippet": {
       "label": "コマンドライン",
-      "description": "コピーボタン付きの一行コード・コマンド表示。Provider / Input / Addon / Text / CopyButton の複合コンポーネント。インストールコマンドやトークン、コピー可能なスニペットに。"
+      "description": "コピーボタン付きの一行コード・コマンド表示。Provider / Input / Addon / Text / CopyButton の複合コンポーネント。インストールコマンドやトークン、コピー可能なスニペットに。",
+      "props": {
+        "code": "Provider：表示してコピーする文字列。",
+        "className": "Provider：ルートコンテナに追加する CSS クラス。",
+        "align": "Addon：アドオンの配置（InputGroupAddon の align）。",
+        "onCopy": "CopyButton：コピー成功後に呼ばれます。",
+        "onError": "CopyButton：コピー失敗時に呼ばれます（Clipboard API など）。",
+        "timeout": "CopyButton：コピー後に成功状態を保持する時間（ミリ秒）。"
+      }
     },
     "pop-up-item": {
       "label": "ポップアップアイテム",

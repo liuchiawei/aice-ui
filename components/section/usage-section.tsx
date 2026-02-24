@@ -20,6 +20,7 @@ interface UsageSectionProps {
 export function UsageSection({ rows = [] }: UsageSectionProps) {
   const t = useTranslations("ComponentPage");
   const tComponents = useTranslations("Components");
+  const showItemColumn = rows.length > 0 && rows.some((row) => row.item != null);
 
   return (
     <section className="flex flex-col gap-3 border-t border-border pt-6">
@@ -32,6 +33,9 @@ export function UsageSection({ rows = [] }: UsageSectionProps) {
         <Table>
           <TableHeader>
             <TableRow>
+              {showItemColumn && (
+                <TableHead>{t("usage.table.item")}</TableHead>
+              )}
               <TableHead>{t("usage.table.prop")}</TableHead>
               <TableHead>{t("usage.table.type")}</TableHead>
               <TableHead>{t("usage.table.default")}</TableHead>
@@ -40,7 +44,12 @@ export function UsageSection({ rows = [] }: UsageSectionProps) {
           </TableHeader>
           <TableBody>
             {rows.map((row) => (
-              <TableRow key={row.name}>
+              <TableRow key={`${row.item ?? ""}-${row.name}`}>
+                {showItemColumn && (
+                  <TableCell className="font-mono text-xs">
+                    {row.item ?? "—"}
+                  </TableCell>
+                )}
                 <TableCell className="font-mono text-xs">{row.name}</TableCell>
                 <TableCell className="font-mono text-xs">{row.type}</TableCell>
                 <TableCell className="font-mono text-xs">

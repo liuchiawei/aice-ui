@@ -30,6 +30,7 @@
       "title": "使用方法",
       "description": "元件的使用方法和屬性說明尚未記載。",
       "table": {
+        "item": "子項",
         "prop": "屬性",
         "type": "類型",
         "default": "預設值",
@@ -74,7 +75,15 @@
     },
     "snippet": {
       "label": "指令欄",
-      "description": "單行程式碼或指令顯示，附複製按鈕。複合元件：Provider、Input、Addon、Text、CopyButton。適用於安裝指令、token 或可複製片段。"
+      "description": "單行程式碼或指令顯示，附複製按鈕。複合元件：Provider、Input、Addon、Text、CopyButton。適用於安裝指令、token 或可複製片段。",
+      "props": {
+        "code": "Provider：要顯示並複製的文字內容。",
+        "className": "Provider：根容器的額外 CSS class。",
+        "align": "Addon：Addon 的對齊方式（沿用 InputGroupAddon 的 align）。",
+        "onCopy": "CopyButton：複製成功後觸發。",
+        "onError": "CopyButton：複製失敗時觸發（例如 Clipboard API 不可用）。",
+        "timeout": "CopyButton：複製成功狀態維持時間（毫秒），到期後恢復。"
+      }
     },
     "pop-up-item": {
       "label": "彈出項目",

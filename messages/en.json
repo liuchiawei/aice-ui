@@ -29,6 +29,7 @@
       "title": "Usage",
       "description": "The usage and properties of the component are not yet documented.",
       "table": {
+        "item": "Item",
         "prop": "Prop",
         "type": "Type",
         "default": "Default",
@@ -74,7 +75,15 @@
     },
     "snippet": {
       "label": "Snippet",
-      "description": "One-line code or command display with copy button. Compound component: Provider, Input, Addon, Text, CopyButton. Use for install commands, tokens, or copyable snippets."
+      "description": "One-line code or command display with copy button. Compound component: Provider, Input, Addon, Text, CopyButton. Use for install commands, tokens, or copyable snippets.",
+      "props": {
+        "code": "Provider: Text to display and copy.",
+        "className": "Provider: Additional CSS class for the root container.",
+        "align": "Addon: Alignment of the addon (inline/block, start/end).",
+        "onCopy": "CopyButton: Called after the code is copied successfully.",
+        "onError": "CopyButton: Called when copying fails (e.g. Clipboard API unavailable).",
+        "timeout": "CopyButton: Time in ms to keep the copied state before resetting."
+      }
     },
     "pop-up-item": {
       "label": "Pop Up Item",
