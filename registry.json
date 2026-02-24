@@ -320,6 +320,19 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "floating-dock",
+      "type": "registry:ui",
+      "title": "Floating Dock",
+      "description": "A floating dock component with a list of items. | アイテムリストを備えたフローティングドックコンポーネント。",
+      "dependencies": ["lucide-react", "motion", "tabler-icons"],
+      "files": [
+        {
+          "path": "components/navigation/floating-dock.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }
