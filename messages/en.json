@@ -219,7 +219,22 @@
       },
       "draggable-grid": {
         "label": "Draggable Grid",
-        "description": "A draggable 2D grid with parallax icon cells. Inspired by Apple WatchOS."
+        "description": "A draggable 2D grid with parallax icon cells. Inspired by Apple WatchOS.",
+        "props": {
+          "children": "Root/Grid: child nodes. Item: custom content; when provided, item (link+image+tooltip) is ignored.",
+          "className": "Optional CSS class for the container.",
+          "iconSize": "Size (px) of each grid cell/icon. Used for layout and parallax.",
+          "iconMargin": "Gap (px) between grid cells.",
+          "rows": "Number of grid rows (Root).",
+          "cols": "Number of grid columns (Root).",
+          "linkComponent": "Custom component for links (e.g. Next.js Link). Receives href and children.",
+          "fallback": "ReactNode shown before mount (e.g. loading). If set, Root renders it instead of default loading UI.",
+          "dragConstraints": "Bounds for dragging: { left, right, top, bottom } in px. Limits how far the grid plane can be dragged.",
+          "row": "Item's row index in the grid (0-based).",
+          "col": "Item's column index in the grid (0-based).",
+          "index": "Item order for stagger animation delay.",
+          "item": "Data for default cell: { id, href?, image?, label? }. When set, renders link + image/tooltip; omit and use children for custom content."
+        }
       },
       "timeline": {
         "label": "Timeline",

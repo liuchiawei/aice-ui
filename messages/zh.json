@@ -219,7 +219,22 @@
     },
     "draggable-grid": {
       "label": "可拖拽網格",
-      "description": "可拖曳的 2D 網格，圖示格具視差效果。靈感來自 Apple WatchOS。"
+      "description": "可拖曳的 2D 網格，圖示格具視差效果。靈感來自 Apple WatchOS。",
+      "props": {
+        "children": "Root/Grid：子節點。Item：自訂內容；提供時會忽略 item（連結+圖片+提示）。",
+        "className": "容器的選用 CSS 類名。",
+        "iconSize": "每個網格格/圖示的尺寸（px），用於版面與視差。",
+        "iconMargin": "網格格之間的間距（px）。",
+        "rows": "網格行數（Root）。",
+        "cols": "網格列數（Root）。",
+        "linkComponent": "連結用自訂元件（如 Next.js Link），接收 href 與 children。",
+        "fallback": "掛載前顯示的 ReactNode（如載入中）。設定時 Root 會渲染此內容而非預設載入 UI。",
+        "dragConstraints": "拖曳邊界：{ left, right, top, bottom }（px），限制網格平面可拖曳範圍。",
+        "row": "項目在網格中的行索引（從 0 開始）。",
+        "col": "項目在網格中的列索引（從 0 開始）。",
+        "index": "用於錯開動畫延遲的順序。",
+        "item": "預設格子的資料：{ id, href?, image?, label? }。設定時會渲染連結+圖片/提示；省略並用 children 可自訂內容。"
+      }
     },
     "timeline": {
       "label": "時間軸",

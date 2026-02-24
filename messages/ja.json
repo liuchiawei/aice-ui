@@ -220,7 +220,22 @@
     },
     "draggable-grid": {
       "label": "ドラッググリッド",
-      "description": "視差付きアイコンセルのドラッグ可能な2Dグリッド。Apple WatchOS にインスパイア。"
+      "description": "視差付きアイコンセルのドラッグ可能な2Dグリッド。Apple WatchOS にインスパイア。",
+      "props": {
+        "children": "Root/Grid：子ノード。Item：カスタム内容。指定時は item（リンク+画像+ツールチップ）は無視。",
+        "className": "コンテナの任意 CSS クラス。",
+        "iconSize": "各グリッドセル/アイコンのサイズ（px）。レイアウトと視差に使用。",
+        "iconMargin": "グリッドセル間の余白（px）。",
+        "rows": "グリッドの行数（Root）。",
+        "cols": "グリッドの列数（Root）。",
+        "linkComponent": "リンク用のカスタムコンポーネント（例：Next.js Link）。href と children を受け取る。",
+        "fallback": "マウント前に表示する ReactNode（例：ローディング）。指定時は Root はデフォルトのローディング UI の代わりにこれを表示。",
+        "dragConstraints": "ドラッグ範囲：{ left, right, top, bottom }（px）。グリッド平面のドラッグ限界。",
+        "row": "アイテムの行インデックス（0 始まり）。",
+        "col": "アイテムの列インデックス（0 始まり）。",
+        "index": "スタッガーアニメーションの遅延用の順序。",
+        "item": "デフォルトセル用データ：{ id, href?, image?, label? }。指定時はリンク+画像/ツールチップを描画。省略して children でカスタム内容を渡せる。"
+      }
     },
     "timeline": {
       "label": "タイムライン",
