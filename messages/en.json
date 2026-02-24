@@ -76,6 +76,10 @@
         "label": "Matrix Code",
         "description": "A matrix code component with glitch effect and optional vignette effect."
       },
+      "perlin-noise": {
+        "label": "Perlin Noise",
+        "description": "Canvas-based Perlin noise wave grid background. Configurable line color, wave speed and amplitude; mouse and touch interaction affect grid displacement."
+      },
       "webcam": {
         "label": "Webcam",
         "description": "A webcam component with customizable data and optional title and description."

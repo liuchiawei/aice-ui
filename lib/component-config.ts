@@ -49,6 +49,10 @@ import {
   matrixCodeSource,
 } from "@/components/demo/matrix-code-demo";
 import {
+  PerlinNoiseDemo,
+  perlinNoiseSource,
+} from "@/components/demo/perlin-noise-demo";
+import {
   RadarChartDemo,
   radarChartSource,
 } from "@/components/demo/radar-chart-demo";
@@ -331,6 +335,14 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         demo: MatrixCodeDemo,
         sourceCode: matrixCodeSource,
         date: "2026-02-19",
+      },
+      {
+        slug: "perlin-noise",
+        labelKey: "perlin-noise.label",
+        descriptionKey: "perlin-noise.description",
+        demo: PerlinNoiseDemo,
+        sourceCode: perlinNoiseSource,
+        date: "2026-02-24",
       },
     ],
   },

@@ -153,6 +153,18 @@
       ]
     },
     {
+      "name": "perlin-noise",
+      "type": "registry:ui",
+      "title": "Perlin Noise",
+      "description": "Canvas-based Perlin noise wave grid background with configurable line color, wave speed and amplitude; mouse and touch interaction. | パーリンノイズの波状グリッド背景。線色・波速・振幅を設定可能。マウス・タッチでグリッド変形。",
+      "files": [
+        {
+          "path": "components/background/perlin-noise.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "radar-chart",
       "type": "registry:ui",
       "title": "Radar Chart",
