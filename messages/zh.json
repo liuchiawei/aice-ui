@@ -80,6 +80,10 @@
       "label": "波浪網格",
       "description": "以 Canvas 繪製的柏林噪聲(Perlin Noise)波浪網格背景。可設定線條顏色、波速與振幅；支援滑鼠與觸控互動，游標會影響網格位移。"
     },
+    "star-background": {
+      "label": "星空背景",
+      "description": "Canvas 2D 星空背景。可設定星數、閃爍速度與顏色。適合用於主視覺區或頁面背景，可選疊加內容。"
+    },
     "webcam": {
       "label": "網路攝影機",
       "description": "用於瀏覽器網路攝影機串流的元件，具備錯誤處理與 ref 轉發支援。"

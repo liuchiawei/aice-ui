@@ -80,6 +80,10 @@
         "label": "Perlin Noise",
         "description": "Canvas-based Perlin noise wave grid background. Configurable line color, wave speed and amplitude; mouse and touch interaction affect grid displacement."
       },
+      "star-background": {
+        "label": "Star Background",
+        "description": "Canvas 2D starfield background. Configurable star count, twinkle speed, and color. Suited for hero sections or page backgrounds with optional overlay content."
+      },
       "webcam": {
         "label": "Webcam",
         "description": "A webcam component with customizable data and optional title and description."

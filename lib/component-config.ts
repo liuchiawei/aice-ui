@@ -53,6 +53,10 @@ import {
   perlinNoiseSource,
 } from "@/components/demo/perlin-noise-demo";
 import {
+  StarBackgroundDemo,
+  starBackgroundSource,
+} from "@/components/demo/star-background-demo";
+import {
   RadarChartDemo,
   radarChartSource,
 } from "@/components/demo/radar-chart-demo";
@@ -342,6 +346,14 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         descriptionKey: "perlin-noise.description",
         demo: PerlinNoiseDemo,
         sourceCode: perlinNoiseSource,
+        date: "2026-02-24",
+      },
+      {
+        slug: "star-background",
+        labelKey: "star-background.label",
+        descriptionKey: "star-background.description",
+        demo: StarBackgroundDemo,
+        sourceCode: starBackgroundSource,
         date: "2026-02-24",
       },
     ],
