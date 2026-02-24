@@ -113,11 +113,27 @@
       "label": "Scroll Button",
       "description": "Buttons that scroll the window (top, bottom, up, down, left, right). Use for quick page navigation."
     },
-      "floating-circles": {
-        "label": "Floating Circles",
-        "description": "A floating circles component with customizable data and optional title and description."
-      },
-      "matrix-code": {
+    "floating-circles": {
+      "label": "Floating Circles",
+      "description": "A floating circles component with customizable data and optional title and description.",
+      "props": {
+        "gradientBackgroundStart": "CSS color for the gradient background start (e.g. rgb(108, 0, 162)).",
+        "gradientBackgroundEnd": "CSS color for the gradient background end (e.g. rgb(0, 17, 82)).",
+        "firstColor": "RGB values for the first circle color (e.g. \"20, 72, 140\").",
+        "secondColor": "RGB values for the second circle color.",
+        "thirdColor": "RGB values for the third circle color.",
+        "fourthColor": "RGB values for the fourth circle color.",
+        "fifthColor": "RGB values for the fifth circle color.",
+        "pointerColor": "RGB values for the pointer-following circle (shown when interactive).",
+        "size": "Size of the gradient circles (e.g. \"80%\" or CSS length).",
+        "blendingValue": "CSS mix-blend-mode for the circles (e.g. hard-light, overlay).",
+        "children": "Content rendered above the background (e.g. hero text).",
+        "className": "Additional CSS class for the content wrapper.",
+        "interactive": "Whether to show a circle that follows the pointer.",
+        "containerClassName": "Additional CSS class for the root container."
+      }
+    },
+    "matrix-code": {
         "label": "Matrix Code",
         "description": "A matrix code component with glitch effect and optional vignette effect."
       },

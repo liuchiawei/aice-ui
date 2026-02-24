@@ -115,7 +115,23 @@
     },
     "floating-circles": {
       "label": "浮動圓形",
-      "description": "顏色可自訂的流動漸層背景，支援滑鼠追蹤效果。"
+      "description": "顏色可自訂的流動漸層背景，支援滑鼠追蹤效果。",
+      "props": {
+        "gradientBackgroundStart": "漸層背景的起始色（如 rgb(108, 0, 162)）。",
+        "gradientBackgroundEnd": "漸層背景的結束色（如 rgb(0, 17, 82)）。",
+        "firstColor": "第一個圓的 RGB 值（如 \"20, 72, 140\"）。",
+        "secondColor": "第二個圓的 RGB 值。",
+        "thirdColor": "第三個圓的 RGB 值。",
+        "fourthColor": "第四個圓的 RGB 值。",
+        "fifthColor": "第五個圓的 RGB 值。",
+        "pointerColor": "跟隨滑鼠之圓的 RGB 值（interactive 時顯示）。",
+        "size": "漸層圓的尺寸（如 \"80%\" 或 CSS 長度）。",
+        "blendingValue": "圓的 CSS mix-blend-mode（如 hard-light、overlay）。",
+        "children": "疊在背景上的內容（如主視覺文字）。",
+        "className": "內容包裝的額外 CSS 類名。",
+        "interactive": "是否顯示跟隨滑鼠的圓。",
+        "containerClassName": "根容器的額外 CSS 類名。"
+      }
     },
     "matrix-code": {
       "label": "代碼瀑布",

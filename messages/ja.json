@@ -116,7 +116,23 @@
     },
     "floating-circles": {
       "label": "浮動サークル",
-      "description": "色変更可能な動くグラデーション背景。マウス追従も可。"
+      "description": "色変更可能な動くグラデーション背景。マウス追従も可。",
+      "props": {
+        "gradientBackgroundStart": "グラデーション背景の開始色（例: rgb(108, 0, 162)）。",
+        "gradientBackgroundEnd": "グラデーション背景の終了色（例: rgb(0, 17, 82)）。",
+        "firstColor": "1 つ目の円の RGB 値（例: \"20, 72, 140\"）。",
+        "secondColor": "2 つ目の円の RGB 値。",
+        "thirdColor": "3 つ目の円の RGB 値。",
+        "fourthColor": "4 つ目の円の RGB 値。",
+        "fifthColor": "5 つ目の円の RGB 値。",
+        "pointerColor": "ポインター追従円の RGB 値（interactive 時のみ表示）。",
+        "size": "グラデーション円のサイズ（例: \"80%\" または CSS の長さ）。",
+        "blendingValue": "円の CSS mix-blend-mode（例: hard-light, overlay）。",
+        "children": "背景の上に表示するコンテンツ（例: ヒーローテキスト）。",
+        "className": "コンテンツラッパーに追加する CSS クラス。",
+        "interactive": "ポインター追従の円を表示するかどうか。",
+        "containerClassName": "ルートコンテナに追加する CSS クラス。"
+      }
     },
     "matrix-code": {
       "label": "マトリックスコード",
