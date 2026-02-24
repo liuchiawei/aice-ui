@@ -22,6 +22,7 @@ import { Badge } from "@/components/ui/badge";
 import { Eye, Code } from "lucide-react";
 import { getItemBySlug, myComponents } from "@/lib/component-config";
 import { InstallationSection } from "@/components/section/installation-section";
+import { UsageSection } from "@/components/section/usage-section";
 import { ComingSoon } from "@/components/section/coming-soon";
 
 interface ComponentShowcaseProps {
@@ -109,6 +110,7 @@ export function ComponentShowcase({ slug }: ComponentShowcaseProps) {
             </TabsContent>
           </Tabs>
           <InstallationSection slug={slug} />
+          <UsageSection rows={result.usageProps} />
         </>
       ) : (
         <ComingSoon componentName={t(result.item.labelKey)} />

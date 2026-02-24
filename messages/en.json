@@ -21,16 +21,52 @@
       "home": "Home",
       "components": "Components"
     },
-    "install": "Please select your favorite package manager to install the component.",
-    "usage": "Please select your favorite package manager to install the component.",
+    "install": {
+      "title": "Install",
+      "description": "Please select your favorite package manager to install the component."
+    },
+    "usage": {
+      "title": "Usage",
+      "description": "The usage and properties of the component are not yet documented.",
+      "table": {
+        "prop": "Prop",
+        "type": "Type",
+        "default": "Default",
+        "description": "Description"
+      }
+    },
     "demo-code": "Demo Code",
+    "usageTitle": "Props",
     "related": "Related Components"
   },
   "Components": {
     "newLabel": "New",
     "glass-surface": {
       "label": "Glass Surface",
-      "description": "A glass surface component with blur and distortion effects."
+      "description": "A glass surface component with blur and distortion effects.",
+      "props": {
+        "children": "Content inside the glass surface.",
+        "width": "Width of the surface (number in px or CSS string).",
+        "height": "Height of the surface (number in px or CSS string).",
+        "borderRadius": "Border radius in pixels.",
+        "borderWidth": "Relative border/edge width for the displacement effect (e.g. 0.07).",
+        "brightness": "Brightness value for the glass effect.",
+        "opacity": "Opacity of the glass layer (0–1).",
+        "blur": "Backdrop blur amount in pixels.",
+        "displace": "Displacement amount for the distortion effect.",
+        "backgroundOpacity": "Opacity of the inner background layer.",
+        "saturation": "Color saturation of the effect.",
+        "distortionScale": "Scale of the SVG displacement map (negative values invert).",
+        "redOffset": "Red channel offset for displacement mapping.",
+        "greenOffset": "Green channel offset for displacement mapping.",
+        "blueOffset": "Blue channel offset for displacement mapping.",
+        "xChannel": "Color channel used for horizontal displacement (R, G, or B).",
+        "yChannel": "Color channel used for vertical displacement (R, G, or B).",
+        "mixBlendMode": "CSS mix-blend-mode for compositing (e.g. difference, overlay).",
+        "className": "Additional CSS class for the root container.",
+        "contentClassName": "Additional CSS class for the inner content wrapper.",
+        "style": "Inline styles for the root element."
+      }
     },
     "code-block": {
       "label": "Code Block",

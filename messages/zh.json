@@ -22,15 +22,51 @@
       "components": "元件一覽"
     },
     "demo-code": "範例代碼",
-    "install": "請選擇您喜歡的包管理器安裝元件。",
-    "usage": "請選擇您喜歡的包管理器安裝元件。",
+    "install": {
+      "title": "安裝",
+      "description": "請選擇您喜歡的包管理器安裝元件。"
+    },
+    "usage": {
+      "title": "使用方法",
+      "description": "元件的使用方法和屬性說明尚未記載。",
+      "table": {
+        "prop": "屬性",
+        "type": "類型",
+        "default": "預設值",
+        "description": "說明"
+      }
+    },
+    "usageTitle": "Props",
     "related": "相關元件"
   },
   "Components": {
     "newLabel": "新",
     "glass-surface": {
       "label": "液態玻璃",
-      "description": "受 Apple 最新設計語言啟發的次世代 UI 元件。將傳統玻璃擬態設計進化，即時再現光的折射、邊緣光澤與如液體般的流動動態。以輕量實作保留物理基礎的進階視覺效果，為網站帶來出色的「質感」與「沉浸感」。"
+      "description": "受 Apple 最新設計語言啟發的次世代 UI 元件。將傳統玻璃擬態設計進化，即時再現光的折射、邊緣光澤與如液體般的流動動態。以輕量實作保留物理基礎的進階視覺效果，為網站帶來出色的「質感」與「沉浸感」。",
+      "props": {
+        "children": "玻璃面內部的內容。",
+        "width": "表面寬度（數字為 px，或 CSS 字串）。",
+        "height": "表面高度（數字為 px，或 CSS 字串）。",
+        "borderRadius": "圓角半徑（像素）。",
+        "borderWidth": "用於位移效果的相對邊框／邊緣寬度（如 0.07）。",
+        "brightness": "玻璃效果的亮度。",
+        "opacity": "玻璃層不透明度（0～1）。",
+        "blur": "背景模糊量（像素）。",
+        "displace": "扭曲效果的位移量。",
+        "backgroundOpacity": "內層背景的不透明度。",
+        "saturation": "效果的色彩飽和度。",
+        "distortionScale": "SVG 位移貼圖的縮放（負值為反轉）。",
+        "redOffset": "位移映射的紅通道偏移。",
+        "greenOffset": "位移映射的綠通道偏移。",
+        "blueOffset": "位移映射的藍通道偏移。",
+        "xChannel": "水平位移使用的色通道（R、G 或 B）。",
+        "yChannel": "垂直位移使用的色通道（R、G 或 B）。",
+        "mixBlendMode": "合成用的 CSS mix-blend-mode（如 difference、overlay）。",
+        "className": "根容器上額外加入的 CSS 類名。",
+        "contentClassName": "內層內容包裝上額外加入的 CSS 類名。",
+        "style": "根元素的內聯樣式。"
+      }
     },
     "code-block": {
       "label": "代碼",

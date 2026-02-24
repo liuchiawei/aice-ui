@@ -1,5 +1,3 @@
-"use client";
-
 import Snippet from "@/components/ui-elements/snippet";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { getInstallCommands } from "@/lib/installation";
@@ -17,9 +15,9 @@ export function InstallationSection({ slug }: InstallationSectionProps) {
 
   return (
     <section className="flex flex-col gap-3 border-t border-border pt-6">
-      <h2 className="text-lg font-bold">{t("install")}</h2>
+      <h2 className="text-lg font-bold">{t("install.title")}</h2>
       <p className="text-sm text-muted-foreground">
-        {t("install")}
+        {t("install.description")}
       </p>
 
       <Tabs defaultValue="pnpm" className="w-full">
