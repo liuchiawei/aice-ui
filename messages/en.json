@@ -231,7 +231,12 @@
       },
       "floating-dock": {
         "label": "Floating Dock",
-        "description": "Bottom navigation dock with magnify-on-hover. Desktop bar at bottom; mobile collapses to hamburger menu."
+        "description": "Bottom navigation dock with magnify-on-hover. Desktop bar at bottom; mobile collapses to hamburger menu.",
+        "props": {
+          "items": "Array of nav items: title, icon (ReactNode), and href. Rendered in both desktop bar and mobile menu.",
+          "desktopClassName": "Optional CSS class for the desktop dock container (visible from md breakpoint).",
+          "mobileClassName": "Optional CSS class for the mobile dock wrapper (visible below md; wraps the hamburger trigger and expanded menu)."
+        }
       }
     },
   "ThreeDCardDemo": {

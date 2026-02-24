@@ -231,7 +231,12 @@
     },
     "floating-dock": {
       "label": "懸浮式選單",
-      "description": "滑鼠懸停放大圖示的底部導航列。桌面版固定於底部，手機版收合為選單按鈕。"
+      "description": "滑鼠懸停放大圖示的底部導航列。桌面版固定於底部，手機版收合為選單按鈕。",
+      "props": {
+        "items": "導航項目陣列（title、icon、href）。會同時用於桌面列與手機選單。",
+        "desktopClassName": "桌面版 dock 容器可選的 CSS 類名（md 斷點以上顯示）。",
+        "mobileClassName": "手機版 dock 外層可選的 CSS 類名（md 以下顯示，含漢堡按鈕與展開選單）。"
+      }
     }
   },
   "ThreeDCardDemo": {

@@ -488,6 +488,11 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         demo: FloatingDockDemo,
         sourceCode: floatingDockSource,
         date: "2026-02-24",
+        usageProps: [
+          { name: "items", type: "{ title: string; icon: ReactNode; href: string }[]", default: "—", descriptionKey: "floating-dock.props.items" },
+          { name: "desktopClassName", type: "string", default: "—", descriptionKey: "floating-dock.props.desktopClassName" },
+          { name: "mobileClassName", type: "string", default: "—", descriptionKey: "floating-dock.props.mobileClassName" },
+        ],
       },
     ],
   },
