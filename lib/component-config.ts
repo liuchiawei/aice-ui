@@ -8,6 +8,10 @@ import {
   codeBlockSource,
 } from "@/components/demo/code-block-demo";
 import {
+  SnippetDemo,
+  snippetSource,
+} from "@/components/demo/snippet-demo";
+import {
   FloatingCirclesDemo,
   floatingCirclesSource,
 } from "@/components/demo/floating-circle-demo";
@@ -49,6 +53,10 @@ import {
   radarChartSource,
 } from "@/components/demo/radar-chart-demo";
 import {
+  RadialClusterDemo,
+  radialClusterSource,
+} from "@/components/demo/radial-cluster-demo";
+import {
   ThreeDCardDemo,
   threeCardDemoSource,
 } from "@/components/demo/3d-card-demo";
@@ -80,6 +88,10 @@ import {
   SpeedDialDemo,
   speedDialSource,
 } from "@/components/demo/speed-dial-demo";
+import {
+  FloatingDockDemo,
+  floatingDockSource,
+} from "@/components/demo/floating-dock-demo";
 /** Translation keys under the "Components" namespace (e.g. "glass-surface.label"). Resolve with useTranslations("Components") then t(key). */
 export interface ComponentItem {
   slug: string;
@@ -111,6 +123,14 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         demo: CodeBlockDemo,
         sourceCode: codeBlockSource,
         date: "2026-02-19",
+      },
+      {
+        slug: "snippet",
+        labelKey: "snippet.label",
+        descriptionKey: "snippet.description",
+        demo: SnippetDemo,
+        sourceCode: snippetSource,
+        date: "2026-02-24",
       },
       {
         slug: "pop-up-item",
@@ -228,6 +248,14 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         sourceCode: radarChartSource,
         date: "2026-02-19",
       },
+      {
+        slug: "radial-cluster",
+        labelKey: "radial-cluster.label",
+        descriptionKey: "radial-cluster.description",
+        demo: RadialClusterDemo,
+        sourceCode: radialClusterSource,
+        date: "2026-02-22",
+      },
     ],
   },
   {
@@ -274,6 +302,14 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         demo: SpeedDialDemo,
         sourceCode: speedDialSource,
         date: "2026-02-21",
+      },
+      {
+        slug: "floating-dock",
+        labelKey: "floating-dock.label",
+        descriptionKey: "floating-dock.description",
+        demo: FloatingDockDemo,
+        sourceCode: floatingDockSource,
+        date: "2026-02-24",
       },
     ],
   },

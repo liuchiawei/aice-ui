@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pop-up-item",
+  "title": "Pop Up Item",
+  "description": "Animated container that reveals content with pop-up spring animation. Supports whileInView, hover, or click triggers.",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "components/ui-elements/pop-up-item.tsx",
+      "content": "\"use client\";\n\nimport { useState, useCallback } from \"react\";\nimport { motion } from \"motion/react\";\nimport { cn } from \"@/lib/utils\";\n\nexport type PopUpItemTrigger = \"scroll\" | \"hover\" | \"click\";\n\nexport interface PopUpItemTransition {\n  duration?: number;\n  delay?: number;\n  bounce?: number;\n}\n\nexport interface PopUpItemViewport {\n  amount?: \"some\" | \"all\" | number;\n  threshold?: number;\n  once?: boolean;\n}\n\nexport interface PopUpItemProps {\n  trigger?: PopUpItemTrigger;\n  className?: string;\n  contentClassName?: string;\n  transition?: PopUpItemTransition;\n  viewport?: PopUpItemViewport;\n  children: React.ReactNode;\n}\n\nconst defaultTransition = { duration: 1, delay: 0, bounce: 0.4 };\nconst hidden = { y: \"150%\" };\nconst visible = { y: 0 };\n\nexport default function PopUpItem({\n  trigger = \"scroll\",\n  className,\n  contentClassName,\n  transition: t,\n  viewport = {},\n  children,\n}: PopUpItemProps) {\n  const transition = { ...defaultTransition, ...t };\n  const [clicked, setClicked] = useState(false);\n  const [hovered, setHovered] = useState(false);\n  const toggle = useCallback(() => setClicked((c) => !c), []);\n\n  const springTransition = {\n    type: \"spring\" as const,\n    bounce: transition.bounce,\n    duration: transition.duration,\n    delay: transition.delay,\n  };\n\n  const contentProps =\n    trigger === \"scroll\"\n      ? {\n          initial: hidden,\n          whileInView: visible,\n          viewport: {\n            amount: viewport.amount ?? \"some\",\n            once: viewport.once ?? false,\n          },\n          transition: springTransition,\n        }\n      : {\n          initial: hidden,\n          animate: (trigger === \"click\" ? clicked : hovered) ? visible : hidden,\n          transition: springTransition,\n        };\n\n  return (\n    <motion.div\n      className={cn(\n        \"flex justify-center items-center relative overflow-hidden\",\n        trigger === \"click\" && \"cursor-pointer\",\n        className,\n      )}\n      {...(trigger === \"hover\"\n        ? {\n            onMouseEnter: () => setHovered(true),\n            onMouseLeave: () => setHovered(false),\n          }\n        : trigger === \"click\"\n          ? {\n              onClick: toggle,\n              role: \"button\" as const,\n              tabIndex: 0,\n              onKeyDown: (e: React.KeyboardEvent) => {\n                if (e.key === \"Enter\" || e.key === \" \") {\n                  e.preventDefault();\n                  toggle();\n                }\n              },\n            }\n          : {})}\n    >\n      <motion.div {...contentProps} className={cn(contentClassName)}>\n        {children}\n      </motion.div>\n    </motion.div>\n  );\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

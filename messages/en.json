@@ -36,6 +36,10 @@
       "label": "Code Block",
       "description": "A code block component with syntax highlighting and line numbers."
     },
+    "snippet": {
+      "label": "Snippet",
+      "description": "One-line code or command display with copy button. Compound component: Provider, Input, Addon, Text, CopyButton. Use for install commands, tokens, or copyable snippets."
+    },
     "pop-up-item": {
       "label": "Pop Up Item",
       "description": "Animated container that reveals content with pop-up spring animation. Supports whileInView, hover, or click triggers."
@@ -47,6 +51,10 @@
     "radar-chart": {
       "label": "Radar Chart",
       "description": "A radar chart component with customizable data and optional title and description."
+    },
+    "radial-cluster": {
+      "label": "Radial Cluster",
+      "description": "Radial cluster chart for hierarchical data. Supports data prop or Item/SubItem composition."
     },
     "copy-button": {
       "label": "Copy Button",
@@ -74,7 +82,7 @@
       },
       "motion-wheel": {
         "label": "Motion Wheel",
-        "description": "A compound carousel wheel with rotation animation, prev/next navigation, dot indicators, and optional center info panel."
+        "description": "A compound carousel wheel with rotation animation, prev/next navigation, dot indicators, and optional center info panel. Supports keyboard control (ArrowLeft/ArrowRight) when focused."
       },
       "3d-card": {
         "label": "3D Card",
@@ -111,6 +119,10 @@
       "speed-dial": {
         "label": "Speed Dial",
         "description": "FAB that expands into a radial menu of actions. Compound component: Root, Trigger, Item. Supports spread angle and direction."
+      },
+      "floating-dock": {
+        "label": "Floating Dock",
+        "description": "Bottom navigation dock with magnify-on-hover. Desktop bar at bottom; mobile collapses to hamburger menu."
       }
     },
   "ThreeDCardDemo": {

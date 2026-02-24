@@ -36,6 +36,10 @@
       "label": "代碼",
       "description": "具語法高亮與行號的程式碼區塊元件。"
     },
+    "snippet": {
+      "label": "指令欄",
+      "description": "單行程式碼或指令顯示，附複製按鈕。複合元件：Provider、Input、Addon、Text、CopyButton。適用於安裝指令、token 或可複製片段。"
+    },
     "pop-up-item": {
       "label": "彈出項目",
       "description": "以彈出式 spring 動畫顯示內容的動畫容器。支援進入視窗、懸停或點擊觸發。"
@@ -47,6 +51,10 @@
     "radar-chart": {
       "label": "雷達圖",
       "description": "具可自訂資料與可選標題、說明的雷達圖元件。"
+    },
+    "radial-cluster": {
+      "label": "徑向叢集",
+      "description": "階層資料徑向叢集圖。支援 data prop 或 Item/SubItem 組合式用法。"
     },
     "copy-button": {
       "label": "複製按鈕",
@@ -74,7 +82,7 @@
     },
     "motion-wheel": {
       "label": "旋轉輪播",
-      "description": "具旋轉動畫、前後導航、圓點指示與可選中央資訊區的複合式輪播元件。"
+      "description": "具旋轉動畫、前後導航、圓點指示與可選中央資訊區的複合式輪播元件。聚焦後支援鍵盤控制（左右方向鍵切換項目）。"
     },
     "3d-card": {
       "label": "3D卡片",
@@ -111,6 +119,10 @@
     "speed-dial": {
       "label": "放射式選單",
       "description": "點擊後以放射狀展開的動作選單。複合元件：Root、Trigger、Item。可設定展開角度與方向。"
+    },
+    "floating-dock": {
+      "label": "懸浮式選單",
+      "description": "滑鼠懸停放大圖示的底部導航列。桌面版固定於底部，手機版收合為選單按鈕。"
     }
   },
   "ThreeDCardDemo": {
