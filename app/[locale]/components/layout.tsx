@@ -95,7 +95,7 @@ export default function ShowcaseLayout({
         <SidebarRail />
       </Sidebar>
       <SidebarInset>
-        <header className="h-14 flex shrink-0 items-center justify-between border-b border-border px-4">
+        <header className="w-full min-w-0 h-14 flex shrink-0 items-center justify-between border-b border-border px-4">
           <div className="flex items-center gap-2">
             <SidebarTrigger aria-label="Toggle sidebar" />
             <Link
@@ -110,7 +110,7 @@ export default function ShowcaseLayout({
             <ThemeSwitch />
           </div>
         </header>
-        {children}
+        <main className="w-full min-w-0 max-w-7xl mx-auto">{children}</main>
       </SidebarInset>
     </SidebarProvider>
   );
