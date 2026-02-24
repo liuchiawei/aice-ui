@@ -147,7 +147,22 @@
     },
     "perlin-noise": {
       "label": "波浪網格",
-      "description": "以 Canvas 繪製的柏林噪聲(Perlin Noise)波浪網格背景。可設定線條顏色、波速與振幅；支援滑鼠與觸控互動，游標會影響網格位移。"
+      "description": "以 Canvas 繪製的柏林噪聲(Perlin Noise)波浪網格背景。可設定線條顏色、波速與振幅；支援滑鼠與觸控互動，游標會影響網格位移。",
+      "props": {
+        "lineColor": "波浪網格線條的描邊顏色（CSS 顏色）。",
+        "backgroundColor": "容器背景色（CSS 顏色）。",
+        "waveSpeedX": "波浪動畫的水平速度。",
+        "waveSpeedY": "波浪動畫的垂直速度。",
+        "waveAmpX": "波浪水平位移振幅（像素）。",
+        "waveAmpY": "波浪垂直位移振幅（像素）。",
+        "xGap": "網格線水平間距（像素）。",
+        "yGap": "每條線上點的垂直間距（像素）。",
+        "friction": "游標引起的位移衰減係數（0–1），越大殘留越久。",
+        "tension": "游標互動後將點拉回原位的彈簧張力。",
+        "maxCursorMove": "游標／觸控對網格點的最大位移（像素）。",
+        "style": "根容器的內聯 CSS 樣式。",
+        "className": "根容器的額外 CSS 類名。"
+      }
     },
     "star-background": {
       "label": "星空背景",

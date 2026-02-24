@@ -147,7 +147,22 @@
       },
       "perlin-noise": {
         "label": "Perlin Noise",
-        "description": "Canvas-based Perlin noise wave grid background. Configurable line color, wave speed and amplitude; mouse and touch interaction affect grid displacement."
+        "description": "Canvas-based Perlin noise wave grid background. Configurable line color, wave speed and amplitude; mouse and touch interaction affect grid displacement.",
+        "props": {
+          "lineColor": "Stroke color of the wave grid lines (CSS color).",
+          "backgroundColor": "Background color of the container (CSS color).",
+          "waveSpeedX": "Horizontal speed of the Perlin wave animation.",
+          "waveSpeedY": "Vertical speed of the Perlin wave animation.",
+          "waveAmpX": "Horizontal amplitude of the wave displacement in pixels.",
+          "waveAmpY": "Vertical amplitude of the wave displacement in pixels.",
+          "xGap": "Horizontal spacing between grid lines in pixels.",
+          "yGap": "Vertical spacing between points on each line in pixels.",
+          "friction": "Decay factor for cursor-induced motion (0–1); higher values mean longer drift.",
+          "tension": "Spring tension pulling points back toward rest after cursor interaction.",
+          "maxCursorMove": "Maximum pixel displacement of grid points from cursor/touch influence.",
+          "style": "Inline CSS styles for the root container.",
+          "className": "Additional CSS class for the root container."
+        }
       },
       "star-background": {
         "label": "Star Background",
