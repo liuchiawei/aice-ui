@@ -71,6 +71,7 @@ Components are grouped by category (see `lib/component-config.ts`).
 | Component | Description |
 |-----------|-------------|
 | **Speed Dial** | FAB that expands into a radial menu of actions. Compound component: Root, Trigger, Item. Supports spread angle and direction. (2026-02-21) |
+| **Floating Dock** | Bottom navigation dock with magnify-on-hover. Desktop bar at bottom; mobile collapses to hamburger menu. (2026-02-24) |
 
 ### Background
 
@@ -85,7 +86,7 @@ Components are grouped by category (see `lib/component-config.ts`).
 |-----------|-------------|
 | **Webcam** | A webcam component with customizable data and optional title and description. |
 
-**Total: 20 components**
+**Total: 21 components**
 
 ---
 
