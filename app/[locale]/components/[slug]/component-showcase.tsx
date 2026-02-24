@@ -66,7 +66,7 @@ export function ComponentShowcase({ slug }: ComponentShowcaseProps) {
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-black font-noto">
+        <h1 className="text-4xl md:text-5xl lg:text-7xl font-black font-noto font-roboto">
           {t(item.labelKey)}
         </h1>
         <p className="text-sm text-muted-foreground">
