@@ -135,7 +135,15 @@
     },
     "matrix-code": {
         "label": "Matrix Code",
-        "description": "A matrix code component with glitch effect and optional vignette effect."
+        "description": "A matrix code component with glitch effect and optional vignette effect.",
+        "props": {
+          "glitchColors": "Hex color array for the glitch characters (e.g. green/cyan palette).",
+          "glitchSpeed": "Interval in ms between character/color updates; lower is faster.",
+          "centerVignette": "Whether to apply a dark vignette overlay in the center.",
+          "outerVignette": "Whether to apply a dark vignette overlay at the edges.",
+          "smooth": "Whether to smoothly interpolate color changes; false for instant switches.",
+          "className": "Additional CSS class for the container."
+        }
       },
       "perlin-noise": {
         "label": "Perlin Noise",

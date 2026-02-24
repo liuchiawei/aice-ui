@@ -135,7 +135,15 @@
     },
     "matrix-code": {
       "label": "代碼瀑布",
-      "description": "以電影《駭客任務》世界觀為靈感的背景元件，呈現綠色字元由畫面頂部向下流動的視覺效果。"
+      "description": "以電影《駭客任務》世界觀為靈感的背景元件，呈現綠色字元由畫面頂部向下流動的視覺效果。",
+      "props": {
+        "glitchColors": "格狀字元使用的 HEX 色陣列（如綠、青系）。",
+        "glitchSpeed": "字元與顏色更新間隔（毫秒），數值越小越快。",
+        "centerVignette": "是否在中央套用暗角效果。",
+        "outerVignette": "是否在邊緣套用暗角效果。",
+        "smooth": "是否平滑過渡顏色變化；false 為即時切換。",
+        "className": "容器額外的 CSS 類名。"
+      }
     },
     "perlin-noise": {
       "label": "波浪網格",

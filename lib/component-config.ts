@@ -525,6 +525,14 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         demo: MatrixCodeDemo,
         sourceCode: matrixCodeSource,
         date: "2026-02-19",
+        usageProps: [
+          { name: "glitchColors", type: "string[]", default: "[\"#2b4539\", \"#61dca3\", \"#61b3dc\"]", descriptionKey: "matrix-code.props.glitchColors" },
+          { name: "glitchSpeed", type: "number", default: "50", descriptionKey: "matrix-code.props.glitchSpeed" },
+          { name: "centerVignette", type: "boolean", default: "false", descriptionKey: "matrix-code.props.centerVignette" },
+          { name: "outerVignette", type: "boolean", default: "true", descriptionKey: "matrix-code.props.outerVignette" },
+          { name: "smooth", type: "boolean", default: "true", descriptionKey: "matrix-code.props.smooth" },
+          { name: "className", type: "string", descriptionKey: "matrix-code.props.className" },
+        ],
       },
       {
         slug: "perlin-noise",
