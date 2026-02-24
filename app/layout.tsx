@@ -27,10 +27,25 @@ const notoSans = Noto_Sans({
   weight: ["200", "300", "400", "500", "700", "800", "900"],
 });
 
+const siteTitle = "AICE UI";
+const siteDescription =
+  "AICE UI is a collection of open-source UI built with Next.js, React, Tailwind CSS, and shadcn/ui";
+
 export const metadata: Metadata = {
-  title: "AICE UI",
-  description:
-    "AICE UI is a collection of open-source UI built with Next.js, React, Tailwind CSS, and shadcn/ui",
+  title: siteTitle,
+  description: siteDescription,
+  openGraph: {
+    title: siteTitle,
+    description: siteDescription,
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "AICE UI – Open-source UI components for Next.js, React, Tailwind CSS, and shadcn/ui",
+      },
+    ],
+  },
 };
 
 export default async function RootLayout({
