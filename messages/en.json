@@ -166,7 +166,17 @@
       },
       "star-background": {
         "label": "Star Background",
-        "description": "Canvas 2D starfield background. Configurable star count, twinkle speed, and color. Suited for hero sections or page backgrounds with optional overlay content."
+        "description": "Canvas 2D starfield background. Configurable star count, twinkle speed, and color. Suited for hero sections or page backgrounds with optional overlay content.",
+        "props": {
+          "starCount": "Number of stars to render in the canvas.",
+          "twinkleSpeed": "Speed of the twinkle animation (0 to disable).",
+          "starColor": "Star color as RGB comma-separated string (e.g. \"255, 255, 255\").",
+          "backgroundColor": "Background color of the canvas (CSS color).",
+          "className": "Additional CSS class for the canvas element.",
+          "containerClassName": "Additional CSS class for the outer container.",
+          "children": "Optional overlay content rendered above the starfield.",
+          "style": "Inline CSS styles for the root container."
+        }
       },
       "webcam": {
         "label": "Webcam",
