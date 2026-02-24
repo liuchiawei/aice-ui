@@ -227,7 +227,18 @@
     },
     "speed-dial": {
       "label": "放射式選單",
-      "description": "點擊後以放射狀展開的動作選單。複合元件：Root、Trigger、Item。可設定展開角度與方向。"
+      "description": "點擊後以放射狀展開的動作選單。複合元件：Root、Trigger、Item。可設定展開角度與方向。",
+      "props": {
+        "children": "Root：Trigger 與 Item 元件。Trigger：FAB 的選用圖示或文字。Item：動作按鈕的圖示或文字。",
+        "spreadRangeAngle": "選單項目展開的總角度（度）。例如 360 整圓、180 半圓、30 窄扇。",
+        "directionAngle": "扇型方向：0° 右、90° 下、180° 左、270° 上。",
+        "radius": "觸發鈕到每個項目之間的距離（px）。",
+        "itemSize": "所有 SpeedDial.Item 的預設尺寸（sm、default、lg）。",
+        "className": "Root 容器的選用 CSS 類名。",
+        "variant": "Trigger 按鈕樣式：default、outline 或 secondary。",
+        "size": "Trigger 或 Item 尺寸：default、sm 或 lg。用於 Item 時會覆寫 Root 的 itemSize。",
+        "onClick": "點擊 Item 時的回呼（點擊後選單會關閉）。"
+      }
     },
     "floating-dock": {
       "label": "懸浮式選單",

@@ -227,7 +227,18 @@
       },
       "speed-dial": {
         "label": "Speed Dial",
-        "description": "FAB that expands into a radial menu of actions. Compound component: Root, Trigger, Item. Supports spread angle and direction."
+        "description": "FAB that expands into a radial menu of actions. Compound component: Root, Trigger, Item. Supports spread angle and direction.",
+        "props": {
+          "children": "Root: Trigger and Item components. Trigger: optional icon or label for the FAB. Item: icon or label for the action button.",
+          "spreadRangeAngle": "Total angle (degrees) the items spread over. e.g. 360 full circle, 180 half, 30 narrow.",
+          "directionAngle": "Direction of the fan: 0° = right, 90° = down, 180° = left, 270° = up.",
+          "radius": "Distance from trigger to each item (px).",
+          "itemSize": "Default size for all SpeedDial.Item children (sm, default, lg).",
+          "className": "Optional CSS class for the Root container.",
+          "variant": "Trigger button style: default, outline, or secondary.",
+          "size": "Trigger or Item size: default, sm, or lg. On Item, overrides Root's itemSize.",
+          "onClick": "Callback when the Item is clicked (menu closes after)."
+        }
       },
       "floating-dock": {
         "label": "Floating Dock",

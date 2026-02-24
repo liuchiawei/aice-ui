@@ -228,7 +228,18 @@
     },
     "speed-dial": {
       "label": "スピードダイヤル",
-      "description": "FAB を押すと放射状にアクションボタンが広がるメニュー。Root / Trigger / Item の複合コンポーネント。展開角度・方向を指定可能。"
+      "description": "FAB を押すと放射状にアクションボタンが広がるメニュー。Root / Trigger / Item の複合コンポーネント。展開角度・方向を指定可能。",
+      "props": {
+        "children": "Root：Trigger と Item コンポーネント。Trigger：FAB の任意のアイコンまたはラベル。Item：アクションボタンのアイコンまたはラベル。",
+        "spreadRangeAngle": "項目が広がる総角度（度）。360 で円形、180 で半円、30 で狭い扇形など。",
+        "directionAngle": "扇形の方向：0° 右、90° 下、180° 左、270° 上。",
+        "radius": "トリガーから各項目までの距離（px）。",
+        "itemSize": "全 SpeedDial.Item のデフォルトサイズ（sm / default / lg）。",
+        "className": "Root コンテナの任意 CSS クラス。",
+        "variant": "Trigger ボタンのスタイル：default / outline / secondary。",
+        "size": "Trigger または Item のサイズ：default / sm / lg。Item では Root の itemSize を上書き。",
+        "onClick": "Item クリック時のコールバック（クリック後にメニューが閉じる）。"
+      }
     },
     "floating-dock": {
       "label": "フローティングドック",
