@@ -36,6 +36,10 @@
       "label": "代碼",
       "description": "具語法高亮與行號的程式碼區塊元件。"
     },
+    "snippet": {
+      "label": "指令欄",
+      "description": "單行程式碼或指令顯示，附複製按鈕。複合元件：Provider、Input、Addon、Text、CopyButton。適用於安裝指令、token 或可複製片段。"
+    },
     "pop-up-item": {
       "label": "彈出項目",
       "description": "以彈出式 spring 動畫顯示內容的動畫容器。支援進入視窗、懸停或點擊觸發。"

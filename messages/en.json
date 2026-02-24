@@ -36,6 +36,10 @@
       "label": "Code Block",
       "description": "A code block component with syntax highlighting and line numbers."
     },
+    "snippet": {
+      "label": "Snippet",
+      "description": "One-line code or command display with copy button. Compound component: Provider, Input, Addon, Text, CopyButton. Use for install commands, tokens, or copyable snippets."
+    },
     "pop-up-item": {
       "label": "Pop Up Item",
       "description": "Animated container that reveals content with pop-up spring animation. Supports whileInView, hover, or click triggers."

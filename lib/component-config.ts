@@ -8,6 +8,10 @@ import {
   codeBlockSource,
 } from "@/components/demo/code-block-demo";
 import {
+  SnippetDemo,
+  snippetSource,
+} from "@/components/demo/snippet-demo";
+import {
   FloatingCirclesDemo,
   floatingCirclesSource,
 } from "@/components/demo/floating-circle-demo";
@@ -119,6 +123,14 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         demo: CodeBlockDemo,
         sourceCode: codeBlockSource,
         date: "2026-02-19",
+      },
+      {
+        slug: "snippet",
+        labelKey: "snippet.label",
+        descriptionKey: "snippet.description",
+        demo: SnippetDemo,
+        sourceCode: snippetSource,
+        date: "2026-02-24",
       },
       {
         slug: "pop-up-item",
