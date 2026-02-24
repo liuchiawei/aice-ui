@@ -25,6 +25,19 @@
       ]
     },
     {
+      "name": "pop-up-item",
+      "type": "registry:ui",
+      "title": "Pop Up Item",
+      "description": "Animated container that reveals content with pop-up spring animation. Supports whileInView, hover, or click triggers.",
+      "dependencies": ["motion"],
+      "files": [
+        {
+          "path": "components/ui-elements/pop-up-item.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "floating-circles",
       "type": "registry:ui",
       "title": "Floating Circles",
@@ -290,6 +303,33 @@
       "files": [
         {
           "path": "components/navigation/speed-dial.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "radial-cluster",
+      "type": "registry:ui",
+      "title": "Radial Cluster",
+      "description": "Radial cluster chart for hierarchical data. Supports data prop or Item/SubItem composition. | 階層データの円環階層図。data プロップまたは Item/SubItem 構成に対応。",
+      "dependencies": ["d3"],
+      "registryDependencies": ["use-mobile"],
+      "files": [
+        {
+          "path": "components/chart/radial-cluster.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "floating-dock",
+      "type": "registry:ui",
+      "title": "Floating Dock",
+      "description": "A floating dock component with a list of items. | アイテムリストを備えたフローティングドックコンポーネント。",
+      "dependencies": ["lucide-react", "motion", "tabler-icons"],
+      "files": [
+        {
+          "path": "components/navigation/floating-dock.tsx",
           "type": "registry:ui"
         }
       ]
