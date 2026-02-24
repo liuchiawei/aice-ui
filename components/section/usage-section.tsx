@@ -20,7 +20,8 @@ interface UsageSectionProps {
 export function UsageSection({ rows = [] }: UsageSectionProps) {
   const t = useTranslations("ComponentPage");
   const tComponents = useTranslations("Components");
-  const showItemColumn = rows.length > 0 && rows.some((row) => row.item != null);
+  const showItemColumn =
+    rows.length > 0 && rows.some((row) => row.item != null);
 
   return (
     <section className="flex flex-col gap-3 border-t border-border pt-6">
@@ -33,13 +34,13 @@ export function UsageSection({ rows = [] }: UsageSectionProps) {
         <Table>
           <TableHeader>
             <TableRow>
-              {showItemColumn && (
-                <TableHead>{t("usage.table.item")}</TableHead>
-              )}
+              {showItemColumn && <TableHead>{t("usage.table.item")}</TableHead>}
               <TableHead>{t("usage.table.prop")}</TableHead>
-              <TableHead>{t("usage.table.type")}</TableHead>
               <TableHead>{t("usage.table.default")}</TableHead>
-              <TableHead className="min-w-[12rem]">{t("usage.table.description")}</TableHead>
+              <TableHead className="min-w-[12rem]">
+                {t("usage.table.description")}
+              </TableHead>
+              <TableHead>{t("usage.table.type")}</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -51,7 +52,6 @@ export function UsageSection({ rows = [] }: UsageSectionProps) {
                   </TableCell>
                 )}
                 <TableCell className="font-mono text-xs">{row.name}</TableCell>
-                <TableCell className="font-mono text-xs">{row.type}</TableCell>
                 <TableCell className="font-mono text-xs">
                   {row.default ?? "—"}
                 </TableCell>
@@ -60,6 +60,7 @@ export function UsageSection({ rows = [] }: UsageSectionProps) {
                     ? tComponents(row.descriptionKey)
                     : (row.description ?? "—")}
                 </TableCell>
+                <TableCell className="font-mono text-xs">{row.type}</TableCell>
               </TableRow>
             ))}
           </TableBody>
