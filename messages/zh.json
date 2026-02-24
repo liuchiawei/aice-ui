@@ -180,7 +180,14 @@
     },
     "webcam": {
       "label": "網路攝影機",
-      "description": "用於瀏覽器網路攝影機串流的元件，具備錯誤處理與 ref 轉發支援。"
+      "description": "可設定解析度與是否啟用麥克風的網路攝影機串流元件，支援 ref 轉發，取得攝影機失敗時會顯示錯誤訊息。",
+      "props": {
+        "width": "影片寬度（像素）。",
+        "height": "影片高度（像素）。",
+        "audio": "是否請求麥克風音訊串流。",
+        "className": "套用在 <video> 上的額外 CSS 類名。",
+        "containerClassName": "套用在外層容器上的額外 CSS 類名。"
+      }
     },
     "motion-wheel": {
       "label": "旋轉輪播",

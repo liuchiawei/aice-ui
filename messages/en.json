@@ -180,7 +180,14 @@
       },
       "webcam": {
         "label": "Webcam",
-        "description": "A webcam component with customizable data and optional title and description."
+        "description": "A webcam component that streams the user's camera with configurable resolution and optional audio. Supports ref forwarding and shows an error message when camera access fails.",
+        "props": {
+          "width": "Video width in pixels.",
+          "height": "Video height in pixels.",
+          "audio": "Whether to request the microphone stream.",
+          "className": "Additional CSS class for the <video> element.",
+          "containerClassName": "Additional CSS class for the outer container."
+        }
       },
       "motion-wheel": {
         "label": "Motion Wheel",

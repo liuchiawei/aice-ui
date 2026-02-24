@@ -587,6 +587,13 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         demo: WebcamDemo,
         sourceCode: webcamSource,
         date: "2026-02-19",
+        usageProps: [
+          { name: "width", type: "number", default: "640", descriptionKey: "webcam.props.width" },
+          { name: "height", type: "number", default: "360", descriptionKey: "webcam.props.height" },
+          { name: "audio", type: "boolean", default: "false", descriptionKey: "webcam.props.audio" },
+          { name: "className", type: "string", descriptionKey: "webcam.props.className" },
+          { name: "containerClassName", type: "string", descriptionKey: "webcam.props.containerClassName" },
+        ],
       },
     ],
   },
