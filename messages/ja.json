@@ -192,7 +192,22 @@
     },
     "motion-wheel": {
       "label": "回転カルーセル",
-      "description": "回転アニメーションと前後ナビゲーション・ドットインジケーター・中央情報パネルを備えた複合カルーセルホイールコンポーネント。フォーカス時は左右キーで項目切り替え可能。"
+      "description": "回転アニメーションと前後ナビゲーション・ドットインジケーター・中央情報パネルを備えた複合カルーセルホイールコンポーネント。フォーカス時は左右キーで項目切り替え可能。",
+      "props": {
+        "items": "ホイール項目のデータ配列。各要素は id 必須。",
+        "children": "子要素または表示内容。",
+        "className": "要素に付与する追加の CSS クラス。",
+        "radius": "ホイールの半径（ピクセル）。レスポンシブ時はデスクトップ 320・モバイル 270。",
+        "spring": "スプリングアニメーション設定（stiffness, damping, duration）。",
+        "initialIndex": "初期表示する項目のインデックス。",
+        "interval": "自動送りの間隔（ミリ秒、AutoCarousel 用）。",
+        "wheelChildren": "各ホイール項目の描画関数 (item, index) => ReactNode。",
+        "item": "現在の項目データ（MotionWheel.Item）。",
+        "index": "ホイール内の項目インデックス（MotionWheel.Item）。",
+        "prevClassName": "前へ（左）ナビボタン用の CSS クラス。",
+        "nextClassName": "次へ（右）ナビボタン用の CSS クラス。",
+        "centerInfoChildren": "中央情報パネルの内容を描画する関数 (item) => ReactNode。"
+      }
     },
     "3d-card": {
       "label": "3Dカード",

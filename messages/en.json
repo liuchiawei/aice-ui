@@ -191,7 +191,22 @@
       },
       "motion-wheel": {
         "label": "Motion Wheel",
-        "description": "A compound carousel wheel with rotation animation, prev/next navigation, dot indicators, and optional center info panel. Supports keyboard control (ArrowLeft/ArrowRight) when focused."
+        "description": "A compound carousel wheel with rotation animation, prev/next navigation, dot indicators, and optional center info panel. Supports keyboard control (ArrowLeft/ArrowRight) when focused.",
+        "props": {
+          "items": "Data array for wheel items; each item must have an id.",
+          "children": "Child elements or render content.",
+          "className": "Additional CSS class for the element.",
+          "radius": "Wheel radius in pixels; responsive default (desktop 320, mobile 270).",
+          "spring": "Spring animation config: stiffness, damping, duration.",
+          "initialIndex": "Index of the initially focused item.",
+          "interval": "Auto-advance interval in milliseconds (AutoCarousel).",
+          "wheelChildren": "Render function (item, index) => ReactNode for each wheel item.",
+          "item": "Current item data (MotionWheel.Item).",
+          "index": "Index of the item in the wheel (MotionWheel.Item).",
+          "prevClassName": "CSS class for the previous (left) navigation button.",
+          "nextClassName": "CSS class for the next (right) navigation button.",
+          "centerInfoChildren": "Render function (item) => ReactNode for the center info panel content."
+        }
       },
       "3d-card": {
         "label": "3D Card",

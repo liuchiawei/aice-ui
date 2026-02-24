@@ -191,7 +191,22 @@
     },
     "motion-wheel": {
       "label": "旋轉輪播",
-      "description": "具旋轉動畫、前後導航、圓點指示與可選中央資訊區的複合式輪播元件。聚焦後支援鍵盤控制（左右方向鍵切換項目）。"
+      "description": "具旋轉動畫、前後導航、圓點指示與可選中央資訊區的複合式輪播元件。聚焦後支援鍵盤控制（左右方向鍵切換項目）。",
+      "props": {
+        "items": "輪播項目資料陣列，每筆需有 id。",
+        "children": "子元件或渲染內容。",
+        "className": "套用在該元件上的額外 CSS 類名。",
+        "radius": "輪圈半徑（像素），響應式預設為桌面 320、行動 270。",
+        "spring": "彈簧動畫設定：stiffness、damping、duration。",
+        "initialIndex": "初始顯示的項目索引。",
+        "interval": "自動切換間隔（毫秒，AutoCarousel 用）。",
+        "wheelChildren": "各輪播項目的渲染函式 (item, index) => ReactNode。",
+        "item": "當前項目資料（MotionWheel.Item）。",
+        "index": "項目在輪播中的索引（MotionWheel.Item）。",
+        "prevClassName": "「上一項」按鈕的 CSS 類名。",
+        "nextClassName": "「下一項」按鈕的 CSS 類名。",
+        "centerInfoChildren": "中央資訊區內容的渲染函式 (item) => ReactNode。"
+      }
     },
     "3d-card": {
       "label": "3D卡片",
