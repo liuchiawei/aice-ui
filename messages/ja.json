@@ -180,10 +180,10 @@
       }
     },
     "ascii-art": {
-      "label": "ASCIIアート",
-      "description": "画像をASCIIアートで描画。解像度・文字セット・色を設定可能。フェード・タイプライター・マトリックスアニメーションに対応。非アニメーションは AsciiArtStatic を使用。",
+      "label": "アスキーアート",
+      "description": "画像をプレーンテキストで描画。解像度・文字セット・色を設定可能。フェード・タイプライター・マトリックスアニメーションに対応。非アニメーションは AsciiArtStatic を使用。",
       "props": {
-        "src": "ASCIIアートに変換する画像のURL（CORSの対象）。",
+        "src": "テキストに変換する画像のURL（CORSの対象）。",
         "resolution": "ASCIIの桁数（文字解像度）。大きいほど細かく表示。",
         "charset": "プリセット名（standard, blocks, binary など）または明度マッピング用の任意文字列。",
         "color": "ASCII文字の色（colored が true の場合は無視）。",
