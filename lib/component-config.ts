@@ -14,6 +14,10 @@ import {
 } from "@/components/demo/floating-circle-demo";
 import { WebcamDemo, webcamSource } from "@/components/demo/webcam-demo";
 import {
+  AsciiArtDemo,
+  asciiArtSource,
+} from "@/components/demo/ascii-art-demo";
+import {
   SlideUpLettersDemo,
   slideUpLettersSource,
 } from "@/components/demo/slide-up-letters-demo";
@@ -640,6 +644,30 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
   {
     label: "Media",
     items: [
+      {
+        slug: "ascii-art",
+        labelKey: "ascii-art.label",
+        descriptionKey: "ascii-art.description",
+        demo: AsciiArtDemo,
+        sourceCode: asciiArtSource,
+        date: "2026-02-25",
+        usageProps: [
+          { name: "src", type: "string", descriptionKey: "ascii-art.props.src" },
+          { name: "resolution", type: "number", default: "80", descriptionKey: "ascii-art.props.resolution" },
+          { name: "charset", type: "string", default: "\"standard\"", descriptionKey: "ascii-art.props.charset" },
+          { name: "color", type: "string", default: "\"#ffffff\"", descriptionKey: "ascii-art.props.color" },
+          { name: "backgroundColor", type: "string", default: "\"transparent\"", descriptionKey: "ascii-art.props.backgroundColor" },
+          { name: "inverted", type: "boolean", default: "false", descriptionKey: "ascii-art.props.inverted" },
+          { name: "colored", type: "boolean", default: "false", descriptionKey: "ascii-art.props.colored" },
+          { name: "animated", type: "boolean", default: "true", descriptionKey: "ascii-art.props.animated" },
+          { name: "animationStyle", type: "\"fade\" | \"typewriter\" | \"matrix\" | \"none\"", default: "\"fade\"", descriptionKey: "ascii-art.props.animationStyle" },
+          { name: "animationDuration", type: "number", default: "1", descriptionKey: "ascii-art.props.animationDuration" },
+          { name: "fontFamily", type: "string", default: "\"monospace\"", descriptionKey: "ascii-art.props.fontFamily" },
+          { name: "className", type: "string", descriptionKey: "ascii-art.props.className" },
+          { name: "animateOnView", type: "boolean", default: "true", descriptionKey: "ascii-art.props.animateOnView" },
+          { name: "objectFit", type: "\"cover\" | \"contain\" | \"fill\"", default: "\"cover\"", descriptionKey: "ascii-art.props.objectFit" },
+        ],
+      },
       {
         slug: "webcam",
         labelKey: "webcam.label",

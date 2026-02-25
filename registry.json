@@ -4,6 +4,16 @@
   "homepage": "https://aice-ui.vercel.app/",
   "items": [
     {
+      "name": "ascii-art",
+      "type": "registry:ui",
+      "title": "Ascii Art",
+      "description": "Renders an image as ASCII art with configurable resolution, charset, and colors. Supports fade, typewriter, and matrix animations. | 画像をASCIIアートで描画。解像度・文字セット・色を設定可能。",
+      "dependencies": ["motion"],
+      "files": [
+        { "path": "components/media/ascii-art.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
       "name": "webcam",
       "type": "registry:ui",
       "title": "Webcam",

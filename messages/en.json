@@ -178,6 +178,26 @@
           "style": "Inline CSS styles for the root container."
         }
       },
+      "ascii-art": {
+        "label": "Ascii Art",
+        "description": "Renders an image as ASCII art with configurable resolution, character set, and colors. Supports fade, typewriter, and matrix animations; use AsciiArtStatic for non-animated output.",
+        "props": {
+          "src": "Image URL to convert to ASCII art (subject to CORS).",
+          "resolution": "Number of ASCII columns (character resolution). Higher values give more detail.",
+          "charset": "Preset name (e.g. standard, blocks, binary) or custom character string for brightness mapping.",
+          "color": "Text color for the ASCII art (ignored when colored is true).",
+          "backgroundColor": "Background color of the container.",
+          "inverted": "When true, uses dark background and light text (reverses charset order).",
+          "colored": "When true, uses image colors for each character instead of a single text color.",
+          "animated": "When true, runs the selected animation on load.",
+          "animationStyle": "Animation type: fade, typewriter, matrix, or none.",
+          "animationDuration": "Duration of the fade animation in seconds.",
+          "fontFamily": "Font family for the ASCII characters (e.g. monospace).",
+          "className": "Additional CSS class for the container (e.g. w-full, aspect-video).",
+          "animateOnView": "When true, animation starts only when the component is in view.",
+          "objectFit": "How the image fits the ASCII grid: cover, contain, or fill."
+        }
+      },
       "webcam": {
         "label": "Webcam",
         "description": "A webcam component that streams the user's camera with configurable resolution and optional audio. Supports ref forwarding and shows an error message when camera access fails.",

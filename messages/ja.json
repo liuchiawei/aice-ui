@@ -179,6 +179,26 @@
         "style": "ルートコンテナのインライン CSS。"
       }
     },
+    "ascii-art": {
+      "label": "ASCIIアート",
+      "description": "画像をASCIIアートで描画。解像度・文字セット・色を設定可能。フェード・タイプライター・マトリックスアニメーションに対応。非アニメーションは AsciiArtStatic を使用。",
+      "props": {
+        "src": "ASCIIアートに変換する画像のURL（CORSの対象）。",
+        "resolution": "ASCIIの桁数（文字解像度）。大きいほど細かく表示。",
+        "charset": "プリセット名（standard, blocks, binary など）または明度マッピング用の任意文字列。",
+        "color": "ASCII文字の色（colored が true の場合は無視）。",
+        "backgroundColor": "コンテナの背景色。",
+        "inverted": "true で暗い背景・明るい文字（文字セットを反転）。",
+        "colored": "true で単色ではなく画像の色を各文字に反映。",
+        "animated": "true で読み込み時に選択したアニメーションを実行。",
+        "animationStyle": "アニメーション種別: fade, typewriter, matrix, none。",
+        "animationDuration": "フェードアニメーションの長さ（秒）。",
+        "fontFamily": "ASCII文字のフォントファミリー（例: monospace）。",
+        "className": "コンテナに付与する追加の CSS クラス（例: w-full, aspect-video）。",
+        "animateOnView": "true でコンポーネントがビューに入ったときのみアニメーション開始。",
+        "objectFit": "画像のASCIIグリッドへの合わせ方: cover, contain, fill。"
+      }
+    },
     "webcam": {
       "label": "ウェブカメラ",
       "description": "解像度とオーディオを設定可能なウェブカメラストリーミングコンポーネント。ref 転送に対応し、カメラ取得失敗時はエラーメッセージを表示します。",
