@@ -10,8 +10,8 @@ export interface InstallCommands {
  */
 export function getInstallCommands(slug: string): InstallCommands {
   return {
-    npm: `npx shadcn@latest add https://aice-ui.vercel.app/r/${slug}.json`,
-    pnpm: `pnpm dlx shadcn@latest add https://aice-ui.vercel.app/r/${slug}.json`,
-    yarn: `yarn dlx shadcn@latest add https://aice-ui.vercel.app/r/${slug}.json`,
+    npm: `npx aice-ui add ${slug}`,
+    pnpm: `pnpm dlx aice-ui add ${slug}`,
+    yarn: `yarn dlx aice-ui add ${slug}`,
   };
 }
