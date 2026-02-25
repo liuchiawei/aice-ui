@@ -8,6 +8,7 @@ import {
 import { get } from "node:https";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { checkbox } from "@inquirer/prompts";
 import { projectConfig } from "../../lib/project-config";
 
 const REGISTRY_BASE_URL = projectConfig.url.replace(/\/$/, "");
@@ -30,7 +31,8 @@ async function main() {
   }
 
   if (command === "list" || command === "ls") {
-    await listComponents();
+    const listArgs = args.slice(1);
+    await listComponents(listArgs);
     process.exit(0);
   }
 
@@ -51,7 +53,7 @@ async function main() {
   console.log("");
   console.log("Commands:");
   console.log(`  add <name> [names...]  Add components from ${projectConfig.name} registry`);
-  console.log("  list, ls                List available components");
+  console.log("  list, ls                List available components (interactive select & install in TTY)");
   console.log("");
   console.log("Options:");
   console.log("  --help, -h              Show help");
@@ -186,16 +188,20 @@ function showHelp() {
   console.log("");
   console.log("Commands:");
   console.log(`  add <name> [names...]  Add components to your project`);
-  console.log("  list, ls               List available components");
+  console.log(
+    "  list, ls               List components; in TTY: select then install (↑/↓ move, Space toggle, a all, Enter confirm)",
+  );
   console.log("");
   console.log("Options:");
   console.log("  --help, -h             Show help");
   console.log("  --version, -v          Show version");
+  console.log("  --no-interactive, -n    For list: print only, no selection (useful in scripts/CI)");
   console.log("");
   console.log("Examples:");
   console.log(`  npx ${CLI_NAME} add copy-button`);
   console.log(`  npx ${CLI_NAME} add copy-button theme-switch glass-surface`);
   console.log(`  npx ${CLI_NAME} list`);
+  console.log(`  npx ${CLI_NAME} list --no-interactive`);
 }
 
 function showVersion() {
@@ -212,7 +218,7 @@ function showVersion() {
   }
 }
 
-async function listComponents() {
+async function listComponents(listArgs: string[]) {
   try {
     console.log("Fetching components...");
     const registryUrl = `${REGISTRY_BASE_URL}/r/registry.json`;
@@ -225,20 +231,57 @@ async function listComponents() {
     }
 
     const items = registry.items;
-    const maxName = Math.max(4, ...items.map((i) => (i.name ?? "").length));
+    const noInteractive =
+      listArgs.includes("--no-interactive") || listArgs.includes("-n");
+    const interactive = Boolean(process.stdin.isTTY) && !noInteractive;
 
-    console.log("");
-    console.log("Available components:");
-    console.log("");
-    for (const item of items) {
-      const name = (item.name ?? "").padEnd(maxName);
-      const desc = item.description ?? item.title ?? "—";
-      console.log(`  ${name}  ${desc}`);
+    if (!interactive) {
+      const maxName = Math.max(4, ...items.map((i) => (i.name ?? "").length));
+      console.log("");
+      console.log("Available components:");
+      console.log("");
+      for (const item of items) {
+        const name = (item.name ?? "").padEnd(maxName);
+        const desc = item.description ?? item.title ?? "—";
+        console.log(`  ${name}  ${desc}`);
+      }
+      console.log("");
+      console.log(`Total: ${items.length} components`);
+      console.log("");
+      console.log(`Usage: npx ${CLI_NAME} add <component-name>`);
+      console.log(
+        `Interactive: npx ${CLI_NAME} list (use arrow keys, space, a to select, Enter to install)`,
+      );
+      return;
     }
-    console.log("");
-    console.log(`Total: ${items.length} components`);
-    console.log("");
-    console.log(`Usage: npx ${CLI_NAME} add <component-name>`);
+
+    const choices = items.map((item) => {
+      const desc = item.description ?? item.title ?? "—";
+      const shortDesc =
+        desc.length > 55 ? `${desc.slice(0, 52).trim()}...` : desc;
+      return {
+        name: `${item.name}  ${shortDesc}`,
+        value: item.name,
+      };
+    });
+
+    const selected = await checkbox({
+      message: "Select components to install (Enter when done)",
+      choices,
+      pageSize: 15,
+      required: false,
+    });
+
+    if (selected.length === 0) {
+      console.log("No components selected.");
+      return;
+    }
+
+    for (const name of selected) {
+      console.log(`Adding ${name}...`);
+      await addComponentWithDependencies(name);
+    }
+    console.log("Done.");
   } catch (err) {
     console.error("Error fetching components:", err instanceof Error ? err.message : err);
     console.log("");
