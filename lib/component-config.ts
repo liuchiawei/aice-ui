@@ -706,3 +706,5 @@ export function isNewComponent(date: string | undefined): boolean {
   const cutoffTime = cutoff.setHours(0, 0, 0, 0);
   return itemTime >= cutoffTime;
 }
+
+export { projectConfig } from "@/lib/project-config";
