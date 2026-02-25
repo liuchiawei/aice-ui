@@ -23,6 +23,15 @@
       ]
     },
     {
+      "name": "pixelated-canvas",
+      "type": "registry:ui",
+      "title": "Pixelated Canvas",
+      "description": "Renders an image as a grid of dots with optional interactive pointer distortion (repel, attract, swirl) and jitter. Supports grayscale, tint, and object-fit. Use variant=\"static\" for non-interactive mode. | 画像をドットグリッドで描画。オプションでポインター変形・ジッター対応。",
+      "files": [
+        { "path": "components/media/pixelated-canvas.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
       "name": "glass-surface",
       "type": "registry:ui",
       "title": "Glass Surface",

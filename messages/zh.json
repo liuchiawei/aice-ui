@@ -209,6 +209,38 @@
         "containerClassName": "套用在外層容器上的額外 CSS 類名。"
       }
     },
+    "pixelated-canvas": {
+      "label": "互動馬賽克",
+      "description": "將任意圖片轉為點陣畫布，並支援滑鼠變形效果。",
+      "props": {
+        "src": "要繪製的圖片網址（需符合 CORS）。",
+        "width": "畫布顯示寬度（像素）。",
+        "height": "畫布顯示高度（像素）。",
+        "variant": "\"static\" 時關閉滑鼠互動；\"interactive\" 或未設定時開啟。",
+        "cellSize": "每個取樣格子的尺寸（CSS 像素）。",
+        "dotScale": "點的大小佔格子尺寸的比例（0–1）。",
+        "shape": "點的形狀：circle 或 square。",
+        "backgroundColor": "繪製前清除畫布使用的背景色。",
+        "grayscale": "為 true 時先轉成灰階再繪製。",
+        "className": "畫布元素上的額外 CSS 類名。",
+        "responsive": "為 true 時視窗縮放時依 width/height 重新繪製。",
+        "dropoutStrength": "0–1，數值越大在低對比區域移除越多點。",
+        "interactive": "為 true 時啟用滑鼠變形動畫（若為 variant=\"static\" 則被覆寫）。",
+        "distortionStrength": "變形造成的每點最大位移（像素）。",
+        "distortionRadius": "滑鼠周圍影響變形的半徑（像素）。",
+        "distortionMode": "滑鼠附近的點如何移動：repel、attract 或 swirl。",
+        "followSpeed": "滑鼠跟隨的平滑係數（0–1）。",
+        "sampleAverage": "為 true 時每個格子取多點平均而非僅中心。",
+        "tintColor": "色調顏色（如 #0ea5e9 或 rgb(14,165,233)）。",
+        "tintStrength": "與原色混合的色調強度（0–1）。",
+        "maxFps": "大畫布時限制動畫幀率以提升效能。",
+        "objectFit": "來源圖片在畫布內的適應方式：cover、contain、fill 或 none。",
+        "jitterStrength": "滑鼠附近點的隨機位移幅度。",
+        "jitterSpeed": "隨機動畫的速度係數。",
+        "fadeOnLeave": "為 true 時滑鼠離開後變形會平滑淡出（variant=\"static\" 時覆寫）。",
+        "fadeSpeed": "離開淡出的平滑係數（0–1），越大淡出越快。"
+      }
+    },
     "motion-wheel": {
       "label": "旋轉輪播",
       "description": "具旋轉動畫、前後導航、圓點指示與可選中央資訊區的複合式輪播元件。聚焦後支援鍵盤控制（左右方向鍵切換項目）。",

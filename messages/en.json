@@ -209,6 +209,38 @@
           "containerClassName": "Additional CSS class for the outer container."
         }
       },
+      "pixelated-canvas": {
+        "label": "Pixelated Canvas",
+        "description": "Convert any image to a pixelated canvas with mouse distortion effects.",
+        "props": {
+          "src": "Image URL to render (subject to CORS).",
+          "width": "Canvas display width in pixels.",
+          "height": "Canvas display height in pixels.",
+          "variant": "When \"static\", disables pointer interaction; \"interactive\" or undefined enables it.",
+          "cellSize": "Size of each sampling cell in CSS pixels.",
+          "dotScale": "Dot size as a fraction of cell size (0–1).",
+          "shape": "Shape of each dot: circle or square.",
+          "backgroundColor": "Background color to clear the canvas with before drawing.",
+          "grayscale": "When true, convert image to grayscale before drawing.",
+          "className": "Additional CSS class for the canvas element.",
+          "responsive": "When true, redraw on window resize using the given width/height.",
+          "dropoutStrength": "0–1. Higher values remove more dots in low-contrast regions.",
+          "interactive": "When true, enable mouse distortion animation (overridden by variant=\"static\").",
+          "distortionStrength": "Max per-dot offset in pixels due to distortion.",
+          "distortionRadius": "Radius in pixels around the pointer that influences distortion.",
+          "distortionMode": "How dots move near the pointer: repel, attract, or swirl.",
+          "followSpeed": "0–1 smoothing factor for pointer follow.",
+          "sampleAverage": "When true, average multiple samples per cell instead of center only.",
+          "tintColor": "Color tint (e.g. #0ea5e9 or rgb(14,165,233)).",
+          "tintStrength": "0–1 tint mix amount with original colors.",
+          "maxFps": "Cap animation frame rate for performance on large canvases.",
+          "objectFit": "Object-fit behavior for the source image: cover, contain, fill, or none.",
+          "jitterStrength": "Random motion amplitude for dots near the pointer.",
+          "jitterSpeed": "Speed factor for the random motion.",
+          "fadeOnLeave": "When true, smoothly fade distortion when the pointer leaves (overridden by variant=\"static\").",
+          "fadeSpeed": "0–1 smoothing factor for leave fade; higher is faster."
+        }
+      },
       "motion-wheel": {
         "label": "Motion Wheel",
         "description": "A compound carousel wheel with rotation animation, prev/next navigation, dot indicators, and optional center info panel. Supports keyboard control (ArrowLeft/ArrowRight) when focused.",

@@ -210,6 +210,38 @@
         "containerClassName": "外側コンテナに付与する追加の CSS クラス。"
       }
     },
+    "pixelated-canvas": {
+      "label": "動くピクセル",
+      "description": "任意の画像をピクセル化キャンバスに変換し、マウスによる変形効果を付与できます。",
+      "props": {
+        "src": "描画する画像のURL（CORSの対象）。",
+        "width": "キャンバスの表示幅（ピクセル）。",
+        "height": "キャンバスの表示高さ（ピクセル）。",
+        "variant": "\"static\" でポインター変形を無効、\"interactive\" または未指定で有効。",
+        "cellSize": "各サンプリングセルのサイズ（CSSピクセル）。",
+        "dotScale": "セルサイズに対するドットの大きさ（0–1）。",
+        "shape": "ドットの形: circle または square。",
+        "backgroundColor": "描画前にキャンバスを塗りつぶす背景色。",
+        "grayscale": "true で描画前にグレースケール変換。",
+        "className": "キャンバス要素に付与する追加の CSS クラス。",
+        "responsive": "true でウィンドウリサイズ時に指定の width/height で再描画。",
+        "dropoutStrength": "0–1。大きいほど低コントラスト域のドットを多く除去。",
+        "interactive": "true でマウス変形アニメーションを有効（variant=\"static\" で上書き）。",
+        "distortionStrength": "変形によるドットあたりの最大オフセット（ピクセル）。",
+        "distortionRadius": "ポインター周辺で変形が効く半径（ピクセル）。",
+        "distortionMode": "ポインター付近のドットの動き: repel, attract, swirl。",
+        "followSpeed": "ポインター追従のスムージング係数（0–1）。",
+        "sampleAverage": "true でセル中央だけでなく複数サンプルを平均。",
+        "tintColor": "色のティント（例: #0ea5e9 または rgb(14,165,233)）。",
+        "tintStrength": "元の色とのティント混合量（0–1）。",
+        "maxFps": "大キャンバス時のパフォーマンスのためアニメーションの最大FPS。",
+        "objectFit": "ソース画像のキャンバス内での合わせ方: cover, contain, fill, none。",
+        "jitterStrength": "ポインター付近のドットのランダムな動きの振幅。",
+        "jitterSpeed": "ランダムな動きの速度係数。",
+        "fadeOnLeave": "true でポインター離脱時に変形をスムーズにフェードアウト（variant=\"static\" で上書き）。",
+        "fadeSpeed": "離脱フェードのスムージング係数（0–1）。大きいほど速い。"
+      }
+    },
     "motion-wheel": {
       "label": "回転カルーセル",
       "description": "回転アニメーションと前後ナビゲーション・ドットインジケーター・中央情報パネルを備えた複合カルーセルホイールコンポーネント。フォーカス時は左右キーで項目切り替え可能。",
