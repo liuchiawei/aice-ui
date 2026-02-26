@@ -86,9 +86,11 @@ Components are grouped by category (see `lib/component-config.ts`).
 
 | Component | Description |
 |-----------|-------------|
+| **Ascii Art** | Renders an image as ASCII art with configurable resolution, character set, and colors. Supports fade, typewriter, and matrix animations; use AsciiArtStatic for static output. (2026-02-25) |
+| **Pixelated Canvas** | Renders an image as a grid of dots with optional interactive pointer distortion (repel, attract, swirl) and jitter. Supports grayscale, tint, and object-fit; use variant="static" for non-interactive mode. (2026-02-25) |
 | **Webcam** | A webcam component with customizable data and optional title and description. |
 
-**Total: 23 components**
+**Total: 25 components**
 
 ---
 

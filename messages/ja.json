@@ -179,6 +179,26 @@
         "style": "ルートコンテナのインライン CSS。"
       }
     },
+    "ascii-art": {
+      "label": "アスキーアート",
+      "description": "画像をプレーンテキストで描画。解像度・文字セット・色を設定可能。フェード・タイプライター・マトリックスアニメーションに対応。非アニメーションは AsciiArtStatic を使用。",
+      "props": {
+        "src": "テキストに変換する画像のURL（CORSの対象）。",
+        "resolution": "ASCIIの桁数（文字解像度）。大きいほど細かく表示。",
+        "charset": "プリセット名（standard, blocks, binary など）または明度マッピング用の任意文字列。",
+        "color": "ASCII文字の色（colored が true の場合は無視）。",
+        "backgroundColor": "コンテナの背景色。",
+        "inverted": "true で暗い背景・明るい文字（文字セットを反転）。",
+        "colored": "true で単色ではなく画像の色を各文字に反映。",
+        "animated": "true で読み込み時に選択したアニメーションを実行。",
+        "animationStyle": "アニメーション種別: fade, typewriter, matrix, none。",
+        "animationDuration": "フェードアニメーションの長さ（秒）。",
+        "fontFamily": "ASCII文字のフォントファミリー（例: monospace）。",
+        "className": "コンテナに付与する追加の CSS クラス（例: w-full, aspect-video）。",
+        "animateOnView": "true でコンポーネントがビューに入ったときのみアニメーション開始。",
+        "objectFit": "画像のASCIIグリッドへの合わせ方: cover, contain, fill。"
+      }
+    },
     "webcam": {
       "label": "ウェブカメラ",
       "description": "解像度とオーディオを設定可能なウェブカメラストリーミングコンポーネント。ref 転送に対応し、カメラ取得失敗時はエラーメッセージを表示します。",
@@ -188,6 +208,38 @@
         "audio": "マイクストリームを取得するかどうか。",
         "className": "<video> 要素に付与する追加の CSS クラス。",
         "containerClassName": "外側コンテナに付与する追加の CSS クラス。"
+      }
+    },
+    "pixelated-canvas": {
+      "label": "動くピクセル",
+      "description": "任意の画像をピクセル化キャンバスに変換し、マウスによる変形効果を付与できます。",
+      "props": {
+        "src": "描画する画像のURL（CORSの対象）。",
+        "width": "キャンバスの表示幅（ピクセル）。",
+        "height": "キャンバスの表示高さ（ピクセル）。",
+        "variant": "\"static\" でポインター変形を無効、\"interactive\" または未指定で有効。",
+        "cellSize": "各サンプリングセルのサイズ（CSSピクセル）。",
+        "dotScale": "セルサイズに対するドットの大きさ（0–1）。",
+        "shape": "ドットの形: circle または square。",
+        "backgroundColor": "描画前にキャンバスを塗りつぶす背景色。",
+        "grayscale": "true で描画前にグレースケール変換。",
+        "className": "キャンバス要素に付与する追加の CSS クラス。",
+        "responsive": "true でウィンドウリサイズ時に指定の width/height で再描画。",
+        "dropoutStrength": "0–1。大きいほど低コントラスト域のドットを多く除去。",
+        "interactive": "true でマウス変形アニメーションを有効（variant=\"static\" で上書き）。",
+        "distortionStrength": "変形によるドットあたりの最大オフセット（ピクセル）。",
+        "distortionRadius": "ポインター周辺で変形が効く半径（ピクセル）。",
+        "distortionMode": "ポインター付近のドットの動き: repel, attract, swirl。",
+        "followSpeed": "ポインター追従のスムージング係数（0–1）。",
+        "sampleAverage": "true でセル中央だけでなく複数サンプルを平均。",
+        "tintColor": "色のティント（例: #0ea5e9 または rgb(14,165,233)）。",
+        "tintStrength": "元の色とのティント混合量（0–1）。",
+        "maxFps": "大キャンバス時のパフォーマンスのためアニメーションの最大FPS。",
+        "objectFit": "ソース画像のキャンバス内での合わせ方: cover, contain, fill, none。",
+        "jitterStrength": "ポインター付近のドットのランダムな動きの振幅。",
+        "jitterSpeed": "ランダムな動きの速度係数。",
+        "fadeOnLeave": "true でポインター離脱時に変形をスムーズにフェードアウト（variant=\"static\" で上書き）。",
+        "fadeSpeed": "離脱フェードのスムージング係数（0–1）。大きいほど速い。"
       }
     },
     "motion-wheel": {

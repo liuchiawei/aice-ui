@@ -178,6 +178,26 @@
           "style": "Inline CSS styles for the root container."
         }
       },
+      "ascii-art": {
+        "label": "Ascii Art",
+        "description": "Renders an image as ASCII art with configurable resolution, character set, and colors. Supports fade, typewriter, and matrix animations; use AsciiArtStatic for non-animated output.",
+        "props": {
+          "src": "Image URL to convert to ASCII art (subject to CORS).",
+          "resolution": "Number of ASCII columns (character resolution). Higher values give more detail.",
+          "charset": "Preset name (e.g. standard, blocks, binary) or custom character string for brightness mapping.",
+          "color": "Text color for the ASCII art (ignored when colored is true).",
+          "backgroundColor": "Background color of the container.",
+          "inverted": "When true, uses dark background and light text (reverses charset order).",
+          "colored": "When true, uses image colors for each character instead of a single text color.",
+          "animated": "When true, runs the selected animation on load.",
+          "animationStyle": "Animation type: fade, typewriter, matrix, or none.",
+          "animationDuration": "Duration of the fade animation in seconds.",
+          "fontFamily": "Font family for the ASCII characters (e.g. monospace).",
+          "className": "Additional CSS class for the container (e.g. w-full, aspect-video).",
+          "animateOnView": "When true, animation starts only when the component is in view.",
+          "objectFit": "How the image fits the ASCII grid: cover, contain, or fill."
+        }
+      },
       "webcam": {
         "label": "Webcam",
         "description": "A webcam component that streams the user's camera with configurable resolution and optional audio. Supports ref forwarding and shows an error message when camera access fails.",
@@ -187,6 +207,38 @@
           "audio": "Whether to request the microphone stream.",
           "className": "Additional CSS class for the <video> element.",
           "containerClassName": "Additional CSS class for the outer container."
+        }
+      },
+      "pixelated-canvas": {
+        "label": "Pixelated Canvas",
+        "description": "Convert any image to a pixelated canvas with mouse distortion effects.",
+        "props": {
+          "src": "Image URL to render (subject to CORS).",
+          "width": "Canvas display width in pixels.",
+          "height": "Canvas display height in pixels.",
+          "variant": "When \"static\", disables pointer interaction; \"interactive\" or undefined enables it.",
+          "cellSize": "Size of each sampling cell in CSS pixels.",
+          "dotScale": "Dot size as a fraction of cell size (0–1).",
+          "shape": "Shape of each dot: circle or square.",
+          "backgroundColor": "Background color to clear the canvas with before drawing.",
+          "grayscale": "When true, convert image to grayscale before drawing.",
+          "className": "Additional CSS class for the canvas element.",
+          "responsive": "When true, redraw on window resize using the given width/height.",
+          "dropoutStrength": "0–1. Higher values remove more dots in low-contrast regions.",
+          "interactive": "When true, enable mouse distortion animation (overridden by variant=\"static\").",
+          "distortionStrength": "Max per-dot offset in pixels due to distortion.",
+          "distortionRadius": "Radius in pixels around the pointer that influences distortion.",
+          "distortionMode": "How dots move near the pointer: repel, attract, or swirl.",
+          "followSpeed": "0–1 smoothing factor for pointer follow.",
+          "sampleAverage": "When true, average multiple samples per cell instead of center only.",
+          "tintColor": "Color tint (e.g. #0ea5e9 or rgb(14,165,233)).",
+          "tintStrength": "0–1 tint mix amount with original colors.",
+          "maxFps": "Cap animation frame rate for performance on large canvases.",
+          "objectFit": "Object-fit behavior for the source image: cover, contain, fill, or none.",
+          "jitterStrength": "Random motion amplitude for dots near the pointer.",
+          "jitterSpeed": "Speed factor for the random motion.",
+          "fadeOnLeave": "When true, smoothly fade distortion when the pointer leaves (overridden by variant=\"static\").",
+          "fadeSpeed": "0–1 smoothing factor for leave fade; higher is faster."
         }
       },
       "motion-wheel": {

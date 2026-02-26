@@ -4,12 +4,31 @@
   "homepage": "https://aice-ui.vercel.app/",
   "items": [
     {
+      "name": "ascii-art",
+      "type": "registry:ui",
+      "title": "Ascii Art",
+      "description": "Renders an image as ASCII art with configurable resolution, charset, and colors. Supports fade, typewriter, and matrix animations. | 画像をASCIIアートで描画。解像度・文字セット・色を設定可能。",
+      "dependencies": ["motion"],
+      "files": [
+        { "path": "components/media/ascii-art.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
       "name": "webcam",
       "type": "registry:ui",
       "title": "Webcam",
       "description": "A browser webcam streaming component with error handling and ref forwarding. | ブラウザのウェブカメラストリーミング用コンポーネント。エラー処理とref転送機能付き。",
       "files": [
         { "path": "components/media/webcam.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
+      "name": "pixelated-canvas",
+      "type": "registry:ui",
+      "title": "Pixelated Canvas",
+      "description": "Renders an image as a grid of dots with optional interactive pointer distortion (repel, attract, swirl) and jitter. Supports grayscale, tint, and object-fit. Use variant=\"static\" for non-interactive mode. | 画像をドットグリッドで描画。オプションでポインター変形・ジッター対応。",
+      "files": [
+        { "path": "components/media/pixelated-canvas.tsx", "type": "registry:ui" }
       ]
     },
     {

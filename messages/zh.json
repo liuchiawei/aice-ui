@@ -178,6 +178,26 @@
         "style": "根容器的內聯 CSS 樣式。"
       }
     },
+    "ascii-art": {
+      "label": "字元畫",
+      "description": "將圖片轉為 ASCII 字元符號，可設定解析度、字元集與顏色。支援淡入、打字機、矩陣等動畫；靜態輸出請使用 AsciiArtStatic。",
+      "props": {
+        "src": "要轉成字元畫的圖片網址（需符合 CORS）。",
+        "resolution": "ASCII 欄數（字元解析度），數值越大細節越多。",
+        "charset": "預設名稱（如 standard、blocks、binary）或自訂字元串，用於明度對應。",
+        "color": "ASCII 文字顏色（colored 為 true 時無效）。",
+        "backgroundColor": "容器背景色。",
+        "inverted": "為 true 時使用深色背景與淺色文字（字元集反轉）。",
+        "colored": "為 true 時以圖片顏色繪製每個字元，而非單一文字色。",
+        "animated": "為 true 時在載入時播放所選動畫。",
+        "animationStyle": "動畫類型：fade、typewriter、matrix 或 none。",
+        "animationDuration": "淡入動畫持續時間（秒）。",
+        "fontFamily": "ASCII 字元字型（如 monospace）。",
+        "className": "容器額外 CSS 類名（如 w-full、aspect-video）。",
+        "animateOnView": "為 true 時僅在元件進入視窗時開始動畫。",
+        "objectFit": "圖片在 ASCII 網格中的適應方式：cover、contain 或 fill。"
+      }
+    },
     "webcam": {
       "label": "網路攝影機",
       "description": "可設定解析度與是否啟用麥克風的網路攝影機串流元件，支援 ref 轉發，取得攝影機失敗時會顯示錯誤訊息。",
@@ -187,6 +207,38 @@
         "audio": "是否請求麥克風音訊串流。",
         "className": "套用在 <video> 上的額外 CSS 類名。",
         "containerClassName": "套用在外層容器上的額外 CSS 類名。"
+      }
+    },
+    "pixelated-canvas": {
+      "label": "互動馬賽克",
+      "description": "將任意圖片轉為點陣畫布，並支援滑鼠變形效果。",
+      "props": {
+        "src": "要繪製的圖片網址（需符合 CORS）。",
+        "width": "畫布顯示寬度（像素）。",
+        "height": "畫布顯示高度（像素）。",
+        "variant": "\"static\" 時關閉滑鼠互動；\"interactive\" 或未設定時開啟。",
+        "cellSize": "每個取樣格子的尺寸（CSS 像素）。",
+        "dotScale": "點的大小佔格子尺寸的比例（0–1）。",
+        "shape": "點的形狀：circle 或 square。",
+        "backgroundColor": "繪製前清除畫布使用的背景色。",
+        "grayscale": "為 true 時先轉成灰階再繪製。",
+        "className": "畫布元素上的額外 CSS 類名。",
+        "responsive": "為 true 時視窗縮放時依 width/height 重新繪製。",
+        "dropoutStrength": "0–1，數值越大在低對比區域移除越多點。",
+        "interactive": "為 true 時啟用滑鼠變形動畫（若為 variant=\"static\" 則被覆寫）。",
+        "distortionStrength": "變形造成的每點最大位移（像素）。",
+        "distortionRadius": "滑鼠周圍影響變形的半徑（像素）。",
+        "distortionMode": "滑鼠附近的點如何移動：repel、attract 或 swirl。",
+        "followSpeed": "滑鼠跟隨的平滑係數（0–1）。",
+        "sampleAverage": "為 true 時每個格子取多點平均而非僅中心。",
+        "tintColor": "色調顏色（如 #0ea5e9 或 rgb(14,165,233)）。",
+        "tintStrength": "與原色混合的色調強度（0–1）。",
+        "maxFps": "大畫布時限制動畫幀率以提升效能。",
+        "objectFit": "來源圖片在畫布內的適應方式：cover、contain、fill 或 none。",
+        "jitterStrength": "滑鼠附近點的隨機位移幅度。",
+        "jitterSpeed": "隨機動畫的速度係數。",
+        "fadeOnLeave": "為 true 時滑鼠離開後變形會平滑淡出（variant=\"static\" 時覆寫）。",
+        "fadeSpeed": "離開淡出的平滑係數（0–1），越大淡出越快。"
       }
     },
     "motion-wheel": {
