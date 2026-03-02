@@ -241,6 +241,19 @@
           "fadeSpeed": "0–1 smoothing factor for leave fade; higher is faster."
         }
       },
+      "heatmap-canvas": {
+        "label": "Heatmap Canvas",
+        "description": "Renders a source image with a heatmap visual effect by mapping pixel intensity to a color gradient.",
+        "props": {
+          "src": "Image URL (must be CORS-enabled for canvas read).",
+          "width": "Display width in CSS pixels.",
+          "height": "Display height in CSS pixels.",
+          "colormap": "Color gradient: thermal, viridis, jet, or grayscale.",
+          "intensitySource": "Intensity source: luminance, r, g, or b.",
+          "objectFit": "How the image fits: cover, contain, fill, or none.",
+          "className": "Additional CSS class for the container."
+        }
+      },
       "motion-wheel": {
         "label": "Motion Wheel",
         "description": "A compound carousel wheel with rotation animation, prev/next navigation, dot indicators, and optional center info panel. Supports keyboard control (ArrowLeft/ArrowRight) when focused.",

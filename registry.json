@@ -32,6 +32,15 @@
       ]
     },
     {
+      "name": "heatmap-canvas",
+      "type": "registry:ui",
+      "title": "Heatmap Canvas",
+      "description": "Renders a source image with a heatmap visual effect by mapping pixel intensity to a color gradient (thermal, viridis, jet, grayscale). | ソース画像をピクセル強度に応じた色グラデーションでヒートマップ表示。",
+      "files": [
+        { "path": "components/media/heatmap-canvas.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
       "name": "glass-surface",
       "type": "registry:ui",
       "title": "Glass Surface",

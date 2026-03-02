@@ -241,6 +241,19 @@
         "fadeSpeed": "離開淡出的平滑係數（0–1），越大淡出越快。"
       }
     },
+    "heatmap-canvas": {
+      "label": "熱成像",
+      "description": "將來源圖片依像素強度映射至色階，呈現熱成像視覺效果。",
+      "props": {
+        "src": "圖片網址（需支援 CORS 以供 canvas 讀取）。",
+        "width": "顯示寬度（CSS 像素）。",
+        "height": "顯示高度（CSS 像素）。",
+        "colormap": "色階：thermal、viridis、jet 或 grayscale。",
+        "intensitySource": "強度來源：luminance、r、g 或 b。",
+        "objectFit": "圖片適應方式：cover、contain、fill 或 none。",
+        "className": "容器額外 CSS 類名。"
+      }
+    },
     "motion-wheel": {
       "label": "旋轉輪播",
       "description": "具旋轉動畫、前後導航、圓點指示與可選中央資訊區的複合式輪播元件。聚焦後支援鍵盤控制（左右方向鍵切換項目）。",

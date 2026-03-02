@@ -19,6 +19,8 @@
   },
   "dependencies": {
     "@nauverse/tailwind-dot-grid-backgrounds": "^1.2.13",
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.5.0",
     "@tabler/icons-react": "^3.37.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -35,7 +37,8 @@
     "recharts": "2.15.4",
     "satori": "^0.19.2",
     "shiki": "^3.22.0",
-    "tailwind-merge": "^3.4.1"
+    "tailwind-merge": "^3.4.1",
+    "three": "^0.183.2"
   },
   "devDependencies": {
     "@inquirer/prompts": "^7.2.0",
@@ -44,6 +47,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/three": "^0.183.1",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
     "shadcn": "^3.8.4",

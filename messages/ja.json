@@ -242,6 +242,19 @@
         "fadeSpeed": "離脱フェードのスムージング係数（0–1）。大きいほど速い。"
       }
     },
+    "heatmap-canvas": {
+      "label": "ヒートマップ",
+      "description": "ソース画像をピクセル強度に応じた色グラデーションでヒートマップ表示します。",
+      "props": {
+        "src": "画像URL（canvas 読み取りのため CORS 対応必須）。",
+        "width": "表示幅（CSS ピクセル）。",
+        "height": "表示高さ（CSS ピクセル）。",
+        "colormap": "色グラデーション: thermal, viridis, jet, grayscale。",
+        "intensitySource": "強度の基準: luminance, r, g, b。",
+        "objectFit": "画像の合わせ方: cover, contain, fill, none。",
+        "className": "コンテナに付与する CSS クラス。"
+      }
+    },
     "motion-wheel": {
       "label": "回転カルーセル",
       "description": "回転アニメーションと前後ナビゲーション・ドットインジケーター・中央情報パネルを備えた複合カルーセルホイールコンポーネント。フォーカス時は左右キーで項目切り替え可能。",
