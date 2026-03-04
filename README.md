@@ -28,6 +28,7 @@ Components are grouped by category (see `lib/component-config.ts`).
 |-----------|-------------|
 | **Glyph Katakana** | A text component with decoding animation—random katakana glyphs gradually resolve to reveal the target text. |
 | **Decrypted Text** | Scrambled text that reveals on hover or when in view. Supports sequential or batch reveal, and multiple reveal directions. |
+| **Text Hover Effect** | Text that reveals a cursor-following gradient and stroke animation on hover. (2026-03-04) |
 | **Slide Up Letters** | A slide up letters component with customizable data and optional title and description. |
 | **Animated Counter** | A number counter that animates from a starting value to a target when it enters the viewport. |
 | **Timer** | A reusable timer that shows elapsed time. Start, pause, or restart with buttons; choose display format (e.g. 00:01:23 or 83.250s). |

@@ -298,6 +298,16 @@
         "label": "Decrypted Text",
         "description": "Scrambled text that reveals on hover or when in view. Supports sequential or batch reveal, and multiple reveal directions."
       },
+      "text-hover-effect": {
+        "label": "Text Hover Effect",
+        "description": "Text that reveals a cursor-following gradient and stroke animation on hover.",
+        "props": {
+          "text": "The text to display. Revealed with cursor-following gradient and stroke animation on hover.",
+          "duration": "Duration (s) for the radial mask to follow the cursor. Use 0 for instant follow. Default: 0.",
+          "className": "Optional CSS class for the root SVG container (e.g. width, height, margin).",
+          "textClassName": "Optional CSS class merged into all text elements (e.g. font size, font family, stroke)."
+        }
+      },
       "draggable-grid": {
         "label": "Draggable Grid",
         "description": "A draggable 2D grid with parallax icon cells. Inspired by Apple WatchOS.",

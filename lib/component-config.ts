@@ -91,6 +91,10 @@ import {
   decryptedTextSource,
 } from "@/components/demo/decrypted-text-demo";
 import {
+  TextHoverEffectDemo,
+  textHoverEffectSource,
+} from "@/components/demo/text-hover-effect-demo";
+import {
   DraggableGridDemo,
   draggableGridSource,
 } from "@/components/demo/draggable-grid-demo";
@@ -350,6 +354,20 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         demo: DecryptedTextDemo,
         sourceCode: decryptedTextSource,
         date: "2026-02-19",
+      },
+      {
+        slug: "text-hover-effect",
+        labelKey: "text-hover-effect.label",
+        descriptionKey: "text-hover-effect.description",
+        demo: TextHoverEffectDemo,
+        sourceCode: textHoverEffectSource,
+        date: "2026-03-04",
+        usageProps: [
+          { name: "text", type: "string", descriptionKey: "text-hover-effect.props.text" },
+          { name: "duration", type: "number", default: "0", descriptionKey: "text-hover-effect.props.duration" },
+          { name: "className", type: "string", default: "—", descriptionKey: "text-hover-effect.props.className" },
+          { name: "textClassName", type: "string", default: "—", descriptionKey: "text-hover-effect.props.textClassName" },
+        ],
       },
       {
         slug: "slide-up-letters",

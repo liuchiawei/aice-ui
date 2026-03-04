@@ -298,6 +298,16 @@
       "label": "解碼文字",
       "description": "滑鼠懸停或進入視窗時解碼顯示的文字。支援逐一揭露、批次揭露與多種揭露方向。"
     },
+    "text-hover-effect": {
+      "label": "文字懸停效果",
+      "description": "懸停時以滑鼠跟隨的漸層與描邊動畫顯示的文字。",
+      "props": {
+        "text": "要顯示的文字。懸停時以滑鼠跟隨的漸層與描邊動畫顯示。",
+        "duration": "徑向遮罩跟隨滑鼠的過渡時間（秒）。0 表示即時跟隨。預設：0。",
+        "className": "根層 SVG 容器的選用 CSS 類名（如寬度、高度、邊距）。",
+        "textClassName": "合併到所有文字元素的選用 CSS 類名（如字級、字體、描邊）。"
+      }
+    },
     "draggable-grid": {
       "label": "可拖拽網格",
       "description": "可拖曳的 2D 網格，圖示格具視差效果。靈感來自 Apple WatchOS。",

@@ -273,6 +273,19 @@
       ]
     },
     {
+      "name": "text-hover-effect",
+      "type": "registry:ui",
+      "title": "Text Hover Effect",
+      "description": "Text that reveals a cursor-following gradient and stroke animation on hover. | ホバー時にカーソル追従のグラデーションとストロークアニメーションで表示されるテキスト。",
+      "dependencies": ["motion"],
+      "files": [
+        {
+          "path": "components/text/text-hover-effect.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "three-card",
       "type": "registry:ui",
       "title": "3D Card",
