@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 
 /** Base class for stroke-outline text layers (outline + motion stroke). */
 const strokeOutlineTextClass =
-  "fill-transparent stroke-gray-200 font-[helvetica] text-[5rem] font-bold dark:stroke-gray-800";
+  "fill-transparent stroke-muted-foreground/50 font-[helvetica] text-[5rem] font-bold";
 /** Base class for the gradient-masked text layer (stroke from gradient, no fill). */
 const gradientTextClass =
   "fill-transparent font-[helvetica] text-[5rem] font-bold";
