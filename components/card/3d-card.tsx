@@ -146,7 +146,7 @@ const CardItem = ({
   style,
   ...rest
 }: {
-  as?: React.ElementType;
+  as?: React.ElementType<React.PropsWithChildren<Record<string, unknown>>>;
   children: React.ReactNode;
   className?: string;
   translateX?: number | string;
@@ -164,15 +164,15 @@ const CardItem = ({
     ? `translateX(${translateX}px) translateY(${translateY}px) translateZ(${translateZ}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg)`
     : "translateX(0) translateY(0) translateZ(0) rotateX(0deg) rotateY(0deg) rotateZ(0deg)";
 
-  return (
-    <Tag
-      className={cn("w-fit transition duration-200 ease-linear", className)}
-      style={{ ...style, transform }}
-      {...rest}
-    >
-      {children}
-    </Tag>
-  );
+  const tagProps = {
+    className: cn("w-fit transition duration-200 ease-linear", className),
+    style: { ...style, transform } as React.CSSProperties,
+    ...rest,
+  };
+  const Component = Tag as React.ComponentType<
+    React.PropsWithChildren<typeof tagProps>
+  >;
+  return <Component {...tagProps}>{children}</Component>;
 };
 
 /**
