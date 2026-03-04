@@ -232,7 +232,8 @@ export const HeatmapCanvas: React.FC<HeatmapCanvasProps> = ({
       }
 
       const result = new ImageData(outData, offscreen.width, offscreen.height);
-      ctx.putImageData(result, 0, 0);
+      off.putImageData(result, 0, 0);
+      ctx.drawImage(offscreen, 0, 0, displayWidth, displayHeight);
       setIsLoading(false);
     };
 
