@@ -17,6 +17,8 @@ type HeatmapCanvasProps = {
   width?: number;
   /** Display height in CSS pixels. */
   height?: number;
+  /** When true, the component fills its outer container; size is determined by ResizeObserver. */
+  fill?: boolean;
   /** Color gradient used to map intensity to color. */
   colormap?: ColormapPreset;
   /** Which value to use as intensity: luminance or single channel. */
@@ -130,13 +132,36 @@ export const HeatmapCanvas: React.FC<HeatmapCanvasProps> = ({
   src,
   width = 400,
   height = 300,
+  fill = false,
   colormap = "thermal",
   intensitySource = "luminance",
   objectFit = "cover",
   className,
 }) => {
   const [isLoading, setIsLoading] = useState(true);
+  const [containerSize, setContainerSize] = useState<{
+    width: number;
+    height: number;
+  } | null>(null);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (!fill) return;
+    const container = containerRef.current;
+    if (!container) return;
+
+    const updateSize = () => {
+      const w = container.clientWidth;
+      const h = container.clientHeight;
+      setContainerSize(w > 0 && h > 0 ? { width: w, height: h } : null);
+    };
+
+    updateSize();
+    const ro = new ResizeObserver(updateSize);
+    ro.observe(container);
+    return () => ro.disconnect();
+  }, [fill]);
 
   useEffect(() => {
     let isCancelled = false;
@@ -152,8 +177,14 @@ export const HeatmapCanvas: React.FC<HeatmapCanvasProps> = ({
       if (isCancelled) return;
       const dpr =
         typeof window !== "undefined" ? window.devicePixelRatio || 1 : 1;
-      const displayWidth = width ?? img.naturalWidth;
-      const displayHeight = height ?? img.naturalHeight;
+      const displayWidth =
+        fill && containerSize && containerSize.width > 0 && containerSize.height > 0
+          ? containerSize.width
+          : width ?? img.naturalWidth;
+      const displayHeight =
+        fill && containerSize && containerSize.width > 0 && containerSize.height > 0
+          ? containerSize.height
+          : height ?? img.naturalHeight;
 
       canvas.width = Math.max(1, Math.floor(displayWidth * dpr));
       canvas.height = Math.max(1, Math.floor(displayHeight * dpr));
@@ -244,14 +275,21 @@ export const HeatmapCanvas: React.FC<HeatmapCanvasProps> = ({
     return () => {
       isCancelled = true;
     };
-  }, [src, width, height, colormap, intensitySource, objectFit]);
+  }, [src, width, height, fill, containerSize, colormap, intensitySource, objectFit]);
 
   return (
-    <div className={cn("relative inline-block", className)}>
+    <div
+      ref={containerRef}
+      className={cn("relative inline-block", fill && "w-full h-full", className)}
+    >
       <canvas
         ref={canvasRef}
         className="block max-w-full h-auto"
-        style={{ width: width ?? "auto", height: height ?? "auto" }}
+        style={
+          fill
+            ? undefined
+            : { width: width ?? "auto", height: height ?? "auto" }
+        }
         aria-label="Heatmap visualization of source image"
       />
       {isLoading && (

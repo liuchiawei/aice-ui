@@ -251,6 +251,7 @@
           "colormap": "Color gradient: thermal, viridis, jet, or grayscale.",
           "intensitySource": "Intensity source: luminance, r, g, or b.",
           "objectFit": "How the image fits: cover, contain, fill, or none.",
+          "fill": "When true, the component fills its outer container; size is determined by ResizeObserver. Parent must have explicit dimensions (e.g. h-64 or aspect-video).",
           "className": "Additional CSS class for the container."
         }
       },

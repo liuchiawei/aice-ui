@@ -252,6 +252,7 @@
         "colormap": "色グラデーション: thermal, viridis, jet, grayscale。",
         "intensitySource": "強度の基準: luminance, r, g, b。",
         "objectFit": "画像の合わせ方: cover, contain, fill, none。",
+        "fill": "true のとき、外側のコンテナいっぱいに表示。サイズは ResizeObserver で取得。親要素に高さなどを指定すること（例: h-64, aspect-video）。",
         "className": "コンテナに付与する CSS クラス。"
       }
     },

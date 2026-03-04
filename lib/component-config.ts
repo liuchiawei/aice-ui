@@ -741,6 +741,7 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
           { name: "colormap", type: "\"thermal\" | \"viridis\" | \"jet\" | \"grayscale\"", default: "\"thermal\"", descriptionKey: "heatmap-canvas.props.colormap" },
           { name: "intensitySource", type: "\"luminance\" | \"r\" | \"g\" | \"b\"", default: "\"luminance\"", descriptionKey: "heatmap-canvas.props.intensitySource" },
           { name: "objectFit", type: "\"cover\" | \"contain\" | \"fill\" | \"none\"", default: "\"cover\"", descriptionKey: "heatmap-canvas.props.objectFit" },
+          { name: "fill", type: "boolean", default: "false", descriptionKey: "heatmap-canvas.props.fill" },
           { name: "className", type: "string", descriptionKey: "heatmap-canvas.props.className" },
         ],
       },

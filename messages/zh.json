@@ -251,6 +251,7 @@
         "colormap": "色階：thermal、viridis、jet 或 grayscale。",
         "intensitySource": "強度來源：luminance、r、g 或 b。",
         "objectFit": "圖片適應方式：cover、contain、fill 或 none。",
+        "fill": "為 true 時，元件會填滿外層容器，尺寸由 ResizeObserver 取得；父層需有明確尺寸（例如 h-64 或 aspect-video）。",
         "className": "容器額外 CSS 類名。"
       }
     },
