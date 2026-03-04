@@ -146,7 +146,7 @@ const CardItem = ({
   style,
   ...rest
 }: {
-  as?: React.ElementType<React.PropsWithChildren<Record<string, unknown>>>;
+  as?: React.ElementType;
   children: React.ReactNode;
   className?: string;
   translateX?: number | string;
