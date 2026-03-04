@@ -13,7 +13,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "registry:build": "shadcn build",
+    "build:registry": "shadcn build",
     "build:cli": "tsup",
     "test:cli": "pnpm run build:cli && node dist/index.js --help"
   },

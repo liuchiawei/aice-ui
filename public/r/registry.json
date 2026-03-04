@@ -4,12 +4,40 @@
   "homepage": "https://aice-ui.vercel.app/",
   "items": [
     {
+      "name": "ascii-art",
+      "type": "registry:ui",
+      "title": "Ascii Art",
+      "description": "Renders an image as ASCII art with configurable resolution, charset, and colors. Supports fade, typewriter, and matrix animations. | 画像をASCIIアートで描画。解像度・文字セット・色を設定可能。",
+      "dependencies": ["motion"],
+      "files": [
+        { "path": "components/media/ascii-art.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
       "name": "webcam",
       "type": "registry:ui",
       "title": "Webcam",
       "description": "A browser webcam streaming component with error handling and ref forwarding. | ブラウザのウェブカメラストリーミング用コンポーネント。エラー処理とref転送機能付き。",
       "files": [
         { "path": "components/media/webcam.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
+      "name": "pixelated-canvas",
+      "type": "registry:ui",
+      "title": "Pixelated Canvas",
+      "description": "Renders an image as a grid of dots with optional interactive pointer distortion (repel, attract, swirl) and jitter. Supports grayscale, tint, and object-fit. Use variant=\"static\" for non-interactive mode. | 画像をドットグリッドで描画。オプションでポインター変形・ジッター対応。",
+      "files": [
+        { "path": "components/media/pixelated-canvas.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
+      "name": "heatmap-canvas",
+      "type": "registry:ui",
+      "title": "Heatmap Canvas",
+      "description": "Renders a source image with a heatmap visual effect by mapping pixel intensity to a color gradient (thermal, viridis, jet, grayscale). | ソース画像をピクセル強度に応じた色グラデーションでヒートマップ表示。",
+      "files": [
+        { "path": "components/media/heatmap-canvas.tsx", "type": "registry:ui" }
       ]
     },
     {
@@ -240,6 +268,19 @@
       "files": [
         {
           "path": "components/text/decrypted-text.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "text-hover-effect",
+      "type": "registry:ui",
+      "title": "Text Hover Effect",
+      "description": "Text that reveals a cursor-following gradient and stroke animation on hover. | ホバー時にカーソル追従のグラデーションとストロークアニメーションで表示されるテキスト。",
+      "dependencies": ["motion"],
+      "files": [
+        {
+          "path": "components/text/text-hover-effect.tsx",
           "type": "registry:ui"
         }
       ]
