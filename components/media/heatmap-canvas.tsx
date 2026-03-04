@@ -19,11 +19,11 @@ type HeatmapCanvasProps = {
   height?: number;
   /** When true, the component fills its outer container; size is determined by ResizeObserver. */
   fill?: boolean;
-  /** Color gradient used to map intensity to color. "thermal", "viridis", "jet", "grayscale". */
+  /** Color gradient used to map intensity to color. "thermal | viridis | jet | grayscale". */
   colormap?: ColormapPreset;
-  /** Which value to use as intensity: luminance or single channel. "luminance", "r", "g", "b". */
+  /** Which value to use as intensity: luminance or single channel. "luminance | r | g | b". */
   intensitySource?: IntensitySource;
-  /** How the image fits within the canvas. "cover", "contain", "fill", "none". */
+  /** How the image fits within the canvas. "cover | contain | fill | none". */
   objectFit?: "cover" | "contain" | "fill" | "none";
   className?: string;
 };
