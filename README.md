@@ -28,6 +28,7 @@ Components are grouped by category (see `lib/component-config.ts`).
 |-----------|-------------|
 | **Glyph Katakana** | A text component with decoding animation—random katakana glyphs gradually resolve to reveal the target text. |
 | **Decrypted Text** | Scrambled text that reveals on hover or when in view. Supports sequential or batch reveal, and multiple reveal directions. |
+| **Text Hover Effect** | Text that reveals a cursor-following gradient and stroke animation on hover. (2026-03-04) |
 | **Slide Up Letters** | A slide up letters component with customizable data and optional title and description. |
 | **Animated Counter** | A number counter that animates from a starting value to a target when it enters the viewport. |
 | **Timer** | A reusable timer that shows elapsed time. Start, pause, or restart with buttons; choose display format (e.g. 00:01:23 or 83.250s). |
@@ -88,9 +89,10 @@ Components are grouped by category (see `lib/component-config.ts`).
 |-----------|-------------|
 | **Ascii Art** | Renders an image as ASCII art with configurable resolution, character set, and colors. Supports fade, typewriter, and matrix animations; use AsciiArtStatic for static output. (2026-02-25) |
 | **Pixelated Canvas** | Renders an image as a grid of dots with optional interactive pointer distortion (repel, attract, swirl) and jitter. Supports grayscale, tint, and object-fit; use variant="static" for non-interactive mode. (2026-02-25) |
+| **Heatmap Canvas** | Renders a source image with a heatmap visual effect by mapping pixel intensity to a color gradient (thermal, viridis, jet, grayscale). (2026-03-02) |
 | **Webcam** | A webcam component with customizable data and optional title and description. |
 
-**Total: 25 components**
+**Total: 26 components**
 
 ---
 

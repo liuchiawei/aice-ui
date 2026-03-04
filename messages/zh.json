@@ -241,6 +241,20 @@
         "fadeSpeed": "離開淡出的平滑係數（0–1），越大淡出越快。"
       }
     },
+    "heatmap-canvas": {
+      "label": "熱成像",
+      "description": "將來源圖片依像素強度映射至色階，呈現熱成像視覺效果。",
+      "props": {
+        "src": "圖片網址（需支援 CORS 以供 canvas 讀取）。",
+        "width": "顯示寬度（CSS 像素）。",
+        "height": "顯示高度（CSS 像素）。",
+        "colormap": "色階：thermal、viridis、jet 或 grayscale。",
+        "intensitySource": "強度來源：luminance、r、g 或 b。",
+        "objectFit": "圖片適應方式：cover、contain、fill 或 none。",
+        "fill": "為 true 時，元件會填滿外層容器，尺寸由 ResizeObserver 取得；父層需有明確尺寸（例如 h-64 或 aspect-video）。",
+        "className": "容器額外 CSS 類名。"
+      }
+    },
     "motion-wheel": {
       "label": "旋轉輪播",
       "description": "具旋轉動畫、前後導航、圓點指示與可選中央資訊區的複合式輪播元件。聚焦後支援鍵盤控制（左右方向鍵切換項目）。",
@@ -283,6 +297,16 @@
     "decrypted-text": {
       "label": "解碼文字",
       "description": "滑鼠懸停或進入視窗時解碼顯示的文字。支援逐一揭露、批次揭露與多種揭露方向。"
+    },
+    "text-hover-effect": {
+      "label": "文字懸停效果",
+      "description": "懸停時以滑鼠跟隨的漸層與描邊動畫顯示的文字。",
+      "props": {
+        "text": "要顯示的文字。懸停時以滑鼠跟隨的漸層與描邊動畫顯示。",
+        "duration": "徑向遮罩跟隨滑鼠的過渡時間（秒）。0 表示即時跟隨。預設：0。",
+        "className": "根層 SVG 容器的選用 CSS 類名（如寬度、高度、邊距）。",
+        "textClassName": "合併到所有文字元素的選用 CSS 類名（如字級、字體、描邊）。"
+      }
     },
     "draggable-grid": {
       "label": "可拖拽網格",

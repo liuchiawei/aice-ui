@@ -22,6 +22,10 @@ import {
   pixelatedCanvasSource,
 } from "@/components/demo/pixelated-canvas-demo";
 import {
+  HeatmapCanvasDemo,
+  heatmapCanvasSource,
+} from "@/components/demo/heatmap-canvas-demo";
+import {
   SlideUpLettersDemo,
   slideUpLettersSource,
 } from "@/components/demo/slide-up-letters-demo";
@@ -86,6 +90,10 @@ import {
   DecryptedTextDemo,
   decryptedTextSource,
 } from "@/components/demo/decrypted-text-demo";
+import {
+  TextHoverEffectDemo,
+  textHoverEffectSource,
+} from "@/components/demo/text-hover-effect-demo";
 import {
   DraggableGridDemo,
   draggableGridSource,
@@ -346,6 +354,20 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
         demo: DecryptedTextDemo,
         sourceCode: decryptedTextSource,
         date: "2026-02-19",
+      },
+      {
+        slug: "text-hover-effect",
+        labelKey: "text-hover-effect.label",
+        descriptionKey: "text-hover-effect.description",
+        demo: TextHoverEffectDemo,
+        sourceCode: textHoverEffectSource,
+        date: "2026-03-04",
+        usageProps: [
+          { name: "text", type: "string", descriptionKey: "text-hover-effect.props.text" },
+          { name: "duration", type: "number", default: "0", descriptionKey: "text-hover-effect.props.duration" },
+          { name: "className", type: "string", default: "—", descriptionKey: "text-hover-effect.props.className" },
+          { name: "textClassName", type: "string", default: "—", descriptionKey: "text-hover-effect.props.textClassName" },
+        ],
       },
       {
         slug: "slide-up-letters",
@@ -649,30 +671,6 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
     label: "Media",
     items: [
       {
-        slug: "ascii-art",
-        labelKey: "ascii-art.label",
-        descriptionKey: "ascii-art.description",
-        demo: AsciiArtDemo,
-        sourceCode: asciiArtSource,
-        date: "2026-02-25",
-        usageProps: [
-          { name: "src", type: "string", descriptionKey: "ascii-art.props.src" },
-          { name: "resolution", type: "number", default: "80", descriptionKey: "ascii-art.props.resolution" },
-          { name: "charset", type: "string", default: "\"standard\"", descriptionKey: "ascii-art.props.charset" },
-          { name: "color", type: "string", default: "\"#ffffff\"", descriptionKey: "ascii-art.props.color" },
-          { name: "backgroundColor", type: "string", default: "\"transparent\"", descriptionKey: "ascii-art.props.backgroundColor" },
-          { name: "inverted", type: "boolean", default: "false", descriptionKey: "ascii-art.props.inverted" },
-          { name: "colored", type: "boolean", default: "false", descriptionKey: "ascii-art.props.colored" },
-          { name: "animated", type: "boolean", default: "true", descriptionKey: "ascii-art.props.animated" },
-          { name: "animationStyle", type: "\"fade\" | \"typewriter\" | \"matrix\" | \"none\"", default: "\"fade\"", descriptionKey: "ascii-art.props.animationStyle" },
-          { name: "animationDuration", type: "number", default: "1", descriptionKey: "ascii-art.props.animationDuration" },
-          { name: "fontFamily", type: "string", default: "\"monospace\"", descriptionKey: "ascii-art.props.fontFamily" },
-          { name: "className", type: "string", descriptionKey: "ascii-art.props.className" },
-          { name: "animateOnView", type: "boolean", default: "true", descriptionKey: "ascii-art.props.animateOnView" },
-          { name: "objectFit", type: "\"cover\" | \"contain\" | \"fill\"", default: "\"cover\"", descriptionKey: "ascii-art.props.objectFit" },
-        ],
-      },
-      {
         slug: "webcam",
         labelKey: "webcam.label",
         descriptionKey: "webcam.description",
@@ -721,6 +719,48 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
           { name: "jitterSpeed", type: "number", default: "4", descriptionKey: "pixelated-canvas.props.jitterSpeed" },
           { name: "fadeOnLeave", type: "boolean", default: "true", descriptionKey: "pixelated-canvas.props.fadeOnLeave" },
           { name: "fadeSpeed", type: "number", default: "0.1", descriptionKey: "pixelated-canvas.props.fadeSpeed" },
+        ],
+      },
+      {
+        slug: "ascii-art",
+        labelKey: "ascii-art.label",
+        descriptionKey: "ascii-art.description",
+        demo: AsciiArtDemo,
+        sourceCode: asciiArtSource,
+        date: "2026-02-25",
+        usageProps: [
+          { name: "src", type: "string", descriptionKey: "ascii-art.props.src" },
+          { name: "resolution", type: "number", default: "80", descriptionKey: "ascii-art.props.resolution" },
+          { name: "charset", type: "string", default: "\"standard\"", descriptionKey: "ascii-art.props.charset" },
+          { name: "color", type: "string", default: "\"#ffffff\"", descriptionKey: "ascii-art.props.color" },
+          { name: "backgroundColor", type: "string", default: "\"transparent\"", descriptionKey: "ascii-art.props.backgroundColor" },
+          { name: "inverted", type: "boolean", default: "false", descriptionKey: "ascii-art.props.inverted" },
+          { name: "colored", type: "boolean", default: "false", descriptionKey: "ascii-art.props.colored" },
+          { name: "animated", type: "boolean", default: "true", descriptionKey: "ascii-art.props.animated" },
+          { name: "animationStyle", type: "\"fade\" | \"typewriter\" | \"matrix\" | \"none\"", default: "\"fade\"", descriptionKey: "ascii-art.props.animationStyle" },
+          { name: "animationDuration", type: "number", default: "1", descriptionKey: "ascii-art.props.animationDuration" },
+          { name: "fontFamily", type: "string", default: "\"monospace\"", descriptionKey: "ascii-art.props.fontFamily" },
+          { name: "className", type: "string", descriptionKey: "ascii-art.props.className" },
+          { name: "animateOnView", type: "boolean", default: "true", descriptionKey: "ascii-art.props.animateOnView" },
+          { name: "objectFit", type: "\"cover\" | \"contain\" | \"fill\"", default: "\"cover\"", descriptionKey: "ascii-art.props.objectFit" },
+        ],
+      },
+      {
+        slug: "heatmap-canvas",
+        labelKey: "heatmap-canvas.label",
+        descriptionKey: "heatmap-canvas.description",
+        demo: HeatmapCanvasDemo,
+        sourceCode: heatmapCanvasSource,
+        date: "2026-03-02",
+        usageProps: [
+          { name: "src", type: "string", descriptionKey: "heatmap-canvas.props.src" },
+          { name: "width", type: "number", default: "400", descriptionKey: "heatmap-canvas.props.width" },
+          { name: "height", type: "number", default: "300", descriptionKey: "heatmap-canvas.props.height" },
+          { name: "colormap", type: "\"thermal\" | \"viridis\" | \"jet\" | \"grayscale\"", default: "\"thermal\"", descriptionKey: "heatmap-canvas.props.colormap" },
+          { name: "intensitySource", type: "\"luminance\" | \"r\" | \"g\" | \"b\"", default: "\"luminance\"", descriptionKey: "heatmap-canvas.props.intensitySource" },
+          { name: "objectFit", type: "\"cover\" | \"contain\" | \"fill\" | \"none\"", default: "\"cover\"", descriptionKey: "heatmap-canvas.props.objectFit" },
+          { name: "fill", type: "boolean", default: "false", descriptionKey: "heatmap-canvas.props.fill" },
+          { name: "className", type: "string", descriptionKey: "heatmap-canvas.props.className" },
         ],
       },
     ],

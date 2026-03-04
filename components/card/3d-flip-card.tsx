@@ -187,7 +187,11 @@ function FlipCardItem({
 }) {
   return (
     <ThreeDCard.Item
-      as={as}
+      as={
+        as as
+          | React.ElementType<React.PropsWithChildren<Record<string, unknown>>>
+          | undefined
+      }
       translateX={translateX}
       translateY={translateY}
       translateZ={translateZ}

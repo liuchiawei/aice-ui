@@ -32,6 +32,15 @@
       ]
     },
     {
+      "name": "heatmap-canvas",
+      "type": "registry:ui",
+      "title": "Heatmap Canvas",
+      "description": "Renders a source image with a heatmap visual effect by mapping pixel intensity to a color gradient (thermal, viridis, jet, grayscale). | ソース画像をピクセル強度に応じた色グラデーションでヒートマップ表示。",
+      "files": [
+        { "path": "components/media/heatmap-canvas.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
       "name": "glass-surface",
       "type": "registry:ui",
       "title": "Glass Surface",
@@ -259,6 +268,19 @@
       "files": [
         {
           "path": "components/text/decrypted-text.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "text-hover-effect",
+      "type": "registry:ui",
+      "title": "Text Hover Effect",
+      "description": "Text that reveals a cursor-following gradient and stroke animation on hover. | ホバー時にカーソル追従のグラデーションとストロークアニメーションで表示されるテキスト。",
+      "dependencies": ["motion"],
+      "files": [
+        {
+          "path": "components/text/text-hover-effect.tsx",
           "type": "registry:ui"
         }
       ]
