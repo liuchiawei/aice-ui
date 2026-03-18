@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next"
 import { Roboto, Roboto_Mono, Noto_Sans_JP, Noto_Sans } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import { getLocale } from "next-intl/server";
@@ -61,6 +62,7 @@ export default async function RootLayout({
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
