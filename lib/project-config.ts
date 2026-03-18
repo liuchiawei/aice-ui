@@ -8,7 +8,7 @@ export const projectConfig = {
     "Aice UI is a collection of components for building modern web applications.",
   url: "https://aice-ui.vercel.app",
   repository: "https://github.com/liuchiawei/aice-ui",
-  cli: "aice-ui",
+  cli: "@aice/ui",
   author: "Liu Chiawei",
   authorUrl: "https://liuchiawei.vercel.app",
   authorEmail: "doublecheap@gmail.com",
