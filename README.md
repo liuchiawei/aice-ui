@@ -1,120 +1,10 @@
 **English** | [日本語](README.ja.md) | [中文](README.zh-TW.md)
 
----
-
 # Aice UI
 
-Open-source UI component collection built with [Next.js](https://nextjs.org), [React](https://react.dev), [Tailwind CSS](https://tailwindcss.com), and [shadcn/ui](https://ui.shadcn.com) style. Copy components into your project and use them as-is.
+UI components built with Next.js, React, Tailwind CSS, and shadcn/ui style. Copy into your project or add via CLI.
 
-**Live preview:** [aice-ui.vercel.app](https://aice-ui.vercel.app/)
-
----
-
-## Components
-
-Components are grouped by category (see `lib/component-config.ts`).
-
-### UI
-
-| Component | Description |
-|-----------|-------------|
-| **Glass Surface** | A glass surface component with blur and distortion effects. |
-| **Code Block** | A code block component with syntax highlighting and line numbers. |
-| **Pop Up Item** | Animated container that reveals content with pop-up spring animation. Supports whileInView, hover, or click triggers. (2026-02-21) |
-
-### Text
-
-| Component | Description |
-|-----------|-------------|
-| **Glyph Katakana** | A text component with decoding animation—random katakana glyphs gradually resolve to reveal the target text. |
-| **Decrypted Text** | Scrambled text that reveals on hover or when in view. Supports sequential or batch reveal, and multiple reveal directions. |
-| **Text Hover Effect** | Text that reveals a cursor-following gradient and stroke animation on hover. (2026-03-04) |
-| **Slide Up Letters** | A slide up letters component with customizable data and optional title and description. |
-| **Animated Counter** | A number counter that animates from a starting value to a target when it enters the viewport. |
-| **Timer** | A reusable timer that shows elapsed time. Start, pause, or restart with buttons; choose display format (e.g. 00:01:23 or 83.250s). |
-
-### Button
-
-| Component | Description |
-|-----------|-------------|
-| **Copy Button** | A button that copies text to the clipboard. Shows a check icon after copying. Use it next to code blocks, quotes, or any text you want users to copy in one click. |
-| **Scroll Button** | Buttons that scroll the window (top, bottom, up, down). Use for quick page navigation. |
-| **Theme Switch** | A theme switch component with dark and light mode. It is built with React, Tailwind CSS, and Motion. |
-
-### Card
-
-| Component | Description |
-|-----------|-------------|
-| **3D Card** | A card that tilts in 3D following your cursor on hover. Child elements can float at different depths for a parallax effect. |
-| **3D Flip Card** | A compound flip card with 3D tilt on hover and click-to-flip front/back. |
-
-### Chart
-
-| Component | Description |
-|-----------|-------------|
-| **Radar Chart** | A radar chart component with customizable data and optional title and description. |
-
-### Carousel
-
-| Component | Description |
-|-----------|-------------|
-| **Motion Wheel** | A compound carousel wheel with rotation animation, prev/next navigation, dot indicators, and optional center info panel. |
-
-### Layout
-
-| Component | Description |
-|-----------|-------------|
-| **Draggable Grid** | A draggable 2D grid with parallax icon cells. Inspired by Apple WatchOS. (2026-02-20) |
-| **Timeline** | Vertical timeline with sticky year on the left and card content on the right. Optional scroll-driven axis fill effect. (2026-02-20) |
-
-### Navigation
-
-| Component | Description |
-|-----------|-------------|
-| **Speed Dial** | FAB that expands into a radial menu of actions. Compound component: Root, Trigger, Item. Supports spread angle and direction. (2026-02-21) |
-| **Floating Dock** | Bottom navigation dock with magnify-on-hover. Desktop bar at bottom; mobile collapses to hamburger menu. (2026-02-24) |
-
-### Background
-
-| Component | Description |
-|-----------|-------------|
-| **Floating Circles** | A floating circles component with customizable data and optional title and description. |
-| **Matrix Code** | A matrix code component with glitch effect and optional vignette effect. |
-| **Perlin Noise** | Canvas-based Perlin noise wave grid background. Configurable line color, wave speed and amplitude; mouse and touch interaction. (2026-02-24) |
-| **Star Background** | Canvas 2D starfield background. Configurable star count, twinkle speed, and color; optional overlay content. (2026-02-24) |
-
-### Media
-
-| Component | Description |
-|-----------|-------------|
-| **Ascii Art** | Renders an image as ASCII art with configurable resolution, character set, and colors. Supports fade, typewriter, and matrix animations; use AsciiArtStatic for static output. (2026-02-25) |
-| **Pixelated Canvas** | Renders an image as a grid of dots with optional interactive pointer distortion (repel, attract, swirl) and jitter. Supports grayscale, tint, and object-fit; use variant="static" for non-interactive mode. (2026-02-25) |
-| **Heatmap Canvas** | Renders a source image with a heatmap visual effect by mapping pixel intensity to a color gradient (thermal, viridis, jet, grayscale). (2026-03-02) |
-| **Webcam** | A webcam component with customizable data and optional title and description. |
-
-**Total: 26 components**
-
----
-
-### Adding a new component
-
-When you add a new component, remember to update:
-
-1. **Component config** — `lib/component-config.ts` (slug, labelKey, descriptionKey, demo, sourceCode).
-2. **Messages** — Add `label` and `description` for the component in `messages/en.json`, `messages/ja.json`, and `messages/zh.json` (under the `Components` namespace).
-3. **Registry** — `registry.json` for shadcn CLI so the component can be installed with `pnpm dlx shadcn@latest add <component>`.
-
----
-
-## Tech Stack
-
-- **Next.js 16** · App Router
-- **React 19**
-- **Tailwind CSS 4**
-- **shadcn/ui** (new-york style)
-- **Motion** · Animation
-- **Radix UI** · Accessible primitives
-- **Lucide** · Icons
+**Preview:** [aice-ui.vercel.app](https://aice-ui.vercel.app/)
 
 ---
 
@@ -123,9 +13,9 @@ When you add a new component, remember to update:
 ### Requirements
 
 - Node.js 18+
-- **pnpm** recommended
+- pnpm recommended
 
-### Clone and run
+### Run locally
 
 ```bash
 git clone https://github.com/your-username/aice-ui.git
@@ -134,80 +24,122 @@ pnpm install
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to preview components.
+Open [http://localhost:3000](http://localhost:3000).
 
-### Use components in your project
+### Use in your project
 
-This repo uses a **registry** layout compatible with shadcn/ui. Source lives in:
+- **Copy** — Copy `.tsx` files from `components/ui/`, `components/background/`, etc. into your app.
+- **shadcn CLI** — Point your project at this repo’s registry and run:
 
-- `components/ui/` — Button, Tooltip, Webcam, Glass Surface, etc.
-- `components/background/` — Background animations, etc.
+  ```bash
+  pnpm run build:registry   # in this repo first
+  pnpm dlx shadcn@latest add <component>
+  ```
 
-You can:
+### CLI (global)
 
-1. **Copy manually** — Copy the `.tsx` (and any styles) you need from `components/` or `registry/new-york/` into your app.
-2. **shadcn CLI** — If your project already uses shadcn, you can point it at this repo’s registry and run `pnpm dlx shadcn@latest add <component>` (run `pnpm run registry:build` in this repo first).
-
-See `package.json` for dependencies (e.g. `class-variance-authority`, `clsx`, `tailwind-merge`, `lucide-react`, `motion`, `radix-ui`).
-
----
-
-## CLI
-
-The project provides an **aice-ui** CLI (e.g. for adding components via shadcn registry). It can be published to npm so others can install it globally.
-
-### Install (for users)
-
-After the package is published to npm:
+After the package is published:
 
 ```bash
-npm install -g aice-ui
-# or
-pnpm add -g aice-ui
+pnpm add -g @doublecheap/aice-ui
 ```
 
-If published under a scope (e.g. `@username/aice-ui`), use:
-
-```bash
-npm install -g @username/aice-ui
-```
-
-### Update & publish (for maintainers)
-
-1. **Login** — `pnpm login` (npm account required at [npmjs.com](https://www.npmjs.com)).
-2. **Build CLI** — `pnpm run build:cli` (output: `dist/index.js`).
-3. **Bump version** — Update `version` in `package.json` for each release.
-4. **Publish** — `pnpm publish --access public` (use `--access public` when publishing a scoped package so it is public).
-
-Subsequent releases: change `version` → `pnpm run build:cli` → `pnpm publish`.
+Then use the CLI to add components via the registry.
 
 ---
 
-## Scripts
+## Components
 
-| Command | Description |
-|---------|-------------|
-| `pnpm dev` | Start dev server |
-| `pnpm build` | Build registry and Next.js |
-| `pnpm run registry:build` | Build shadcn registry only |
-| `pnpm run build:cli` | Build CLI to `dist/index.js` (for publish) |
-| `pnpm run test:cli` | Build CLI and run `aice-ui --help` |
-| `pnpm lint` | Run ESLint |
+Grouped by category (see `lib/component-config.ts`).
+
+### UI
+
+| Component | Description |
+|-----------|-------------|
+| **Glass Surface** | Glass surface with blur. |
+| **Code Block** | Code block with syntax highlighting and line numbers. |
+| **Pop Up Item** | Container that reveals content with pop-up animation (whileInView, hover, or click). |
+
+### Text
+
+| Component | Description |
+|-----------|-------------|
+| **Glyph Katakana** | Text with decoding animation—katakana resolves to target text. |
+| **Decrypted Text** | Scrambled text that reveals on hover or in view. |
+| **Text Hover Effect** | Text with cursor-following gradient and stroke on hover. |
+| **Slide Up Letters** | Slide-up letters with optional title and description. |
+| **Animated Counter** | Number that animates from start to target in viewport. |
+| **Timer** | Elapsed-time timer; start, pause, restart; configurable format. |
+
+### Button
+
+| Component | Description |
+|-----------|-------------|
+| **Copy Button** | Copies text to clipboard; shows check after copy. |
+| **Scroll Button** | Scrolls window (top, bottom, up, down). |
+| **Theme Switch** | Dark/light theme switch (React, Tailwind, Motion). |
+
+### Card
+
+| Component | Description |
+|-----------|-------------|
+| **3D Card** | Card tilts in 3D on hover; parallax depth. |
+| **3D Flip Card** | Flip card with 3D tilt and click-to-flip front/back. |
+
+### Chart
+
+| Component | Description |
+|-----------|-------------|
+| **Radar Chart** | Radar chart with optional title and description. |
+
+### Carousel
+
+| Component | Description |
+|-----------|-------------|
+| **Motion Wheel** | Carousel wheel with rotation, prev/next, dots, optional center panel. |
+
+### Layout
+
+| Component | Description |
+|-----------|-------------|
+| **Draggable Grid** | Draggable 2D grid with parallax cells. |
+| **Timeline** | Vertical timeline with sticky year and card content. |
+
+### Navigation
+
+| Component | Description |
+|-----------|-------------|
+| **Speed Dial** | FAB that expands to radial menu (Root, Trigger, Item). |
+| **Floating Dock** | Bottom dock with magnify on hover; mobile collapses to menu. |
+
+### Background
+
+| Component | Description |
+|-----------|-------------|
+| **Floating Circles** | Floating circles with optional title and description. |
+| **Matrix Code** | Matrix-style code with glitch and optional vignette. |
+| **Perlin Noise** | Canvas Perlin noise wave grid; mouse/touch interaction. |
+| **Star Background** | Canvas starfield; configurable stars and twinkle. |
+
+### Media
+
+| Component | Description |
+|-----------|-------------|
+| **Ascii Art** | Image as ASCII art; optional fade, typewriter, matrix. |
+| **Pixelated Canvas** | Image as dot grid; optional pointer distortion. |
+| **Heatmap Canvas** | Image with heatmap gradient (thermal, viridis, jet, etc.). |
+| **Webcam** | Webcam with optional title and description. |
+
+**Total: 26 components**
 
 ---
 
-## Contributing
+## Tech Stack
 
-Issues and Pull Requests welcome, including:
-
-- New component ideas or implementations
-- Docs and examples
-- Bug fixes and accessibility improvements
-
-For larger changes, please open an issue first.
+Next.js 16 (App Router) · React 19 · Tailwind CSS 4 · shadcn/ui (new-york) · Motion · Radix UI · Lucide
 
 ---
 
 ## License
 
-See [LICENSE](LICENSE) in this repository.
+[LICENSE](LICENSE)
