@@ -1,5 +1,5 @@
 ---
-description: 發布前後需執行的 shadcn registry 建置與 npm CLI 發布步驟
+description: Steps to build the shadcn registry and run npm/pnpm CLI commands before and after publishing
 alwaysApply: true
 ---
 
