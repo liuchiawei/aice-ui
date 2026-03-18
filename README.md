@@ -58,6 +58,7 @@ Grouped by category (see `lib/component-config.ts`).
 |-----------|-------------|
 | **Glass Surface** | Glass surface with blur. |
 | **Code Block** | Code block with syntax highlighting and line numbers. |
+| **Snippet** | One-line code or command display with copy button. Compound: Provider, Addon, CopyButton. |
 | **Pop Up Item** | Container that reveals content with pop-up animation (whileInView, hover, or click). |
 
 ### Text
@@ -91,6 +92,7 @@ Grouped by category (see `lib/component-config.ts`).
 | Component | Description |
 |-----------|-------------|
 | **Radar Chart** | Radar chart with optional title and description. |
+| **Radial Cluster** | Radial cluster chart for hierarchical data. Supports data prop or Item/SubItem composition. |
 
 ### Carousel
 
@@ -130,7 +132,7 @@ Grouped by category (see `lib/component-config.ts`).
 | **Heatmap Canvas** | Image with heatmap gradient (thermal, viridis, jet, etc.). |
 | **Webcam** | Webcam with optional title and description. |
 
-**Total: 26 components**
+**Total: 30 components**
 
 ---
 
