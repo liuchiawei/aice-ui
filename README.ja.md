@@ -145,6 +145,37 @@ pnpm dev
 
 ---
 
+## CLI
+
+このプロジェクトは **aice-ui** CLI を提供します（shadcn registry 経由でコンポーネントを追加するなど）。npm に公開すれば、他のユーザーがグローバルにインストールして利用できます。
+
+### ユーザー向けインストール
+
+npm に公開した後、他の人は以下でインストールできます。
+
+```bash
+npm install -g aice-ui
+# または
+pnpm add -g aice-ui
+```
+
+scope 付きで公開した場合（例: `@username/aice-ui`）は次のようにします。
+
+```bash
+npm install -g @username/aice-ui
+```
+
+### メンテナ向け：更新・公開フロー
+
+1. **ログイン** — `pnpm login` を実行（[npmjs.com](https://www.npmjs.com) でアカウントが必要）。
+2. **CLI をビルド** — `pnpm run build:cli` を実行（出力: `dist/index.js`）。
+3. **バージョンを上げる** — 毎回のリリース前に `package.json` の `version` を更新。
+4. **公開** — `pnpm publish --access public` を実行（scope パッケージの場合は `--access public` で公開パッケージになる）。
+
+以降のリリース: `version` を変更 → `pnpm run build:cli` → `pnpm publish`。
+
+---
+
 ## スクリプト
 
 | コマンド | 説明 |
@@ -152,6 +183,8 @@ pnpm dev
 | `pnpm dev` | 開発サーバー起動 |
 | `pnpm build` | registry と Next.js をビルド |
 | `pnpm run registry:build` | shadcn registry のみビルド |
+| `pnpm run build:cli` | CLI を `dist/index.js` にビルド（公開前に使用） |
+| `pnpm run test:cli` | CLI をビルドして `aice-ui --help` を実行 |
 | `pnpm lint` | ESLint 実行 |
 
 ---

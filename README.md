@@ -152,6 +152,37 @@ See `package.json` for dependencies (e.g. `class-variance-authority`, `clsx`, `t
 
 ---
 
+## CLI
+
+The project provides an **aice-ui** CLI (e.g. for adding components via shadcn registry). It can be published to npm so others can install it globally.
+
+### Install (for users)
+
+After the package is published to npm:
+
+```bash
+npm install -g aice-ui
+# or
+pnpm add -g aice-ui
+```
+
+If published under a scope (e.g. `@username/aice-ui`), use:
+
+```bash
+npm install -g @username/aice-ui
+```
+
+### Update & publish (for maintainers)
+
+1. **Login** — `pnpm login` (npm account required at [npmjs.com](https://www.npmjs.com)).
+2. **Build CLI** — `pnpm run build:cli` (output: `dist/index.js`).
+3. **Bump version** — Update `version` in `package.json` for each release.
+4. **Publish** — `pnpm publish --access public` (use `--access public` when publishing a scoped package so it is public).
+
+Subsequent releases: change `version` → `pnpm run build:cli` → `pnpm publish`.
+
+---
+
 ## Scripts
 
 | Command | Description |
@@ -159,6 +190,8 @@ See `package.json` for dependencies (e.g. `class-variance-authority`, `clsx`, `t
 | `pnpm dev` | Start dev server |
 | `pnpm build` | Build registry and Next.js |
 | `pnpm run registry:build` | Build shadcn registry only |
+| `pnpm run build:cli` | Build CLI to `dist/index.js` (for publish) |
+| `pnpm run test:cli` | Build CLI and run `aice-ui --help` |
 | `pnpm lint` | Run ESLint |
 
 ---

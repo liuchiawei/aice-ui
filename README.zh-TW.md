@@ -145,6 +145,37 @@ pnpm dev
 
 ---
 
+## CLI
+
+本專案提供 **aice-ui** CLI（例如透過 shadcn registry 新增元件）。可發佈至 npm，供他人全域安裝使用。
+
+### 使用者安裝
+
+發佈至 npm 後，其他人可執行：
+
+```bash
+npm install -g aice-ui
+# 或
+pnpm add -g aice-ui
+```
+
+若以 scope 發佈（例如 `@你的帳號/aice-ui`），則使用：
+
+```bash
+npm install -g @你的帳號/aice-ui
+```
+
+### 維護者：更新與發佈流程
+
+1. **登入** — 執行 `pnpm login`（需先在 [npmjs.com](https://www.npmjs.com) 註冊帳號）。
+2. **建置 CLI** — 執行 `pnpm run build:cli`（產出 `dist/index.js`）。
+3. **更新版本** — 在 `package.json` 中更新 `version`，每次發佈前需遞增。
+4. **發佈** — 執行 `pnpm publish --access public`（若為 scope 套件，需加 `--access public` 才會是公開套件）。
+
+之後若要再發佈新版本：修改 `version` → `pnpm run build:cli` → `pnpm publish`。
+
+---
+
 ## 專案腳本
 
 | 指令 | 說明 |
@@ -152,6 +183,8 @@ pnpm dev
 | `pnpm dev` | 啟動開發伺服器 |
 | `pnpm build` | 建置 registry 並建置 Next.js |
 | `pnpm run registry:build` | 僅建置 shadcn registry |
+| `pnpm run build:cli` | 建置 CLI 至 `dist/index.js`（發佈前使用） |
+| `pnpm run test:cli` | 建置 CLI 並執行 `aice-ui --help` |
 | `pnpm lint` | 執行 ESLint |
 
 ---
