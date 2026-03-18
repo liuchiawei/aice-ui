@@ -10,8 +10,8 @@ export interface InstallCommands {
  */
 export function getInstallCommands(slug: string): InstallCommands {
   return {
-    npm: `npx @aice/ui add ${slug}`,
-    pnpm: `pnpm dlx @aice/ui add ${slug}`,
-    yarn: `yarn dlx @aice/ui add ${slug}`,
+    npm: `npx @doublecheap/aice-ui add ${slug}`,
+    pnpm: `pnpm dlx @doublecheap/aice-ui add ${slug}`,
+    yarn: `yarn dlx @doublecheap/aice-ui add ${slug}`,
   };
 }
