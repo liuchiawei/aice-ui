@@ -70,7 +70,7 @@ export function Webcam({
     return () => {
       stream?.getTracks().forEach((track) => track.stop());
     };
-  }, []);
+  }, [audio, height, width]);
 
   return (
     <div
