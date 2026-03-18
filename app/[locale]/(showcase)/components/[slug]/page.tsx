@@ -26,3 +26,4 @@ export function generateStaticParams() {
     demoSlugs.map((slug) => ({ locale, slug })),
   );
 }
+

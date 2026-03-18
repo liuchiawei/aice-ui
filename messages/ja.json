@@ -14,7 +14,53 @@
   "Home": {
     "title": "AICE UI",
     "description": "AI向けアプリをすぐ作れる、使いやすいUIコンポーネント集です。会話やメッセージなどが簡単に使えます。Next.js、React、Tailwind CSS、shadcn/ui製です。",
-    "CTA": "コンポーネント一覧"
+    "CTA": "コンポーネント一覧",
+    "CTAUsage": "使い方"
+  },
+  "UsagePage": {
+    "title": "使い方",
+    "description": "Aice UI CLI または shadcn CLI のレジストリからコンポーネントを追加できます。手動コピーでも利用可能です。",
+    "sections": {
+      "prerequisites": {
+        "title": "前提",
+        "node": "Node.js 18+",
+        "tailwind": "プロジェクトに Tailwind CSS が設定済み",
+        "shadcn": "任意：レジストリ経由で入れる場合は shadcn を初期化"
+      },
+      "aiceCli": {
+        "title": "Aice UI CLI",
+        "description": "おすすめ。slug から追加し、依存関係も CLI が処理します。"
+      },
+      "shadcnCli": {
+        "title": "shadcn CLI（レジストリURL）",
+        "description": "すでに shadcn を使っている場合、このサイトのレジストリから直接追加できます。",
+        "initLabel": "初期化（プロジェクトごとに一度）",
+        "addLabel": "コンポーネントを追加",
+        "registryHint": "ヒント：<component> を slug（例：glass-surface）に置き換えてください。"
+      },
+      "manualCopy": {
+        "title": "手動コピー",
+        "description": "ソースをコピーして使うこともできます。",
+        "point1": "このリポジトリのコンポーネントファイルをプロジェクトへコピー（例：components/*）。",
+        "point2": "Tailwind 設定、CSS 変数、必要な npm パッケージを揃えてください。",
+        "point3": "各コンポーネントページでプレビューとサンプルコードを確認できます。"
+      },
+      "faq": {
+        "title": "FAQ",
+        "q1": {
+          "q": "どの入れ方が良い？",
+          "a": "迷ったら Aice UI CLI が最も簡単です。shadcn を使っているならレジストリURLも便利です。"
+        },
+        "q2": {
+          "q": "shadcn add が 404 になる",
+          "a": "slug が存在するか確認し、レジストリがビルド/公開されているか確認してください。URL 形式は /r/<component>.json です。"
+        },
+        "q3": {
+          "q": "モノレポの場合は？",
+          "a": "shadcn の --cwd オプションで対象アプリのディレクトリを指定して init/add を実行してください。"
+        }
+      }
+    }
   },
   "ComponentPage": {
     "breadcrumb": {

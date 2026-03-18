@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { ChevronRight } from "lucide-react";
+import ChevronRight from "lucide-react/dist/esm/icons/chevron-right";
 import {
   Collapsible,
   CollapsibleContent,
@@ -35,6 +35,7 @@ export default function ShowcaseLayout({
 }) {
   const t = useTranslations("Components");
   const tCategory = useTranslations("Category");
+  const tUsage = useTranslations("UsagePage");
   return (
     <SidebarProvider>
       <Sidebar>
@@ -44,6 +45,19 @@ export default function ShowcaseLayout({
           </Link>
         </SidebarHeader>
         <SidebarContent>
+          <SidebarGroup className="group py-0">
+            <SidebarGroupContent>
+              <SidebarMenu>
+                <SidebarMenuItem>
+                  <SidebarMenuButton asChild>
+                    <Link href="/usage" className="font-bold">
+                      {tUsage("title")}
+                    </Link>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              </SidebarMenu>
+            </SidebarGroupContent>
+          </SidebarGroup>
           {myComponents.map((group, index) => (
             <SidebarGroup key={group.label} className="group py-0">
               <Collapsible defaultOpen={index === 0}>
@@ -118,3 +132,4 @@ export default function ShowcaseLayout({
     </SidebarProvider>
   );
 }
+

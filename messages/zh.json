@@ -14,7 +14,53 @@
   "Home": {
     "title": "AICE UI",
     "description": "這是一個開源的 UI 元件庫，幫助你更快打造 AI 應用。提供像對話、訊息等預建元件，採用 Next.js、React、Tailwind CSS 與 shadcn/ui 製作。",
-    "CTA": "元件一覽"
+    "CTA": "元件一覽",
+    "CTAUsage": "使用指南"
+  },
+  "UsagePage": {
+    "title": "使用指南",
+    "description": "你可以透過 Aice UI CLI 或 shadcn CLI 的 registry 來安裝元件；也可以手動複製原始碼使用。",
+    "sections": {
+      "prerequisites": {
+        "title": "前置需求",
+        "node": "Node.js 18+",
+        "tailwind": "專案已設定 Tailwind CSS",
+        "shadcn": "選用：若要用 registry 安裝，請先初始化 shadcn"
+      },
+      "aiceCli": {
+        "title": "Aice UI CLI",
+        "description": "推薦。用 slug 安裝元件，CLI 會協助處理相依套件與檔案。"
+      },
+      "shadcnCli": {
+        "title": "shadcn CLI（registry URL）",
+        "description": "若你已使用 shadcn，可直接從本站 registry URL 加入元件。",
+        "initLabel": "初始化（每個專案一次）",
+        "addLabel": "安裝元件",
+        "registryHint": "提示：將 <component> 替換成元件 slug（例如 glass-surface）。"
+      },
+      "manualCopy": {
+        "title": "手動複製",
+        "description": "你也可以直接複製原始碼到專案中使用。",
+        "point1": "從此 repo 複製元件檔案到你的專案（例如 components/*）。",
+        "point2": "確認 Tailwind 設定、CSS 變數與需要的 npm 套件與元件一致。",
+        "point3": "在元件頁可查看預覽與簡化用法範例。"
+      },
+      "faq": {
+        "title": "常見問題",
+        "q1": {
+          "q": "我該用哪種安裝方式？",
+          "a": "想最省事就用 Aice UI CLI。若你的專案已經有 shadcn，使用 registry URL 也很方便。"
+        },
+        "q2": {
+          "q": "shadcn add 出現 404",
+          "a": "請確認 slug 存在、registry 已建置/發布。URL 格式是 /r/<component>.json。"
+        },
+        "q3": {
+          "q": "Monorepo 怎麼用？",
+          "a": "使用 shadcn 的 --cwd 指向目標 app 目錄，再在該 workspace 執行 init/add。"
+        }
+      }
+    }
   },
   "ComponentPage": {
     "breadcrumb": {

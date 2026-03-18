@@ -19,7 +19,8 @@ import {
 } from "@/components/ui/breadcrumb";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
-import { Eye, Code } from "lucide-react";
+import Eye from "lucide-react/dist/esm/icons/eye";
+import Code from "lucide-react/dist/esm/icons/code";
 import { getItemBySlug, myComponents } from "@/lib/component-config";
 import { InstallationSection } from "@/components/section/installation-section";
 import { UsageSection } from "@/components/section/usage-section";
@@ -67,7 +68,7 @@ export function ComponentShowcase({ slug }: ComponentShowcaseProps) {
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
-        <h1 className="text-4xl md:text-5xl lg:text-7xl font-black font-noto font-roboto">
+        <h1 className="text-4xl md:text-5xl lg:text-7xl font-black font-roboto">
           {t(item.labelKey)}
         </h1>
         <p className="text-sm text-muted-foreground">
@@ -124,17 +125,17 @@ export function ComponentShowcase({ slug }: ComponentShowcaseProps) {
               {tPage("related")}
             </h3>
             <ul className="flex flex-wrap items-center gap-x-2 gap-y-1">
-              {currentGroup.items.map((item) => (
+              {currentGroup.items.map((related) => (
                 <li
-                  key={item.slug}
+                  key={related.slug}
                   className="inline-flex items-center gap-x-2"
                 >
-                  <Link href={`/components/${item.slug}`}>
+                  <Link href={`/components/${related.slug}`}>
                     <Badge
                       variant="outline"
                       className="py-1 hover:bg-primary/20 transition-colors"
                     >
-                      {t(item.labelKey)}
+                      {t(related.labelKey)}
                     </Badge>
                   </Link>
                 </li>
@@ -146,3 +147,4 @@ export function ComponentShowcase({ slug }: ComponentShowcaseProps) {
     </div>
   );
 }
+
