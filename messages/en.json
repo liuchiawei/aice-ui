@@ -14,7 +14,53 @@
   "Home": {
     "title": "AICE UI",
     "description": "An open-source UI component library to help you build applications faster. It provides pre-built components like conversations, messages and more. Built with Next.js, React, Tailwind CSS, and shadcn/ui.",
-    "CTA": "Components"
+    "CTA": "Components",
+    "CTAUsage": "Usage"
+  },
+  "UsagePage": {
+    "title": "Usage",
+    "description": "Install components via Aice UI CLI or shadcn CLI registry. You can also copy source files manually.",
+    "sections": {
+      "prerequisites": {
+        "title": "Prerequisites",
+        "node": "Node.js 18+",
+        "tailwind": "Tailwind CSS set up in your project",
+        "shadcn": "Optional: shadcn initialized for registry-based install"
+      },
+      "aiceCli": {
+        "title": "Aice UI CLI",
+        "description": "Recommended. Add components by slug and let the CLI handle dependencies."
+      },
+      "shadcnCli": {
+        "title": "shadcn CLI (registry URL)",
+        "description": "If you already use shadcn, you can add components directly from this site registry.",
+        "initLabel": "Initialize (once per project)",
+        "addLabel": "Add a component",
+        "registryHint": "Tip: replace <component> with a component slug (e.g. glass-surface)."
+      },
+      "manualCopy": {
+        "title": "Manual copy",
+        "description": "You can also copy the source into your project.",
+        "point1": "Copy the component files from this repo into your project (e.g. components/*).",
+        "point2": "Make sure Tailwind config, CSS variables, and required packages match the component.",
+        "point3": "Check the component page for preview and example code."
+      },
+      "faq": {
+        "title": "FAQ",
+        "q1": {
+          "q": "Which install method should I use?",
+          "a": "Use Aice UI CLI for the simplest setup. If you already use shadcn, the registry URL approach is also great."
+        },
+        "q2": {
+          "q": "shadcn add fails with 404",
+          "a": "Make sure the slug exists and the registry is built/published. The URL format is /r/<component>.json."
+        },
+        "q3": {
+          "q": "Monorepo project?",
+          "a": "Use shadcn's --cwd option to point to the app directory, then run init/add in that workspace."
+        }
+      }
+    }
   },
   "ComponentPage": {
     "breadcrumb": {
