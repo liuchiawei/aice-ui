@@ -1,6 +1,6 @@
 "use client";
 
-import { forwardRef, useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 
 // default video and audio settings
@@ -26,6 +26,7 @@ function mergeRefs<T>(
 }
 
 interface WebcamProps {
+  ref?: React.Ref<HTMLVideoElement>;
   width?: number; // Video width, default: 640
   height?: number; // Video height, default: 360
   audio?: boolean; // Audio, default: false
@@ -33,16 +34,14 @@ interface WebcamProps {
   containerClassName?: string; // Container class name
 }
 
-export const Webcam = forwardRef<HTMLVideoElement, WebcamProps>(function Webcam(
-  {
-    width = mediaConfig.video.width,
-    height = mediaConfig.video.height,
-    audio = mediaConfig.audio,
-    className,
-    containerClassName,
-  },
+export function Webcam({
   ref,
-) {
+  width = mediaConfig.video.width,
+  height = mediaConfig.video.height,
+  audio = mediaConfig.audio,
+  className,
+  containerClassName,
+}: WebcamProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [error, setError] = useState<string | null>(null);
 
@@ -100,4 +99,4 @@ export const Webcam = forwardRef<HTMLVideoElement, WebcamProps>(function Webcam(
       />
     </div>
   );
-});
+}
