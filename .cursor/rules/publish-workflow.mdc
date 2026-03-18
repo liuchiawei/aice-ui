@@ -1,0 +1,50 @@
+---
+description: 發布前後需執行的 shadcn registry 建置與 npm CLI 發布步驟
+alwaysApply: true
+---
+
+# Publish Workflow
+
+當使用者要求「發布」、「release」、「上架 npm」、「publish」或執行發布流程時，依本規則步驟**依序執行**對應的 CLI；每步完成後再進行下一步。
+
+## 發布前（shadcn registry）
+
+- 建置 registry，確保 `public/r/` 與 `registry.json` 一致：
+
+  ```bash
+  pnpm run build:registry
+  ```
+
+- 若需一併建置網站：`pnpm build`
+
+## 發布流程（依序執行）
+
+1. **登入 npm** — 需已有 [npmjs.com](https://www.npmjs.com) 帳號：
+
+   ```bash
+   pnpm login
+   ```
+
+2. **升版** — 在 `package.json` 更新 `version`。
+3. **建置 CLI** — 產出 `dist/index.js`：
+
+   ```bash
+   pnpm run build:cli
+   ```
+
+4. **可選驗證** — 建置並執行 `aice-ui --help`：
+
+   ```bash
+   pnpm run test:cli
+   ```
+
+5. **發布** — scoped 套件（如 `@doublecheap/aice-ui`）必須加 `--access public`：
+
+   ```bash
+   pnpm publish --access public
+   ```
+
+## 後續發版
+
+若僅改版號、未動 registry：改 `version` → `pnpm run build:cli` → `pnpm publish --access public`。  
+若動過 registry：先執行 `pnpm run build:registry`，再依上列發布流程進行。
