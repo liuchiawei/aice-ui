@@ -23,7 +23,9 @@
     },
     "install": {
       "title": "Install",
-      "description": "Please select your favorite package manager to install the component."
+      "description": "Use Aice UI CLI or Shadcn CLI to install the component.",
+      "aiceLabel": "Aice UI CLI",
+      "shadcnLabel": "Shadcn CLI"
     },
     "usage": {
       "title": "Usage",
@@ -134,228 +136,228 @@
       }
     },
     "matrix-code": {
-        "label": "Matrix Code",
-        "description": "A matrix code component with glitch effect and optional vignette effect.",
-        "props": {
-          "glitchColors": "Hex color array for the glitch characters (e.g. green/cyan palette).",
-          "glitchSpeed": "Interval in ms between character/color updates; lower is faster.",
-          "centerVignette": "Whether to apply a dark vignette overlay in the center.",
-          "outerVignette": "Whether to apply a dark vignette overlay at the edges.",
-          "smooth": "Whether to smoothly interpolate color changes; false for instant switches.",
-          "className": "Additional CSS class for the container."
-        }
-      },
-      "perlin-noise": {
-        "label": "Perlin Noise",
-        "description": "Canvas-based Perlin noise wave grid background. Configurable line color, wave speed and amplitude; mouse and touch interaction affect grid displacement.",
-        "props": {
-          "lineColor": "Stroke color of the wave grid lines (CSS color).",
-          "backgroundColor": "Background color of the container (CSS color).",
-          "waveSpeedX": "Horizontal speed of the Perlin wave animation.",
-          "waveSpeedY": "Vertical speed of the Perlin wave animation.",
-          "waveAmpX": "Horizontal amplitude of the wave displacement in pixels.",
-          "waveAmpY": "Vertical amplitude of the wave displacement in pixels.",
-          "xGap": "Horizontal spacing between grid lines in pixels.",
-          "yGap": "Vertical spacing between points on each line in pixels.",
-          "friction": "Decay factor for cursor-induced motion (0–1); higher values mean longer drift.",
-          "tension": "Spring tension pulling points back toward rest after cursor interaction.",
-          "maxCursorMove": "Maximum pixel displacement of grid points from cursor/touch influence.",
-          "style": "Inline CSS styles for the root container.",
-          "className": "Additional CSS class for the root container."
-        }
-      },
-      "star-background": {
-        "label": "Star Background",
-        "description": "Canvas 2D starfield background. Configurable star count, twinkle speed, and color. Suited for hero sections or page backgrounds with optional overlay content.",
-        "props": {
-          "starCount": "Number of stars to render in the canvas.",
-          "twinkleSpeed": "Speed of the twinkle animation (0 to disable).",
-          "starColor": "Star color as RGB comma-separated string (e.g. \"255, 255, 255\").",
-          "backgroundColor": "Background color of the canvas (CSS color).",
-          "className": "Additional CSS class for the canvas element.",
-          "containerClassName": "Additional CSS class for the outer container.",
-          "children": "Optional overlay content rendered above the starfield.",
-          "style": "Inline CSS styles for the root container."
-        }
-      },
-      "ascii-art": {
-        "label": "Ascii Art",
-        "description": "Renders an image as ASCII art with configurable resolution, character set, and colors. Supports fade, typewriter, and matrix animations; use AsciiArtStatic for non-animated output.",
-        "props": {
-          "src": "Image URL to convert to ASCII art (subject to CORS).",
-          "resolution": "Number of ASCII columns (character resolution). Higher values give more detail.",
-          "charset": "Preset name (e.g. standard, blocks, binary) or custom character string for brightness mapping.",
-          "color": "Text color for the ASCII art (ignored when colored is true).",
-          "backgroundColor": "Background color of the container.",
-          "inverted": "When true, uses dark background and light text (reverses charset order).",
-          "colored": "When true, uses image colors for each character instead of a single text color.",
-          "animated": "When true, runs the selected animation on load.",
-          "animationStyle": "Animation type: fade, typewriter, matrix, or none.",
-          "animationDuration": "Duration of the fade animation in seconds.",
-          "fontFamily": "Font family for the ASCII characters (e.g. monospace).",
-          "className": "Additional CSS class for the container (e.g. w-full, aspect-video).",
-          "animateOnView": "When true, animation starts only when the component is in view.",
-          "objectFit": "How the image fits the ASCII grid: cover, contain, or fill."
-        }
-      },
-      "webcam": {
-        "label": "Webcam",
-        "description": "A webcam component that streams the user's camera with configurable resolution and optional audio. Supports ref forwarding and shows an error message when camera access fails.",
-        "props": {
-          "width": "Video width in pixels.",
-          "height": "Video height in pixels.",
-          "audio": "Whether to request the microphone stream.",
-          "className": "Additional CSS class for the <video> element.",
-          "containerClassName": "Additional CSS class for the outer container."
-        }
-      },
-      "pixelated-canvas": {
-        "label": "Pixelated Canvas",
-        "description": "Convert any image to a pixelated canvas with mouse distortion effects.",
-        "props": {
-          "src": "Image URL to render (subject to CORS).",
-          "width": "Canvas display width in pixels.",
-          "height": "Canvas display height in pixels.",
-          "variant": "When \"static\", disables pointer interaction; \"interactive\" or undefined enables it.",
-          "cellSize": "Size of each sampling cell in CSS pixels.",
-          "dotScale": "Dot size as a fraction of cell size (0–1).",
-          "shape": "Shape of each dot: circle or square.",
-          "backgroundColor": "Background color to clear the canvas with before drawing.",
-          "grayscale": "When true, convert image to grayscale before drawing.",
-          "className": "Additional CSS class for the canvas element.",
-          "responsive": "When true, redraw on window resize using the given width/height.",
-          "dropoutStrength": "0–1. Higher values remove more dots in low-contrast regions.",
-          "interactive": "When true, enable mouse distortion animation (overridden by variant=\"static\").",
-          "distortionStrength": "Max per-dot offset in pixels due to distortion.",
-          "distortionRadius": "Radius in pixels around the pointer that influences distortion.",
-          "distortionMode": "How dots move near the pointer: repel, attract, or swirl.",
-          "followSpeed": "0–1 smoothing factor for pointer follow.",
-          "sampleAverage": "When true, average multiple samples per cell instead of center only.",
-          "tintColor": "Color tint (e.g. #0ea5e9 or rgb(14,165,233)).",
-          "tintStrength": "0–1 tint mix amount with original colors.",
-          "maxFps": "Cap animation frame rate for performance on large canvases.",
-          "objectFit": "Object-fit behavior for the source image: cover, contain, fill, or none.",
-          "jitterStrength": "Random motion amplitude for dots near the pointer.",
-          "jitterSpeed": "Speed factor for the random motion.",
-          "fadeOnLeave": "When true, smoothly fade distortion when the pointer leaves (overridden by variant=\"static\").",
-          "fadeSpeed": "0–1 smoothing factor for leave fade; higher is faster."
-        }
-      },
-      "heatmap-canvas": {
-        "label": "Heatmap Canvas",
-        "description": "Renders a source image with a heatmap visual effect by mapping pixel intensity to a color gradient.",
-        "props": {
-          "src": "Image URL (must be CORS-enabled for canvas read).",
-          "width": "Display width in CSS pixels.",
-          "height": "Display height in CSS pixels.",
-          "colormap": "Color gradient: thermal, viridis, jet, or grayscale.",
-          "intensitySource": "Intensity source: luminance, r, g, or b.",
-          "objectFit": "How the image fits: cover, contain, fill, or none.",
-          "fill": "When true, the component fills its outer container; size is determined by ResizeObserver. Parent must have explicit dimensions (e.g. h-64 or aspect-video).",
-          "className": "Additional CSS class for the container."
-        }
-      },
-      "motion-wheel": {
-        "label": "Motion Wheel",
-        "description": "A compound carousel wheel with rotation animation, prev/next navigation, dot indicators, and optional center info panel. Supports keyboard control (ArrowLeft/ArrowRight) when focused.",
-        "props": {
-          "items": "Data array for wheel items; each item must have an id.",
-          "children": "Child elements or render content.",
-          "className": "Additional CSS class for the element.",
-          "radius": "Wheel radius in pixels; responsive default (desktop 320, mobile 270).",
-          "spring": "Spring animation config: stiffness, damping, duration.",
-          "initialIndex": "Index of the initially focused item.",
-          "interval": "Auto-advance interval in milliseconds (AutoCarousel).",
-          "wheelChildren": "Render function (item, index) => ReactNode for each wheel item.",
-          "item": "Current item data (MotionWheel.Item).",
-          "index": "Index of the item in the wheel (MotionWheel.Item).",
-          "prevClassName": "CSS class for the previous (left) navigation button.",
-          "nextClassName": "CSS class for the next (right) navigation button.",
-          "centerInfoChildren": "Render function (item) => ReactNode for the center info panel content."
-        }
-      },
-      "3d-card": {
-        "label": "3D Card",
-        "description": "A card that tilts in 3D following your cursor on hover. Child elements can float at different depths for a parallax effect."
-      },
-      "3d-flip-card": {
-        "label": "3D Flip Card",
-        "description": "A compound flip card with 3D tilt on hover and click-to-flip front/back."
-      },
-      "glyph-katakana": {
-        "label": "Glyph Katakana",
-        "description": "A text component with decoding animation—random katakana glyphs gradually resolve to reveal the target text."
-      },
-      "slide-up-letters": {
-        "label": "Slide Up Letters",
-        "description": "A slide up letters component with customizable data and optional title and description."
-      },
-      "animated-counter": {
-        "label": "Animated Counter",
-        "description": "A number counter that animates from a starting value to a target when it enters the viewport."
-      },
-      "decrypted-text": {
-        "label": "Decrypted Text",
-        "description": "Scrambled text that reveals on hover or when in view. Supports sequential or batch reveal, and multiple reveal directions."
-      },
-      "text-hover-effect": {
-        "label": "Text Hover Effect",
-        "description": "Text that reveals a cursor-following gradient and stroke animation on hover.",
-        "props": {
-          "text": "The text to display. Revealed with cursor-following gradient and stroke animation on hover.",
-          "duration": "Duration (s) for the radial mask to follow the cursor. Use 0 for instant follow. Default: 0.",
-          "className": "Optional CSS class for the root SVG container (e.g. width, height, margin).",
-          "textClassName": "Optional CSS class merged into all text elements (e.g. font size, font family, stroke)."
-        }
-      },
-      "draggable-grid": {
-        "label": "Draggable Grid",
-        "description": "A draggable 2D grid with parallax icon cells. Inspired by Apple WatchOS.",
-        "props": {
-          "children": "Root/Grid: child nodes. Item: custom content; when provided, item (link+image+tooltip) is ignored.",
-          "className": "Optional CSS class for the container.",
-          "iconSize": "Size (px) of each grid cell/icon. Used for layout and parallax.",
-          "iconMargin": "Gap (px) between grid cells.",
-          "rows": "Number of grid rows (Root).",
-          "cols": "Number of grid columns (Root).",
-          "linkComponent": "Custom component for links (e.g. Next.js Link). Receives href and children.",
-          "fallback": "ReactNode shown before mount (e.g. loading). If set, Root renders it instead of default loading UI.",
-          "dragConstraints": "Bounds for dragging: { left, right, top, bottom } in px. Limits how far the grid plane can be dragged.",
-          "row": "Item's row index in the grid (0-based).",
-          "col": "Item's column index in the grid (0-based).",
-          "index": "Item order for stagger animation delay.",
-          "item": "Data for default cell: { id, href?, image?, label? }. When set, renders link + image/tooltip; omit and use children for custom content."
-        }
-      },
-      "timeline": {
-        "label": "Timeline",
-        "description": "Vertical timeline with sticky year on the left and card content on the right. Optional scroll-driven axis fill effect."
-      },
-      "speed-dial": {
-        "label": "Speed Dial",
-        "description": "FAB that expands into a radial menu of actions. Compound component: Root, Trigger, Item. Supports spread angle and direction.",
-        "props": {
-          "children": "Root: Trigger and Item components. Trigger: optional icon or label for the FAB. Item: icon or label for the action button.",
-          "spreadRangeAngle": "Total angle (degrees) the items spread over. e.g. 360 full circle, 180 half, 30 narrow.",
-          "directionAngle": "Direction of the fan: 0° = right, 90° = down, 180° = left, 270° = up.",
-          "radius": "Distance from trigger to each item (px).",
-          "itemSize": "Default size for all SpeedDial.Item children (sm, default, lg).",
-          "className": "Optional CSS class for the Root container.",
-          "variant": "Trigger button style: default, outline, or secondary.",
-          "size": "Trigger or Item size: default, sm, or lg. On Item, overrides Root's itemSize.",
-          "onClick": "Callback when the Item is clicked (menu closes after)."
-        }
-      },
-      "floating-dock": {
-        "label": "Floating Dock",
-        "description": "Bottom navigation dock with magnify-on-hover. Desktop bar at bottom; mobile collapses to hamburger menu.",
-        "props": {
-          "items": "Array of nav items: title, icon (ReactNode), and href. Rendered in both desktop bar and mobile menu.",
-          "desktopClassName": "Optional CSS class for the desktop dock container (visible from md breakpoint).",
-          "mobileClassName": "Optional CSS class for the mobile dock wrapper (visible below md; wraps the hamburger trigger and expanded menu)."
-        }
+      "label": "Matrix Code",
+      "description": "A matrix code component with glitch effect and optional vignette effect.",
+      "props": {
+        "glitchColors": "Hex color array for the glitch characters (e.g. green/cyan palette).",
+        "glitchSpeed": "Interval in ms between character/color updates; lower is faster.",
+        "centerVignette": "Whether to apply a dark vignette overlay in the center.",
+        "outerVignette": "Whether to apply a dark vignette overlay at the edges.",
+        "smooth": "Whether to smoothly interpolate color changes; false for instant switches.",
+        "className": "Additional CSS class for the container."
       }
     },
+    "perlin-noise": {
+      "label": "Perlin Noise",
+      "description": "Canvas-based Perlin noise wave grid background. Configurable line color, wave speed and amplitude; mouse and touch interaction affect grid displacement.",
+      "props": {
+        "lineColor": "Stroke color of the wave grid lines (CSS color).",
+        "backgroundColor": "Background color of the container (CSS color).",
+        "waveSpeedX": "Horizontal speed of the Perlin wave animation.",
+        "waveSpeedY": "Vertical speed of the Perlin wave animation.",
+        "waveAmpX": "Horizontal amplitude of the wave displacement in pixels.",
+        "waveAmpY": "Vertical amplitude of the wave displacement in pixels.",
+        "xGap": "Horizontal spacing between grid lines in pixels.",
+        "yGap": "Vertical spacing between points on each line in pixels.",
+        "friction": "Decay factor for cursor-induced motion (0–1); higher values mean longer drift.",
+        "tension": "Spring tension pulling points back toward rest after cursor interaction.",
+        "maxCursorMove": "Maximum pixel displacement of grid points from cursor/touch influence.",
+        "style": "Inline CSS styles for the root container.",
+        "className": "Additional CSS class for the root container."
+      }
+    },
+    "star-background": {
+      "label": "Star Background",
+      "description": "Canvas 2D starfield background. Configurable star count, twinkle speed, and color. Suited for hero sections or page backgrounds with optional overlay content.",
+      "props": {
+        "starCount": "Number of stars to render in the canvas.",
+        "twinkleSpeed": "Speed of the twinkle animation (0 to disable).",
+        "starColor": "Star color as RGB comma-separated string (e.g. \"255, 255, 255\").",
+        "backgroundColor": "Background color of the canvas (CSS color).",
+        "className": "Additional CSS class for the canvas element.",
+        "containerClassName": "Additional CSS class for the outer container.",
+        "children": "Optional overlay content rendered above the starfield.",
+        "style": "Inline CSS styles for the root container."
+      }
+    },
+    "ascii-art": {
+      "label": "Ascii Art",
+      "description": "Renders an image as ASCII art with configurable resolution, character set, and colors. Supports fade, typewriter, and matrix animations; use AsciiArtStatic for non-animated output.",
+      "props": {
+        "src": "Image URL to convert to ASCII art (subject to CORS).",
+        "resolution": "Number of ASCII columns (character resolution). Higher values give more detail.",
+        "charset": "Preset name (e.g. standard, blocks, binary) or custom character string for brightness mapping.",
+        "color": "Text color for the ASCII art (ignored when colored is true).",
+        "backgroundColor": "Background color of the container.",
+        "inverted": "When true, uses dark background and light text (reverses charset order).",
+        "colored": "When true, uses image colors for each character instead of a single text color.",
+        "animated": "When true, runs the selected animation on load.",
+        "animationStyle": "Animation type: fade, typewriter, matrix, or none.",
+        "animationDuration": "Duration of the fade animation in seconds.",
+        "fontFamily": "Font family for the ASCII characters (e.g. monospace).",
+        "className": "Additional CSS class for the container (e.g. w-full, aspect-video).",
+        "animateOnView": "When true, animation starts only when the component is in view.",
+        "objectFit": "How the image fits the ASCII grid: cover, contain, or fill."
+      }
+    },
+    "webcam": {
+      "label": "Webcam",
+      "description": "A webcam component that streams the user's camera with configurable resolution and optional audio. Supports ref forwarding and shows an error message when camera access fails.",
+      "props": {
+        "width": "Video width in pixels.",
+        "height": "Video height in pixels.",
+        "audio": "Whether to request the microphone stream.",
+        "className": "Additional CSS class for the <video> element.",
+        "containerClassName": "Additional CSS class for the outer container."
+      }
+    },
+    "pixelated-canvas": {
+      "label": "Pixelated Canvas",
+      "description": "Convert any image to a pixelated canvas with mouse distortion effects.",
+      "props": {
+        "src": "Image URL to render (subject to CORS).",
+        "width": "Canvas display width in pixels.",
+        "height": "Canvas display height in pixels.",
+        "variant": "When \"static\", disables pointer interaction; \"interactive\" or undefined enables it.",
+        "cellSize": "Size of each sampling cell in CSS pixels.",
+        "dotScale": "Dot size as a fraction of cell size (0–1).",
+        "shape": "Shape of each dot: circle or square.",
+        "backgroundColor": "Background color to clear the canvas with before drawing.",
+        "grayscale": "When true, convert image to grayscale before drawing.",
+        "className": "Additional CSS class for the canvas element.",
+        "responsive": "When true, redraw on window resize using the given width/height.",
+        "dropoutStrength": "0–1. Higher values remove more dots in low-contrast regions.",
+        "interactive": "When true, enable mouse distortion animation (overridden by variant=\"static\").",
+        "distortionStrength": "Max per-dot offset in pixels due to distortion.",
+        "distortionRadius": "Radius in pixels around the pointer that influences distortion.",
+        "distortionMode": "How dots move near the pointer: repel, attract, or swirl.",
+        "followSpeed": "0–1 smoothing factor for pointer follow.",
+        "sampleAverage": "When true, average multiple samples per cell instead of center only.",
+        "tintColor": "Color tint (e.g. #0ea5e9 or rgb(14,165,233)).",
+        "tintStrength": "0–1 tint mix amount with original colors.",
+        "maxFps": "Cap animation frame rate for performance on large canvases.",
+        "objectFit": "Object-fit behavior for the source image: cover, contain, fill, or none.",
+        "jitterStrength": "Random motion amplitude for dots near the pointer.",
+        "jitterSpeed": "Speed factor for the random motion.",
+        "fadeOnLeave": "When true, smoothly fade distortion when the pointer leaves (overridden by variant=\"static\").",
+        "fadeSpeed": "0–1 smoothing factor for leave fade; higher is faster."
+      }
+    },
+    "heatmap-canvas": {
+      "label": "Heatmap Canvas",
+      "description": "Renders a source image with a heatmap visual effect by mapping pixel intensity to a color gradient.",
+      "props": {
+        "src": "Image URL (must be CORS-enabled for canvas read).",
+        "width": "Display width in CSS pixels.",
+        "height": "Display height in CSS pixels.",
+        "colormap": "Color gradient: thermal, viridis, jet, or grayscale.",
+        "intensitySource": "Intensity source: luminance, r, g, or b.",
+        "objectFit": "How the image fits: cover, contain, fill, or none.",
+        "fill": "When true, the component fills its outer container; size is determined by ResizeObserver. Parent must have explicit dimensions (e.g. h-64 or aspect-video).",
+        "className": "Additional CSS class for the container."
+      }
+    },
+    "motion-wheel": {
+      "label": "Motion Wheel",
+      "description": "A compound carousel wheel with rotation animation, prev/next navigation, dot indicators, and optional center info panel. Supports keyboard control (ArrowLeft/ArrowRight) when focused.",
+      "props": {
+        "items": "Data array for wheel items; each item must have an id.",
+        "children": "Child elements or render content.",
+        "className": "Additional CSS class for the element.",
+        "radius": "Wheel radius in pixels; responsive default (desktop 320, mobile 270).",
+        "spring": "Spring animation config: stiffness, damping, duration.",
+        "initialIndex": "Index of the initially focused item.",
+        "interval": "Auto-advance interval in milliseconds (AutoCarousel).",
+        "wheelChildren": "Render function (item, index) => ReactNode for each wheel item.",
+        "item": "Current item data (MotionWheel.Item).",
+        "index": "Index of the item in the wheel (MotionWheel.Item).",
+        "prevClassName": "CSS class for the previous (left) navigation button.",
+        "nextClassName": "CSS class for the next (right) navigation button.",
+        "centerInfoChildren": "Render function (item) => ReactNode for the center info panel content."
+      }
+    },
+    "3d-card": {
+      "label": "3D Card",
+      "description": "A card that tilts in 3D following your cursor on hover. Child elements can float at different depths for a parallax effect."
+    },
+    "3d-flip-card": {
+      "label": "3D Flip Card",
+      "description": "A compound flip card with 3D tilt on hover and click-to-flip front/back."
+    },
+    "glyph-katakana": {
+      "label": "Glyph Katakana",
+      "description": "A text component with decoding animation—random katakana glyphs gradually resolve to reveal the target text."
+    },
+    "slide-up-letters": {
+      "label": "Slide Up Letters",
+      "description": "A slide up letters component with customizable data and optional title and description."
+    },
+    "animated-counter": {
+      "label": "Animated Counter",
+      "description": "A number counter that animates from a starting value to a target when it enters the viewport."
+    },
+    "decrypted-text": {
+      "label": "Decrypted Text",
+      "description": "Scrambled text that reveals on hover or when in view. Supports sequential or batch reveal, and multiple reveal directions."
+    },
+    "text-hover-effect": {
+      "label": "Text Hover Effect",
+      "description": "Text that reveals a cursor-following gradient and stroke animation on hover.",
+      "props": {
+        "text": "The text to display. Revealed with cursor-following gradient and stroke animation on hover.",
+        "duration": "Duration (s) for the radial mask to follow the cursor. Use 0 for instant follow. Default: 0.",
+        "className": "Optional CSS class for the root SVG container (e.g. width, height, margin).",
+        "textClassName": "Optional CSS class merged into all text elements (e.g. font size, font family, stroke)."
+      }
+    },
+    "draggable-grid": {
+      "label": "Draggable Grid",
+      "description": "A draggable 2D grid with parallax icon cells. Inspired by Apple WatchOS.",
+      "props": {
+        "children": "Root/Grid: child nodes. Item: custom content; when provided, item (link+image+tooltip) is ignored.",
+        "className": "Optional CSS class for the container.",
+        "iconSize": "Size (px) of each grid cell/icon. Used for layout and parallax.",
+        "iconMargin": "Gap (px) between grid cells.",
+        "rows": "Number of grid rows (Root).",
+        "cols": "Number of grid columns (Root).",
+        "linkComponent": "Custom component for links (e.g. Next.js Link). Receives href and children.",
+        "fallback": "ReactNode shown before mount (e.g. loading). If set, Root renders it instead of default loading UI.",
+        "dragConstraints": "Bounds for dragging: { left, right, top, bottom } in px. Limits how far the grid plane can be dragged.",
+        "row": "Item's row index in the grid (0-based).",
+        "col": "Item's column index in the grid (0-based).",
+        "index": "Item order for stagger animation delay.",
+        "item": "Data for default cell: { id, href?, image?, label? }. When set, renders link + image/tooltip; omit and use children for custom content."
+      }
+    },
+    "timeline": {
+      "label": "Timeline",
+      "description": "Vertical timeline with sticky year on the left and card content on the right. Optional scroll-driven axis fill effect."
+    },
+    "speed-dial": {
+      "label": "Speed Dial",
+      "description": "FAB that expands into a radial menu of actions. Compound component: Root, Trigger, Item. Supports spread angle and direction.",
+      "props": {
+        "children": "Root: Trigger and Item components. Trigger: optional icon or label for the FAB. Item: icon or label for the action button.",
+        "spreadRangeAngle": "Total angle (degrees) the items spread over. e.g. 360 full circle, 180 half, 30 narrow.",
+        "directionAngle": "Direction of the fan: 0° = right, 90° = down, 180° = left, 270° = up.",
+        "radius": "Distance from trigger to each item (px).",
+        "itemSize": "Default size for all SpeedDial.Item children (sm, default, lg).",
+        "className": "Optional CSS class for the Root container.",
+        "variant": "Trigger button style: default, outline, or secondary.",
+        "size": "Trigger or Item size: default, sm, or lg. On Item, overrides Root's itemSize.",
+        "onClick": "Callback when the Item is clicked (menu closes after)."
+      }
+    },
+    "floating-dock": {
+      "label": "Floating Dock",
+      "description": "Bottom navigation dock with magnify-on-hover. Desktop bar at bottom; mobile collapses to hamburger menu.",
+      "props": {
+        "items": "Array of nav items: title, icon (ReactNode), and href. Rendered in both desktop bar and mobile menu.",
+        "desktopClassName": "Optional CSS class for the desktop dock container (visible from md breakpoint).",
+        "mobileClassName": "Optional CSS class for the mobile dock wrapper (visible below md; wraps the hamburger trigger and expanded menu)."
+      }
+    }
+  },
   "ThreeDCardDemo": {
     "title": "3D Tilt Card",
     "hint": "Hover to see tilt effect"

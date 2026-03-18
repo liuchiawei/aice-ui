@@ -24,7 +24,9 @@
     "demo-code": "範例代碼",
     "install": {
       "title": "安裝",
-      "description": "請選擇您喜歡的包管理器安裝元件。"
+      "description": "使用 Aice UI CLI 或 Shadcn CLI 安裝元件。",
+      "aiceLabel": "Aice UI CLI",
+      "shadcnLabel": "Shadcn CLI"
     },
     "usage": {
       "title": "使用方法",
