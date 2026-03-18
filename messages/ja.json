@@ -25,7 +25,9 @@
     "demo-code": "デモコード",
     "install": {
       "title": "インストール",
-      "description": "お好きなパッケージマネージャーでコンポーネントをインストールしてください。"
+      "description": "Aice UI CLI または Shadcn CLI でコンポーネントをインストールしてください。",
+      "aiceLabel": "Aice UI CLI",
+      "shadcnLabel": "Shadcn CLI"
     },
     "usage": {
       "title": "使用方法",

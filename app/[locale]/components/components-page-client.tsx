@@ -18,6 +18,9 @@ export function ComponentsPageClient() {
           key={group.label}
           id={sectionIdFromLabel(group.label)}
           title={t(group.label)}
+          icon={
+            <group.icon className="size-5 shrink-0" aria-hidden />
+          }
         >
           <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5">
             {group.items.map((item) => (
