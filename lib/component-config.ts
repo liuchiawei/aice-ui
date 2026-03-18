@@ -1,5 +1,18 @@
 import type { ComponentType } from "react";
 import {
+  type LucideIcon,
+  BarChart3,
+  GalleryThumbnails,
+  Image,
+  Layout,
+  LayoutGrid,
+  Layers,
+  MousePointerClick,
+  Type,
+  Menu,
+  AppWindowMac
+} from "lucide-react";
+import {
   GlassSurfaceDemo,
   glassSurfaceSource,
 } from "@/components/demo/glass-surface-demo";
@@ -134,9 +147,14 @@ export interface ComponentItem {
   usageProps?: UsagePropRow[];
 }
 
-export const myComponents: { label: string; items: ComponentItem[] }[] = [
+export const myComponents: {
+  label: string;
+  icon: LucideIcon;
+  items: ComponentItem[];
+}[] = [
   {
     label: "UI",
+    icon: LayoutGrid,
     items: [
       {
         slug: "glass-surface",
@@ -338,6 +356,7 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
   },
   {
     label: "Text",
+    icon: Type,
     items: [
       {
         slug: "glyph-katakana",
@@ -397,6 +416,7 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
   },
   {
     label: "Button",
+    icon: MousePointerClick,
     items: [
       {
         slug: "copy-button",
@@ -426,6 +446,7 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
   },
   {
     label: "Card",
+    icon: AppWindowMac,
     items: [
       {
         slug: "3d-card",
@@ -447,6 +468,7 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
   },
   {
     label: "Chart",
+    icon: BarChart3,
     items: [
       {
         slug: "radar-chart",
@@ -468,6 +490,7 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
   },
   {
     label: "Carousel",
+    icon: GalleryThumbnails,
     items: [
       {
         slug: "motion-wheel",
@@ -501,6 +524,7 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
   },
   {
     label: "Layout",
+    icon: Layout,
     items: [
       {
         slug: "draggable-grid",
@@ -542,6 +566,7 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
   },
   {
     label: "Navigation",
+    icon: Menu,
     items: [
       {
         slug: "speed-dial",
@@ -583,6 +608,7 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
   },
   {
     label: "Background",
+    icon: Layers,
     items: [
       {
         slug: "floating-circles",
@@ -669,6 +695,7 @@ export const myComponents: { label: string; items: ComponentItem[] }[] = [
   },
   {
     label: "Media",
+    icon: Image,
     items: [
       {
         slug: "webcam",

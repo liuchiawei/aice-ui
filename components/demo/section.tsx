@@ -4,6 +4,7 @@ interface SectionProps {
   id: string;
   title: string;
   description?: string;
+  icon?: React.ReactNode;
   children: React.ReactNode;
   className?: string;
 }
@@ -12,6 +13,7 @@ export function Section({
   id,
   title,
   description,
+  icon,
   children,
   className,
 }: SectionProps) {
@@ -27,8 +29,12 @@ export function Section({
       <div className="mx-auto max-w-6xl px-4">
         <h2
           id={`${id}-heading`}
-          className="text-xl font-semibold text-foreground"
+          className={cn(
+            "text-xl font-semibold text-foreground",
+            icon && "flex items-center gap-2"
+          )}
         >
+          {icon}
           {title}
         </h2>
         {description ? (
