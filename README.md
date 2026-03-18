@@ -1,10 +1,10 @@
-**English** | [日本語](README.ja.md) | [中文](README.zh-TW.md)
-
 # Aice UI
 
 UI components built with Next.js, React, Tailwind CSS, and shadcn/ui style. Copy into your project or add via CLI.
 
 **Preview:** [aice-ui.vercel.app](https://aice-ui.vercel.app/)
+
+**English** | [日本語](README.ja.md) | [中文](README.zh-TW.md)
 
 ---
 
