@@ -3,13 +3,61 @@
 import React, {
   createContext,
   useState,
-  useContext,
   useCallback,
+  use,
   type ReactNode,
 } from "react";
 import { cn } from "@/lib/utils";
 import ThreeDCard from "@/components/card/3d-card";
-import ReactCardFlip from "react-card-flip";
+
+/** Inline flip container: two faces, CSS 3D transform. Does not own state; receives isFlipped/flipDirection from Root. */
+function CardFlipContainer({
+  isFlipped,
+  flipDirection,
+  containerClassName,
+  front,
+  back,
+}: {
+  isFlipped: boolean;
+  flipDirection: "horizontal" | "vertical";
+  containerClassName?: string;
+  front: ReactNode;
+  back: ReactNode;
+}) {
+  const isHorizontal = flipDirection === "horizontal";
+  const rotate = isFlipped ? "180deg" : "0deg";
+  const transformInner = isHorizontal
+    ? { transform: `rotateY(${rotate})` }
+    : { transform: `rotateX(${rotate})` };
+  const transformBack = isHorizontal
+    ? { transform: "rotateY(180deg)" }
+    : { transform: "rotateX(180deg)" };
+
+  return (
+    <div
+      className={cn("relative h-full w-full perspective-[1000px]", containerClassName)}
+      style={{ overflow: "hidden" }}
+    >
+      <div
+        className="relative h-full w-full transition-transform duration-500 ease-in-out transform-3d"
+        style={transformInner}
+      >
+        <div
+          className="absolute inset-0 backface-hidden"
+          style={isHorizontal ? { transform: "rotateY(0deg)" } : { transform: "rotateX(0deg)" }}
+        >
+          {front}
+        </div>
+        <div
+          className="absolute inset-0 backface-hidden"
+          style={transformBack}
+        >
+          {back}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 /** Context value for flip state and actions. Injected by FlipCard.Root. */
 interface FlipCardContextValue {
@@ -26,14 +74,14 @@ const FlipCardSideContext = createContext<FlipCardSide>(null);
 
 /** Hook to access flip state and actions. Must be used within FlipCard.Root. */
 export function useFlipCard() {
-  const ctx = useContext(FlipCardContext);
+  const ctx = use(FlipCardContext);
   if (!ctx) {
     throw new Error("useFlipCard must be used within FlipCard.Root");
   }
   return ctx;
 }
 
-/** Root flip card wrapper. Manages flip state and ReactCardFlip. */
+/** Root flip card wrapper. Manages flip state and CardFlipContainer. */
 function FlipCardRoot({
   children,
   className,
@@ -71,14 +119,13 @@ function FlipCardRoot({
 
   return (
     <FlipCardContext.Provider value={value}>
-      <ReactCardFlip
+      <CardFlipContainer
         isFlipped={isFlipped}
         flipDirection={flipDirection}
         containerClassName={cn(containerClassName)}
-      >
-        {front}
-        {back}
-      </ReactCardFlip>
+        front={front}
+        back={back}
+      />
     </FlipCardContext.Provider>
   );
 }
@@ -111,8 +158,8 @@ function FlipCardContainer({
   className?: string;
   containerClassName?: string;
 }) {
-  const ctx = useContext(FlipCardContext);
-  const side = useContext(FlipCardSideContext);
+  const ctx = use(FlipCardContext);
+  const side = use(FlipCardSideContext);
 
   const opacityClass =
     ctx && side === "front"
@@ -152,7 +199,7 @@ function FlipCardBody({
   return (
     <ThreeDCard.Body
       className={cn(
-        "h-96 w-96 [transform-style:preserve-3d] [&>*]:[transform-style:preserve-3d]",
+        "h-96 w-96 transform-3d *:transform-3d",
         className
       )}
     >
