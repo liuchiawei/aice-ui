@@ -18,7 +18,7 @@ UI components built with Next.js, React, Tailwind CSS, and shadcn/ui style. Copy
 ### Run locally
 
 ```bash
-git clone https://github.com/your-username/aice-ui.git
+git clone https://github.com/liuchiawei/aice-ui.git
 cd aice-ui
 pnpm install
 pnpm dev
@@ -41,7 +41,7 @@ Open [http://localhost:3000](http://localhost:3000).
 After the package is published:
 
 ```bash
-pnpm add -g @doublecheap/aice-ui
+npx @doublecheap/aice-ui list
 ```
 
 Then use the CLI to add components via the registry.
