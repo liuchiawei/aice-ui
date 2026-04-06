@@ -12,14 +12,14 @@
     "Media": "媒體"
   },
   "Home": {
-    "title": "AICE UI",
+    "title": "OPEN-UI",
     "description": "這是一個開源的 UI 元件庫，幫助你更快打造 AI 應用。提供像對話、訊息等預建元件，採用 Next.js、React、Tailwind CSS 與 shadcn/ui 製作。",
     "CTA": "元件一覽",
     "CTAUsage": "使用指南"
   },
   "UsagePage": {
     "title": "使用指南",
-    "description": "你可以透過 Aice UI CLI 或 shadcn CLI 的 registry 來安裝元件；也可以手動複製原始碼使用。",
+    "description": "你可以透過 Open-UI CLI 或 shadcn CLI 的 registry 來安裝元件；也可以手動複製原始碼使用。",
     "sections": {
       "prerequisites": {
         "title": "前置需求",
@@ -27,8 +27,8 @@
         "tailwind": "專案已設定 Tailwind CSS",
         "shadcn": "選用：若要用 registry 安裝，請先初始化 shadcn"
       },
-      "aiceCli": {
-        "title": "Aice UI CLI",
+      "openUiCli": {
+        "title": "Open-UI CLI",
         "description": "推薦。用 slug 安裝元件，CLI 會協助處理相依套件與檔案。"
       },
       "shadcnCli": {
@@ -49,7 +49,7 @@
         "title": "常見問題",
         "q1": {
           "q": "我該用哪種安裝方式？",
-          "a": "想最省事就用 Aice UI CLI。若你的專案已經有 shadcn，使用 registry URL 也很方便。"
+          "a": "想最省事就用 Open-UI CLI。若你的專案已經有 shadcn，使用 registry URL 也很方便。"
         },
         "q2": {
           "q": "shadcn add 出現 404",
@@ -70,8 +70,8 @@
     "demo-code": "範例代碼",
     "install": {
       "title": "安裝",
-      "description": "使用 Aice UI CLI 或 Shadcn CLI 安裝元件。",
-      "aiceLabel": "Aice UI CLI",
+      "description": "使用 Open-UI CLI 或 Shadcn CLI 安裝元件。",
+      "openUiLabel": "Open-UI CLI",
       "shadcnLabel": "Shadcn CLI"
     },
     "usage": {

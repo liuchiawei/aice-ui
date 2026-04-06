@@ -2,7 +2,7 @@
 
 ---
 
-# Aice UI
+# OPEN-UI
 
 Next.js、React、Tailwind CSS、shadcn/ui スタイルで構築した UI コンポーネント。プロジェクトにコピーするか CLI で追加できます。
 
@@ -20,8 +20,8 @@ Next.js、React、Tailwind CSS、shadcn/ui スタイルで構築した UI コン
 ### ローカルで起動
 
 ```bash
-git clone https://github.com/your-username/aice-ui.git
-cd aice-ui
+git clone https://github.com/your-username/open-ui.git
+cd open-ui
 pnpm install
 pnpm dev
 ```
@@ -43,7 +43,7 @@ pnpm dev
 パッケージ公開後：
 
 ```bash
-pnpm add -g @doublecheap/aice-ui
+pnpm add -g @doublecheap/open-ui
 ```
 
 CLI から registry 経由でコンポーネントを追加できます。

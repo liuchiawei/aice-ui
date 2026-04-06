@@ -8,12 +8,12 @@ export interface InstallCommands {
 
 const PLACEHOLDER_SLUG = "<component>";
 
-export function getAiceCliAddCommandsExample(): InstallCommands {
+export function getOpenUiCliAddCommandsExample(): InstallCommands {
   const slug = PLACEHOLDER_SLUG;
   return {
-    npm: `npx @doublecheap/aice-ui add ${slug}`,
-    pnpm: `pnpm dlx @doublecheap/aice-ui add ${slug}`,
-    yarn: `yarn dlx @doublecheap/aice-ui add ${slug}`,
+    npm: `npx @doublecheap/open-ui add ${slug}`,
+    pnpm: `pnpm dlx @doublecheap/open-ui add ${slug}`,
+    yarn: `yarn dlx @doublecheap/open-ui add ${slug}`,
   };
 }
 

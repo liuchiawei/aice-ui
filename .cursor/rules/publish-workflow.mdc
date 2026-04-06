@@ -32,13 +32,13 @@ alwaysApply: true
    pnpm run build:cli
    ```
 
-4. **可選驗證** — 建置並執行 `aice-ui --help`：
+4. **可選驗證** — 建置並執行 CLI（等同 `node dist/index.js --help`）：
 
    ```bash
    pnpm run test:cli
    ```
 
-5. **發布** — scoped 套件（如 `@doublecheap/aice-ui`）必須加 `--access public`：
+5. **發布** — scoped 套件（如 `@doublecheap/open-ui`）必須加 `--access public`：
 
    ```bash
    pnpm publish --access public

@@ -22,7 +22,7 @@ export function InstallationSection({ slug }: InstallationSectionProps) {
       </p>
 
       <div className="flex flex-col gap-2">
-        <p className="text-sm font-medium">{t("install.aiceLabel")}</p>
+        <p className="text-sm font-medium">{t("install.openUiLabel")}</p>
         <Tabs defaultValue="pnpm" className="w-full">
           <TabsList>
             {PACKAGE_MANAGERS.map((pm) => (

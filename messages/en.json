@@ -12,14 +12,14 @@
     "Media": "Media"
   },
   "Home": {
-    "title": "AICE UI",
+    "title": "OPEN-UI",
     "description": "An open-source UI component library to help you build applications faster. It provides pre-built components like conversations, messages and more. Built with Next.js, React, Tailwind CSS, and shadcn/ui.",
     "CTA": "Components",
     "CTAUsage": "Usage"
   },
   "UsagePage": {
     "title": "Usage",
-    "description": "Install components via Aice UI CLI or shadcn CLI registry. You can also copy source files manually.",
+    "description": "Install components via Open-UI CLI or shadcn CLI registry. You can also copy source files manually.",
     "sections": {
       "prerequisites": {
         "title": "Prerequisites",
@@ -27,8 +27,8 @@
         "tailwind": "Tailwind CSS set up in your project",
         "shadcn": "Optional: shadcn initialized for registry-based install"
       },
-      "aiceCli": {
-        "title": "Aice UI CLI",
+      "openUiCli": {
+        "title": "Open-UI CLI",
         "description": "Recommended. Add components by slug and let the CLI handle dependencies."
       },
       "shadcnCli": {
@@ -49,7 +49,7 @@
         "title": "FAQ",
         "q1": {
           "q": "Which install method should I use?",
-          "a": "Use Aice UI CLI for the simplest setup. If you already use shadcn, the registry URL approach is also great."
+          "a": "Use Open-UI CLI for the simplest setup. If you already use shadcn, the registry URL approach is also great."
         },
         "q2": {
           "q": "shadcn add fails with 404",
@@ -69,8 +69,8 @@
     },
     "install": {
       "title": "Install",
-      "description": "Use Aice UI CLI or Shadcn CLI to install the component.",
-      "aiceLabel": "Aice UI CLI",
+      "description": "Use Open-UI CLI or Shadcn CLI to install the component.",
+      "openUiLabel": "Open-UI CLI",
       "shadcnLabel": "Shadcn CLI"
     },
     "usage": {

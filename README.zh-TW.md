@@ -2,7 +2,7 @@
 
 ---
 
-# Aice UI
+# OPEN-UI
 
 以 Next.js、React、Tailwind CSS 與 shadcn/ui 風格建構的 UI 元件。可複製到專案或透過 CLI 加入。
 
@@ -20,8 +20,8 @@
 ### 本地執行
 
 ```bash
-git clone https://github.com/your-username/aice-ui.git
-cd aice-ui
+git clone https://github.com/your-username/open-ui.git
+cd open-ui
 pnpm install
 pnpm dev
 ```
@@ -43,7 +43,7 @@ pnpm dev
 套件發佈後：
 
 ```bash
-pnpm add -g @doublecheap/aice-ui
+pnpm add -g @doublecheap/open-ui
 ```
 
 之後可透過 CLI 從 registry 加入元件。

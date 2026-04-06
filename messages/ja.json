@@ -12,14 +12,14 @@
     "Media": "メディア"
   },
   "Home": {
-    "title": "AICE UI",
+    "title": "OPEN-UI",
     "description": "AI向けアプリをすぐ作れる、使いやすいUIコンポーネント集です。会話やメッセージなどが簡単に使えます。Next.js、React、Tailwind CSS、shadcn/ui製です。",
     "CTA": "コンポーネント一覧",
     "CTAUsage": "使い方"
   },
   "UsagePage": {
     "title": "使い方",
-    "description": "Aice UI CLI または shadcn CLI のレジストリからコンポーネントを追加できます。手動コピーでも利用可能です。",
+    "description": "Open-UI CLI または shadcn CLI のレジストリからコンポーネントを追加できます。手動コピーでも利用可能です。",
     "sections": {
       "prerequisites": {
         "title": "前提",
@@ -27,8 +27,8 @@
         "tailwind": "プロジェクトに Tailwind CSS が設定済み",
         "shadcn": "任意：レジストリ経由で入れる場合は shadcn を初期化"
       },
-      "aiceCli": {
-        "title": "Aice UI CLI",
+      "openUiCli": {
+        "title": "Open-UI CLI",
         "description": "おすすめ。slug から追加し、依存関係も CLI が処理します。"
       },
       "shadcnCli": {
@@ -49,7 +49,7 @@
         "title": "FAQ",
         "q1": {
           "q": "どの入れ方が良い？",
-          "a": "迷ったら Aice UI CLI が最も簡単です。shadcn を使っているならレジストリURLも便利です。"
+          "a": "迷ったら Open-UI CLI が最も簡単です。shadcn を使っているならレジストリURLも便利です。"
         },
         "q2": {
           "q": "shadcn add が 404 になる",
@@ -71,8 +71,8 @@
     "demo-code": "デモコード",
     "install": {
       "title": "インストール",
-      "description": "Aice UI CLI または Shadcn CLI でコンポーネントをインストールしてください。",
-      "aiceLabel": "Aice UI CLI",
+      "description": "Open-UI CLI または Shadcn CLI でコンポーネントをインストールしてください。",
+      "openUiLabel": "Open-UI CLI",
       "shadcnLabel": "Shadcn CLI"
     },
     "usage": {

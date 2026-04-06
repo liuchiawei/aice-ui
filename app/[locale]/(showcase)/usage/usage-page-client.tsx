@@ -4,14 +4,14 @@ import { useTranslations } from "next-intl";
 import Snippet from "@/components/ui-elements/snippet";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
-  getAiceCliAddCommandsExample,
+  getOpenUiCliAddCommandsExample,
   getShadcnInitCommand,
   getShadcnRegistryAddCommandsExample,
 } from "@/lib/usage";
 
 export function UsagePageClient() {
   const t = useTranslations("UsagePage");
-  const aiceCliCommands = getAiceCliAddCommandsExample();
+  const openUiCliCommands = getOpenUiCliAddCommandsExample();
   const shadcnCommands = getShadcnRegistryAddCommandsExample();
 
   return (
@@ -33,21 +33,21 @@ export function UsagePageClient() {
       </section>
 
       <section className="space-y-3 border-t border-border pt-6">
-        <h2 className="text-lg font-bold">{t("sections.aiceCli.title")}</h2>
-        <p className="text-sm text-muted-foreground">{t("sections.aiceCli.description")}</p>
+        <h2 className="text-lg font-bold">{t("sections.openUiCli.title")}</h2>
+        <p className="text-sm text-muted-foreground">{t("sections.openUiCli.description")}</p>
 
         <Tabs defaultValue="pnpm" className="w-full">
           <TabsList>
-            {Object.keys(aiceCliCommands).map((pm) => (
+            {Object.keys(openUiCliCommands).map((pm) => (
               <TabsTrigger key={pm} value={pm}>
                 {pm}
               </TabsTrigger>
             ))}
           </TabsList>
-          {(Object.keys(aiceCliCommands) as Array<keyof typeof aiceCliCommands>).map((pm) => (
+          {(Object.keys(openUiCliCommands) as Array<keyof typeof openUiCliCommands>).map((pm) => (
             <TabsContent key={pm} value={pm} className="mt-2">
               <Snippet.Provider
-                code={aiceCliCommands[pm]}
+                code={openUiCliCommands[pm]}
                 className="rounded-lg border border-border bg-shiki-light-bg dark:bg-shiki-dark-bg"
               >
                 <Snippet.Input className="min-h-9" />

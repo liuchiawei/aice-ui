@@ -4,7 +4,7 @@ import { RadialCluster, type Node } from "@/components/chart/radial-cluster";
 
 const DEMO_DATA: Node[] = [
   {
-    name: "AICE",
+    name: "OPEN",
     children: [
       {
         name: "A",
@@ -30,7 +30,7 @@ export const radialClusterSource = `import { RadialCluster, type Node } from "@/
 
 const DEMO_DATA: Node[] = [
   {
-    name: "AICE",
+    name: "OPEN",
     children: [
       {
         name: "A",

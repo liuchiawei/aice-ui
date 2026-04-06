@@ -1,4 +1,4 @@
-# Aice UI
+# OPEN-UI
 
 UI components built with Next.js, React, Tailwind CSS, and shadcn/ui style. Copy into your project or add via CLI.
 
@@ -18,8 +18,8 @@ UI components built with Next.js, React, Tailwind CSS, and shadcn/ui style. Copy
 ### Run locally
 
 ```bash
-git clone https://github.com/liuchiawei/aice-ui.git
-cd aice-ui
+git clone https://github.com/liuchiawei/open-ui.git
+cd open-ui
 pnpm install
 pnpm dev
 ```
@@ -41,7 +41,7 @@ Open [http://localhost:3000](http://localhost:3000).
 After the package is published:
 
 ```bash
-npx @doublecheap/aice-ui list
+pnpm add -g @doublecheap/open-ui
 ```
 
 Then use the CLI to add components via the registry.

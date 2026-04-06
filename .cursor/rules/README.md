@@ -10,9 +10,9 @@ Project rules in `.cursor/rules/` provide persistent context for the AI agent. E
 
 | Lang | Description |
 |------|-------------|
-| **EN** | Component refactor workflow for the aice-ui shadcn collection. When the user asks to refactor a component, follow the 7-step workflow (refactor → review → demo → i18n → component-config → registry.json → README). Supports partial work; list remaining steps and ask to continue. |
-| **中文** | aice-ui shadcn 元件庫的元件重構流程。當使用者要求重構元件時，依 7 步驟執行：重構 → 審查 → demo → i18n → component-config → registry.json → README；支援只做部分步驟，完成後列出未完成步驟並詢問是否繼續。 |
-| **JA** | aice-ui shadcn コレクションのコンポーネントリファクタ用ワークフロー。コンポーネントのリファクタを依頼されたら 7 ステップ（リファクタ → レビュー → demo → i18n → component-config → registry.json → README）に従う。部分対応可。残りステップを列挙し続行を確認。 |
+| **EN** | Component refactor workflow for the open-ui shadcn collection. When the user asks to refactor a component, follow the 7-step workflow (refactor → review → demo → i18n → component-config → registry.json → README). Supports partial work; list remaining steps and ask to continue. |
+| **中文** | open-ui shadcn 元件庫的元件重構流程。當使用者要求重構元件時，依 7 步驟執行：重構 → 審查 → demo → i18n → component-config → registry.json → README；支援只做部分步驟，完成後列出未完成步驟並詢問是否繼續。 |
+| **JA** | open-ui shadcn コレクションのコンポーネントリファクタ用ワークフロー。コンポーネントのリファクタを依頼されたら 7 ステップ（リファクタ → レビュー → demo → i18n → component-config → registry.json → README）に従う。部分対応可。残りステップを列挙し続行を確認。 |
 
 ### publish-workflow.mdc
 

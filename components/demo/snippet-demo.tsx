@@ -1,6 +1,6 @@
 import Snippet from "@/components/ui-elements/snippet";
 
-const SAMPLE_CODE = "pnpm add @aice-ui/snippet";
+const SAMPLE_CODE = "pnpm dlx @doublecheap/open-ui add snippet";
 
 export function SnippetDemo() {
   return (
@@ -32,7 +32,7 @@ export function SnippetDemo() {
 
 export const snippetSource = `import Snippet from "@/components/ui-elements/snippet";
 
-const code = "pnpm add @aice-ui/snippet";
+const code = "pnpm dlx @doublecheap/open-ui add snippet";
 
 export function SnippetDemo() {
   return (

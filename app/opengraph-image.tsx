@@ -1,11 +1,11 @@
 import { ImageResponse } from "next/og";
 import { HomepageOgImage } from "@/components/og/homepage-og-image";
 
-export const alt = "AICE UI – Open-source UI components for Next.js, React, Tailwind CSS, and shadcn/ui";
+export const alt = "OPEN-UI – Open-source UI components for Next.js, React, Tailwind CSS, and shadcn/ui";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-const TITLE = "AICE UI";
+const TITLE = "OPEN-UI";
 const DESCRIPTION =
   "An open-source UI component library to help you build applications faster. It provides pre-built components like conversations, messages and more. Built with Next.js, React, Tailwind CSS, and shadcn/ui.";
 const CTA = "Components";

@@ -3,13 +3,13 @@
 ## 問題來源
 
 - `react-card-flip@1.2.3` 的 `peerDependencies` 僅宣告 `react@"^18.2.0"`，未支援 React 19。
-- 消費者安裝 `@doublecheap/aice-ui` 時，若專案使用 React 19，npm/pnpm 會解析到衝突並顯示 ERESOLVE 警告。
+- 消費者安裝 `@doublecheap/open-ui` 時，若專案使用 React 19，npm/pnpm 會解析到衝突並顯示 ERESOLVE 警告。
 - 實測確認：React 19 不影響 react-card-flip 行為，問題僅是警告與依賴聲明。
 
 ## 為何不能只靠 overrides 從套件端修掉？
 
 - 套件發佈到 npm 後，消費者在自家專案執行 `npm install` / `pnpm add` 時，是由**消費者的 package manager** 解析依賴。
-- 在 aice-ui 的 `package.json` 裡加 `overrides` / `pnpm.overrides` 只會影響**本 repo** 的 `node_modules`，**不會**改變消費者安裝時的解析結果。
+- 在 open-ui 的 `package.json` 裡加 `overrides` / `pnpm.overrides` 只會影響**本 repo** 的 `node_modules`，**不會**改變消費者安裝時的解析結果。
 - 要從根源消除警告，只能：**不再依賴 react-card-flip**；或讓消費者自己在專案裡加 overrides（僅文件說明，不推薦為主要解法）。
 
 ---
@@ -45,7 +45,7 @@
 6. **驗證**
    - 執行 `pnpm install` 確認本專案無 react-card-flip。
    - 手動測試 `components/demo/3d-flip-card-demo.tsx` 的 horizontal/vertical 翻轉與 `containerClassName` 表現與原本一致。
-   - 以消費者情境在一個使用 React 19 的專案中 `pnpm add @doublecheap/aice-ui`（或 npm install）確認不再出現 react-card-flip 的 ERESOLVE/peer 警告。
+   - 以消費者情境在一個使用 React 19 的專案中 `pnpm add @doublecheap/open-ui`（或 npm install）確認不再出現 react-card-flip 的 ERESOLVE/peer 警告。
 
 ---
 

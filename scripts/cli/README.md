@@ -1,6 +1,6 @@
-# Aice UI CLI
+# Open-UI CLI
 
-本目錄為 Aice UI 的 CLI 實作區，提供 `npx @doublecheap/aice-ui add <component>`、`npx @doublecheap/aice-ui list` 等指令，讓使用者從 [Aice UI Registry](https://aice-ui.vercel.app) 安裝元件到自己的專案。
+本目錄為 OPEN-UI 的 CLI 實作區，提供 `npx @doublecheap/open-ui add <component>`、`npx @doublecheap/open-ui list` 等指令，讓使用者從 [Open-UI Registry](https://aice-ui.vercel.app) 安裝元件到自己的專案。
 
 ## 相關檔案說明
 
@@ -9,7 +9,7 @@
 | **`scripts/cli/index.ts`** | CLI 程式進入點。解析指令（add / list / --help / --version）、拉取 registry JSON、安裝依賴、呼叫 `npx shadcn@latest add <url>`。 |
 | **`lib/project-config.ts`** | 專案常數（`projectConfig`）：`url`（registry 基底）、`cli`（指令名稱）、`name`、`author` 等。CLI 僅依賴此檔以取得 URL 與 CLI 名稱，不依賴整份 component-config。 |
 | **`tsup.config.ts`**（專案根目錄） | 建置設定：entry 為 `scripts/cli/index.ts`，輸出 `dist/index.js`，供 `package.json` 的 `bin` 使用。 |
-| **`package.json`** | 定義 `bin["@doublecheap/aice-ui"] = "dist/index.js"`、`scripts["build:cli"]`、`files` 含 `dist`，發佈時僅會帶上 CLI 產物。 |
+| **`package.json`** | 定義 `bin["@doublecheap/open-ui"] = "dist/index.js"`、`scripts["build:cli"]`、`files` 含 `dist`，發佈時僅會帶上 CLI 產物。 |
 | **`registry.json`**（專案根目錄） | shadcn 相容的 registry 主清單；`pnpm run registry:build` 會同步更新 `public/r/` 下各元件 JSON。 |
 | **`public/r/<component>.json`** | 單一元件完整定義（含 `files[].content`），由 shadcn build 產生，部署後供 CLI 透過 `{projectConfig.url}/r/<component>.json` 拉取。 |
 
@@ -39,19 +39,19 @@ pnpm run test:cli
 
 ```bash
 # 安裝單一元件
-npx @doublecheap/aice-ui add copy-button
+npx @doublecheap/open-ui add copy-button
 
 # 安裝多個元件
-npx @doublecheap/aice-ui add copy-button theme-switch glass-surface
+npx @doublecheap/open-ui add copy-button theme-switch glass-surface
 
 # 列出所有可用元件
-npx @doublecheap/aice-ui list
+npx @doublecheap/open-ui list
 # 或
-npx @doublecheap/aice-ui ls
+npx @doublecheap/open-ui ls
 
 # 說明與版本
-npx @doublecheap/aice-ui --help
-npx @doublecheap/aice-ui --version
+npx @doublecheap/open-ui --help
+npx @doublecheap/open-ui --version
 ```
 
 ### 發佈
@@ -63,4 +63,4 @@ pnpm run build:cli
 npm publish
 ```
 
-發佈後使用者即可直接使用 `npx @doublecheap/aice-ui add <name>`，無需安裝到全域。
+發佈後使用者即可直接使用 `npx @doublecheap/open-ui add <name>`，無需安裝到全域。

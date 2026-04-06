@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
-  "name": "@doublecheap/aice-ui",
+  "name": "@doublecheap/open-ui",
   "homepage": "https://aice-ui.vercel.app/",
   "items": [
     {
