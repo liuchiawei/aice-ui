@@ -3,7 +3,7 @@
   "version": "0.1.3",
   "private": false,
   "bin": {
-    "@doublecheap/open-ui": "dist/index.js"
+    "open-ui": "dist/index.js"
   },
   "files": [
     "dist"
